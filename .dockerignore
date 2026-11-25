@@ -31,3 +31,16 @@ web/*.tsbuildinfo
 **/*_test.go
 *.md
 docs
+
+# Development workflow and reference-only assets
+.trellis
+.agents
+.codex
+.codegraph
+.github
+**/testdata
+**/__pycache__
+.venv
+
+# Preserve distribution notices for the runtime image
+!THIRD_PARTY_NOTICES.md

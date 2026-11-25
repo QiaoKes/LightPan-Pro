@@ -1,6 +1,6 @@
 services:
   litepan:
-    image: ponphil/litepan:beta
+    image: ghcr.io/qiaokes/lightpan-pro:${LIGHTPAN_TAG:?Set LIGHTPAN_TAG to sha-<7-character-SHA>}
     container_name: litepan
     restart: unless-stopped
     ports:
