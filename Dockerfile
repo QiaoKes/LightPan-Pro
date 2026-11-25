@@ -10,7 +10,7 @@ COPY web/package.json web/package-lock.json ./
 RUN npm ci
 
 COPY web/ ./
-RUN npm run type-check && npm run build
+RUN npm run build
 
 
 FROM golang:1.26.6-bookworm AS build

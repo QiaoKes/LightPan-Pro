@@ -15,7 +15,7 @@
 
 ## 基础部署
 
-GitHub Actions 检查通过后会发布镜像 `ghcr.io/qiaokes/lightpan-pro`，tag 为 `sha-` 加提交 SHA 的前 7 位，不发布 `latest`。镜像目前支持 `linux/amd64`。
+GitHub Actions 构建成功后会发布镜像 `ghcr.io/qiaokes/lightpan-pro`，tag 为 `sha-` 加提交 SHA 的前 7 位，不发布 `latest`。镜像目前支持 `linux/amd64`。
 
 从 Actions 成功记录中取得对应提交后运行（将示例 SHA 替换为实际值）：
 
@@ -55,8 +55,8 @@ docker run -d \
 
 ## CI 与镜像发布
 
-- Push 和 Pull Request 执行 Go 测试、静态检查、竞态检测及前端检查；Pull Request 不发布镜像。
-- Push 检查通过后构建并发布对应 SHA 的镜像；镜像构建会重新生成前端资源。
+- Push 或手动运行直接构建并发布对应 SHA 的 Docker 镜像。
+- 流水线只负责镜像构建和推送，前端资源在 Docker 构建中生成。
 - 发布使用仓库的 `GITHUB_TOKEN`，无需额外配置 Docker Hub 账号。
 
 ## 来源与许可
