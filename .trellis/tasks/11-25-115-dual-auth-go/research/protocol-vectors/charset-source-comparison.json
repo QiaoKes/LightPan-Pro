@@ -1,0 +1,30 @@
+{
+  "__init__": {
+    "entire_code_tree_equal_ignoring_locations": true,
+    "bundled_filename": "charset_normalizer/__init__.py"
+  },
+  "version": {
+    "entire_code_tree_equal_ignoring_locations": true,
+    "bundled_filename": "charset_normalizer/version.py"
+  },
+  "legacy": {
+    "entire_code_tree_equal_ignoring_locations": true,
+    "bundled_filename": "charset_normalizer/legacy.py"
+  },
+  "api": {
+    "entire_code_tree_equal_ignoring_locations": true,
+    "bundled_filename": "charset_normalizer/api.py"
+  },
+  "utils": {
+    "entire_code_tree_equal_ignoring_locations": true,
+    "bundled_filename": "charset_normalizer/utils.py"
+  },
+  "models": {
+    "entire_code_tree_equal_ignoring_locations": true,
+    "bundled_filename": "charset_normalizer/models.py"
+  },
+  "constant": {
+    "entire_code_tree_equal_ignoring_locations": true,
+    "bundled_filename": "charset_normalizer/constant.py"
+  }
+}

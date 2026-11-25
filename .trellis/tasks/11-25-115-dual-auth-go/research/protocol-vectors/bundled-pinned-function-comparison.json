@@ -1,0 +1,49 @@
+{
+  "p115cipher.__init__": {
+    "<module>": false,
+    "rsa_encrypt": true,
+    "rsa_decrypt": true,
+    "ecdh_aes_encrypt": true,
+    "ecdh_aes_decrypt": true,
+    "ecdh_encode_token": true,
+    "ecdh_decode_token": true,
+    "ecdh_decode_token.<locals>.<lambda>": true,
+    "ecdh_decode_token.<locals>.<lambda>.<locals>.<genexpr>": true,
+    "make_upload_payload": true,
+    "make_upload_payload.<locals>.<genexpr>": true
+  },
+  "p115cipher.util": {
+    "<module>": false,
+    "_pad": true,
+    "_unpad": true,
+    "_unpad.<locals>.<genexpr>": true,
+    "aes_cbc_encrypt": true,
+    "aes_cbc_decrypt": true,
+    "aes_cbc_decrypt.<locals>.<genexpr>": true,
+    "lz4_block_decompress": true,
+    "acc_step": true,
+    "bytes_xor": true,
+    "xor": true,
+    "generate_ecdh_pair": true,
+    "rsa_gen_key": true,
+    "pad_pkcs1_v1_5": false,
+    "rsa_encrypt_with_pubkey": false,
+    "rsa_decrypt_with_pubkey": false,
+    "lz4_decompress": true
+  },
+  "p115client.client": {
+    "get_request": true,
+    "ClientRequestMixin.request": false,
+    "P115OpenClient.download_url": false,
+    "P115OpenClient.fs_files": false,
+    "P115OpenClient.fs_video_subtitle": false,
+    "P115Client.download_url": false,
+    "P115Client.download_url_app": false,
+    "P115Client.fs_dir_getid": true,
+    "P115Client.fs_files": false,
+    "P115Client.fs_video_subtitle": false
+  },
+  "p115client.util": {
+    "complete_url": true
+  }
+}

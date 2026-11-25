@@ -1,0 +1,53 @@
+{
+  "scope": "isolated localhost instance; no 115 credentials or cloud calls",
+  "build_boundary": "Current final source, including D9, D11 and final Open transport/source-closure corrections.",
+  "binary_sha256": "349a1670ce17fcc2422050d14e248253c870257d761e255474911b15da4152ef",
+  "health": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "data": {
+        "boot_id": "fca393db-0070-4b5c-a538-53672e60913f",
+        "status": "ok"
+      },
+      "message": "",
+      "timestamp": "2026-11-25T14:55:14Z"
+    }
+  },
+  "html": {
+    "status": 200,
+    "assets": [
+      {
+        "path": "/assets/index-DL6AgVM2.js",
+        "status": 200,
+        "bytes": 120989,
+        "content_type": "text/javascript; charset=utf-8"
+      },
+      {
+        "path": "/assets/index-RIHIpgqz.css",
+        "status": 200,
+        "bytes": 53182,
+        "content_type": "text/css; charset=utf-8"
+      },
+      {
+        "path": "/assets/vue-vendor-ZnxwVLGj.js",
+        "status": 200,
+        "bytes": 98120,
+        "content_type": "text/javascript; charset=utf-8"
+      }
+    ]
+  },
+  "bootstrap_login": {
+    "success": true,
+    "must_change_password": true
+  },
+  "auth_status": {
+    "success": true,
+    "is_admin": true,
+    "must_change_password": true
+  },
+  "graceful_shutdown": {
+    "signal": "SIGTERM",
+    "exit_code": 0
+  }
+}

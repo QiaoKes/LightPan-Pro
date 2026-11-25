@@ -1,0 +1,83 @@
+{
+  "provenance": "actual bundled CPython3.12 cipher bytecode; pure bundled AES fallback; synthetic inputs only",
+  "rsa_encrypt": [
+    {
+      "plaintext_hex": "7b227069636b636f6465223a22616263222c22757365725f6964223a34327d",
+      "ciphertext_base64": "ELE5bix6ATPd3RSco79mVv+13oeyB2+jC64FhbHaTmBAaBnITdaK+yc6I8J4KqnrerbpySEDmrH9smQzRZzBu9vDpXKVF4m4m2t2Ws8KODxXtZVinBbtro+iAg4SO+qJ3Rgm3gDPi3gGdyHiU0wdCgHNMbmN7P8dMxeScmdeaxo="
+    },
+    {
+      "plaintext_hex": "",
+      "ciphertext_base64": "gss8BiTOuTPZ6/P8OXHFi87fPxOuUVzEr8cek9pV7LavJ3JiXqIcPr6JNVtIMg8wOP89zPrG5/q8cHRufHEnfzVoMYPEAQrHob6eQ5zUOQcV8hurvDYP96LTEimD8tMwAVd2SeCOUShASNSSOz4pb3DpZwJUzuCs7P/zjvlQOiM="
+    },
+    {
+      "plaintext_hex": "61616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161",
+      "ciphertext_base64": "fgF00iScYEwIiCuO8X69bK4dhgfLWxR2tx5AkrSv8TG8V1PrOy8bwcyLYmicjI6ubKXDoq9Yq9oKgfLa8Uws3L1MEm45mjuCDBlFtMhErvAF4cL+jPPfD/3H9Qlw9YDc8Vfo9f5KTlOml6UQE5eZQlpBhPm91xKM4QmrcWbn8V8ss4MBSxUdlkIuf7LeqGoIt4gO1zCtN8HNfdnqO2YOwgsVoYWh9fqVeQ8LDuUE7TqZvOtwWXnonDX9ixFLkEnIJ8VCced+0XJ3gXk2n6YeQaNBZj/eAoTlshiLyPJ06vug86+4NCnfjR7X3yfyU7f9LfjnrVj0SoEPudYuBTi5Sw=="
+    }
+  ],
+  "aes_encrypt": [
+    {
+      "plaintext_hex": "68656c6c6f26",
+      "ciphertext_hex": "c2395e102e074febeaa1a0848f213e60",
+      "raw_aes_decrypted_hex": "68656c6c6f26"
+    },
+    {
+      "plaintext_hex": "61616161616161616161616161616161",
+      "ciphertext_hex": "4f418c2a805cbfa4e2373c5ed82cb825",
+      "raw_aes_decrypted_hex": "61616161616161616161616161616161"
+    },
+    {
+      "plaintext_hex": "",
+      "ciphertext_hex": "",
+      "raw_aes_decrypted_hex": ""
+    }
+  ],
+  "ecdh_token": [
+    {
+      "timestamp": 0,
+      "token": "HQMOgKF43O7OzaN33hKNAHMAAAAAAAAAjtndz1WuYe1G6hIaHPyBAAEAAAAMfvVI"
+    },
+    {
+      "timestamp": 1700000000,
+      "token": "HQMOgKF43O7OzaN33hKNAHMAAAAA8VNljtndz1WuYe1G6hIaHPyBAAEAAACWHoRq"
+    }
+  ],
+  "constants": {
+    "AES_KEY": "fb1a19d652f5aaf7bc651d0f69bf422f",
+    "AES_IV": "69bf422f49960550a0ad44ec3446cb4c",
+    "AES_PUBKEY": "1d030e80a178dceececda377de128d8ed9ddcf55ae61ed46ea121a1cfc81",
+    "RSA_KEY": "8da5a58d",
+    "RSA_RAND_KEY": "00000000000000000000000000000000",
+    "G_key_l": "7806ad4c33865d184c013f46",
+    "CRC_SALT": "5e6a3e5744334b723f4a32674c466a443457327940"
+  },
+  "rsa_pubkey_n_hex": "0x8686980c0f5a24c4b9d43020cd2c22703ff3f450756529058b1cf88f09b8602136477198a6e2683149659bd122c33592fdb5ad47944ad1ea4d36c6b172aad6338c3bb6ac6227502d010993ac967d1aef00f0c8e038de2e4d3bc2ec368af2e9f10a6f1eda4f7262f136420c07c331b871bf139f74f3010e3c4fe57df3afb71683",
+  "rsa_pubkey_e": 65537,
+  "rsa_decrypt": [
+    {
+      "ciphertext_base64": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM=",
+      "plaintext_hex": "ac239448c0f6a9c54984c072eec2fa62db007db0f3a8fbe044cba5b64ca1a6fc49315e380512c552326cb98ba036e5c37ca9438889",
+      "kind": "synthetic arbitrary cipher block, not a server signature/JSON"
+    }
+  ],
+  "aes_response": {
+    "decoded_json_utf8": "{\"state\":true,\"data\":{\"file_id\":\"42\"}}",
+    "lz4_framed_hex": "2800f0177b227374617465223a747275652c2264617461223a7b2266696c655f6964223a223432227d7d0000",
+    "ciphertext_hex": "337b41157ca6dd15990412146270c53b72322e5119cabbdc7b56931b5438b67f84965e09c31fcff4d9f92747bd490d03"
+  },
+  "cookie_download_request": {
+    "url": "https://proapi.115.com/os_windows/2.0/ufile/downurl",
+    "k_ec": "HQMOgKF43O7OzaN33hKNAHMAAAAAAAAAjtndz1WuYe1G6hIaHPyBAAEAAAAMfvVI",
+    "ua": "",
+    "rsa_json_utf8": "{\"pickcode\":\"abc\",\"user_id\":42}",
+    "form_before_aes_utf8": "data=ELE5bix6ATPd3RSco79mVv%2B13oeyB2%2BjC64FhbHaTmBAaBnITdaK%2Byc6I8J4KqnrerbpySEDmrH9smQzRZzBu9vDpXKVF4m4m2t2Ws8KODxXtZVinBbtro%2BiAg4SO%2BqJ3Rgm3gDPi3gGdyHiU0wdCgHNMbmN7P8dMxeScmdeaxo%3D&",
+    "wire_body_hex": "999fb33912559575bce4baae15fae0d518382253a6f773ca20ca36717e39fb90f7115ffeb142dc5e75ae48ce8488c0a18a9172b24407e8255bf90dd2689607dbdfd376ef9cd3288c8125c57da8664d434b17b1942d42299094d3263d00d3565c03af59f99f613d9fb5f808e6dba2177b24eb2f77570cc4cdcec9e926c3f401b32888e75c3c99a9dfefd7aa0c6d45de101eb62400bd5604f0e06807a60f6f7d828e0cbbf1d495e5cf6ebcea150d345704217f9b858a123e5d4ea55b98effb9004"
+  },
+  "bundled_metadata": {
+    "version": [
+      0,
+      0,
+      5
+    ],
+    "license": "GPLv3 <https://www.gnu.org/licenses/gpl-3.0.txt>"
+  }
+}

@@ -19,6 +19,8 @@ This directory contains guidelines for backend development. Fill in each file wi
 | [Error Handling](./error-handling.md) | Error types, handling strategies | To fill |
 | [Quality Guidelines](./quality-guidelines.md) | Code standards, forbidden patterns | To fill |
 | [Logging Guidelines](./logging-guidelines.md) | Structured logging, log levels | To fill |
+| [CI Container Contract](./ci-container-contract.md) | GitHub validation, GHCR short-SHA publishing and Docker context | Implemented |
+| [115 Reference Contract](./115-reference-contract.md) | Dual credentials, request fidelity, playback and tree/event ownership | Implemented |
 
 ---
 

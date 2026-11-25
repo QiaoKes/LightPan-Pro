@@ -1,0 +1,1882 @@
+QUALNAME <module>
+  0           0 RESUME                   0
+
+  4           2 SETUP_ANNOTATIONS
+              4 LOAD_CONST               0 (0)
+              6 LOAD_CONST               1 (('Callable', 'Iterator'))
+              8 IMPORT_NAME              0 (collections.abc)
+             10 IMPORT_FROM              1 (Callable)
+             12 STORE_NAME               1 (Callable)
+             14 IMPORT_FROM              2 (Iterator)
+             16 STORE_NAME               2 (Iterator)
+             18 POP_TOP
+
+  6          20 LOAD_CONST               0 (0)
+             22 LOAD_CONST               2 (('to_bytes_view',))
+             24 IMPORT_NAME              3 (filewrap)
+             26 IMPORT_FROM              4 (to_bytes_view)
+             28 STORE_NAME               4 (to_bytes_view)
+             30 POP_TOP
+
+  7          32 LOAD_CONST               0 (0)
+             34 LOAD_CONST               3 (('Buffer', 'Final', 'Literal'))
+             36 IMPORT_NAME              5 (typing_extensions)
+             38 IMPORT_FROM              6 (Buffer)
+             40 STORE_NAME               6 (Buffer)
+             42 IMPORT_FROM              7 (Final)
+             44 STORE_NAME               7 (Final)
+             46 IMPORT_FROM              8 (Literal)
+             48 STORE_NAME               8 (Literal)
+             50 POP_TOP
+
+ 10          52 PUSH_NULL
+             54 LOAD_NAME                9 (bytes)
+             56 LOAD_CONST               4 ((240, 229, 105, 174, 191, 220, 191, 138, 26, 69, 232, 190, 125, 166, 115, 184, 222, 143, 231, 196, 69, 218, 134, 196, 155, 100, 139, 20, 106, 180, 241, 170, 56, 1, 53, 158, 38, 105, 44, 134, 0, 107, 79, 165, 54, 52, 98, 166, 42, 150, 104, 24, 242, 74, 253, 189, 107, 151, 143, 77, 143, 137, 19, 183, 108, 142, 147, 237, 14, 13, 72, 62, 215, 47, 136, 216, 254, 254, 126, 134, 80, 149, 79, 209, 235, 131, 38, 52, 219, 102, 123, 156, 126, 157, 122, 129, 50, 234, 182, 51, 222, 58, 169, 89, 52, 102, 59, 170, 186, 129, 96, 72, 185, 213, 129, 156, 248, 108, 132, 119, 255, 84, 120, 38, 95, 190, 232, 30, 54, 159, 52, 128, 92, 69, 44, 155, 118, 213, 27, 143, 204, 195, 184, 245))
+             58 CALL                     1
+             66 STORE_NAME              10 (G_kts)
+             68 LOAD_NAME                7 (Final)
+             70 LOAD_NAME               11 (__annotations__)
+             72 LOAD_CONST               5 ('G_kts')
+             74 STORE_SUBSCR
+
+ 21          78 PUSH_NULL
+             80 LOAD_NAME                9 (bytes)
+             82 LOAD_CONST               6 ((87, 162, 146, 87, 205, 35, 32, 229, 214, 209, 67, 50, 47, 164, 187, 138, 60, 249, 211, 204, 98, 62, 245, 237, 172, 98, 183, 103, 138, 137, 201, 26, 131, 186, 128, 13, 97, 41, 245, 34, 208, 52, 200, 149, 221, 36, 101, 36, 58, 221, 194, 80, 149, 59, 238, 186))
+             84 CALL                     1
+             92 STORE_NAME              12 (ECDH_REMOTE_PUBKEY)
+             94 LOAD_NAME                7 (Final)
+             96 LOAD_NAME               11 (__annotations__)
+             98 LOAD_CONST               7 ('ECDH_REMOTE_PUBKEY')
+            100 STORE_SUBSCR
+
+ 27         104 LOAD_CONST               8 ((94467199538421168685115018334776065898663751652520808966691769684389754194866868839785962914624862265689699980316658987338198288176273874160782292722912223482699621202960645813656296092078123617049558650961406540632832570073725203873545017737008711614000139573916153236215559489283800593547775766023112169091, 65537))
+            106 STORE_NAME              13 (RSA_PUBKEY_PAIR)
+            108 LOAD_NAME                7 (Final)
+            110 LOAD_NAME               11 (__annotations__)
+            112 LOAD_CONST               9 ('RSA_PUBKEY_PAIR')
+            114 STORE_SUBSCR
+
+ 33         118 LOAD_NAME               14 (int)
+            120 LOAD_ATTR               30 (from_bytes)
+            140 STORE_NAME              15 (from_bytes)
+
+ 34         142 LOAD_NAME               14 (int)
+            144 LOAD_ATTR               32 (to_bytes)
+            164 STORE_NAME              16 (to_bytes)
+
+ 37         166 LOAD_CONST              10 (<code object _pad at 0x106031290, file "p115cipher/util.py", line 37>)
+            168 MAKE_FUNCTION            0
+            170 STORE_NAME              17 (_pad)
+
+ 45         172 LOAD_CONST              11 (<code object _unpad at 0x10146fe10, file "p115cipher/util.py", line 45>)
+            174 MAKE_FUNCTION            0
+            176 STORE_NAME              18 (_unpad)
+
+ 52         178 LOAD_NAME                1 (Callable)
+            180 LOAD_NAME                6 (Buffer)
+            182 LOAD_NAME                9 (bytes)
+            184 LOAD_NAME                9 (bytes)
+            186 BUILD_LIST               3
+            188 LOAD_NAME                9 (bytes)
+            190 BUILD_TUPLE              2
+            192 BINARY_SUBSCR
+            196 LOAD_NAME               11 (__annotations__)
+            198 LOAD_CONST              12 ('aes_cbc_encrypt')
+            200 STORE_SUBSCR
+
+ 53         204 LOAD_NAME                1 (Callable)
+            206 LOAD_NAME                6 (Buffer)
+            208 LOAD_NAME                9 (bytes)
+            210 LOAD_NAME                9 (bytes)
+            212 BUILD_LIST               3
+            214 LOAD_NAME                9 (bytes)
+            216 BUILD_TUPLE              2
+            218 BINARY_SUBSCR
+            222 LOAD_NAME               11 (__annotations__)
+            224 LOAD_CONST              13 ('aes_cbc_decrypt')
+            226 STORE_SUBSCR
+
+ 54         230 NOP
+
+ 55         232 LOAD_CONST               0 (0)
+            234 LOAD_CONST              14 (('AES',))
+            236 IMPORT_NAME             19 (Crypto.Cipher)
+            238 IMPORT_FROM             20 (AES)
+            240 STORE_NAME              20 (AES)
+            242 POP_TOP
+
+ 57         244 LOAD_CONST              15 (<code object aes_cbc_encrypt at 0x105f47230, file "p115cipher/util.py", line 57>)
+            246 MAKE_FUNCTION            0
+            248 STORE_NAME              21 (aes_cbc_encrypt)
+
+ 60         250 LOAD_CONST              16 (<code object aes_cbc_decrypt at 0x10607d170, file "p115cipher/util.py", line 60>)
+            252 MAKE_FUNCTION            0
+            254 STORE_NAME              22 (aes_cbc_decrypt)
+
+130     >>  256 LOAD_NAME                1 (Callable)
+            258 LOAD_NAME                6 (Buffer)
+            260 LOAD_NAME               14 (int)
+            262 BUILD_LIST               2
+            264 LOAD_NAME                9 (bytes)
+            266 BUILD_TUPLE              2
+            268 BINARY_SUBSCR
+            272 LOAD_NAME               11 (__annotations__)
+            274 LOAD_CONST              28 ('lz4_block_decompress')
+            276 STORE_SUBSCR
+
+131         280 NOP
+
+132         282 LOAD_CONST               0 (0)
+            284 LOAD_CONST              29 (('decompress',))
+            286 IMPORT_NAME             34 (lz4.block)
+            288 IMPORT_FROM             35 (decompress)
+            290 STORE_NAME              36 (lz4_block_decompress)
+            292 POP_TOP
+
+213     >>  294 NOP
+
+214         296 NOP
+
+211         298 LOAD_CONST              63 ((None, 1))
+            300 LOAD_CONST              36 ('start')
+
+212         302 LOAD_NAME               14 (int)
+
+211         304 LOAD_CONST              37 ('stop')
+
+213         306 LOAD_CONST              32 (None)
+            308 LOAD_NAME               14 (int)
+            310 BINARY_OP                7 (|)
+
+211         314 LOAD_CONST              38 ('step')
+
+214         316 LOAD_NAME               14 (int)
+
+211         318 LOAD_CONST              39 ('return')
+
+215         320 LOAD_NAME                2 (Iterator)
+            322 LOAD_NAME               49 (tuple)
+            324 LOAD_NAME               14 (int)
+            326 LOAD_NAME               14 (int)
+            328 LOAD_NAME               14 (int)
+            330 BUILD_TUPLE              3
+            332 BINARY_SUBSCR
+            336 BINARY_SUBSCR
+
+211         340 BUILD_TUPLE              8
+            342 LOAD_CONST              40 (<code object acc_step at 0x105ff9f70, file "p115cipher/util.py", line 211>)
+            344 MAKE_FUNCTION            5 (defaults, annotations)
+            346 STORE_NAME              50 (acc_step)
+
+228         348 NOP
+
+229         350 NOP
+
+224         352 LOAD_CONST              64 ((0, 'big'))
+            354 LOAD_CONST              41 ('size')
+
+228         356 LOAD_NAME               14 (int)
+
+224         358 LOAD_CONST              42 ('byteorder')
+
+229         360 LOAD_NAME                8 (Literal)
+            362 LOAD_CONST              43 (('little', 'big'))
+            364 BINARY_SUBSCR
+
+224         368 LOAD_CONST              44 ('v1')
+
+225         370 LOAD_NAME                6 (Buffer)
+
+224         372 LOAD_CONST              45 ('v2')
+
+226         374 LOAD_NAME                6 (Buffer)
+
+224         376 LOAD_CONST              39 ('return')
+
+230         378 LOAD_NAME                9 (bytes)
+
+224         380 BUILD_TUPLE             10
+            382 LOAD_CONST              46 (<code object bytes_xor at 0x10607d8a0, file "p115cipher/util.py", line 224>)
+            384 MAKE_FUNCTION            5 (defaults, annotations)
+            386 STORE_NAME              51 (bytes_xor)
+
+243         388 NOP
+
+239         390 LOAD_CONST              65 (('big',))
+            392 LOAD_CONST              42 ('byteorder')
+
+243         394 LOAD_NAME                8 (Literal)
+            396 LOAD_CONST              43 (('little', 'big'))
+            398 BINARY_SUBSCR
+
+239         402 LOAD_CONST              47 ('src')
+
+240         404 LOAD_NAME                6 (Buffer)
+
+239         406 LOAD_CONST              48 ('key')
+
+241         408 LOAD_NAME                6 (Buffer)
+
+239         410 LOAD_CONST              39 ('return')
+
+244         412 LOAD_NAME               52 (bytearray)
+
+239         414 BUILD_TUPLE              8
+            416 LOAD_CONST              49 (<code object xor at 0x1060443d0, file "p115cipher/util.py", line 239>)
+            418 MAKE_FUNCTION            5 (defaults, annotations)
+            420 STORE_NAME              53 (xor)
+
+255         422 LOAD_CONST              39 ('return')
+            424 LOAD_NAME               49 (tuple)
+            426 LOAD_NAME                9 (bytes)
+            428 LOAD_NAME                9 (bytes)
+            430 BUILD_TUPLE              2
+            432 BINARY_SUBSCR
+            436 BUILD_TUPLE              2
+            438 LOAD_CONST              50 (<code object generate_ecdh_pair at 0x978f33480, file "p115cipher/util.py", line 255>)
+            440 MAKE_FUNCTION            4 (annotations)
+            442 STORE_NAME              54 (generate_ecdh_pair)
+
+285         444 NOP
+
+283         446 LOAD_CONST              66 ((4,))
+            448 LOAD_CONST              51 ('rand_key')
+
+284         450 LOAD_NAME                6 (Buffer)
+
+283         452 LOAD_CONST              52 ('sk_len')
+
+285         454 LOAD_NAME               14 (int)
+
+283         456 LOAD_CONST              39 ('return')
+
+287         458 LOAD_NAME               52 (bytearray)
+
+283         460 BUILD_TUPLE              6
+            462 LOAD_CONST              53 (<code object rsa_gen_key at 0x1014af630, file "p115cipher/util.py", line 283>)
+            464 MAKE_FUNCTION            5 (defaults, annotations)
+            466 STORE_NAME              55 (rsa_gen_key)
+
+300         468 LOAD_CONST              54 ('message')
+            470 LOAD_NAME                6 (Buffer)
+            472 LOAD_CONST              39 ('return')
+            474 LOAD_NAME               14 (int)
+            476 BUILD_TUPLE              4
+            478 LOAD_CONST              55 (<code object pad_pkcs1_v1_5 at 0x105ffb730, file "p115cipher/util.py", line 300>)
+            480 MAKE_FUNCTION            4 (annotations)
+            482 STORE_NAME              56 (pad_pkcs1_v1_5)
+
+308         484 LOAD_CONST              56 ('data')
+            486 LOAD_NAME                6 (Buffer)
+            488 LOAD_CONST              39 ('return')
+            490 LOAD_NAME               52 (bytearray)
+            492 BUILD_TUPLE              4
+            494 LOAD_CONST              57 (<code object rsa_encrypt_with_pubkey at 0x1060828d0, file "p115cipher/util.py", line 308>)
+            496 MAKE_FUNCTION            4 (annotations)
+            498 STORE_NAME              57 (rsa_encrypt_with_pubkey)
+
+317         500 LOAD_CONST              58 ('cipher_data')
+            502 LOAD_NAME                6 (Buffer)
+            504 LOAD_CONST              39 ('return')
+            506 LOAD_NAME               52 (bytearray)
+            508 BUILD_TUPLE              4
+            510 LOAD_CONST              59 (<code object rsa_decrypt_with_pubkey at 0x978f32f80, file "p115cipher/util.py", line 317>)
+            512 MAKE_FUNCTION            4 (annotations)
+            514 STORE_NAME              58 (rsa_decrypt_with_pubkey)
+
+328         516 LOAD_CONST              60 ('source')
+            518 LOAD_NAME                6 (Buffer)
+            520 LOAD_CONST              39 ('return')
+            522 LOAD_NAME                9 (bytes)
+            524 BUILD_TUPLE              4
+            526 LOAD_CONST              61 (<code object lz4_decompress at 0x106080370, file "p115cipher/util.py", line 328>)
+            528 MAKE_FUNCTION            4 (annotations)
+            530 STORE_NAME              59 (lz4_decompress)
+            532 RETURN_CONST            32 (None)
+        >>  534 PUSH_EXC_INFO
+
+ 64         536 LOAD_NAME               23 (ImportError)
+            538 CHECK_EXC_MATCH
+            540 POP_JUMP_IF_FALSE       71 (to 684)
+            542 POP_TOP
+
+ 65         544 NOP
+
+ 66         546 LOAD_CONST               0 (0)
+            548 LOAD_CONST              17 (('Cipher', 'algorithms', 'modes'))
+            550 IMPORT_NAME             24 (cryptography.hazmat.primitives.ciphers)
+            552 IMPORT_FROM             25 (Cipher)
+            554 STORE_NAME              25 (Cipher)
+            556 IMPORT_FROM             26 (algorithms)
+            558 STORE_NAME              26 (algorithms)
+            560 IMPORT_FROM             27 (modes)
+            562 STORE_NAME              27 (modes)
+            564 POP_TOP
+
+ 68         566 LOAD_CONST              18 (<code object aes_cbc_encrypt at 0x106082730, file "p115cipher/util.py", line 68>)
+            568 MAKE_FUNCTION            0
+            570 STORE_NAME              21 (aes_cbc_encrypt)
+
+ 73         572 LOAD_CONST              19 (<code object aes_cbc_decrypt at 0x106081890, file "p115cipher/util.py", line 73>)
+            574 MAKE_FUNCTION            0
+            576 STORE_NAME              22 (aes_cbc_decrypt)
+            578 JUMP_FORWARD            50 (to 680)
+        >>  580 PUSH_EXC_INFO
+
+ 77         582 LOAD_NAME               23 (ImportError)
+            584 CHECK_EXC_MATCH
+            586 POP_JUMP_IF_FALSE       42 (to 672)
+            588 POP_TOP
+
+ 78         590 LOAD_CONST               0 (0)
+            592 LOAD_CONST              20 (('which',))
+            594 IMPORT_NAME             28 (shutil)
+            596 IMPORT_FROM             29 (which)
+            598 STORE_NAME              29 (which)
+            600 POP_TOP
+
+ 80         602 PUSH_NULL
+            604 LOAD_NAME               29 (which)
+            606 LOAD_CONST              21 ('openssl')
+            608 CALL                     1
+            616 POP_JUMP_IF_FALSE       13 (to 644)
+
+ 81         618 LOAD_CONST               0 (0)
+            620 LOAD_CONST              22 (('check_output',))
+            622 IMPORT_NAME             30 (subprocess)
+            624 IMPORT_FROM             31 (check_output)
+            626 STORE_NAME              31 (check_output)
+            628 POP_TOP
+
+ 83         630 LOAD_CONST              23 (<code object aes_cbc_encrypt at 0x106079200, file "p115cipher/util.py", line 83>)
+            632 MAKE_FUNCTION            0
+            634 STORE_NAME              21 (aes_cbc_encrypt)
+
+ 94         636 LOAD_CONST              24 (<code object aes_cbc_decrypt at 0x106078880, file "p115cipher/util.py", line 94>)
+            638 MAKE_FUNCTION            0
+            640 STORE_NAME              22 (aes_cbc_decrypt)
+            642 JUMP_FORWARD            12 (to 668)
+
+105     >>  644 LOAD_CONST              25 (1)
+            646 LOAD_CONST              14 (('AES',))
+            648 IMPORT_NAME             32 (aes)
+            650 IMPORT_FROM             20 (AES)
+            652 STORE_NAME              33 (AES_)
+            654 POP_TOP
+
+107         656 LOAD_CONST              26 (<code object aes_cbc_encrypt at 0x105ff2a30, file "p115cipher/util.py", line 107>)
+            658 MAKE_FUNCTION            0
+            660 STORE_NAME              21 (aes_cbc_encrypt)
+
+118         662 LOAD_CONST              27 (<code object aes_cbc_decrypt at 0x1014b6970, file "p115cipher/util.py", line 118>)
+            664 MAKE_FUNCTION            0
+            666 STORE_NAME              22 (aes_cbc_decrypt)
+        >>  668 POP_EXCEPT
+            670 JUMP_FORWARD             4 (to 680)
+
+ 77     >>  672 RERAISE                  0
+        >>  674 COPY                     3
+            676 POP_EXCEPT
+            678 RERAISE                  1
+        >>  680 POP_EXCEPT
+            682 JUMP_BACKWARD          214 (to 256)
+
+ 64     >>  684 RERAISE                  0
+        >>  686 COPY                     3
+            688 POP_EXCEPT
+            690 RERAISE                  1
+        >>  692 PUSH_EXC_INFO
+
+133         694 LOAD_NAME               23 (ImportError)
+            696 CHECK_EXC_MATCH
+            698 POP_JUMP_IF_FALSE      136 (to 972)
+            700 POP_TOP
+
+134         702 LOAD_CONST               0 (0)
+            704 LOAD_CONST              30 (('find_library',))
+            706 IMPORT_NAME             37 (ctypes.util)
+            708 IMPORT_FROM             38 (find_library)
+            710 STORE_NAME              38 (find_library)
+            712 POP_TOP
+
+136         714 PUSH_NULL
+            716 LOAD_NAME               38 (find_library)
+            718 LOAD_CONST              31 ('lz4')
+            720 CALL                     1
+            728 COPY                     1
+            730 STORE_NAME              39 (lz4_path)
+            732 POP_JUMP_IF_FALSE      112 (to 958)
+
+137         734 LOAD_CONST               0 (0)
+            736 LOAD_CONST              32 (None)
+            738 IMPORT_NAME             40 (ctypes)
+            740 STORE_NAME              40 (ctypes)
+
+138         742 LOAD_CONST               0 (0)
+            744 LOAD_CONST              33 (('create_string_buffer',))
+            746 IMPORT_NAME             40 (ctypes)
+            748 IMPORT_FROM             41 (create_string_buffer)
+            750 STORE_NAME              41 (create_string_buffer)
+            752 POP_TOP
+
+140         754 PUSH_NULL
+            756 LOAD_NAME               40 (ctypes)
+            758 LOAD_ATTR               84 (CDLL)
+            778 LOAD_NAME               39 (lz4_path)
+            780 CALL                     1
+            788 STORE_NAME              43 (_lz4)
+
+141         790 LOAD_NAME               43 (_lz4)
+            792 LOAD_ATTR               88 (LZ4_decompress_safe)
+            812 STORE_NAME              44 (LZ4_decompress_safe)
+
+142         814 LOAD_NAME               40 (ctypes)
+            816 LOAD_ATTR               90 (c_char_p)
+            836 LOAD_NAME               40 (ctypes)
+            838 LOAD_ATTR               90 (c_char_p)
+            858 LOAD_NAME               40 (ctypes)
+            860 LOAD_ATTR               92 (c_int)
+            880 LOAD_NAME               40 (ctypes)
+            882 LOAD_ATTR               92 (c_int)
+            902 BUILD_LIST               4
+            904 LOAD_NAME               44 (LZ4_decompress_safe)
+            906 STORE_ATTR              47 (argtypes)
+
+143         916 LOAD_NAME               40 (ctypes)
+            918 LOAD_ATTR               92 (c_int)
+            938 LOAD_NAME               44 (LZ4_decompress_safe)
+            940 STORE_ATTR              48 (restype)
+
+145         950 LOAD_CONST              34 (<code object lz4_block_decompress at 0x10146f730, file "p115cipher/util.py", line 145>)
+            952 MAKE_FUNCTION            0
+            954 STORE_NAME              36 (lz4_block_decompress)
+            956 JUMP_FORWARD             4 (to 966)
+
+157     >>  958 LOAD_CONST              62 ((-1,))
+            960 LOAD_CONST              35 (<code object lz4_block_decompress at 0x978eb3800, file "p115cipher/util.py", line 157>)
+            962 MAKE_FUNCTION            1 (defaults)
+            964 STORE_NAME              36 (lz4_block_decompress)
+        >>  966 POP_EXCEPT
+            968 EXTENDED_ARG             1
+            970 JUMP_BACKWARD          339 (to 294)
+
+133     >>  972 RERAISE                  0
+        >>  974 COPY                     3
+            976 POP_EXCEPT
+            978 RERAISE                  1
+ExceptionTable:
+  232 to 254 -> 534 [0]
+  282 to 292 -> 692 [0]
+  534 to 542 -> 686 [1] lasti
+  546 to 576 -> 580 [1]
+  578 to 578 -> 686 [1] lasti
+  580 to 666 -> 674 [2] lasti
+  668 to 670 -> 686 [1] lasti
+  672 to 672 -> 674 [2] lasti
+  674 to 678 -> 686 [1] lasti
+  684 to 684 -> 686 [1] lasti
+  692 to 964 -> 974 [1] lasti
+  972 to 972 -> 974 [1] lasti
+QUALNAME _pad
+ 37           0 RESUME                   0
+
+ 38           2 LOAD_GLOBAL              1 (NULL + isinstance)
+             12 LOAD_FAST                0 (data)
+             14 LOAD_GLOBAL              2 (bytes)
+             24 LOAD_GLOBAL              4 (bytearray)
+             34 BUILD_TUPLE              2
+             36 CALL                     2
+             44 POP_JUMP_IF_TRUE        11 (to 68)
+
+ 39          46 LOAD_GLOBAL              3 (NULL + bytes)
+             56 LOAD_FAST                0 (data)
+             58 CALL                     1
+             66 STORE_FAST               0 (data)
+
+ 40     >>   68 LOAD_GLOBAL              7 (NULL + len)
+             78 LOAD_FAST                0 (data)
+             80 CALL                     1
+             88 UNARY_NEGATIVE
+             90 LOAD_CONST               1 (15)
+             92 BINARY_OP                1 (&)
+             96 COPY                     1
+             98 STORE_FAST               1 (pad_size)
+            100 POP_JUMP_IF_FALSE       18 (to 138)
+
+ 41         102 LOAD_FAST                0 (data)
+            104 LOAD_GLOBAL              3 (NULL + bytes)
+            114 LOAD_FAST                1 (pad_size)
+            116 BUILD_TUPLE              1
+            118 LOAD_FAST                1 (pad_size)
+            120 BINARY_OP                5 (*)
+            124 CALL                     1
+            132 BINARY_OP                0 (+)
+            136 RETURN_VALUE
+
+ 42     >>  138 LOAD_FAST                0 (data)
+            140 RETURN_VALUE
+QUALNAME _unpad
+              0 MAKE_CELL                2 (pad_size)
+
+ 45           2 RESUME                   0
+
+ 46           4 LOAD_GLOBAL              1 (NULL + to_bytes_view)
+             14 LOAD_FAST                0 (data)
+             16 CALL                     1
+             24 STORE_FAST               1 (view)
+
+ 47          26 LOAD_CONST               1 (0)
+             28 LOAD_FAST                1 (view)
+             30 LOAD_CONST               2 (-1)
+             32 BINARY_SUBSCR
+             36 COPY                     1
+             38 STORE_DEREF              2 (pad_size)
+             40 SWAP                     2
+             42 COPY                     2
+             44 COMPARE_OP               2 (<)
+             48 POP_JUMP_IF_FALSE        5 (to 60)
+             50 LOAD_CONST               3 (16)
+             52 COMPARE_OP               2 (<)
+             56 POP_JUMP_IF_FALSE       48 (to 154)
+             58 JUMP_FORWARD             3 (to 66)
+        >>   60 POP_TOP
+
+ 49          62 LOAD_FAST                0 (data)
+             64 RETURN_VALUE
+
+ 47     >>   66 LOAD_GLOBAL              3 (NULL + all)
+             76 LOAD_CLOSURE             2 (pad_size)
+             78 BUILD_TUPLE              1
+             80 LOAD_CONST               4 (<code object <genexpr> at 0x1060174b0, file "p115cipher/util.py", line 47>)
+             82 MAKE_FUNCTION            8 (closure)
+             84 LOAD_FAST                1 (view)
+             86 LOAD_DEREF               2 (pad_size)
+             88 UNARY_NEGATIVE
+             90 LOAD_CONST               0 (None)
+             92 BINARY_SLICE
+             94 GET_ITER
+             96 CALL                     0
+            104 CALL                     1
+            112 POP_JUMP_IF_FALSE       20 (to 154)
+
+ 48         114 LOAD_FAST                1 (view)
+            116 LOAD_CONST               0 (None)
+            118 LOAD_DEREF               2 (pad_size)
+            120 UNARY_NEGATIVE
+            122 BINARY_SLICE
+            124 LOAD_ATTR                5 (NULL|self + tobytes)
+            144 CALL                     0
+            152 RETURN_VALUE
+
+ 49     >>  154 LOAD_FAST                0 (data)
+            156 RETURN_VALUE
+QUALNAME _unpad.<locals>.<genexpr>
+              0 COPY_FREE_VARS           1
+
+ 47           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+              8 LOAD_FAST                0 (.0)
+        >>   10 FOR_ITER                 9 (to 32)
+             14 STORE_FAST               1 (c)
+             16 LOAD_FAST                1 (c)
+             18 LOAD_DEREF               2 (pad_size)
+             20 COMPARE_OP              40 (==)
+             24 YIELD_VALUE              1
+             26 RESUME                   1
+             28 POP_TOP
+             30 JUMP_BACKWARD           11 (to 10)
+        >>   32 END_FOR
+             34 RETURN_CONST             0 (None)
+        >>   36 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             38 RERAISE                  1
+ExceptionTable:
+  6 to 34 -> 36 [0] lasti
+QUALNAME aes_cbc_encrypt
+ 57           0 RESUME                   0
+
+ 58           2 LOAD_GLOBAL              1 (NULL + AES)
+             12 LOAD_ATTR                2 (new)
+             32 LOAD_FAST                1 (aes_key)
+             34 LOAD_GLOBAL              0 (AES)
+             44 LOAD_ATTR                4 (MODE_CBC)
+             64 LOAD_FAST                2 (aes_iv)
+             66 CALL                     3
+             74 LOAD_ATTR                7 (NULL|self + encrypt)
+             94 LOAD_GLOBAL              9 (NULL + _pad)
+            104 LOAD_FAST                0 (data)
+            106 CALL                     1
+            114 CALL                     1
+            122 RETURN_VALUE
+QUALNAME aes_cbc_decrypt
+ 60           0 RESUME                   0
+
+ 61           2 LOAD_GLOBAL              1 (NULL + to_bytes_view)
+             12 LOAD_FAST                0 (cipher_data)
+             14 CALL                     1
+             22 STORE_FAST               3 (view)
+
+ 62          24 LOAD_GLOBAL              3 (NULL + _unpad)
+             34 LOAD_GLOBAL              5 (NULL + AES)
+             44 LOAD_ATTR                6 (new)
+             64 LOAD_FAST                1 (aes_key)
+             66 LOAD_GLOBAL              4 (AES)
+             76 LOAD_ATTR                8 (MODE_CBC)
+             96 LOAD_FAST                2 (aes_iv)
+             98 CALL                     3
+            106 LOAD_ATTR               11 (NULL|self + decrypt)
+
+ 63         126 LOAD_FAST                3 (view)
+            128 LOAD_CONST               0 (None)
+            130 LOAD_GLOBAL             13 (NULL + len)
+            140 LOAD_FAST                3 (view)
+            142 CALL                     1
+            150 LOAD_CONST               1 (-16)
+            152 BINARY_OP                1 (&)
+            156 BINARY_SLICE
+
+ 62         158 CALL                     1
+            166 CALL                     1
+            174 RETURN_VALUE
+QUALNAME aes_cbc_encrypt
+ 68           0 RESUME                   0
+
+ 69           2 LOAD_GLOBAL              1 (NULL + Cipher)
+             12 LOAD_GLOBAL              3 (NULL + algorithms)
+             22 LOAD_ATTR                4 (AES)
+             42 LOAD_FAST                1 (aes_key)
+             44 CALL                     1
+             52 LOAD_GLOBAL              7 (NULL + modes)
+             62 LOAD_ATTR                8 (CBC)
+             82 LOAD_FAST                2 (aes_iv)
+             84 CALL                     1
+             92 CALL                     2
+            100 STORE_FAST               3 (cipher)
+
+ 70         102 LOAD_FAST                3 (cipher)
+            104 LOAD_ATTR               11 (NULL|self + encryptor)
+            124 CALL                     0
+            132 STORE_FAST               4 (encryptor)
+
+ 71         134 LOAD_FAST                4 (encryptor)
+            136 LOAD_ATTR               13 (NULL|self + update)
+            156 LOAD_GLOBAL             15 (NULL + _pad)
+            166 LOAD_FAST                0 (data)
+            168 CALL                     1
+            176 CALL                     1
+            184 LOAD_FAST                4 (encryptor)
+            186 LOAD_ATTR               17 (NULL|self + finalize)
+            206 CALL                     0
+            214 BINARY_OP                0 (+)
+            218 RETURN_VALUE
+QUALNAME aes_cbc_decrypt
+ 73           0 RESUME                   0
+
+ 74           2 LOAD_GLOBAL              1 (NULL + Cipher)
+             12 LOAD_GLOBAL              3 (NULL + algorithms)
+             22 LOAD_ATTR                4 (AES)
+             42 LOAD_FAST                1 (aes_key)
+             44 CALL                     1
+             52 LOAD_GLOBAL              7 (NULL + modes)
+             62 LOAD_ATTR                8 (CBC)
+             82 LOAD_FAST                2 (aes_iv)
+             84 CALL                     1
+             92 CALL                     2
+            100 STORE_FAST               3 (cipher)
+
+ 75         102 LOAD_FAST                3 (cipher)
+            104 LOAD_ATTR               11 (NULL|self + decryptor)
+            124 CALL                     0
+            132 STORE_FAST               4 (decryptor)
+
+ 76         134 LOAD_GLOBAL             13 (NULL + _unpad)
+            144 LOAD_FAST                4 (decryptor)
+            146 LOAD_ATTR               15 (NULL|self + update)
+            166 LOAD_FAST                0 (cipher_data)
+            168 CALL                     1
+            176 LOAD_FAST                4 (decryptor)
+            178 LOAD_ATTR               17 (NULL|self + finalize)
+            198 CALL                     0
+            206 BINARY_OP                0 (+)
+            210 CALL                     1
+            218 RETURN_VALUE
+QUALNAME aes_cbc_encrypt
+ 83           0 RESUME                   0
+
+ 84           2 LOAD_GLOBAL              1 (NULL + check_output)
+
+ 86          12 LOAD_CONST               1 ('openssl')
+             14 LOAD_CONST               2 ('enc')
+             16 LOAD_CONST               3 ('-aes-128-cbc')
+             18 LOAD_CONST               4 ('-e')
+
+ 87          20 LOAD_CONST               5 ('-K')
+             22 LOAD_FAST                1 (aes_key)
+             24 LOAD_ATTR                3 (NULL|self + hex)
+             44 CALL                     0
+
+ 88          52 LOAD_CONST               6 ('-iv')
+             54 LOAD_FAST                2 (aes_iv)
+             56 LOAD_ATTR                3 (NULL|self + hex)
+             76 CALL                     0
+
+ 89          84 LOAD_CONST               7 ('-nosalt')
+
+ 85          86 BUILD_LIST               9
+
+ 91          88 LOAD_FAST                0 (data)
+
+ 84          90 KW_NAMES                 8 (('input',))
+             92 CALL                     2
+            100 RETURN_VALUE
+QUALNAME aes_cbc_decrypt
+ 94           0 RESUME                   0
+
+ 95           2 LOAD_GLOBAL              1 (NULL + check_output)
+
+ 97          12 LOAD_CONST               1 ('openssl')
+             14 LOAD_CONST               2 ('enc')
+             16 LOAD_CONST               3 ('-aes-128-cbc')
+             18 LOAD_CONST               4 ('-d')
+
+ 98          20 LOAD_CONST               5 ('-K')
+             22 LOAD_FAST                1 (aes_key)
+             24 LOAD_ATTR                3 (NULL|self + hex)
+             44 CALL                     0
+
+ 99          52 LOAD_CONST               6 ('-iv')
+             54 LOAD_FAST                2 (aes_iv)
+             56 LOAD_ATTR                3 (NULL|self + hex)
+             76 CALL                     0
+
+100          84 LOAD_CONST               7 ('-nosalt')
+
+ 96          86 BUILD_LIST               9
+
+102          88 LOAD_FAST                0 (cipher_data)
+
+ 95          90 KW_NAMES                 8 (('input',))
+             92 CALL                     2
+            100 RETURN_VALUE
+QUALNAME aes_cbc_encrypt
+107           0 RESUME                   0
+
+108           2 LOAD_GLOBAL              1 (NULL + AES_)
+             12 LOAD_FAST                1 (aes_key)
+             14 CALL                     1
+             22 LOAD_ATTR                2 (encrypt)
+             42 STORE_FAST               3 (encrypt)
+
+109          44 LOAD_GLOBAL              5 (NULL + to_bytes_view)
+             54 LOAD_GLOBAL              7 (NULL + _pad)
+             64 LOAD_FAST                0 (data)
+             66 CALL                     1
+             74 CALL                     1
+             82 STORE_FAST               4 (view)
+
+110          84 LOAD_GLOBAL              9 (NULL + bytearray)
+             94 CALL                     0
+            102 STORE_FAST               5 (b)
+
+111         104 LOAD_FAST                5 (b)
+            106 LOAD_ATTR               10 (extend)
+            126 STORE_FAST               6 (puts)
+
+112         128 LOAD_FAST                2 (aes_iv)
+            130 STORE_FAST               7 (last_cipher)
+
+113         132 LOAD_GLOBAL             13 (NULL + range)
+            142 LOAD_CONST               1 (0)
+            144 LOAD_GLOBAL             15 (NULL + len)
+            154 LOAD_FAST                4 (view)
+            156 CALL                     1
+            164 LOAD_CONST               2 (16)
+            166 CALL                     3
+            174 GET_ITER
+        >>  176 FOR_ITER                56 (to 292)
+            180 STORE_FAST               8 (i)
+
+114         182 PUSH_NULL
+            184 LOAD_FAST                3 (encrypt)
+            186 LOAD_GLOBAL             17 (NULL + zip)
+            196 LOAD_FAST                4 (view)
+            198 LOAD_FAST                8 (i)
+            200 LOAD_FAST                8 (i)
+            202 LOAD_CONST               2 (16)
+            204 BINARY_OP                0 (+)
+            208 BINARY_SLICE
+            210 LOAD_FAST                7 (last_cipher)
+            212 CALL                     2
+            220 GET_ITER
+            222 LOAD_FAST_AND_CLEAR      9 (p)
+            224 LOAD_FAST_AND_CLEAR     10 (l)
+            226 SWAP                     3
+            228 BUILD_LIST               0
+            230 SWAP                     2
+        >>  232 FOR_ITER                10 (to 256)
+            236 UNPACK_SEQUENCE          2
+            240 STORE_FAST               9 (p)
+            242 STORE_FAST              10 (l)
+            244 LOAD_FAST                9 (p)
+            246 LOAD_FAST               10 (l)
+            248 BINARY_OP               12 (^)
+            252 LIST_APPEND              2
+            254 JUMP_BACKWARD           12 (to 232)
+        >>  256 END_FOR
+            258 SWAP                     3
+            260 STORE_FAST              10 (l)
+            262 STORE_FAST               9 (p)
+            264 CALL                     1
+            272 STORE_FAST               7 (last_cipher)
+
+115         274 PUSH_NULL
+            276 LOAD_FAST                6 (puts)
+            278 LOAD_FAST                7 (last_cipher)
+            280 CALL                     1
+            288 POP_TOP
+            290 JUMP_BACKWARD           58 (to 176)
+
+113     >>  292 END_FOR
+
+116         294 LOAD_FAST                5 (b)
+            296 RETURN_VALUE
+        >>  298 SWAP                     2
+            300 POP_TOP
+
+114         302 SWAP                     3
+            304 STORE_FAST              10 (l)
+            306 STORE_FAST               9 (p)
+            308 RERAISE                  0
+ExceptionTable:
+  228 to 256 -> 298 [6]
+QUALNAME aes_cbc_decrypt
+118           0 RESUME                   0
+
+119           2 LOAD_GLOBAL              1 (NULL + AES_)
+             12 LOAD_FAST                1 (aes_key)
+             14 CALL                     1
+             22 LOAD_ATTR                2 (decrypt)
+             42 STORE_FAST               3 (decrypt)
+
+120          44 LOAD_GLOBAL              5 (NULL + to_bytes_view)
+             54 LOAD_FAST                0 (cipher_data)
+             56 CALL                     1
+             64 STORE_FAST               4 (view)
+
+121          66 LOAD_GLOBAL              7 (NULL + bytearray)
+             76 CALL                     0
+             84 STORE_FAST               5 (b)
+
+122          86 LOAD_FAST                5 (b)
+             88 LOAD_ATTR                8 (extend)
+            108 STORE_FAST               6 (puts)
+
+123         110 LOAD_FAST                2 (aes_iv)
+            112 STORE_FAST               7 (last_cipher)
+
+124         114 LOAD_GLOBAL             11 (NULL + range)
+            124 LOAD_CONST               1 (0)
+            126 LOAD_GLOBAL             13 (NULL + len)
+            136 LOAD_FAST                4 (view)
+            138 CALL                     1
+            146 LOAD_CONST               2 (16)
+            148 CALL                     3
+            156 GET_ITER
+        >>  158 FOR_ITER                47 (to 256)
+            162 STORE_FAST               8 (i)
+
+125         164 PUSH_NULL
+            166 LOAD_FAST                6 (puts)
+            168 LOAD_CONST               3 (<code object <genexpr> at 0x1060175a0, file "p115cipher/util.py", line 125>)
+            170 MAKE_FUNCTION            0
+            172 LOAD_GLOBAL             15 (NULL + zip)
+            182 PUSH_NULL
+            184 LOAD_FAST                3 (decrypt)
+            186 LOAD_FAST                4 (view)
+            188 LOAD_FAST                8 (i)
+            190 LOAD_FAST                8 (i)
+            192 LOAD_CONST               2 (16)
+            194 BINARY_OP                0 (+)
+            198 BINARY_SLICE
+            200 CALL                     1
+            208 LOAD_FAST                7 (last_cipher)
+            210 CALL                     2
+            218 GET_ITER
+            220 CALL                     0
+            228 CALL                     1
+            236 POP_TOP
+
+126         238 LOAD_FAST                4 (view)
+            240 LOAD_FAST                8 (i)
+            242 LOAD_FAST                8 (i)
+            244 LOAD_CONST               2 (16)
+            246 BINARY_OP                0 (+)
+            250 BINARY_SLICE
+            252 STORE_FAST               7 (last_cipher)
+            254 JUMP_BACKWARD           49 (to 158)
+
+124     >>  256 END_FOR
+
+127         258 LOAD_GLOBAL             17 (NULL + _unpad)
+            268 LOAD_FAST                5 (b)
+            270 CALL                     1
+            278 RETURN_VALUE
+QUALNAME aes_cbc_decrypt.<locals>.<genexpr>
+125           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                12 (to 36)
+             12 UNPACK_SEQUENCE          2
+             16 STORE_FAST               1 (p)
+             18 STORE_FAST               2 (l)
+             20 LOAD_FAST                1 (p)
+             22 LOAD_FAST                2 (l)
+             24 BINARY_OP               12 (^)
+             28 YIELD_VALUE              1
+             30 RESUME                   1
+             32 POP_TOP
+             34 JUMP_BACKWARD           14 (to 8)
+        >>   36 END_FOR
+             38 RETURN_CONST             0 (None)
+        >>   40 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             42 RERAISE                  1
+ExceptionTable:
+  4 to 38 -> 40 [0] lasti
+QUALNAME lz4_block_decompress
+145           0 RESUME                   0
+
+146           2 LOAD_GLOBAL              1 (NULL + create_string_buffer)
+             12 LOAD_FAST                1 (uncompressed_size)
+             14 CALL                     1
+             22 STORE_FAST               2 (dst_buf)
+
+147          24 LOAD_GLOBAL              3 (NULL + LZ4_decompress_safe)
+
+148          34 LOAD_GLOBAL              5 (NULL + bytes)
+             44 LOAD_FAST                0 (source)
+             46 CALL                     1
+
+149          54 LOAD_FAST                2 (dst_buf)
+
+150          56 LOAD_GLOBAL              7 (NULL + len)
+             66 LOAD_FAST                0 (source)
+             68 CALL                     1
+
+151          76 LOAD_FAST                1 (uncompressed_size)
+
+147          78 CALL                     4
+             86 STORE_FAST               3 (result)
+
+153          88 LOAD_FAST                3 (result)
+             90 LOAD_CONST               1 (0)
+             92 COMPARE_OP               2 (<)
+             96 POP_JUMP_IF_FALSE       11 (to 120)
+
+154          98 LOAD_GLOBAL              9 (NULL + ValueError)
+            108 LOAD_CONST               2 ('LZ4 decompression failed')
+            110 CALL                     1
+            118 RAISE_VARARGS            1
+
+155     >>  120 LOAD_FAST                2 (dst_buf)
+            122 LOAD_ATTR               10 (raw)
+            142 LOAD_CONST               0 (None)
+            144 LOAD_FAST                3 (result)
+            146 BINARY_SLICE
+            148 RETURN_VALUE
+QUALNAME lz4_block_decompress
+157           0 RESUME                   0
+
+158           2 LOAD_GLOBAL              1 (NULL + to_bytes_view)
+             12 LOAD_FAST                0 (source)
+             14 CALL                     1
+             22 STORE_FAST               2 (src)
+
+159          24 LOAD_GLOBAL              3 (NULL + len)
+             34 LOAD_FAST                0 (source)
+             36 CALL                     1
+             44 STORE_FAST               3 (src_len)
+
+160          46 LOAD_CONST               1 (0)
+             48 STORE_FAST               4 (src_ptr)
+
+161          50 LOAD_GLOBAL              5 (NULL + bytearray)
+             60 CALL                     0
+             68 STORE_FAST               5 (dest)
+
+162          70 LOAD_FAST                5 (dest)
+             72 LOAD_ATTR                6 (extend)
+             92 STORE_FAST               6 (dest_extend)
+
+163          94 LOAD_FAST                4 (src_ptr)
+             96 LOAD_FAST                3 (src_len)
+             98 COMPARE_OP               2 (<)
+            102 EXTENDED_ARG             1
+            104 POP_JUMP_IF_FALSE      299 (to 704)
+
+164     >>  106 LOAD_FAST                2 (src)
+            108 LOAD_FAST                4 (src_ptr)
+            110 BINARY_SUBSCR
+            114 STORE_FAST               7 (token)
+
+165         116 LOAD_FAST                4 (src_ptr)
+            118 LOAD_CONST               2 (1)
+            120 BINARY_OP               13 (+=)
+            124 STORE_FAST               4 (src_ptr)
+
+166         126 LOAD_FAST                7 (token)
+            128 LOAD_CONST               3 (4)
+            130 BINARY_OP                9 (>>)
+            134 STORE_FAST               8 (lit_len)
+
+167         136 LOAD_FAST                8 (lit_len)
+            138 LOAD_CONST               4 (15)
+            140 COMPARE_OP              40 (==)
+            144 POP_JUMP_IF_FALSE       47 (to 240)
+
+168         146 LOAD_FAST                4 (src_ptr)
+            148 STORE_FAST               9 (start_ptr)
+
+169         150 NOP
+
+170         152 LOAD_FAST                2 (src)
+            154 LOAD_FAST                4 (src_ptr)
+            156 BINARY_SUBSCR
+            160 LOAD_CONST               5 (255)
+            162 COMPARE_OP              40 (==)
+            166 POP_JUMP_IF_FALSE       14 (to 196)
+
+171     >>  168 LOAD_FAST                4 (src_ptr)
+            170 LOAD_CONST               2 (1)
+            172 BINARY_OP               13 (+=)
+            176 STORE_FAST               4 (src_ptr)
+
+170         178 LOAD_FAST                2 (src)
+            180 LOAD_FAST                4 (src_ptr)
+            182 BINARY_SUBSCR
+            186 LOAD_CONST               5 (255)
+            188 COMPARE_OP              40 (==)
+            192 POP_JUMP_IF_FALSE        1 (to 196)
+            194 JUMP_BACKWARD           14 (to 168)
+
+172     >>  196 LOAD_FAST                8 (lit_len)
+            198 LOAD_FAST                4 (src_ptr)
+            200 LOAD_FAST                9 (start_ptr)
+            202 BINARY_OP               10 (-)
+            206 LOAD_CONST               5 (255)
+            208 BINARY_OP                5 (*)
+            212 LOAD_FAST                2 (src)
+            214 LOAD_FAST                4 (src_ptr)
+            216 BINARY_SUBSCR
+            220 BINARY_OP                0 (+)
+            224 BINARY_OP               13 (+=)
+            228 STORE_FAST               8 (lit_len)
+
+173         230 LOAD_FAST                4 (src_ptr)
+            232 LOAD_CONST               2 (1)
+            234 BINARY_OP               13 (+=)
+            238 STORE_FAST               4 (src_ptr)
+
+176     >>  240 LOAD_FAST                8 (lit_len)
+            242 POP_JUMP_IF_FALSE       19 (to 282)
+
+177         244 PUSH_NULL
+            246 LOAD_FAST                6 (dest_extend)
+            248 LOAD_FAST                2 (src)
+            250 LOAD_FAST                4 (src_ptr)
+            252 LOAD_FAST                4 (src_ptr)
+            254 LOAD_FAST                8 (lit_len)
+            256 BINARY_OP                0 (+)
+            260 BINARY_SLICE
+            262 CALL                     1
+            270 POP_TOP
+
+178         272 LOAD_FAST                4 (src_ptr)
+            274 LOAD_FAST                8 (lit_len)
+            276 BINARY_OP               13 (+=)
+            280 STORE_FAST               4 (src_ptr)
+
+179     >>  282 LOAD_FAST                4 (src_ptr)
+            284 LOAD_FAST                3 (src_len)
+            286 COMPARE_OP              92 (>=)
+            290 POP_JUMP_IF_FALSE        3 (to 298)
+
+180         292 NOP
+
+208         294 LOAD_FAST                5 (dest)
+            296 RETURN_VALUE
+
+181     >>  298 LOAD_FAST                2 (src)
+            300 LOAD_FAST                4 (src_ptr)
+            302 BINARY_SUBSCR
+            306 LOAD_FAST                2 (src)
+            308 LOAD_FAST                4 (src_ptr)
+            310 LOAD_CONST               2 (1)
+            312 BINARY_OP                0 (+)
+            316 BINARY_SUBSCR
+            320 LOAD_CONST               6 (8)
+            322 BINARY_OP                3 (<<)
+            326 BINARY_OP                7 (|)
+            330 STORE_FAST              10 (offset)
+
+182         332 LOAD_FAST                4 (src_ptr)
+            334 LOAD_CONST               7 (2)
+            336 BINARY_OP               13 (+=)
+            340 STORE_FAST               4 (src_ptr)
+
+183         342 LOAD_FAST                7 (token)
+            344 LOAD_CONST               4 (15)
+            346 BINARY_OP                1 (&)
+            350 STORE_FAST              11 (match_len)
+
+184         352 LOAD_FAST               11 (match_len)
+            354 LOAD_CONST               4 (15)
+            356 COMPARE_OP              40 (==)
+            360 POP_JUMP_IF_FALSE       47 (to 456)
+
+185         362 LOAD_FAST                4 (src_ptr)
+            364 STORE_FAST               9 (start_ptr)
+
+186         366 NOP
+
+187         368 LOAD_FAST                2 (src)
+            370 LOAD_FAST                4 (src_ptr)
+            372 BINARY_SUBSCR
+            376 LOAD_CONST               5 (255)
+            378 COMPARE_OP              40 (==)
+            382 POP_JUMP_IF_FALSE       14 (to 412)
+
+188     >>  384 LOAD_FAST                4 (src_ptr)
+            386 LOAD_CONST               2 (1)
+            388 BINARY_OP               13 (+=)
+            392 STORE_FAST               4 (src_ptr)
+
+187         394 LOAD_FAST                2 (src)
+            396 LOAD_FAST                4 (src_ptr)
+            398 BINARY_SUBSCR
+            402 LOAD_CONST               5 (255)
+            404 COMPARE_OP              40 (==)
+            408 POP_JUMP_IF_FALSE        1 (to 412)
+            410 JUMP_BACKWARD           14 (to 384)
+
+189     >>  412 LOAD_FAST               11 (match_len)
+            414 LOAD_FAST                4 (src_ptr)
+            416 LOAD_FAST                9 (start_ptr)
+            418 BINARY_OP               10 (-)
+            422 LOAD_CONST               5 (255)
+            424 BINARY_OP                5 (*)
+            428 LOAD_FAST                2 (src)
+            430 LOAD_FAST                4 (src_ptr)
+            432 BINARY_SUBSCR
+            436 BINARY_OP                0 (+)
+            440 BINARY_OP               13 (+=)
+            444 STORE_FAST              11 (match_len)
+
+190         446 LOAD_FAST                4 (src_ptr)
+            448 LOAD_CONST               2 (1)
+            450 BINARY_OP               13 (+=)
+            454 STORE_FAST               4 (src_ptr)
+
+193     >>  456 LOAD_FAST               11 (match_len)
+            458 LOAD_CONST               3 (4)
+            460 BINARY_OP               13 (+=)
+            464 STORE_FAST              11 (match_len)
+
+194         466 LOAD_GLOBAL              3 (NULL + len)
+            476 LOAD_FAST                5 (dest)
+            478 CALL                     1
+            486 STORE_FAST              12 (dest_ptr)
+
+195         488 LOAD_FAST               12 (dest_ptr)
+            490 LOAD_FAST               10 (offset)
+            492 BINARY_OP               10 (-)
+            496 STORE_FAST              13 (match_pos)
+
+196         498 LOAD_FAST               10 (offset)
+            500 LOAD_FAST               11 (match_len)
+            502 COMPARE_OP              92 (>=)
+            506 POP_JUMP_IF_FALSE       15 (to 538)
+
+197         508 PUSH_NULL
+            510 LOAD_FAST                6 (dest_extend)
+            512 LOAD_FAST                5 (dest)
+            514 LOAD_FAST               13 (match_pos)
+            516 LOAD_FAST               13 (match_pos)
+            518 LOAD_FAST               11 (match_len)
+            520 BINARY_OP                0 (+)
+            524 BINARY_SLICE
+            526 CALL                     1
+            534 POP_TOP
+            536 JUMP_FORWARD            76 (to 690)
+
+199     >>  538 LOAD_FAST               10 (offset)
+            540 LOAD_CONST               2 (1)
+            542 COMPARE_OP              40 (==)
+            546 POP_JUMP_IF_FALSE       16 (to 580)
+
+200         548 PUSH_NULL
+            550 LOAD_FAST                6 (dest_extend)
+            552 LOAD_FAST                5 (dest)
+            554 LOAD_FAST               13 (match_pos)
+            556 BINARY_SUBSCR
+            560 BUILD_TUPLE              1
+            562 LOAD_FAST               11 (match_len)
+            564 BINARY_OP                5 (*)
+            568 CALL                     1
+            576 POP_TOP
+            578 JUMP_FORWARD            55 (to 690)
+
+202     >>  580 LOAD_FAST               12 (dest_ptr)
+            582 LOAD_FAST               11 (match_len)
+            584 BINARY_OP                0 (+)
+            588 STORE_FAST              14 (end_ptr)
+
+203         590 LOAD_FAST               12 (dest_ptr)
+            592 LOAD_FAST               14 (end_ptr)
+            594 COMPARE_OP               2 (<)
+            598 POP_JUMP_IF_FALSE       45 (to 690)
+
+204     >>  600 LOAD_FAST               10 (offset)
+            602 LOAD_FAST               14 (end_ptr)
+            604 LOAD_FAST               12 (dest_ptr)
+            606 BINARY_OP               10 (-)
+            610 COMPARE_OP               2 (<)
+            614 POP_JUMP_IF_FALSE        2 (to 620)
+            616 LOAD_FAST               10 (offset)
+            618 JUMP_FORWARD             4 (to 628)
+        >>  620 LOAD_FAST               14 (end_ptr)
+            622 LOAD_FAST               12 (dest_ptr)
+            624 BINARY_OP               10 (-)
+        >>  628 STORE_FAST              15 (copy_size)
+
+205         630 PUSH_NULL
+            632 LOAD_FAST                6 (dest_extend)
+            634 LOAD_FAST                5 (dest)
+            636 LOAD_FAST               13 (match_pos)
+            638 LOAD_FAST               13 (match_pos)
+            640 LOAD_FAST               15 (copy_size)
+            642 BINARY_OP                0 (+)
+            646 BINARY_SLICE
+            648 CALL                     1
+            656 POP_TOP
+
+206         658 LOAD_FAST               12 (dest_ptr)
+            660 LOAD_FAST               15 (copy_size)
+            662 BINARY_OP               13 (+=)
+            666 STORE_FAST              12 (dest_ptr)
+
+207         668 LOAD_FAST               10 (offset)
+            670 LOAD_FAST               10 (offset)
+            672 BINARY_OP               13 (+=)
+            676 STORE_FAST              10 (offset)
+
+203         678 LOAD_FAST               12 (dest_ptr)
+            680 LOAD_FAST               14 (end_ptr)
+            682 COMPARE_OP               2 (<)
+            686 POP_JUMP_IF_FALSE        1 (to 690)
+            688 JUMP_BACKWARD           45 (to 600)
+
+163     >>  690 LOAD_FAST                4 (src_ptr)
+            692 LOAD_FAST                3 (src_len)
+            694 COMPARE_OP               2 (<)
+            698 POP_JUMP_IF_FALSE        2 (to 704)
+            700 EXTENDED_ARG             1
+            702 JUMP_BACKWARD          299 (to 106)
+
+208     >>  704 LOAD_FAST                5 (dest)
+            706 RETURN_VALUE
+        >>  708 PUSH_EXC_INFO
+
+174         710 LOAD_GLOBAL              8 (IndexError)
+            720 CHECK_EXC_MATCH
+            722 POP_JUMP_IF_FALSE        3 (to 730)
+            724 POP_TOP
+
+175         726 POP_EXCEPT
+            728 JUMP_BACKWARD          245 (to 240)
+
+174     >>  730 RERAISE                  0
+        >>  732 COPY                     3
+            734 POP_EXCEPT
+            736 RERAISE                  1
+        >>  738 PUSH_EXC_INFO
+
+191         740 LOAD_GLOBAL              8 (IndexError)
+            750 CHECK_EXC_MATCH
+            752 POP_JUMP_IF_FALSE        3 (to 760)
+            754 POP_TOP
+
+192         756 POP_EXCEPT
+            758 JUMP_BACKWARD          152 (to 456)
+
+191     >>  760 RERAISE                  0
+        >>  762 COPY                     3
+            764 POP_EXCEPT
+            766 RERAISE                  1
+ExceptionTable:
+  152 to 192 -> 708 [0]
+  196 to 238 -> 708 [0]
+  368 to 408 -> 738 [0]
+  412 to 454 -> 738 [0]
+  708 to 724 -> 732 [1] lasti
+  730 to 730 -> 732 [1] lasti
+  738 to 754 -> 762 [1] lasti
+  760 to 760 -> 762 [1] lasti
+QUALNAME acc_step
+211           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+
+216           6 LOAD_FAST                1 (stop)
+              8 POP_JUMP_IF_NOT_NONE     4 (to 18)
+
+217          10 LOAD_CONST               1 (0)
+             12 LOAD_FAST                0 (start)
+             14 STORE_FAST               1 (stop)
+             16 STORE_FAST               0 (start)
+
+218     >>   18 LOAD_GLOBAL              1 (NULL + range)
+             28 LOAD_FAST                0 (start)
+             30 LOAD_FAST                2 (step)
+             32 BINARY_OP                0 (+)
+             36 LOAD_FAST                1 (stop)
+             38 LOAD_FAST                2 (step)
+             40 CALL                     3
+             48 GET_ITER
+        >>   50 FOR_ITER                11 (to 76)
+             54 STORE_FAST               3 (i)
+
+219          56 LOAD_FAST                0 (start)
+             58 LOAD_FAST                3 (i)
+             60 COPY                     1
+             62 STORE_FAST               0 (start)
+             64 LOAD_FAST                2 (step)
+             66 BUILD_TUPLE              3
+             68 YIELD_VALUE              1
+             70 RESUME                   1
+             72 POP_TOP
+             74 JUMP_BACKWARD           13 (to 50)
+
+218     >>   76 END_FOR
+
+220          78 LOAD_FAST                0 (start)
+             80 LOAD_FAST                1 (stop)
+             82 COMPARE_OP              55 (!=)
+             86 POP_JUMP_IF_FALSE       11 (to 110)
+
+221          88 LOAD_FAST                0 (start)
+             90 LOAD_FAST                1 (stop)
+             92 LOAD_FAST                1 (stop)
+             94 LOAD_FAST                0 (start)
+             96 BINARY_OP               10 (-)
+            100 BUILD_TUPLE              3
+            102 YIELD_VALUE              1
+            104 RESUME                   1
+            106 POP_TOP
+            108 RETURN_CONST             0 (None)
+
+220     >>  110 RETURN_CONST             0 (None)
+        >>  112 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            114 RERAISE                  1
+ExceptionTable:
+  4 to 110 -> 112 [0] lasti
+QUALNAME bytes_xor
+224           0 RESUME                   0
+
+231           2 LOAD_FAST                2 (size)
+              4 POP_JUMP_IF_FALSE       29 (to 64)
+
+232           6 LOAD_GLOBAL              1 (NULL + to_bytes_view)
+             16 LOAD_FAST                0 (v1)
+             18 CALL                     1
+             26 LOAD_CONST               0 (None)
+             28 LOAD_FAST                2 (size)
+             30 BINARY_SLICE
+             32 STORE_FAST               0 (v1)
+
+233          34 LOAD_GLOBAL              1 (NULL + to_bytes_view)
+             44 LOAD_FAST                1 (v2)
+             46 CALL                     1
+             54 LOAD_CONST               0 (None)
+             56 LOAD_FAST                2 (size)
+             58 BINARY_SLICE
+             60 STORE_FAST               1 (v2)
+             62 JUMP_FORWARD            21 (to 106)
+
+235     >>   64 LOAD_GLOBAL              3 (NULL + memoryview)
+             74 LOAD_FAST                0 (v1)
+             76 CALL                     1
+             84 LOAD_ATTR                4 (nbytes)
+            104 STORE_FAST               2 (size)
+
+236     >>  106 LOAD_GLOBAL              7 (NULL + to_bytes)
+            116 LOAD_GLOBAL              9 (NULL + from_bytes)
+            126 LOAD_FAST                0 (v1)
+            128 CALL                     1
+            136 LOAD_GLOBAL              9 (NULL + from_bytes)
+            146 LOAD_FAST                1 (v2)
+            148 CALL                     1
+            156 BINARY_OP               12 (^)
+            160 LOAD_FAST                2 (size)
+            162 LOAD_FAST                3 (byteorder)
+            164 KW_NAMES                 1 (('byteorder',))
+            166 CALL                     3
+            174 RETURN_VALUE
+QUALNAME xor
+239           0 RESUME                   0
+
+245           2 LOAD_GLOBAL              1 (NULL + to_bytes_view)
+             12 LOAD_FAST                0 (src)
+             14 CALL                     1
+             22 STORE_FAST               0 (src)
+
+246          24 LOAD_GLOBAL              1 (NULL + to_bytes_view)
+             34 LOAD_FAST                1 (key)
+             36 CALL                     1
+             44 STORE_FAST               1 (key)
+
+247          46 LOAD_GLOBAL              3 (NULL + bytearray)
+             56 CALL                     0
+             64 STORE_FAST               3 (secret)
+
+248          66 LOAD_GLOBAL              5 (NULL + len)
+             76 LOAD_FAST                0 (src)
+             78 CALL                     1
+             86 LOAD_CONST               1 (3)
+             88 BINARY_OP                1 (&)
+             92 COPY                     1
+             94 STORE_FAST               4 (i)
+             96 POP_JUMP_IF_FALSE       18 (to 134)
+
+249          98 LOAD_FAST                3 (secret)
+            100 LOAD_GLOBAL              7 (NULL + bytes_xor)
+            110 LOAD_FAST                0 (src)
+            112 LOAD_FAST                1 (key)
+            114 LOAD_FAST                4 (i)
+            116 LOAD_FAST                2 (byteorder)
+            118 KW_NAMES                 2 (('byteorder',))
+            120 CALL                     4
+            128 BINARY_OP               13 (+=)
+            132 STORE_FAST               3 (secret)
+
+250     >>  134 LOAD_GLOBAL              9 (NULL + acc_step)
+            144 LOAD_FAST                4 (i)
+            146 LOAD_GLOBAL              5 (NULL + len)
+            156 LOAD_FAST                0 (src)
+            158 CALL                     1
+            166 LOAD_GLOBAL              5 (NULL + len)
+            176 LOAD_FAST                1 (key)
+            178 CALL                     1
+            186 CALL                     3
+            194 GET_ITER
+        >>  196 FOR_ITER                29 (to 258)
+            200 UNPACK_SEQUENCE          3
+            204 STORE_FAST               4 (i)
+            206 STORE_FAST               5 (j)
+            208 STORE_FAST               6 (s)
+
+251         210 LOAD_FAST                3 (secret)
+            212 LOAD_GLOBAL              7 (NULL + bytes_xor)
+            222 LOAD_FAST                0 (src)
+            224 LOAD_FAST                4 (i)
+            226 LOAD_FAST                5 (j)
+            228 BINARY_SLICE
+            230 LOAD_FAST                1 (key)
+            232 LOAD_CONST               0 (None)
+            234 LOAD_FAST                6 (s)
+            236 BINARY_SLICE
+            238 LOAD_FAST                2 (byteorder)
+            240 KW_NAMES                 2 (('byteorder',))
+            242 CALL                     3
+            250 BINARY_OP               13 (+=)
+            254 STORE_FAST               3 (secret)
+            256 JUMP_BACKWARD           31 (to 196)
+
+250     >>  258 END_FOR
+
+252         260 LOAD_FAST                3 (secret)
+            262 RETURN_VALUE
+QUALNAME generate_ecdh_pair
+255           0 RESUME                   0
+
+266           2 LOAD_CONST               1 (0)
+              4 LOAD_CONST               2 (('ECDH', 'NIST224p', 'SigningKey'))
+              6 IMPORT_NAME              0 (ecdsa)
+              8 IMPORT_FROM              1 (ECDH)
+             10 STORE_FAST               0 (ECDH)
+             12 IMPORT_FROM              2 (NIST224p)
+             14 STORE_FAST               1 (NIST224p)
+             16 IMPORT_FROM              3 (SigningKey)
+             18 STORE_FAST               2 (SigningKey)
+             20 POP_TOP
+
+268          22 LOAD_FAST                2 (SigningKey)
+             24 LOAD_ATTR                9 (NULL|self + generate)
+             44 LOAD_FAST                1 (NIST224p)
+             46 CALL                     1
+             54 STORE_FAST               3 (secret_key)
+
+269          56 LOAD_FAST                3 (secret_key)
+             58 LOAD_ATTR               10 (verifying_key)
+             78 STORE_FAST               4 (public_key)
+
+270          80 PUSH_NULL
+             82 LOAD_FAST                0 (ECDH)
+             84 LOAD_FAST                1 (NIST224p)
+             86 CALL                     1
+             94 STORE_FAST               5 (ecdh)
+
+271          96 LOAD_FAST                5 (ecdh)
+             98 LOAD_ATTR               13 (NULL|self + load_private_key)
+            118 LOAD_FAST                3 (secret_key)
+            120 CALL                     1
+            128 POP_TOP
+
+272         130 LOAD_FAST                5 (ecdh)
+            132 LOAD_ATTR               15 (NULL|self + load_received_public_key_bytes)
+            152 LOAD_GLOBAL             16 (ECDH_REMOTE_PUBKEY)
+            162 CALL                     1
+            170 POP_TOP
+
+273         172 LOAD_FAST                4 (public_key)
+            174 LOAD_ATTR               18 (pubkey)
+            194 LOAD_ATTR               20 (point)
+            214 LOAD_ATTR               23 (NULL|self + to_bytes)
+            234 CALL                     0
+            242 STORE_FAST               6 (public)
+
+274         244 LOAD_FAST                6 (public)
+            246 LOAD_CONST               3 (None)
+            248 LOAD_CONST               4 (28)
+            250 BINARY_SLICE
+            252 LOAD_FAST                6 (public)
+            254 LOAD_CONST               4 (28)
+            256 LOAD_CONST               3 (None)
+            258 BINARY_SLICE
+            260 STORE_FAST               8 (y)
+            262 STORE_FAST               7 (x)
+
+275         264 LOAD_GLOBAL             25 (NULL + bytes)
+            274 LOAD_CONST               5 (29)
+            276 LOAD_CONST               6 (2)
+            278 LOAD_GLOBAL             27 (NULL + from_bytes)
+            288 LOAD_FAST                8 (y)
+            290 CALL                     1
+            298 LOAD_CONST               7 (1)
+            300 BINARY_OP                1 (&)
+            304 BINARY_OP                0 (+)
+            308 BUILD_TUPLE              2
+            310 CALL                     1
+            318 LOAD_FAST                7 (x)
+            320 BINARY_OP                0 (+)
+            324 STORE_FAST               9 (pubkey)
+
+279         326 LOAD_FAST                5 (ecdh)
+            328 LOAD_ATTR               29 (NULL|self + generate_sharedsecret_bytes)
+            348 CALL                     0
+            356 STORE_FAST              10 (secret)
+
+280         358 LOAD_FAST                9 (pubkey)
+            360 LOAD_FAST               10 (secret)
+            362 BUILD_TUPLE              2
+            364 RETURN_VALUE
+QUALNAME rsa_gen_key
+283           0 RESUME                   0
+
+288           2 LOAD_GLOBAL              1 (NULL + to_bytes_view)
+             12 LOAD_FAST                0 (rand_key)
+             14 CALL                     1
+             22 STORE_FAST               0 (rand_key)
+
+289          24 LOAD_GLOBAL              3 (NULL + bytearray)
+             34 LOAD_FAST                1 (sk_len)
+             36 CALL                     1
+             44 STORE_FAST               2 (xor_key)
+
+290          46 LOAD_FAST                1 (sk_len)
+             48 LOAD_FAST                1 (sk_len)
+             50 LOAD_CONST               1 (1)
+             52 BINARY_OP               10 (-)
+             56 BINARY_OP                5 (*)
+             60 STORE_FAST               3 (length)
+
+291          62 LOAD_CONST               2 (0)
+             64 STORE_FAST               4 (index)
+
+292          66 LOAD_GLOBAL              5 (NULL + range)
+             76 LOAD_FAST                1 (sk_len)
+             78 CALL                     1
+             86 GET_ITER
+        >>   88 FOR_ITER                45 (to 182)
+             92 STORE_FAST               5 (i)
+
+293          94 LOAD_FAST                0 (rand_key)
+             96 LOAD_FAST                5 (i)
+             98 BINARY_SUBSCR
+            102 LOAD_GLOBAL              6 (G_kts)
+            112 LOAD_FAST                4 (index)
+            114 BINARY_SUBSCR
+            118 BINARY_OP                0 (+)
+            122 LOAD_CONST               3 (255)
+            124 BINARY_OP                1 (&)
+            128 STORE_FAST               6 (x)
+
+294         130 LOAD_GLOBAL              6 (G_kts)
+            140 LOAD_FAST                3 (length)
+            142 BINARY_SUBSCR
+            146 LOAD_FAST                6 (x)
+            148 BINARY_OP               12 (^)
+            152 LOAD_FAST                2 (xor_key)
+            154 LOAD_FAST                5 (i)
+            156 STORE_SUBSCR
+
+295         160 LOAD_FAST                3 (length)
+            162 LOAD_FAST                1 (sk_len)
+            164 BINARY_OP               23 (-=)
+            168 STORE_FAST               3 (length)
+
+296         170 LOAD_FAST                4 (index)
+            172 LOAD_FAST                1 (sk_len)
+            174 BINARY_OP               13 (+=)
+            178 STORE_FAST               4 (index)
+            180 JUMP_BACKWARD           47 (to 88)
+
+292     >>  182 END_FOR
+
+297         184 LOAD_FAST                2 (xor_key)
+            186 RETURN_VALUE
+QUALNAME pad_pkcs1_v1_5
+300           0 RESUME                   0
+
+301           2 LOAD_GLOBAL              1 (NULL + bytearray)
+             12 LOAD_CONST               1 (b'\x00')
+             14 CALL                     1
+             22 STORE_FAST               1 (data)
+
+302          24 LOAD_FAST                1 (data)
+             26 LOAD_CONST               2 (b'\x02')
+             28 LOAD_CONST               3 (126)
+             30 LOAD_GLOBAL              3 (NULL + memoryview)
+             40 LOAD_FAST                0 (message)
+             42 CALL                     1
+             50 LOAD_ATTR                4 (nbytes)
+             70 BINARY_OP               10 (-)
+             74 BINARY_OP                5 (*)
+             78 BINARY_OP               13 (+=)
+             82 STORE_FAST               1 (data)
+
+303          84 LOAD_FAST                1 (data)
+             86 LOAD_CONST               1 (b'\x00')
+             88 BINARY_OP               13 (+=)
+             92 STORE_FAST               1 (data)
+
+304          94 LOAD_FAST                1 (data)
+             96 LOAD_FAST                0 (message)
+             98 BINARY_OP               13 (+=)
+            102 STORE_FAST               1 (data)
+
+305         104 LOAD_GLOBAL              7 (NULL + from_bytes)
+            114 LOAD_FAST                1 (data)
+            116 CALL                     1
+            124 RETURN_VALUE
+QUALNAME rsa_encrypt_with_pubkey
+308           0 RESUME                   0
+
+310           2 LOAD_GLOBAL              1 (NULL + bytearray)
+             12 CALL                     0
+             20 STORE_FAST               1 (cipher_data)
+
+311          22 LOAD_GLOBAL              3 (NULL + to_bytes_view)
+             32 LOAD_FAST                0 (data)
+             34 CALL                     1
+             42 STORE_FAST               2 (view)
+
+312          44 LOAD_GLOBAL              5 (NULL + acc_step)
+             54 LOAD_CONST               1 (0)
+             56 LOAD_GLOBAL              7 (NULL + len)
+             66 LOAD_FAST                2 (view)
+             68 CALL                     1
+             76 LOAD_CONST               2 (117)
+             78 CALL                     3
+             86 GET_ITER
+        >>   88 FOR_ITER                58 (to 208)
+             92 UNPACK_SEQUENCE          3
+             96 STORE_FAST               3 (l)
+             98 STORE_FAST               4 (r)
+            100 STORE_FAST               5 (_)
+
+313         102 LOAD_FAST                1 (cipher_data)
+            104 LOAD_GLOBAL              9 (NULL + to_bytes)
+            114 LOAD_GLOBAL             11 (NULL + pow)
+            124 LOAD_GLOBAL             13 (NULL + pad_pkcs1_v1_5)
+            134 LOAD_FAST                2 (view)
+            136 LOAD_FAST                3 (l)
+            138 LOAD_FAST                4 (r)
+            140 BINARY_SLICE
+            142 CALL                     1
+            150 LOAD_GLOBAL             14 (RSA_PUBKEY_PAIR)
+            160 LOAD_CONST               3 (1)
+            162 BINARY_SUBSCR
+            166 LOAD_GLOBAL             14 (RSA_PUBKEY_PAIR)
+            176 LOAD_CONST               1 (0)
+            178 BINARY_SUBSCR
+            182 CALL                     3
+            190 LOAD_CONST               4 (128)
+            192 CALL                     2
+            200 BINARY_OP               13 (+=)
+            204 STORE_FAST               1 (cipher_data)
+            206 JUMP_BACKWARD           60 (to 88)
+
+312     >>  208 END_FOR
+
+314         210 LOAD_FAST                1 (cipher_data)
+            212 RETURN_VALUE
+QUALNAME rsa_decrypt_with_pubkey
+317           0 RESUME                   0
+
+319           2 LOAD_GLOBAL              1 (NULL + bytearray)
+             12 CALL                     0
+             20 STORE_FAST               1 (data)
+
+320          22 LOAD_GLOBAL              3 (NULL + to_bytes_view)
+             32 LOAD_FAST                0 (cipher_data)
+             34 CALL                     1
+             42 STORE_FAST               2 (view)
+
+321          44 LOAD_GLOBAL              5 (NULL + acc_step)
+             54 LOAD_CONST               1 (0)
+             56 LOAD_GLOBAL              7 (NULL + len)
+             66 LOAD_FAST                2 (view)
+             68 CALL                     1
+             76 LOAD_CONST               2 (128)
+             78 CALL                     3
+             86 GET_ITER
+        >>   88 FOR_ITER               112 (to 316)
+             92 UNPACK_SEQUENCE          3
+             96 STORE_FAST               3 (l)
+             98 STORE_FAST               4 (r)
+            100 STORE_FAST               5 (_)
+
+322         102 LOAD_GLOBAL              9 (NULL + pow)
+            112 LOAD_GLOBAL             11 (NULL + from_bytes)
+            122 LOAD_FAST                2 (view)
+            124 LOAD_FAST                3 (l)
+            126 LOAD_FAST                4 (r)
+            128 BINARY_SLICE
+            130 CALL                     1
+            138 LOAD_GLOBAL             12 (RSA_PUBKEY_PAIR)
+            148 LOAD_CONST               3 (1)
+            150 BINARY_SUBSCR
+            154 LOAD_GLOBAL             12 (RSA_PUBKEY_PAIR)
+            164 LOAD_CONST               1 (0)
+            166 BINARY_SUBSCR
+            170 CALL                     3
+            178 STORE_FAST               6 (p)
+
+323         180 LOAD_GLOBAL             15 (NULL + to_bytes)
+            190 LOAD_FAST                6 (p)
+            192 LOAD_FAST                6 (p)
+            194 LOAD_ATTR               17 (NULL|self + bit_length)
+            214 CALL                     0
+            222 LOAD_CONST               4 (7)
+            224 BINARY_OP                0 (+)
+            228 LOAD_CONST               5 (3)
+            230 BINARY_OP                9 (>>)
+            234 CALL                     2
+            242 STORE_FAST               7 (b)
+
+324         244 LOAD_FAST                1 (data)
+            246 LOAD_GLOBAL             19 (NULL + memoryview)
+            256 LOAD_FAST                7 (b)
+            258 CALL                     1
+            266 LOAD_FAST                7 (b)
+            268 LOAD_ATTR               21 (NULL|self + index)
+            288 LOAD_CONST               1 (0)
+            290 CALL                     1
+            298 LOAD_CONST               3 (1)
+            300 BINARY_OP                0 (+)
+            304 LOAD_CONST               6 (None)
+            306 BINARY_SLICE
+            308 BINARY_OP               13 (+=)
+            312 STORE_FAST               1 (data)
+            314 JUMP_BACKWARD          114 (to 88)
+
+321     >>  316 END_FOR
+
+325         318 LOAD_FAST                1 (data)
+            320 RETURN_VALUE
+QUALNAME lz4_decompress
+328           0 RESUME                   0
+
+329           2 LOAD_GLOBAL              1 (NULL + to_bytes_view)
+             12 LOAD_FAST                0 (source)
+             14 CALL                     1
+             22 STORE_FAST               1 (src)
+
+330          24 LOAD_CONST               1 (b'')
+             26 STORE_FAST               2 (data)
+
+331          28 LOAD_FAST                1 (src)
+             30 POP_JUMP_IF_FALSE       94 (to 220)
+             32 LOAD_FAST                1 (src)
+             34 LOAD_ATTR                2 (nbytes)
+             54 LOAD_CONST               2 (2)
+             56 COMPARE_OP              68 (>)
+             60 POP_JUMP_IF_FALSE       79 (to 220)
+             62 LOAD_FAST                1 (src)
+             64 LOAD_CONST               3 (0)
+             66 BINARY_SUBSCR
+             70 LOAD_FAST                1 (src)
+             72 LOAD_CONST               4 (1)
+             74 BINARY_SUBSCR
+             78 LOAD_CONST               5 (8)
+             80 BINARY_OP                3 (<<)
+             84 BINARY_OP                0 (+)
+             88 COPY                     1
+             90 STORE_FAST               3 (src_len)
+             92 POP_JUMP_IF_FALSE       63 (to 220)
+
+332     >>   94 LOAD_FAST                2 (data)
+             96 LOAD_GLOBAL              5 (NULL + lz4_block_decompress)
+            106 LOAD_FAST                1 (src)
+            108 LOAD_CONST               2 (2)
+            110 LOAD_FAST                3 (src_len)
+            112 LOAD_CONST               2 (2)
+            114 BINARY_OP                0 (+)
+            118 BINARY_SLICE
+            120 LOAD_CONST               6 (8192)
+            122 CALL                     2
+            130 BINARY_OP               13 (+=)
+            134 STORE_FAST               2 (data)
+
+333         136 LOAD_FAST                1 (src)
+            138 LOAD_FAST                3 (src_len)
+            140 LOAD_CONST               2 (2)
+            142 BINARY_OP                0 (+)
+            146 LOAD_CONST               0 (None)
+            148 BINARY_SLICE
+            150 STORE_FAST               1 (src)
+
+331         152 LOAD_FAST                1 (src)
+            154 POP_JUMP_IF_FALSE       32 (to 220)
+            156 LOAD_FAST                1 (src)
+            158 LOAD_ATTR                2 (nbytes)
+            178 LOAD_CONST               2 (2)
+            180 COMPARE_OP              68 (>)
+            184 POP_JUMP_IF_FALSE       17 (to 220)
+            186 LOAD_FAST                1 (src)
+            188 LOAD_CONST               3 (0)
+            190 BINARY_SUBSCR
+            194 LOAD_FAST                1 (src)
+            196 LOAD_CONST               4 (1)
+            198 BINARY_SUBSCR
+            202 LOAD_CONST               5 (8)
+            204 BINARY_OP                3 (<<)
+            208 BINARY_OP                0 (+)
+            212 COPY                     1
+            214 STORE_FAST               3 (src_len)
+            216 POP_JUMP_IF_FALSE        1 (to 220)
+            218 JUMP_BACKWARD           63 (to 94)
+
+334     >>  220 LOAD_FAST                2 (data)
+            222 RETURN_VALUE

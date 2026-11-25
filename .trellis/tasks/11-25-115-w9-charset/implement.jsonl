@@ -1,0 +1,5 @@
+{"file": ".trellis/tasks/11-25-115-dual-auth-go/reference-contract.md", "reason": "Mandatory source fidelity"}
+{"file": ".trellis/tasks/11-25-115-dual-auth-go/prd.md", "reason": "Parent scope including user D11"}
+{"file": ".trellis/tasks/11-25-115-w9-charset/prd.md", "reason": "Charset acceptance"}
+{"file": ".trellis/tasks/11-25-115-w9-charset/design.md", "reason": "Frozen shared signatures and exclusive ownership"}
+{"file": ".trellis/spec/backend/115-reference-contract.md", "reason": "No new115 requests and architecture contract"}

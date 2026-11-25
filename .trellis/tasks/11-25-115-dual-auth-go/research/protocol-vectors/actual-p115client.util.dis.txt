@@ -1,0 +1,337 @@
+QUALNAME complete_url
+126           0 RESUME                   0
+
+161           2 LOAD_GLOBAL              1 (NULL + callable)
+             12 LOAD_FAST                0 (path)
+             14 CALL                     1
+             22 POP_JUMP_IF_FALSE        7 (to 38)
+
+162          24 PUSH_NULL
+             26 LOAD_FAST                0 (path)
+             28 CALL                     0
+             36 STORE_FAST               0 (path)
+
+163     >>   38 LOAD_FAST                0 (path)
+             40 LOAD_ATTR                3 (NULL|self + startswith)
+             60 LOAD_CONST               1 ('/')
+             62 CALL                     1
+             70 POP_JUMP_IF_TRUE         5 (to 82)
+
+164          72 LOAD_CONST               1 ('/')
+             74 LOAD_FAST                0 (path)
+             76 BINARY_OP                0 (+)
+             80 STORE_FAST               0 (path)
+
+165     >>   82 LOAD_FAST                3 (version)
+             84 POP_JUMP_IF_FALSE        7 (to 100)
+
+166          86 LOAD_CONST               1 ('/')
+             88 LOAD_FAST                3 (version)
+             90 FORMAT_VALUE             0
+             92 LOAD_FAST                0 (path)
+             94 FORMAT_VALUE             0
+             96 BUILD_STRING             3
+             98 STORE_FAST               0 (path)
+
+167     >>  100 LOAD_GLOBAL              1 (NULL + callable)
+            110 LOAD_FAST                1 (base_url)
+            112 CALL                     1
+            120 POP_JUMP_IF_FALSE        7 (to 136)
+
+168         122 PUSH_NULL
+            124 LOAD_FAST                1 (base_url)
+            126 CALL                     0
+            134 STORE_FAST               1 (base_url)
+
+169     >>  136 LOAD_GLOBAL              1 (NULL + callable)
+            146 LOAD_FAST                2 (app)
+            148 CALL                     1
+            156 POP_JUMP_IF_FALSE        7 (to 172)
+
+170         158 PUSH_NULL
+            160 LOAD_FAST                2 (app)
+            162 CALL                     0
+            170 STORE_FAST               2 (app)
+
+171     >>  172 LOAD_GLOBAL              1 (NULL + callable)
+            182 LOAD_FAST                5 (domain)
+            184 CALL                     1
+            192 POP_JUMP_IF_FALSE        7 (to 208)
+
+172         194 PUSH_NULL
+            196 LOAD_FAST                5 (domain)
+            198 CALL                     0
+            206 STORE_FAST               5 (domain)
+
+174     >>  208 LOAD_FAST                1 (base_url)
+            210 LOAD_ATTR                3 (NULL|self + startswith)
+            230 LOAD_CONST               2 (('http://f.115.com/api/proxy/115', 'https://f.115.com/api/proxy/115', 'http://n.115.com/api/proxy/115', 'https://n.115.com/api/proxy/115'))
+            232 CALL                     1
+            240 POP_JUMP_IF_FALSE       68 (to 378)
+
+175         242 LOAD_FAST                1 (base_url)
+            244 STORE_FAST               7 (url)
+
+176         246 LOAD_CONST               3 ('?')
+            248 LOAD_FAST                7 (url)
+            250 CONTAINS_OP              1
+            252 POP_JUMP_IF_FALSE        5 (to 264)
+
+177         254 LOAD_FAST                7 (url)
+            256 LOAD_CONST               3 ('?')
+            258 BINARY_OP               13 (+=)
+            262 STORE_FAST               7 (url)
+
+178     >>  264 LOAD_FAST                5 (domain)
+            266 POP_JUMP_IF_FALSE        8 (to 284)
+
+179         268 LOAD_FAST                7 (url)
+            270 LOAD_CONST               4 ('&domain=')
+            272 LOAD_FAST                5 (domain)
+            274 BINARY_OP                0 (+)
+            278 BINARY_OP               13 (+=)
+            282 STORE_FAST               7 (url)
+
+180     >>  284 LOAD_FAST                7 (url)
+            286 LOAD_CONST               5 ('&path=')
+            288 LOAD_FAST                0 (path)
+            290 BINARY_OP                0 (+)
+            294 BINARY_OP               13 (+=)
+            298 STORE_FAST               7 (url)
+
+181         300 LOAD_GLOBAL              5 (NULL + isinstance)
+            310 LOAD_FAST                6 (query)
+            312 LOAD_GLOBAL              6 (str)
+            322 CALL                     2
+            330 POP_JUMP_IF_TRUE        11 (to 354)
+
+182         332 LOAD_GLOBAL              9 (NULL + urlencode)
+            342 LOAD_FAST                6 (query)
+            344 CALL                     1
+            352 STORE_FAST               6 (query)
+
+183     >>  354 LOAD_FAST                6 (query)
+            356 POP_JUMP_IF_FALSE        8 (to 374)
+
+184         358 LOAD_FAST                7 (url)
+            360 LOAD_CONST               3 ('?')
+            362 LOAD_FAST                6 (query)
+            364 BINARY_OP                0 (+)
+            368 BINARY_OP               13 (+=)
+            372 STORE_FAST               7 (url)
+
+185     >>  374 LOAD_FAST                7 (url)
+            376 RETURN_VALUE
+
+186     >>  378 LOAD_FAST                2 (app)
+            380 LOAD_ATTR                3 (NULL|self + startswith)
+            400 LOAD_CONST               6 ('=')
+            402 CALL                     1
+            410 POP_JUMP_IF_FALSE        8 (to 428)
+
+187         412 LOAD_CONST               7 (True)
+            414 STORE_FAST               4 (force_app)
+
+188         416 LOAD_FAST                2 (app)
+            418 LOAD_CONST               8 (1)
+            420 LOAD_CONST               9 (None)
+            422 BINARY_SLICE
+            424 STORE_FAST               2 (app)
+            426 JUMP_FORWARD            20 (to 468)
+
+189     >>  428 LOAD_GLOBAL              5 (NULL + isinstance)
+            438 LOAD_FAST                4 (force_app)
+            440 LOAD_GLOBAL             10 (Container)
+            450 CALL                     2
+            458 POP_JUMP_IF_FALSE        4 (to 468)
+
+190         460 LOAD_FAST                2 (app)
+            462 LOAD_FAST                4 (force_app)
+            464 CONTAINS_OP              0
+            466 STORE_FAST               4 (force_app)
+
+191     >>  468 LOAD_FAST                0 (path)
+            470 POP_JUMP_IF_FALSE       22 (to 516)
+            472 LOAD_FAST                0 (path)
+            474 LOAD_ATTR                3 (NULL|self + startswith)
+            494 LOAD_CONST               1 ('/')
+            496 CALL                     1
+            504 POP_JUMP_IF_TRUE         5 (to 516)
+
+192         506 LOAD_CONST               1 ('/')
+            508 LOAD_FAST                0 (path)
+            510 BINARY_OP                0 (+)
+            514 STORE_FAST               0 (path)
+
+193     >>  516 LOAD_FAST                1 (base_url)
+            518 POP_JUMP_IF_FALSE       22 (to 564)
+
+194         520 LOAD_FAST                5 (domain)
+            522 POP_JUMP_IF_TRUE        64 (to 652)
+            524 LOAD_FAST                1 (base_url)
+            526 LOAD_ATTR               13 (NULL|self + endswith)
+            546 LOAD_CONST              10 (('://115cdn.com', '://115vod.com'))
+            548 CALL                     1
+            556 POP_JUMP_IF_FALSE       47 (to 652)
+
+195         558 LOAD_CONST              11 ('site')
+            560 STORE_FAST               5 (domain)
+            562 JUMP_FORWARD            44 (to 652)
+
+197     >>  564 LOAD_FAST                2 (app)
+            566 POP_JUMP_IF_TRUE        17 (to 602)
+            568 LOAD_FAST                0 (path)
+            570 LOAD_ATTR                3 (NULL|self + startswith)
+            590 LOAD_CONST              12 ('/open/')
+            592 CALL                     1
+            600 POP_JUMP_IF_FALSE        3 (to 608)
+
+198     >>  602 LOAD_CONST              13 ('https://proapi.115.com')
+            604 STORE_FAST               1 (base_url)
+            606 JUMP_FORWARD            22 (to 652)
+
+199     >>  608 LOAD_FAST                5 (domain)
+            610 POP_JUMP_IF_FALSE       18 (to 648)
+
+200         612 LOAD_FAST                5 (domain)
+            614 LOAD_CONST              14 (('web.api', 'pro.api'))
+            616 CONTAINS_OP              0
+            618 POP_JUMP_IF_FALSE        7 (to 634)
+
+201         620 LOAD_CONST              15 ('http://')
+            622 LOAD_FAST                5 (domain)
+            624 FORMAT_VALUE             0
+            626 LOAD_CONST              16 ('.115.com')
+            628 BUILD_STRING             3
+            630 STORE_FAST               1 (base_url)
+            632 JUMP_FORWARD             9 (to 652)
+
+203     >>  634 LOAD_CONST              17 ('https://')
+            636 LOAD_FAST                5 (domain)
+            638 FORMAT_VALUE             0
+            640 LOAD_CONST              16 ('.115.com')
+            642 BUILD_STRING             3
+            644 STORE_FAST               1 (base_url)
+            646 JUMP_FORWARD             2 (to 652)
+
+205     >>  648 LOAD_CONST              18 ('https://webapi.115.com')
+            650 STORE_FAST               1 (base_url)
+
+206     >>  652 LOAD_FAST                2 (app)
+            654 LOAD_CONST              19 (('windows', 'mac', 'linux'))
+            656 CONTAINS_OP              0
+            658 POP_JUMP_IF_FALSE        5 (to 670)
+
+207         660 LOAD_CONST              20 ('os_')
+            662 LOAD_FAST                2 (app)
+            664 BINARY_OP                0 (+)
+            668 STORE_FAST               2 (app)
+
+208     >>  670 LOAD_FAST                2 (app)
+            672 POP_JUMP_IF_FALSE       94 (to 862)
+            674 LOAD_FAST                0 (path)
+            676 LOAD_ATTR                3 (NULL|self + startswith)
+            696 LOAD_CONST              12 ('/open/')
+            698 CALL                     1
+            706 POP_JUMP_IF_TRUE        77 (to 862)
+
+209         708 LOAD_FAST                4 (force_app)
+            710 POP_JUMP_IF_TRUE        67 (to 846)
+
+210         712 LOAD_FAST                2 (app)
+            714 LOAD_CONST              21 (('ios', '115ios', '115ipad', 'android', '115android', 'harmony', 'os_windows', 'os_mac', 'os_linux'))
+            716 CONTAINS_OP              0
+            718 POP_JUMP_IF_FALSE        1 (to 722)
+
+220         720 JUMP_FORWARD            62 (to 846)
+
+221     >>  722 LOAD_FAST                2 (app)
+            724 LOAD_ATTR               13 (NULL|self + endswith)
+            744 LOAD_CONST              22 ('ios')
+            746 CALL                     1
+            754 POP_JUMP_IF_FALSE        3 (to 762)
+
+222         756 LOAD_CONST              22 ('ios')
+            758 STORE_FAST               2 (app)
+            760 JUMP_FORWARD            42 (to 846)
+
+223     >>  762 LOAD_FAST                2 (app)
+            764 LOAD_ATTR               13 (NULL|self + endswith)
+            784 LOAD_CONST              23 ('ipad')
+            786 CALL                     1
+            794 POP_JUMP_IF_FALSE        3 (to 802)
+
+224         796 LOAD_CONST              24 ('115ipad')
+            798 STORE_FAST               2 (app)
+            800 JUMP_FORWARD            22 (to 846)
+
+225     >>  802 LOAD_FAST                2 (app)
+            804 LOAD_ATTR               13 (NULL|self + endswith)
+            824 LOAD_CONST              25 ('android')
+            826 CALL                     1
+            834 POP_JUMP_IF_FALSE        3 (to 842)
+
+226         836 LOAD_CONST              25 ('android')
+            838 STORE_FAST               2 (app)
+            840 JUMP_FORWARD             2 (to 846)
+
+228     >>  842 LOAD_CONST              25 ('android')
+            844 STORE_FAST               2 (app)
+
+229     >>  846 LOAD_CONST               1 ('/')
+            848 LOAD_FAST                2 (app)
+            850 BINARY_OP                0 (+)
+            854 LOAD_FAST                0 (path)
+            856 BINARY_OP                0 (+)
+            860 STORE_FAST               0 (path)
+
+230     >>  862 LOAD_FAST                1 (base_url)
+            864 STORE_FAST               7 (url)
+
+231         866 LOAD_GLOBAL              5 (NULL + isinstance)
+            876 LOAD_FAST                6 (query)
+            878 LOAD_GLOBAL              6 (str)
+            888 CALL                     2
+            896 POP_JUMP_IF_FALSE       11 (to 920)
+
+232         898 LOAD_GLOBAL             15 (NULL + parse_qsl)
+            908 LOAD_FAST                6 (query)
+            910 CALL                     1
+            918 STORE_FAST               6 (query)
+
+233     >>  920 LOAD_FAST                0 (path)
+            922 POP_JUMP_IF_FALSE       24 (to 972)
+
+234         924 LOAD_FAST                7 (url)
+            926 LOAD_FAST                0 (path)
+            928 LOAD_ATTR               17 (NULL|self + translate)
+            948 LOAD_GLOBAL             18 (URL_PATH_TRANSTAB)
+            958 CALL                     1
+            966 BINARY_OP               13 (+=)
+            970 STORE_FAST               7 (url)
+
+235     >>  972 LOAD_GLOBAL              9 (NULL + urlencode)
+            982 LOAD_FAST                6 (query)
+            984 CALL                     1
+            992 COPY                     1
+            994 STORE_FAST               8 (query_string)
+            996 POP_JUMP_IF_FALSE       16 (to 1030)
+
+236         998 LOAD_CONST               3 ('?')
+           1000 LOAD_FAST                7 (url)
+           1002 CONTAINS_OP              0
+           1004 POP_JUMP_IF_FALSE        2 (to 1010)
+           1006 LOAD_CONST              26 ('&')
+           1008 JUMP_FORWARD             1 (to 1012)
+        >> 1010 LOAD_CONST               3 ('?')
+        >> 1012 STORE_FAST               9 (sep)
+
+237        1014 LOAD_FAST                7 (url)
+           1016 LOAD_FAST                9 (sep)
+           1018 LOAD_FAST                8 (query_string)
+           1020 BINARY_OP                0 (+)
+           1024 BINARY_OP               13 (+=)
+           1028 STORE_FAST               7 (url)
+
+238     >> 1030 LOAD_FAST                7 (url)
+           1032 RETURN_VALUE

@@ -1,0 +1,270 @@
+               0 MAKE_CELL                9 (headers)
+
+8590           2 RESUME                   0
+
+8619           4 LOAD_FAST                3 (app)
+               6 LOAD_CONST               1 (('', 'chrome'))
+               8 CONTAINS_OP              0
+              10 POP_JUMP_IF_FALSE       46 (to 104)
+
+8620          12 LOAD_GLOBAL              1 (NULL + complete_url)
+              22 LOAD_CONST               2 ('/app/chrome/downurl')
+              24 LOAD_FAST                4 (base_url)
+              26 CALL                     2
+              34 STORE_FAST               7 (api)
+
+8621          36 LOAD_GLOBAL              3 (NULL + isinstance)
+              46 LOAD_FAST                1 (payload)
+              48 LOAD_GLOBAL              4 (str)
+              58 CALL                     2
+              66 POP_JUMP_IF_FALSE        5 (to 78)
+
+8622          68 LOAD_CONST               3 ('pickcode')
+              70 LOAD_FAST                1 (payload)
+              72 BUILD_MAP                1
+              74 STORE_FAST               1 (payload)
+              76 JUMP_FORWARD           204 (to 486)
+
+8623     >>   78 LOAD_CONST               3 ('pickcode')
+              80 LOAD_FAST                1 (payload)
+              82 CONTAINS_OP              1
+              84 POP_JUMP_IF_FALSE      200 (to 486)
+
+8624          86 LOAD_FAST                1 (payload)
+              88 LOAD_CONST               4 ('pick_code')
+              90 BINARY_SUBSCR
+              94 LOAD_FAST                1 (payload)
+              96 LOAD_CONST               3 ('pickcode')
+              98 STORE_SUBSCR
+             102 JUMP_FORWARD           191 (to 486)
+
+8625     >>  104 LOAD_FAST                3 (app)
+             106 LOAD_CONST               5 (('os_windows', 'os_mac', 'os_linux', 'windows', 'mac', 'linux'))
+             108 CONTAINS_OP              0
+             110 POP_JUMP_IF_FALSE      140 (to 392)
+
+8626         112 LOAD_FAST                3 (app)
+             114 LOAD_ATTR                7 (NULL|self + startswith)
+             134 LOAD_CONST               6 ('os_')
+             136 CALL                     1
+             144 POP_JUMP_IF_TRUE         5 (to 156)
+
+8627         146 LOAD_CONST               6 ('os_')
+             148 LOAD_FAST                3 (app)
+             150 BINARY_OP                0 (+)
+             154 STORE_FAST               3 (app)
+
+8628     >>  156 LOAD_GLOBAL              1 (NULL + complete_url)
+             166 LOAD_CONST               7 ('/2.0/ufile/downurl')
+             168 LOAD_FAST                4 (base_url)
+             170 LOAD_FAST                3 (app)
+             172 KW_NAMES                 8 (('base_url', 'app'))
+             174 CALL                     3
+             182 STORE_FAST               7 (api)
+
+8629         184 LOAD_GLOBAL              3 (NULL + isinstance)
+             194 LOAD_FAST                1 (payload)
+             196 LOAD_GLOBAL              4 (str)
+             206 CALL                     2
+             214 POP_JUMP_IF_FALSE        5 (to 226)
+
+8630         216 LOAD_CONST               3 ('pickcode')
+             218 LOAD_FAST                1 (payload)
+             220 BUILD_MAP                1
+             222 STORE_FAST               1 (payload)
+             224 JUMP_FORWARD            12 (to 250)
+
+8631     >>  226 LOAD_CONST               3 ('pickcode')
+             228 LOAD_FAST                1 (payload)
+             230 CONTAINS_OP              1
+             232 POP_JUMP_IF_FALSE        8 (to 250)
+
+8632         234 LOAD_FAST                1 (payload)
+             236 LOAD_CONST               4 ('pick_code')
+             238 BINARY_SUBSCR
+             242 LOAD_FAST                1 (payload)
+             244 LOAD_CONST               3 ('pickcode')
+             246 STORE_SUBSCR
+
+8634     >>  250 LOAD_CONST               9 (',')
+             252 LOAD_ATTR                9 (NULL|self + join)
+             272 LOAD_GLOBAL             11 (NULL + map)
+             282 LOAD_GLOBAL             12 (normalize_pickcode)
+             292 LOAD_FAST                1 (payload)
+             294 LOAD_CONST               3 ('pickcode')
+             296 BINARY_SUBSCR
+             300 LOAD_ATTR               15 (NULL|self + split)
+             320 LOAD_CONST               9 (',')
+             322 CALL                     1
+             330 CALL                     2
+             338 CALL                     1
+             346 LOAD_FAST                1 (payload)
+             348 LOAD_CONST               3 ('pickcode')
+             350 STORE_SUBSCR
+
+8635         354 LOAD_FAST                6 (request_kwargs)
+             356 LOAD_ATTR               17 (NULL|self + setdefault)
+             376 LOAD_CONST              10 ('ecdh_encrypt')
+             378 LOAD_CONST              11 (True)
+             380 CALL                     2
+             388 POP_TOP
+             390 JUMP_FORWARD            47 (to 486)
+
+8637     >>  392 LOAD_GLOBAL              1 (NULL + complete_url)
+             402 LOAD_CONST              12 ('/2.0/ufile/download')
+             404 LOAD_FAST                4 (base_url)
+             406 LOAD_FAST                3 (app)
+             408 KW_NAMES                 8 (('base_url', 'app'))
+             410 CALL                     3
+             418 STORE_FAST               7 (api)
+
+8638         420 LOAD_GLOBAL              3 (NULL + isinstance)
+             430 LOAD_FAST                1 (payload)
+             432 LOAD_GLOBAL              4 (str)
+             442 CALL                     2
+             450 POP_JUMP_IF_FALSE        5 (to 462)
+
+8639         452 LOAD_CONST               4 ('pick_code')
+             454 LOAD_FAST                1 (payload)
+             456 BUILD_MAP                1
+             458 STORE_FAST               1 (payload)
+             460 JUMP_FORWARD            12 (to 486)
+
+8640     >>  462 LOAD_CONST               4 ('pick_code')
+             464 LOAD_FAST                1 (payload)
+             466 CONTAINS_OP              1
+             468 POP_JUMP_IF_FALSE        8 (to 486)
+
+8641         470 LOAD_FAST                1 (payload)
+             472 LOAD_CONST               3 ('pickcode')
+             474 BINARY_SUBSCR
+             478 LOAD_FAST                1 (payload)
+             480 LOAD_CONST               4 ('pick_code')
+             482 STORE_SUBSCR
+
+8642     >>  486 LOAD_FAST                1 (payload)
+             488 LOAD_ATTR               17 (NULL|self + setdefault)
+             508 LOAD_CONST              13 ('user_id')
+             510 LOAD_FAST                0 (self)
+             512 LOAD_ATTR               18 (user_id)
+             532 CALL                     2
+             540 POP_TOP
+
+8643         542 LOAD_GLOBAL             21 (NULL + dict)
+             552 LOAD_FAST                6 (request_kwargs)
+             554 LOAD_ATTR               23 (NULL|self + get)
+             574 LOAD_CONST              14 ('headers')
+             576 CALL                     1
+             584 COPY                     1
+             586 POP_JUMP_IF_TRUE         2 (to 592)
+             588 POP_TOP
+             590 LOAD_CONST              15 (())
+         >>  592 CALL                     1
+             600 COPY                     1
+             602 STORE_DEREF              9 (headers)
+             604 LOAD_FAST                6 (request_kwargs)
+             606 LOAD_CONST              14 ('headers')
+             608 STORE_SUBSCR
+
+8644         612 LOAD_FAST                2 (user_agent)
+             614 POP_JUMP_IF_NOT_NONE    19 (to 654)
+
+8645         616 LOAD_DEREF               9 (headers)
+             618 LOAD_ATTR               17 (NULL|self + setdefault)
+             638 LOAD_CONST              16 ('user-agent')
+             640 LOAD_CONST              17 ('')
+             642 CALL                     2
+             650 POP_TOP
+             652 JUMP_FORWARD             5 (to 664)
+
+8647     >>  654 LOAD_FAST                2 (user_agent)
+             656 LOAD_DEREF               9 (headers)
+             658 LOAD_CONST              16 ('user-agent')
+             660 STORE_SUBSCR
+
+8648     >>  664 LOAD_CONST              24 (('content', 'bytes', 'return', 'dict'))
+             666 LOAD_CLOSURE             9 (headers)
+             668 BUILD_TUPLE              1
+             670 LOAD_CONST              18 (<code object parse at 0x10335c180, file "p115client/client.py", line 8648>)
+             672 MAKE_FUNCTION           12 (annotations, closure)
+             674 STORE_FAST               8 (parse)
+
+8654         676 LOAD_FAST                6 (request_kwargs)
+             678 LOAD_ATTR               17 (NULL|self + setdefault)
+             698 LOAD_CONST              19 ('parse')
+             700 LOAD_FAST                8 (parse)
+             702 CALL                     2
+             710 POP_TOP
+
+8655         712 LOAD_CONST              20 ('data')
+             714 LOAD_GLOBAL             25 (NULL + rsa_encrypt)
+             724 LOAD_GLOBAL             27 (NULL + dumps)
+             734 LOAD_FAST                1 (payload)
+             736 CALL                     1
+             744 CALL                     1
+             752 LOAD_ATTR               29 (NULL|self + decode)
+             772 LOAD_CONST              21 ('ascii')
+             774 CALL                     1
+             782 BUILD_MAP                1
+             784 LOAD_FAST                6 (request_kwargs)
+             786 LOAD_CONST              20 ('data')
+             788 STORE_SUBSCR
+
+8656         792 PUSH_NULL
+             794 LOAD_FAST                0 (self)
+             796 LOAD_ATTR               30 (request)
+             816 LOAD_CONST              15 (())
+
+8657         818 LOAD_FAST                7 (api)
+
+8658         820 LOAD_CONST              22 ('POST')
+
+8659         822 LOAD_FAST                5 (async_)
+
+8656         824 LOAD_CONST              23 (('url', 'method', 'async_'))
+             826 BUILD_CONST_KEY_MAP      3
+
+8660         828 LOAD_FAST                6 (request_kwargs)
+
+8656         830 DICT_MERGE               1
+             832 CALL_FUNCTION_EX         1
+             834 RETURN_VALUE
+
+Disassembly of <code object parse at 0x10335c180, file "p115client/client.py", line 8648>:
+               0 COPY_FREE_VARS           1
+
+8648           2 RESUME                   0
+
+8649           4 LOAD_GLOBAL              1 (NULL + json_maybe_decrypt_loads)
+              14 LOAD_FAST                1 (content)
+              16 CALL                     1
+              24 STORE_FAST               2 (json)
+
+8650          26 LOAD_FAST                2 (json)
+              28 LOAD_CONST               1 ('state')
+              30 BINARY_SUBSCR
+              34 POP_JUMP_IF_FALSE       42 (to 120)
+              36 LOAD_FAST                2 (json)
+              38 LOAD_ATTR                3 (NULL|self + get)
+              58 LOAD_CONST               2 ('data')
+              60 CALL                     1
+              68 COPY                     1
+              70 STORE_FAST               3 (data)
+              72 POP_JUMP_IF_FALSE       23 (to 120)
+
+8651          74 LOAD_GLOBAL              5 (NULL + json_loads)
+              84 LOAD_GLOBAL              7 (NULL + rsa_decrypt)
+              94 LOAD_FAST                3 (data)
+              96 CALL                     1
+             104 CALL                     1
+             112 LOAD_FAST                2 (json)
+             114 LOAD_CONST               2 ('data')
+             116 STORE_SUBSCR
+
+8652     >>  120 LOAD_DEREF               4 (headers)
+             122 LOAD_FAST                2 (json)
+             124 LOAD_CONST               3 ('headers')
+             126 STORE_SUBSCR
+
+8653         130 LOAD_FAST                2 (json)
+             132 RETURN_VALUE

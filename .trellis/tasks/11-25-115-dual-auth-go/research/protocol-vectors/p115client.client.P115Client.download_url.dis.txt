@@ -1,0 +1,474 @@
+               0 MAKE_CELL                0 (self)
+               2 MAKE_CELL                1 (pickcode)
+               4 MAKE_CELL                2 (strict)
+               6 MAKE_CELL                3 (user_agent)
+               8 MAKE_CELL                4 (app)
+              10 MAKE_CELL                5 (async_)
+              12 MAKE_CELL                6 (request_kwargs)
+
+8325          14 RESUME                   0
+
+8358          16 LOAD_DEREF               4 (app)
+              18 LOAD_CONST               1 ('open')
+              20 COMPARE_OP              40 (==)
+              24 POP_JUMP_IF_FALSE       23 (to 72)
+
+8359          26 PUSH_NULL
+              28 LOAD_DEREF               0 (self)
+              30 LOAD_ATTR                0 (download_url_open)
+
+8360          50 LOAD_DEREF               1 (pickcode)
+
+8359          52 BUILD_TUPLE              1
+
+8361          54 LOAD_DEREF               2 (strict)
+
+8362          56 LOAD_DEREF               3 (user_agent)
+
+8363          58 LOAD_DEREF               5 (async_)
+
+8359          60 LOAD_CONST               2 (('strict', 'user_agent', 'async_'))
+              62 BUILD_CONST_KEY_MAP      3
+
+8364          64 LOAD_DEREF               6 (request_kwargs)
+
+8359          66 DICT_MERGE               1
+              68 CALL_FUNCTION_EX         1
+              70 RETURN_VALUE
+
+8366     >>   72 LOAD_DEREF               0 (self)
+              74 LOAD_ATTR                3 (NULL|self + to_pickcode)
+              94 LOAD_DEREF               1 (pickcode)
+              96 CALL                     1
+             104 STORE_DEREF              1 (pickcode)
+
+8367         106 LOAD_CLOSURE             4 (app)
+             108 LOAD_CLOSURE             5 (async_)
+             110 LOAD_CLOSURE             1 (pickcode)
+             112 LOAD_CLOSURE             6 (request_kwargs)
+             114 LOAD_CLOSURE             0 (self)
+             116 LOAD_CLOSURE             2 (strict)
+             118 LOAD_CLOSURE             3 (user_agent)
+             120 BUILD_TUPLE              7
+             122 LOAD_CONST               3 (<code object gen_step at 0x15889e800, file "p115client/client.py", line 8367>)
+             124 MAKE_FUNCTION            8 (closure)
+             126 STORE_FAST               7 (gen_step)
+
+8456         128 LOAD_GLOBAL              5 (NULL + run_gen_step)
+             138 LOAD_FAST                7 (gen_step)
+             140 LOAD_DEREF               5 (async_)
+             142 CALL                     2
+             150 RETURN_VALUE
+
+Disassembly of <code object gen_step at 0x15889e800, file "p115client/client.py", line 8367>:
+               0 COPY_FREE_VARS           7
+
+8367           2 RETURN_GENERATOR
+               4 POP_TOP
+               6 RESUME                   0
+
+8368           8 LOAD_DEREF               5 (app)
+              10 LOAD_CONST               1 (('web2', 'video'))
+              12 CONTAINS_OP              0
+              14 POP_JUMP_IF_FALSE      132 (to 280)
+
+8369          16 PUSH_NULL
+              18 LOAD_DEREF               9 (self)
+              20 LOAD_ATTR                0 (download_url_web2)
+
+8370          40 LOAD_DEREF               7 (pickcode)
+
+8369          42 BUILD_TUPLE              1
+
+8371          44 LOAD_DEREF              11 (user_agent)
+
+8372          46 LOAD_DEREF               6 (async_)
+
+8369          48 LOAD_CONST               2 (('user_agent', 'async_'))
+              50 BUILD_CONST_KEY_MAP      2
+
+8373          52 LOAD_DEREF               8 (request_kwargs)
+
+8369          54 DICT_MERGE               1
+              56 CALL_FUNCTION_EX         1
+              58 YIELD_VALUE              1
+              60 RESUME                   1
+              62 STORE_FAST               0 (resp)
+
+8375          64 LOAD_DEREF               7 (pickcode)
+              66 LOAD_FAST                0 (resp)
+              68 LOAD_CONST               3 ('pickcode')
+              70 STORE_SUBSCR
+
+8376          74 LOAD_CONST               4 (True)
+              76 LOAD_FAST                0 (resp)
+              78 LOAD_CONST               5 ('is_download')
+              80 STORE_SUBSCR
+
+8377          84 LOAD_GLOBAL              3 (NULL + check_response)
+              94 LOAD_FAST                0 (resp)
+              96 CALL                     1
+             104 POP_TOP
+
+8378         106 LOAD_FAST                0 (resp)
+             108 LOAD_CONST               6 ('url')
+             110 BINARY_SUBSCR
+             114 STORE_FAST               1 (url)
+
+8379         116 LOAD_GLOBAL              5 (NULL + P115URL)
+
+8380         126 LOAD_FAST                1 (url)
+
+8381         128 LOAD_DEREF               9 (self)
+             130 LOAD_ATTR                7 (NULL|self + to_id)
+             150 LOAD_DEREF               7 (pickcode)
+             152 CALL                     1
+
+8382         160 LOAD_DEREF               7 (pickcode)
+
+8383         162 LOAD_GLOBAL              9 (NULL + unquote)
+             172 LOAD_GLOBAL             11 (NULL + urlsplit)
+             182 LOAD_FAST                1 (url)
+             184 CALL                     1
+             192 LOAD_ATTR               12 (path)
+             212 LOAD_ATTR               15 (NULL|self + rsplit)
+             232 LOAD_CONST               7 ('/')
+             234 LOAD_CONST               8 (1)
+             236 CALL                     2
+             244 LOAD_CONST               9 (-1)
+             246 BINARY_SUBSCR
+             250 CALL                     1
+
+8384         258 LOAD_CONST              10 (False)
+
+8385         260 LOAD_FAST                0 (resp)
+             262 LOAD_CONST              11 ('headers')
+             264 BINARY_SUBSCR
+
+8379         268 KW_NAMES                12 (('id', 'pickcode', 'name', 'is_dir', 'headers'))
+             270 CALL                     6
+             278 RETURN_VALUE
+
+8387     >>  280 LOAD_DEREF               5 (app)
+             282 LOAD_CONST              13 (('web', 'desktop'))
+             284 CONTAINS_OP              0
+             286 POP_JUMP_IF_FALSE      114 (to 516)
+
+8388         288 PUSH_NULL
+             290 LOAD_DEREF               9 (self)
+             292 LOAD_ATTR               16 (download_url_web)
+
+8389         312 LOAD_DEREF               7 (pickcode)
+
+8388         314 BUILD_TUPLE              1
+
+8390         316 LOAD_DEREF              11 (user_agent)
+
+8391         318 LOAD_DEREF               6 (async_)
+
+8388         320 LOAD_CONST               2 (('user_agent', 'async_'))
+             322 BUILD_CONST_KEY_MAP      2
+
+8392         324 LOAD_DEREF               8 (request_kwargs)
+
+8388         326 DICT_MERGE               1
+             328 CALL_FUNCTION_EX         1
+             330 YIELD_VALUE              1
+             332 RESUME                   1
+             334 STORE_FAST               0 (resp)
+
+8394         336 LOAD_DEREF               7 (pickcode)
+             338 LOAD_FAST                0 (resp)
+             340 LOAD_CONST               3 ('pickcode')
+             342 STORE_SUBSCR
+
+8395         346 LOAD_CONST               4 (True)
+             348 LOAD_FAST                0 (resp)
+             350 LOAD_CONST               5 ('is_download')
+             352 STORE_SUBSCR
+
+8396         356 NOP
+
+8397         358 LOAD_GLOBAL              3 (NULL + check_response)
+             368 LOAD_FAST                0 (resp)
+             370 CALL                     1
+             378 POP_TOP
+
+8401     >>  380 LOAD_GLOBAL              5 (NULL + P115URL)
+
+8402         390 LOAD_FAST                0 (resp)
+             392 LOAD_ATTR               21 (NULL|self + get)
+             412 LOAD_CONST              14 ('file_url')
+             414 LOAD_CONST              15 ('')
+             416 CALL                     2
+
+8403         424 LOAD_GLOBAL             23 (NULL + int)
+             434 LOAD_FAST                0 (resp)
+             436 LOAD_CONST              16 ('file_id')
+             438 BINARY_SUBSCR
+             442 CALL                     1
+
+8404         450 LOAD_DEREF               7 (pickcode)
+
+8405         452 LOAD_FAST                0 (resp)
+             454 LOAD_CONST              17 ('file_name')
+             456 BINARY_SUBSCR
+
+8406         460 LOAD_GLOBAL             23 (NULL + int)
+             470 LOAD_FAST                0 (resp)
+             472 LOAD_CONST              18 ('file_size')
+             474 BINARY_SUBSCR
+             478 CALL                     1
+
+8407         486 LOAD_FAST                0 (resp)
+             488 LOAD_CONST              19 ('state')
+             490 BINARY_SUBSCR
+             494 UNARY_NOT
+
+8408         496 LOAD_FAST                0 (resp)
+             498 LOAD_CONST              11 ('headers')
+             500 BINARY_SUBSCR
+
+8401         504 KW_NAMES                20 (('id', 'pickcode', 'name', 'size', 'is_dir', 'headers'))
+             506 CALL                     7
+             514 RETURN_VALUE
+
+8411     >>  516 PUSH_NULL
+             518 LOAD_DEREF               9 (self)
+             520 LOAD_ATTR               24 (download_url_app)
+
+8412         540 LOAD_DEREF               7 (pickcode)
+
+8411         542 BUILD_TUPLE              1
+
+8413         544 LOAD_DEREF              11 (user_agent)
+
+8414         546 LOAD_DEREF               5 (app)
+
+8415         548 LOAD_DEREF               6 (async_)
+
+8411         550 LOAD_CONST              21 (('user_agent', 'app', 'async_'))
+             552 BUILD_CONST_KEY_MAP      3
+
+8416         554 LOAD_DEREF               8 (request_kwargs)
+
+8411         556 DICT_MERGE               1
+             558 CALL_FUNCTION_EX         1
+             560 YIELD_VALUE              1
+             562 RESUME                   1
+             564 STORE_FAST               0 (resp)
+
+8418         566 LOAD_DEREF               7 (pickcode)
+             568 LOAD_FAST                0 (resp)
+             570 LOAD_CONST               3 ('pickcode')
+             572 STORE_SUBSCR
+
+8419         576 LOAD_CONST               4 (True)
+             578 LOAD_FAST                0 (resp)
+             580 LOAD_CONST               5 ('is_download')
+             582 STORE_SUBSCR
+
+8420         586 LOAD_FAST                0 (resp)
+             588 LOAD_ATTR               21 (NULL|self + get)
+             608 LOAD_CONST              22 ('data')
+             610 CALL                     1
+             618 STORE_FAST               2 (data)
+
+8421         620 LOAD_FAST                2 (data)
+             622 POP_JUMP_IF_TRUE        47 (to 718)
+
+8422         624 LOAD_CONST              10 (False)
+             626 LOAD_FAST                0 (resp)
+             628 LOAD_CONST              19 ('state')
+             630 STORE_SUBSCR
+
+8423         634 LOAD_FAST                0 (resp)
+             636 LOAD_ATTR               21 (NULL|self + get)
+             656 LOAD_CONST              23 ('errno')
+             658 CALL                     1
+             666 COPY                     1
+             668 POP_JUMP_IF_TRUE         2 (to 674)
+             670 POP_TOP
+             672 LOAD_CONST              24 (50015)
+         >>  674 LOAD_FAST                0 (resp)
+             676 LOAD_CONST              23 ('errno')
+             678 STORE_SUBSCR
+
+8424         682 LOAD_FAST                0 (resp)
+             684 LOAD_ATTR               27 (NULL|self + setdefault)
+             704 LOAD_CONST              25 ('message')
+             706 LOAD_CONST              26 ('文件不存在、是目录或者不支持此操作')
+             708 CALL                     2
+             716 POP_TOP
+
+8425     >>  718 LOAD_GLOBAL              3 (NULL + check_response)
+             728 LOAD_FAST                0 (resp)
+             730 CALL                     1
+             738 POP_TOP
+
+8426         740 LOAD_CONST               6 ('url')
+             742 LOAD_FAST                2 (data)
+             744 CONTAINS_OP              0
+             746 POP_JUMP_IF_FALSE       71 (to 890)
+
+8427         748 LOAD_FAST                2 (data)
+             750 LOAD_CONST               6 ('url')
+             752 BINARY_SUBSCR
+             756 STORE_FAST               1 (url)
+
+8428         758 LOAD_GLOBAL              5 (NULL + P115URL)
+
+8429         768 LOAD_FAST                1 (url)
+
+8430         770 LOAD_DEREF               7 (pickcode)
+
+8431         772 LOAD_GLOBAL              9 (NULL + unquote)
+             782 LOAD_GLOBAL             11 (NULL + urlsplit)
+             792 LOAD_FAST                1 (url)
+             794 CALL                     1
+             802 LOAD_ATTR               12 (path)
+             822 LOAD_ATTR               15 (NULL|self + rsplit)
+             842 LOAD_CONST               7 ('/')
+             844 LOAD_CONST               8 (1)
+             846 CALL                     2
+             854 LOAD_CONST               9 (-1)
+             856 BINARY_SUBSCR
+             860 CALL                     1
+
+8432         868 LOAD_CONST              10 (False)
+
+8433         870 LOAD_FAST                0 (resp)
+             872 LOAD_CONST              11 ('headers')
+             874 BINARY_SUBSCR
+
+8428         878 KW_NAMES                27 (('pickcode', 'name', 'is_dir', 'headers'))
+             880 CALL                     5
+             888 RETURN_VALUE
+
+8435     >>  890 LOAD_FAST                2 (data)
+             892 LOAD_ATTR               29 (NULL|self + items)
+             912 CALL                     0
+             920 GET_ITER
+             922 FOR_ITER               106 (to 1138)
+             926 UNPACK_SEQUENCE          2
+             930 STORE_FAST               3 (fid)
+             932 STORE_FAST               4 (info)
+
+8436         934 LOAD_FAST                4 (info)
+             936 LOAD_CONST               6 ('url')
+             938 BINARY_SUBSCR
+             942 STORE_FAST               1 (url)
+
+8437         944 LOAD_DEREF              10 (strict)
+             946 POP_JUMP_IF_FALSE       33 (to 1014)
+             948 LOAD_FAST                1 (url)
+             950 POP_JUMP_IF_TRUE        31 (to 1014)
+
+8438         952 LOAD_GLOBAL             31 (NULL + throw)
+
+8439         962 LOAD_GLOBAL             32 (errno)
+             972 LOAD_ATTR               34 (EISDIR)
+
+8440         992 LOAD_FAST                3 (fid)
+             994 FORMAT_VALUE             0
+             996 LOAD_CONST              28 (' is a directory, with response ')
+             998 LOAD_FAST                0 (resp)
+            1000 FORMAT_VALUE             0
+            1002 BUILD_STRING             3
+
+8438        1004 CALL                     2
+            1012 POP_TOP
+
+8442     >> 1014 LOAD_GLOBAL              5 (NULL + P115URL)
+
+8443        1024 LOAD_FAST                1 (url)
+            1026 POP_JUMP_IF_FALSE        5 (to 1038)
+            1028 LOAD_FAST                1 (url)
+            1030 LOAD_CONST               6 ('url')
+            1032 BINARY_SUBSCR
+            1036 JUMP_FORWARD             1 (to 1040)
+         >> 1038 LOAD_CONST              15 ('')
+
+8444     >> 1040 LOAD_GLOBAL             23 (NULL + int)
+            1050 LOAD_FAST                3 (fid)
+            1052 CALL                     1
+
+8445        1060 LOAD_FAST                4 (info)
+            1062 LOAD_CONST              29 ('pick_code')
+            1064 BINARY_SUBSCR
+
+8446        1068 LOAD_FAST                4 (info)
+            1070 LOAD_CONST              17 ('file_name')
+            1072 BINARY_SUBSCR
+
+8447        1076 LOAD_GLOBAL             23 (NULL + int)
+            1086 LOAD_FAST                4 (info)
+            1088 LOAD_CONST              18 ('file_size')
+            1090 BINARY_SUBSCR
+            1094 CALL                     1
+
+8448        1102 LOAD_FAST                4 (info)
+            1104 LOAD_CONST              30 ('sha1')
+            1106 BINARY_SUBSCR
+
+8449        1110 LOAD_FAST                1 (url)
+            1112 UNARY_NOT
+
+8450        1114 LOAD_FAST                0 (resp)
+            1116 LOAD_CONST              11 ('headers')
+            1118 BINARY_SUBSCR
+
+8442        1122 KW_NAMES                31 (('id', 'pickcode', 'name', 'size', 'sha1', 'is_dir', 'headers'))
+            1124 CALL                     8
+            1132 SWAP                     2
+            1134 POP_TOP
+            1136 RETURN_VALUE
+
+8435     >> 1138 END_FOR
+
+8452        1140 LOAD_GLOBAL             31 (NULL + throw)
+
+8453        1150 LOAD_GLOBAL             32 (errno)
+            1160 LOAD_ATTR               36 (ENOENT)
+
+8454        1180 LOAD_CONST              32 ('no such pickcode: ')
+            1182 LOAD_DEREF               7 (pickcode)
+            1184 FORMAT_VALUE             2 (repr)
+            1186 LOAD_CONST              33 (', with response ')
+            1188 LOAD_FAST                0 (resp)
+            1190 FORMAT_VALUE             0
+            1192 BUILD_STRING             4
+
+8452        1194 CALL                     2
+            1202 POP_TOP
+            1204 RETURN_CONST             0 (None)
+         >> 1206 PUSH_EXC_INFO
+
+8398        1208 LOAD_GLOBAL             18 (IsADirectoryError)
+            1218 CHECK_EXC_MATCH
+            1220 POP_JUMP_IF_FALSE        7 (to 1236)
+            1222 POP_TOP
+
+8399        1224 LOAD_DEREF              10 (strict)
+            1226 POP_JUMP_IF_FALSE        1 (to 1230)
+
+8400        1228 RAISE_VARARGS            0
+
+8399     >> 1230 POP_EXCEPT
+            1232 EXTENDED_ARG             1
+            1234 JUMP_BACKWARD          428 (to 380)
+
+8398     >> 1236 RERAISE                  0
+         >> 1238 COPY                     3
+            1240 POP_EXCEPT
+            1242 RERAISE                  1
+         >> 1244 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            1246 RERAISE                  1
+ExceptionTable:
+  6 to 354 -> 1244 [0] lasti
+  358 to 378 -> 1206 [0]
+  380 to 1204 -> 1244 [0] lasti
+  1206 to 1228 -> 1238 [1] lasti
+  1230 to 1234 -> 1244 [0] lasti
+  1236 to 1236 -> 1238 [1] lasti
+  1238 to 1242 -> 1244 [0] lasti

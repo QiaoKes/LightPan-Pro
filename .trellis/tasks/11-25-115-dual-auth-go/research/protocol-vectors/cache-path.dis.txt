@@ -1,0 +1,630 @@
+attr get_path 1100
+1100           0 RESUME                   0
+
+1114           2 RETURN_CONST             0 (None)
+attr get_path 1115
+1115           0 RESUME                   0
+
+1129           2 RETURN_CONST             0 (None)
+attr get_path 1130
+               0 MAKE_CELL                0 (client)
+               2 MAKE_CELL                1 (attr)
+               4 MAKE_CELL                2 (root_id)
+               6 MAKE_CELL                3 (escape)
+               8 MAKE_CELL                4 (id_to_dirnode)
+              10 MAKE_CELL                5 (ensure_file)
+              12 MAKE_CELL                6 (refresh)
+              14 MAKE_CELL                7 (app)
+              16 MAKE_CELL                8 (async_)
+              18 MAKE_CELL                9 (request_kwargs)
+
+1130          20 RESUME                   0
+
+1169          22 LOAD_GLOBAL              1 (NULL + isinstance)
+              32 LOAD_DEREF               3 (escape)
+              34 LOAD_GLOBAL              2 (bool)
+              44 CALL                     2
+              52 POP_JUMP_IF_FALSE       15 (to 84)
+
+1170          54 LOAD_DEREF               3 (escape)
+              56 POP_JUMP_IF_FALSE        7 (to 72)
+
+1171          58 LOAD_CONST               1 (0)
+              60 LOAD_CONST               2 (('escape',))
+              62 IMPORT_NAME              2 (posixpatht)
+              64 IMPORT_FROM              3 (escape)
+              66 STORE_DEREF              3 (escape)
+              68 POP_TOP
+              70 JUMP_FORWARD             6 (to 84)
+
+1173     >>   72 LOAD_GLOBAL              8 (posix_escape_name)
+              82 STORE_DEREF              3 (escape)
+
+1174     >>   84 LOAD_GLOBAL             11 (NULL + cast)
+              94 LOAD_CONST               3 (None)
+              96 LOAD_GLOBAL             12 (Callable)
+             106 LOAD_GLOBAL             14 (str)
+             116 BUILD_LIST               1
+             118 LOAD_GLOBAL             14 (str)
+             128 BUILD_TUPLE              2
+             130 BINARY_SUBSCR
+             134 BINARY_OP                7 (|)
+             138 LOAD_DEREF               3 (escape)
+             140 CALL                     2
+             148 STORE_DEREF              3 (escape)
+
+1175         150 LOAD_DEREF               2 (root_id)
+             152 POP_JUMP_IF_NONE        11 (to 176)
+
+1176         154 LOAD_GLOBAL             17 (NULL + to_id)
+             164 LOAD_DEREF               2 (root_id)
+             166 CALL                     1
+             174 STORE_DEREF              2 (root_id)
+
+1177     >>  176 LOAD_CLOSURE             7 (app)
+             178 LOAD_CLOSURE             8 (async_)
+             180 LOAD_CLOSURE             1 (attr)
+             182 LOAD_CLOSURE             0 (client)
+             184 LOAD_CLOSURE             5 (ensure_file)
+             186 LOAD_CLOSURE             3 (escape)
+             188 LOAD_CLOSURE             4 (id_to_dirnode)
+             190 LOAD_CLOSURE             6 (refresh)
+             192 LOAD_CLOSURE             9 (request_kwargs)
+             194 LOAD_CLOSURE             2 (root_id)
+             196 BUILD_TUPLE             10
+             198 LOAD_CONST               4 (<code object gen_step at 0x72ad2a080, file "p115client/tool/attr.py", line 1177>)
+             200 MAKE_FUNCTION            8 (closure)
+             202 STORE_FAST              10 (gen_step)
+
+1203         204 LOAD_GLOBAL             19 (NULL + run_gen_step)
+             214 LOAD_FAST               10 (gen_step)
+             216 LOAD_DEREF               8 (async_)
+             218 CALL                     2
+             226 RETURN_VALUE
+attr get_path.<locals>.gen_step 1177
+               0 COPY_FREE_VARS          10
+
+1177           2 RETURN_GENERATOR
+               4 POP_TOP
+               6 RESUME                   0
+
+1178           8 LOAD_DEREF              11 (root_id)
+              10 POP_JUMP_IF_NONE        47 (to 106)
+
+1179          12 LOAD_DEREF               4 (attr)
+              14 POP_JUMP_IF_FALSE       44 (to 104)
+
+1180          16 LOAD_GLOBAL              1 (NULL + isinstance)
+              26 LOAD_DEREF               4 (attr)
+              28 LOAD_GLOBAL              2 (dict)
+              38 CALL                     2
+              46 POP_JUMP_IF_FALSE       14 (to 76)
+              48 LOAD_GLOBAL              5 (NULL + int)
+              58 LOAD_DEREF               4 (attr)
+              60 LOAD_CONST               1 ('id')
+              62 BINARY_SUBSCR
+              66 CALL                     1
+              74 JUMP_FORWARD            10 (to 96)
+         >>   76 LOAD_GLOBAL              7 (NULL + to_id)
+              86 LOAD_DEREF               4 (attr)
+              88 CALL                     1
+         >>   96 LOAD_DEREF              11 (root_id)
+              98 COMPARE_OP              40 (==)
+             102 POP_JUMP_IF_FALSE        1 (to 106)
+
+1182     >>  104 RETURN_CONST             2 ('')
+
+1183     >>  106 LOAD_GLOBAL              9 (NULL + get_ancestors)
+
+1184         116 LOAD_DEREF               5 (client)
+
+1185         118 LOAD_DEREF               4 (attr)
+
+1183         120 BUILD_TUPLE              2
+
+1186         122 LOAD_DEREF               8 (id_to_dirnode)
+
+1187         124 LOAD_DEREF               6 (ensure_file)
+
+1188         126 LOAD_DEREF               9 (refresh)
+
+1189         128 LOAD_DEREF               2 (app)
+
+1190         130 LOAD_DEREF               3 (async_)
+
+1183         132 LOAD_CONST               3 (('id_to_dirnode', 'ensure_file', 'refresh', 'app', 'async_'))
+             134 BUILD_CONST_KEY_MAP      5
+
+1191         136 LOAD_DEREF              10 (request_kwargs)
+
+1183         138 DICT_MERGE               1
+             140 CALL_FUNCTION_EX         1
+             142 YIELD_VALUE              1
+             144 RESUME                   1
+             146 STORE_FAST               0 (ancestors)
+
+1193         148 LOAD_DEREF              11 (root_id)
+             150 POP_JUMP_IF_NOT_NONE    10 (to 172)
+
+1194         152 LOAD_CONST               4 (<code object <genexpr> at 0x106a974b0, file "p115client/tool/attr.py", line 1194>)
+             154 MAKE_FUNCTION            0
+             156 LOAD_FAST                0 (ancestors)
+             158 GET_ITER
+             160 CALL                     0
+             168 STORE_FAST               1 (parts)
+             170 JUMP_FORWARD            46 (to 264)
+
+1195     >>  172 LOAD_FAST                0 (ancestors)
+             174 LOAD_CONST               5 (0)
+             176 BINARY_SUBSCR
+             180 LOAD_CONST               1 ('id')
+             182 BINARY_SUBSCR
+             186 LOAD_DEREF              11 (root_id)
+             188 COMPARE_OP              40 (==)
+             192 POP_JUMP_IF_FALSE       13 (to 220)
+
+1196         194 LOAD_CONST               6 (<code object <genexpr> at 0x106a975a0, file "p115client/tool/attr.py", line 1196>)
+             196 MAKE_FUNCTION            0
+             198 LOAD_FAST                0 (ancestors)
+             200 LOAD_CONST               7 (1)
+             202 LOAD_CONST               0 (None)
+             204 BINARY_SLICE
+             206 GET_ITER
+             208 CALL                     0
+             216 STORE_FAST               1 (parts)
+             218 JUMP_FORWARD            22 (to 264)
+
+1198     >>  220 LOAD_CONST               8 (<code object <genexpr> at 0x106a97690, file "p115client/tool/attr.py", line 1198>)
+             222 MAKE_FUNCTION            0
+             224 LOAD_GLOBAL             11 (NULL + dropwhile)
+             234 LOAD_CLOSURE            11 (root_id)
+             236 BUILD_TUPLE              1
+             238 LOAD_CONST               9 (<code object <lambda> at 0x101fa6bf0, file "p115client/tool/attr.py", line 1198>)
+             240 MAKE_FUNCTION            8 (closure)
+             242 LOAD_FAST                0 (ancestors)
+             244 CALL                     2
+             252 GET_ITER
+             254 CALL                     0
+             262 STORE_FAST               1 (parts)
+
+1199     >>  264 LOAD_DEREF               7 (escape)
+             266 POP_JUMP_IF_NOT_NONE    17 (to 302)
+
+1200         268 LOAD_CONST              10 ('/')
+             270 LOAD_ATTR               13 (NULL|self + join)
+             290 LOAD_FAST                1 (parts)
+             292 CALL                     1
+             300 RETURN_VALUE
+
+1202     >>  302 LOAD_CONST              10 ('/')
+             304 LOAD_ATTR               13 (NULL|self + join)
+             324 LOAD_GLOBAL             15 (NULL + map)
+             334 LOAD_DEREF               7 (escape)
+             336 LOAD_FAST                1 (parts)
+             338 CALL                     2
+             346 CALL                     1
+             354 RETURN_VALUE
+         >>  356 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             358 RERAISE                  1
+ExceptionTable:
+  6 to 354 -> 356 [0] lasti
+attr get_path.<locals>.gen_step.<locals>.<genexpr> 1194
+1194           0 RETURN_GENERATOR
+               2 POP_TOP
+               4 RESUME                   0
+               6 LOAD_FAST                0 (.0)
+         >>    8 FOR_ITER                 9 (to 30)
+              12 STORE_FAST               1 (a)
+              14 LOAD_FAST                1 (a)
+              16 LOAD_CONST               0 ('name')
+              18 BINARY_SUBSCR
+              22 YIELD_VALUE              1
+              24 RESUME                   1
+              26 POP_TOP
+              28 JUMP_BACKWARD           11 (to 8)
+         >>   30 END_FOR
+              32 RETURN_CONST             1 (None)
+         >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+              36 RERAISE                  1
+ExceptionTable:
+  4 to 32 -> 34 [0] lasti
+attr get_path.<locals>.gen_step.<locals>.<genexpr> 1196
+1196           0 RETURN_GENERATOR
+               2 POP_TOP
+               4 RESUME                   0
+               6 LOAD_FAST                0 (.0)
+         >>    8 FOR_ITER                 9 (to 30)
+              12 STORE_FAST               1 (a)
+              14 LOAD_FAST                1 (a)
+              16 LOAD_CONST               0 ('name')
+              18 BINARY_SUBSCR
+              22 YIELD_VALUE              1
+              24 RESUME                   1
+              26 POP_TOP
+              28 JUMP_BACKWARD           11 (to 8)
+         >>   30 END_FOR
+              32 RETURN_CONST             1 (None)
+         >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+              36 RERAISE                  1
+ExceptionTable:
+  4 to 32 -> 34 [0] lasti
+attr get_path.<locals>.gen_step.<locals>.<genexpr> 1198
+1198           0 RETURN_GENERATOR
+               2 POP_TOP
+               4 RESUME                   0
+               6 LOAD_FAST                0 (.0)
+         >>    8 FOR_ITER                 9 (to 30)
+              12 STORE_FAST               1 (a)
+              14 LOAD_FAST                1 (a)
+              16 LOAD_CONST               0 ('name')
+              18 BINARY_SUBSCR
+              22 YIELD_VALUE              1
+              24 RESUME                   1
+              26 POP_TOP
+              28 JUMP_BACKWARD           11 (to 8)
+         >>   30 END_FOR
+              32 RETURN_CONST             1 (None)
+         >>   34 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+              36 RERAISE                  1
+ExceptionTable:
+  4 to 32 -> 34 [0] lasti
+attr get_path.<locals>.gen_step.<locals>.<lambda> 1198
+               0 COPY_FREE_VARS           1
+
+1198           2 RESUME                   0
+               4 LOAD_FAST                0 (a)
+               6 LOAD_CONST               1 ('parent_id')
+               8 BINARY_SUBSCR
+              12 LOAD_DEREF               1 (root_id)
+              14 COMPARE_OP              55 (!=)
+              18 RETURN_VALUE
+iterdir update_resp_ancestors 244
+244           0 RESUME                   0
+
+250           2 BUILD_LIST               0
+              4 STORE_FAST               3 (ancestors)
+
+251           6 LOAD_FAST                3 (ancestors)
+              8 LOAD_ATTR                0 (append)
+             28 STORE_FAST               4 (add_ancestor)
+
+252          30 LOAD_FAST                1 (id_to_dirnode)
+             32 LOAD_CONST               1 ((Ellipsis, None))
+             34 CONTAINS_OP              1
+             36 STORE_FAST               5 (need_update_id_to_dirnode)
+
+253          38 LOAD_CONST               2 ('path')
+             40 LOAD_FAST                0 (resp)
+             42 CONTAINS_OP              0
+             44 POP_JUMP_IF_FALSE      140 (to 326)
+
+254          46 LOAD_FAST                3 (ancestors)
+             48 LOAD_FAST                0 (resp)
+             50 LOAD_CONST               3 ('ancestors')
+             52 STORE_SUBSCR
+
+255          56 LOAD_CONST               4 (1)
+             58 LOAD_GLOBAL              3 (NULL + int)
+             68 LOAD_FAST                0 (resp)
+             70 LOAD_CONST               2 ('path')
+             72 BINARY_SUBSCR
+             76 LOAD_CONST               5 (0)
+             78 BINARY_SUBSCR
+             82 LOAD_CONST               6 ('cid')
+             84 BINARY_SUBSCR
+             88 CALL                     1
+             96 LOAD_CONST               5 (0)
+             98 COMPARE_OP              68 (>)
+            102 BINARY_OP               10 (-)
+            106 STORE_FAST               6 (start_idx)
+
+256         108 LOAD_FAST                6 (start_idx)
+            110 POP_JUMP_IF_FALSE       12 (to 136)
+
+257         112 PUSH_NULL
+            114 LOAD_FAST                4 (add_ancestor)
+            116 LOAD_CONST               5 (0)
+            118 LOAD_CONST               5 (0)
+            120 LOAD_CONST               7 ('')
+            122 LOAD_CONST               8 (('id', 'parent_id', 'name'))
+            124 BUILD_CONST_KEY_MAP      3
+            126 CALL                     1
+            134 POP_TOP
+
+258     >>  136 LOAD_FAST                0 (resp)
+            138 LOAD_CONST               2 ('path')
+            140 BINARY_SUBSCR
+            144 LOAD_FAST                6 (start_idx)
+            146 LOAD_CONST               0 (None)
+            148 BINARY_SLICE
+            150 GET_ITER
+        >>  152 FOR_ITER                82 (to 320)
+            156 STORE_FAST               7 (info)
+
+259         158 LOAD_GLOBAL              3 (NULL + int)
+            168 LOAD_FAST                7 (info)
+            170 LOAD_CONST               6 ('cid')
+            172 BINARY_SUBSCR
+            176 CALL                     1
+            184 LOAD_FAST                7 (info)
+            186 LOAD_CONST               9 ('name')
+            188 BINARY_SUBSCR
+            192 LOAD_GLOBAL              3 (NULL + int)
+            202 LOAD_FAST                7 (info)
+            204 LOAD_CONST              10 ('pid')
+            206 BINARY_SUBSCR
+            210 CALL                     1
+            218 STORE_FAST              10 (pid)
+            220 STORE_FAST               9 (name)
+            222 STORE_FAST               8 (id)
+
+260         224 LOAD_GLOBAL              5 (NULL + unescape_115_charref)
+            234 LOAD_FAST                9 (name)
+            236 CALL                     1
+            244 STORE_FAST               9 (name)
+
+261         246 PUSH_NULL
+            248 LOAD_FAST                4 (add_ancestor)
+            250 LOAD_FAST                8 (id)
+            252 LOAD_FAST               10 (pid)
+            254 LOAD_FAST                9 (name)
+            256 LOAD_CONST               8 (('id', 'parent_id', 'name'))
+            258 BUILD_CONST_KEY_MAP      3
+            260 CALL                     1
+            268 POP_TOP
+
+262         270 LOAD_FAST                5 (need_update_id_to_dirnode)
+            272 POP_JUMP_IF_TRUE         1 (to 276)
+            274 JUMP_BACKWARD           62 (to 152)
+
+263     >>  276 LOAD_FAST                9 (name)
+            278 LOAD_FAST               10 (pid)
+            280 BUILD_TUPLE              2
+            282 LOAD_GLOBAL              7 (NULL + cast)
+            292 LOAD_GLOBAL              8 (MutableMapping)
+            302 LOAD_FAST                1 (id_to_dirnode)
+            304 CALL                     2
+            312 LOAD_FAST                8 (id)
+            314 STORE_SUBSCR
+            318 JUMP_BACKWARD           84 (to 152)
+
+258     >>  320 END_FOR
+
+301         322 LOAD_FAST                0 (resp)
+            324 RETURN_VALUE
+
+264     >>  326 LOAD_CONST              11 ('offset')
+            328 LOAD_FAST                0 (resp)
+            330 CONTAINS_OP              0
+            332 POP_JUMP_IF_FALSE        2 (to 338)
+
+265         334 LOAD_FAST                0 (resp)
+            336 RETURN_VALUE
+
+267     >>  338 LOAD_FAST                0 (resp)
+            340 POP_JUMP_IF_FALSE       20 (to 382)
+            342 LOAD_CONST              12 ('paths')
+            344 LOAD_FAST                0 (resp)
+            346 CONTAINS_OP              1
+            348 POP_JUMP_IF_FALSE       16 (to 382)
+
+268         350 LOAD_GLOBAL             11 (NULL + check_response)
+            360 LOAD_FAST                0 (resp)
+            362 CALL                     1
+            370 POP_TOP
+
+269         372 LOAD_FAST                0 (resp)
+            374 LOAD_CONST              13 ('data')
+            376 BINARY_SUBSCR
+            380 STORE_FAST               0 (resp)
+
+270     >>  382 LOAD_FAST                0 (resp)
+            384 POP_JUMP_IF_TRUE         6 (to 398)
+
+271         386 LOAD_FAST                2 (error)
+            388 POP_JUMP_IF_NOT_NONE     2 (to 394)
+
+272         390 LOAD_FAST                0 (resp)
+            392 RETURN_VALUE
+
+273     >>  394 LOAD_FAST                2 (error)
+            396 RAISE_VARARGS            1
+
+274     >>  398 LOAD_CONST              14 ('file_id')
+            400 LOAD_FAST                0 (resp)
+            402 CONTAINS_OP              0
+            404 POP_JUMP_IF_FALSE       18 (to 442)
+
+275         406 LOAD_GLOBAL              3 (NULL + int)
+            416 LOAD_FAST                0 (resp)
+            418 LOAD_CONST              14 ('file_id')
+            420 BINARY_SUBSCR
+            424 CALL                     1
+            432 LOAD_FAST                0 (resp)
+            434 LOAD_CONST              14 ('file_id')
+            436 STORE_SUBSCR
+            440 JUMP_FORWARD            17 (to 476)
+
+277     >>  442 LOAD_GLOBAL             13 (NULL + to_id)
+            452 LOAD_FAST                0 (resp)
+            454 LOAD_CONST              15 ('pick_code')
+            456 BINARY_SUBSCR
+            460 CALL                     1
+            468 LOAD_FAST                0 (resp)
+            470 LOAD_CONST              14 ('file_id')
+            472 STORE_SUBSCR
+
+278     >>  476 LOAD_FAST                3 (ancestors)
+            478 LOAD_FAST                0 (resp)
+            480 LOAD_CONST               3 ('ancestors')
+            482 STORE_SUBSCR
+
+279         486 LOAD_FAST                0 (resp)
+            488 LOAD_CONST              12 ('paths')
+            490 BINARY_SUBSCR
+            494 LOAD_CONST               5 (0)
+            496 BINARY_SUBSCR
+            500 STORE_FAST               7 (info)
+
+280         502 LOAD_GLOBAL              3 (NULL + int)
+            512 LOAD_FAST                7 (info)
+            514 LOAD_CONST              14 ('file_id')
+            516 BINARY_SUBSCR
+            520 CALL                     1
+            528 STORE_FAST              10 (pid)
+
+281         530 LOAD_FAST               10 (pid)
+            532 POP_JUMP_IF_FALSE       55 (to 644)
+
+282         534 LOAD_GLOBAL              5 (NULL + unescape_115_charref)
+            544 LOAD_FAST                7 (info)
+            546 LOAD_CONST              16 ('file_name')
+            548 BINARY_SUBSCR
+            552 CALL                     1
+            560 STORE_FAST               9 (name)
+
+283         562 LOAD_FAST                3 (ancestors)
+            564 LOAD_ATTR                1 (NULL|self + append)
+            584 LOAD_FAST               10 (pid)
+            586 LOAD_FAST                9 (name)
+            588 LOAD_CONST              17 (('id', 'name'))
+            590 BUILD_CONST_KEY_MAP      2
+            592 CALL                     1
+            600 POP_TOP
+
+284         602 LOAD_GLOBAL             15 (NULL + warn)
+            612 LOAD_CONST              18 ('found a dangling node: ')
+            614 LOAD_FAST                0 (resp)
+            616 FORMAT_VALUE             2 (repr)
+            618 BUILD_STRING             2
+            620 LOAD_GLOBAL             16 (P115Warning)
+            630 KW_NAMES                19 (('category',))
+            632 CALL                     2
+            640 POP_TOP
+            642 JUMP_FORWARD            21 (to 686)
+
+286     >>  644 LOAD_FAST                3 (ancestors)
+            646 LOAD_ATTR                1 (NULL|self + append)
+            666 LOAD_CONST               5 (0)
+            668 LOAD_CONST               5 (0)
+            670 LOAD_CONST               7 ('')
+            672 LOAD_CONST               8 (('id', 'parent_id', 'name'))
+            674 BUILD_CONST_KEY_MAP      3
+            676 CALL                     1
+            684 POP_TOP
+
+287     >>  686 LOAD_FAST                0 (resp)
+            688 LOAD_CONST              12 ('paths')
+            690 BINARY_SUBSCR
+            694 LOAD_CONST               4 (1)
+            696 LOAD_CONST               0 (None)
+            698 BINARY_SLICE
+            700 GET_ITER
+        >>  702 FOR_ITER                67 (to 840)
+            706 STORE_FAST               7 (info)
+
+288         708 LOAD_GLOBAL              3 (NULL + int)
+            718 LOAD_FAST                7 (info)
+            720 LOAD_CONST              14 ('file_id')
+            722 BINARY_SUBSCR
+            726 CALL                     1
+            734 STORE_FAST               8 (id)
+
+289         736 LOAD_GLOBAL              5 (NULL + unescape_115_charref)
+            746 LOAD_FAST                7 (info)
+            748 LOAD_CONST              16 ('file_name')
+            750 BINARY_SUBSCR
+            754 CALL                     1
+            762 STORE_FAST               9 (name)
+
+290         764 PUSH_NULL
+            766 LOAD_FAST                4 (add_ancestor)
+            768 LOAD_FAST                8 (id)
+            770 LOAD_FAST               10 (pid)
+            772 LOAD_FAST                9 (name)
+            774 LOAD_CONST               8 (('id', 'parent_id', 'name'))
+            776 BUILD_CONST_KEY_MAP      3
+            778 CALL                     1
+            786 POP_TOP
+
+291         788 LOAD_FAST                5 (need_update_id_to_dirnode)
+            790 POP_JUMP_IF_FALSE       21 (to 834)
+
+292         792 LOAD_FAST                9 (name)
+            794 LOAD_FAST               10 (pid)
+            796 BUILD_TUPLE              2
+            798 LOAD_GLOBAL              7 (NULL + cast)
+            808 LOAD_GLOBAL              8 (MutableMapping)
+            818 LOAD_FAST                1 (id_to_dirnode)
+            820 CALL                     2
+            828 LOAD_FAST                8 (id)
+            830 STORE_SUBSCR
+
+293     >>  834 LOAD_FAST                8 (id)
+            836 STORE_FAST              10 (pid)
+            838 JUMP_BACKWARD           69 (to 702)
+
+287     >>  840 END_FOR
+
+294         842 LOAD_FAST               10 (pid)
+            844 LOAD_FAST                0 (resp)
+            846 LOAD_CONST              20 ('parent_id')
+            848 STORE_SUBSCR
+
+295         852 LOAD_FAST                0 (resp)
+            854 LOAD_CONST              14 ('file_id')
+            856 BINARY_SUBSCR
+            860 COPY                     1
+            862 STORE_FAST               8 (id)
+            864 LOAD_FAST                0 (resp)
+            866 LOAD_CONST              21 ('id')
+            868 STORE_SUBSCR
+
+296         872 LOAD_GLOBAL              5 (NULL + unescape_115_charref)
+            882 LOAD_FAST                0 (resp)
+            884 LOAD_CONST              16 ('file_name')
+            886 BINARY_SUBSCR
+            890 CALL                     1
+            898 COPY                     1
+            900 STORE_FAST               9 (name)
+            902 LOAD_FAST                0 (resp)
+            904 LOAD_CONST               9 ('name')
+            906 STORE_SUBSCR
+
+297         910 LOAD_FAST                0 (resp)
+            912 LOAD_CONST              22 ('sha1')
+            914 BINARY_SUBSCR
+            918 UNARY_NOT
+            920 COPY                     1
+            922 STORE_FAST              11 (is_dir)
+            924 LOAD_FAST                0 (resp)
+            926 LOAD_CONST              23 ('is_dir')
+            928 STORE_SUBSCR
+
+298         932 PUSH_NULL
+            934 LOAD_FAST                4 (add_ancestor)
+            936 LOAD_FAST                8 (id)
+            938 LOAD_FAST               10 (pid)
+            940 LOAD_FAST                9 (name)
+            942 LOAD_CONST               8 (('id', 'parent_id', 'name'))
+            944 BUILD_CONST_KEY_MAP      3
+            946 CALL                     1
+            954 POP_TOP
+
+299         956 LOAD_FAST                5 (need_update_id_to_dirnode)
+            958 POP_JUMP_IF_FALSE       23 (to 1006)
+            960 LOAD_FAST               11 (is_dir)
+            962 POP_JUMP_IF_FALSE       21 (to 1006)
+
+300         964 LOAD_FAST                9 (name)
+            966 LOAD_FAST               10 (pid)
+            968 BUILD_TUPLE              2
+            970 LOAD_GLOBAL              7 (NULL + cast)
+            980 LOAD_GLOBAL              8 (MutableMapping)
+            990 LOAD_FAST                1 (id_to_dirnode)
+            992 CALL                     2
+           1000 LOAD_FAST                8 (id)
+           1002 STORE_SUBSCR
+
+301     >> 1006 LOAD_FAST                0 (resp)
+           1008 RETURN_VALUE

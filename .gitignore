@@ -33,3 +33,8 @@ dist/*.tar.gz
 # 环境与密钥
 .env
 .env.*
+
+# Offline research environments stay local; source pins and oracle outputs are committed
+.trellis/**/research/protocol-vectors/charset-native/
+.trellis/**/research/protocol-vectors/runtime/
+**/__pycache__/

@@ -1,0 +1,731 @@
+QUALNAME fs_files SOURCE 32
+ 32           0 RESUME                   0
+
+ 44           2 RETURN_CONST             0 (None)
+QUALNAME fs_files SOURCE 45
+ 45           0 RESUME                   0
+
+ 57           2 RETURN_CONST             0 (None)
+QUALNAME fs_files SOURCE 58
+              0 MAKE_CELL                1 (payload)
+              2 MAKE_CELL                5 (async_)
+              4 MAKE_CELL                6 (request_kwargs)
+              6 MAKE_CELL                8 (cid)
+              8 MAKE_CELL                9 (fs_files)
+
+ 58          10 RESUME                   0
+
+ 81          12 LOAD_GLOBAL              1 (NULL + isinstance)
+             22 LOAD_FAST                0 (client)
+             24 LOAD_GLOBAL              2 (str)
+             34 LOAD_GLOBAL              4 (PathLike)
+             44 BUILD_TUPLE              2
+             46 CALL                     2
+             54 POP_JUMP_IF_FALSE       11 (to 78)
+
+ 82          56 LOAD_GLOBAL              7 (NULL + P115Client)
+             66 LOAD_FAST                0 (client)
+             68 CALL                     1
+             76 STORE_FAST               0 (client)
+
+ 83     >>   78 LOAD_FAST                2 (page_size)
+             80 LOAD_CONST               1 (0)
+             82 COMPARE_OP              26 (<=)
+             86 POP_JUMP_IF_FALSE        7 (to 102)
+
+ 84          88 LOAD_FAST                4 (use_media_api)
+             90 POP_JUMP_IF_FALSE        3 (to 98)
+
+ 85          92 LOAD_CONST               2 (10000)
+             94 STORE_FAST               2 (page_size)
+             96 JUMP_FORWARD             2 (to 102)
+
+ 87     >>   98 LOAD_CONST               3 (7000)
+            100 STORE_FAST               2 (page_size)
+
+ 88     >>  102 LOAD_GLOBAL              1 (NULL + isinstance)
+            112 LOAD_FAST                0 (client)
+            114 LOAD_GLOBAL              6 (P115Client)
+            124 CALL                     2
+            132 POP_JUMP_IF_FALSE        5 (to 144)
+            134 LOAD_FAST                3 (app)
+            136 LOAD_CONST               4 ('open')
+            138 COMPARE_OP              40 (==)
+            142 POP_JUMP_IF_FALSE       25 (to 194)
+
+ 89     >>  144 LOAD_GLOBAL              9 (NULL + min)
+            154 LOAD_FAST                2 (page_size)
+            156 LOAD_CONST               5 (1150)
+            158 CALL                     2
+            166 STORE_FAST               2 (page_size)
+
+ 90         168 LOAD_FAST                0 (client)
+            170 LOAD_ATTR               10 (fs_files_open)
+            190 STORE_DEREF              9 (fs_files)
+            192 JUMP_FORWARD           162 (to 518)
+
+ 91     >>  194 LOAD_FAST                3 (app)
+            196 LOAD_CONST               6 (('', 'web', 'desktop', 'chrome'))
+            198 CONTAINS_OP              0
+            200 POP_JUMP_IF_FALSE       74 (to 350)
+
+ 92         202 LOAD_FAST                4 (use_media_api)
+            204 POP_JUMP_IF_FALSE       25 (to 256)
+
+ 93         206 LOAD_GLOBAL              9 (NULL + min)
+            216 LOAD_FAST                2 (page_size)
+            218 LOAD_CONST               7 (500)
+            220 CALL                     2
+            228 STORE_FAST               2 (page_size)
+
+ 94         230 LOAD_FAST                0 (client)
+            232 LOAD_ATTR               12 (fs_files_media)
+            252 STORE_DEREF              9 (fs_files)
+            254 JUMP_FORWARD            24 (to 304)
+
+ 96     >>  256 LOAD_GLOBAL              9 (NULL + min)
+            266 LOAD_FAST                2 (page_size)
+            268 LOAD_CONST               5 (1150)
+            270 CALL                     2
+            278 STORE_FAST               2 (page_size)
+
+ 97         280 LOAD_FAST                0 (client)
+            282 LOAD_ATTR               14 (fs_files)
+            302 STORE_DEREF              9 (fs_files)
+
+ 98     >>  304 LOAD_DEREF               6 (request_kwargs)
+            306 LOAD_ATTR               17 (NULL|self + setdefault)
+            326 LOAD_CONST               8 ('base_url')
+            328 LOAD_GLOBAL             18 (get_webapi_origin)
+            338 CALL                     2
+            346 POP_TOP
+            348 JUMP_FORWARD            84 (to 518)
+
+ 99     >>  350 LOAD_FAST                3 (app)
+            352 LOAD_CONST               9 ('aps')
+            354 COMPARE_OP              40 (==)
+            358 POP_JUMP_IF_FALSE       25 (to 410)
+
+100         360 LOAD_GLOBAL              9 (NULL + min)
+            370 LOAD_FAST                2 (page_size)
+            372 LOAD_CONST              10 (1200)
+            374 CALL                     2
+            382 STORE_FAST               2 (page_size)
+
+101         384 LOAD_FAST                0 (client)
+            386 LOAD_ATTR               20 (fs_files_aps)
+            406 STORE_DEREF              9 (fs_files)
+            408 JUMP_FORWARD            54 (to 518)
+
+103     >>  410 LOAD_FAST                4 (use_media_api)
+            412 POP_JUMP_IF_FALSE       13 (to 440)
+
+104         414 LOAD_FAST                0 (client)
+            416 LOAD_ATTR               22 (fs_files_media_app)
+            436 STORE_DEREF              9 (fs_files)
+            438 JUMP_FORWARD            12 (to 464)
+
+106     >>  440 LOAD_FAST                0 (client)
+            442 LOAD_ATTR               24 (fs_files_app)
+            462 STORE_DEREF              9 (fs_files)
+
+107     >>  464 LOAD_FAST                3 (app)
+            466 LOAD_DEREF               6 (request_kwargs)
+            468 LOAD_CONST              11 ('app')
+            470 STORE_SUBSCR
+
+108         474 LOAD_DEREF               6 (request_kwargs)
+            476 LOAD_ATTR               17 (NULL|self + setdefault)
+            496 LOAD_CONST               8 ('base_url')
+            498 LOAD_GLOBAL             26 (get_proapi_origin)
+            508 CALL                     2
+            516 POP_TOP
+
+109     >>  518 LOAD_GLOBAL              1 (NULL + isinstance)
+            528 LOAD_DEREF               1 (payload)
+            530 LOAD_GLOBAL             28 (int)
+            540 LOAD_GLOBAL              2 (str)
+            550 BUILD_TUPLE              2
+            552 CALL                     2
+            560 POP_JUMP_IF_FALSE       19 (to 600)
+
+110         562 LOAD_CONST              12 ('cid')
+            564 LOAD_FAST                0 (client)
+            566 LOAD_ATTR               31 (NULL|self + to_id)
+            586 LOAD_DEREF               1 (payload)
+            588 CALL                     1
+            596 BUILD_MAP                1
+            598 STORE_DEREF              1 (payload)
+
+112     >>  600 LOAD_CONST              13 (1)
+            602 LOAD_CONST               1 (0)
+            604 LOAD_CONST              13 (1)
+            606 LOAD_CONST              13 (1)
+            608 LOAD_CONST              14 ('user_ptime')
+
+113         610 LOAD_CONST               1 (0)
+            612 LOAD_FAST                2 (page_size)
+            614 LOAD_CONST              13 (1)
+
+111         616 LOAD_CONST              15 (('asc', 'cid', 'cur', 'fc_mix', 'o', 'offset', 'limit', 'show_dir'))
+            618 BUILD_CONST_KEY_MAP      8
+
+113         620 LOAD_DEREF               1 (payload)
+
+111         622 DICT_UPDATE              1
+            624 STORE_DEREF              1 (payload)
+
+115         626 LOAD_GLOBAL             29 (NULL + int)
+            636 LOAD_DEREF               1 (payload)
+            638 LOAD_CONST              12 ('cid')
+            640 BINARY_SUBSCR
+            644 CALL                     1
+            652 STORE_DEREF              8 (cid)
+
+116         654 LOAD_CLOSURE             5 (async_)
+            656 LOAD_CLOSURE             8 (cid)
+            658 LOAD_CLOSURE             9 (fs_files)
+            660 LOAD_CLOSURE             1 (payload)
+            662 LOAD_CLOSURE             6 (request_kwargs)
+            664 BUILD_TUPLE              5
+            666 LOAD_CONST              16 (<code object gen_step at 0x108294940, file "p115client/tool/fs_files.py", line 116>)
+            668 MAKE_FUNCTION            8 (closure)
+            670 STORE_FAST               7 (gen_step)
+
+123         672 LOAD_GLOBAL             33 (NULL + run_gen_step)
+            682 LOAD_FAST                7 (gen_step)
+            684 LOAD_DEREF               5 (async_)
+            686 CALL                     2
+            694 RETURN_VALUE
+QUALNAME fs_files.<locals>.gen_step SOURCE 116
+              0 COPY_FREE_VARS           5
+
+116           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+117           8 PUSH_NULL
+             10 LOAD_DEREF               3 (fs_files)
+             12 LOAD_DEREF               4 (payload)
+             14 BUILD_TUPLE              1
+             16 LOAD_CONST               1 ('async_')
+             18 LOAD_DEREF               1 (async_)
+             20 BUILD_MAP                1
+             22 LOAD_DEREF               5 (request_kwargs)
+             24 DICT_MERGE               1
+             26 CALL_FUNCTION_EX         1
+             28 YIELD_VALUE              1
+             30 RESUME                   1
+             32 STORE_FAST               0 (resp)
+
+118          34 LOAD_GLOBAL              1 (NULL + check_response)
+             44 LOAD_FAST                0 (resp)
+             46 CALL                     1
+             54 POP_TOP
+
+119          56 LOAD_DEREF               2 (cid)
+             58 POP_JUMP_IF_FALSE       43 (to 146)
+             60 LOAD_GLOBAL              3 (NULL + int)
+             70 LOAD_FAST                0 (resp)
+             72 LOAD_CONST               2 ('cid')
+             74 BINARY_SUBSCR
+             78 CALL                     1
+             86 LOAD_DEREF               2 (cid)
+             88 COMPARE_OP              55 (!=)
+             92 POP_JUMP_IF_FALSE       26 (to 146)
+
+120          94 LOAD_GLOBAL              5 (NULL + throw)
+            104 LOAD_GLOBAL              6 (errno)
+            114 LOAD_ATTR                8 (ENOENT)
+            134 LOAD_DEREF               2 (cid)
+            136 CALL                     2
+            144 POP_TOP
+
+121     >>  146 LOAD_GLOBAL             11 (NULL + len)
+            156 LOAD_FAST                0 (resp)
+            158 LOAD_CONST               3 ('data')
+            160 BINARY_SUBSCR
+            164 CALL                     1
+            172 LOAD_CONST               4 (0)
+            174 COMPARE_OP              68 (>)
+            178 COPY                     1
+            180 POP_JUMP_IF_FALSE       35 (to 252)
+            182 POP_TOP
+            184 LOAD_DEREF               4 (payload)
+            186 LOAD_CONST               5 ('offset')
+            188 BINARY_SUBSCR
+            192 LOAD_GLOBAL             11 (NULL + len)
+            202 LOAD_FAST                0 (resp)
+            204 LOAD_CONST               3 ('data')
+            206 BINARY_SUBSCR
+            210 CALL                     1
+            218 BINARY_OP                0 (+)
+            222 LOAD_GLOBAL              3 (NULL + int)
+            232 LOAD_FAST                0 (resp)
+            234 LOAD_CONST               6 ('count')
+            236 BINARY_SUBSCR
+            240 CALL                     1
+            248 COMPARE_OP               2 (<)
+        >>  252 LOAD_FAST                0 (resp)
+            254 LOAD_CONST               7 ('has_next_page')
+            256 STORE_SUBSCR
+
+122         260 LOAD_FAST                0 (resp)
+            262 RETURN_VALUE
+        >>  264 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            266 RERAISE                  1
+ExceptionTable:
+  6 to 262 -> 264 [0] lasti
+QUALNAME fs_files_iter SOURCE 126
+126           0 RESUME                   0
+
+142           2 RETURN_CONST             0 (None)
+QUALNAME fs_files_iter SOURCE 143
+143           0 RESUME                   0
+
+159           2 RETURN_CONST             0 (None)
+QUALNAME fs_files_iter SOURCE 160
+              0 MAKE_CELL                4 (app)
+              2 MAKE_CELL                6 (raise_for_changed_count)
+              4 MAKE_CELL                9 (async_)
+              6 MAKE_CELL               10 (request_kwargs)
+              8 MAKE_CELL               12 (cid)
+             10 MAKE_CELL               13 (count)
+             12 MAKE_CELL               14 (fs_files)
+
+160          14 RESUME                   0
+
+191          16 LOAD_GLOBAL              1 (NULL + isinstance)
+             26 LOAD_FAST                0 (client)
+             28 LOAD_GLOBAL              2 (str)
+             38 LOAD_GLOBAL              4 (PathLike)
+             48 BUILD_TUPLE              2
+             50 CALL                     2
+             58 POP_JUMP_IF_FALSE       11 (to 82)
+
+192          60 LOAD_GLOBAL              7 (NULL + P115Client)
+             70 LOAD_FAST                0 (client)
+             72 CALL                     1
+             80 STORE_FAST               0 (client)
+
+193     >>   82 LOAD_FAST                2 (page_size)
+             84 LOAD_CONST               1 (0)
+             86 COMPARE_OP              26 (<=)
+             90 POP_JUMP_IF_FALSE        7 (to 106)
+
+194          92 LOAD_FAST                5 (use_media_api)
+             94 POP_JUMP_IF_FALSE        3 (to 102)
+
+195          96 LOAD_CONST               2 (10000)
+             98 STORE_FAST               2 (page_size)
+            100 JUMP_FORWARD             2 (to 106)
+
+197     >>  102 LOAD_CONST               3 (7000)
+            104 STORE_FAST               2 (page_size)
+
+199     >>  106 LOAD_GLOBAL              1 (NULL + isinstance)
+            116 LOAD_FAST                0 (client)
+            118 LOAD_GLOBAL              6 (P115Client)
+            128 CALL                     2
+            136 POP_JUMP_IF_FALSE        5 (to 148)
+            138 LOAD_DEREF               4 (app)
+            140 LOAD_CONST               4 ('open')
+            142 COMPARE_OP              40 (==)
+            146 POP_JUMP_IF_FALSE       25 (to 198)
+
+200     >>  148 LOAD_GLOBAL              9 (NULL + min)
+            158 LOAD_FAST                2 (page_size)
+            160 LOAD_CONST               5 (1150)
+            162 CALL                     2
+            170 STORE_FAST               2 (page_size)
+
+201         172 LOAD_FAST                0 (client)
+            174 LOAD_ATTR               10 (fs_files_open)
+            194 STORE_DEREF             14 (fs_files)
+            196 JUMP_FORWARD           162 (to 522)
+
+202     >>  198 LOAD_DEREF               4 (app)
+            200 LOAD_CONST               6 (('', 'web', 'desktop', 'chrome'))
+            202 CONTAINS_OP              0
+            204 POP_JUMP_IF_FALSE       74 (to 354)
+
+203         206 LOAD_FAST                5 (use_media_api)
+            208 POP_JUMP_IF_FALSE       25 (to 260)
+
+204         210 LOAD_GLOBAL              9 (NULL + min)
+            220 LOAD_FAST                2 (page_size)
+            222 LOAD_CONST               7 (500)
+            224 CALL                     2
+            232 STORE_FAST               2 (page_size)
+
+205         234 LOAD_FAST                0 (client)
+            236 LOAD_ATTR               12 (fs_files_media)
+            256 STORE_DEREF             14 (fs_files)
+            258 JUMP_FORWARD            24 (to 308)
+
+207     >>  260 LOAD_GLOBAL              9 (NULL + min)
+            270 LOAD_FAST                2 (page_size)
+            272 LOAD_CONST               5 (1150)
+            274 CALL                     2
+            282 STORE_FAST               2 (page_size)
+
+208         284 LOAD_FAST                0 (client)
+            286 LOAD_ATTR               14 (fs_files)
+            306 STORE_DEREF             14 (fs_files)
+
+209     >>  308 LOAD_DEREF              10 (request_kwargs)
+            310 LOAD_ATTR               17 (NULL|self + setdefault)
+            330 LOAD_CONST               8 ('base_url')
+            332 LOAD_GLOBAL             18 (get_webapi_origin)
+            342 CALL                     2
+            350 POP_TOP
+            352 JUMP_FORWARD            84 (to 522)
+
+210     >>  354 LOAD_DEREF               4 (app)
+            356 LOAD_CONST               9 ('aps')
+            358 COMPARE_OP              40 (==)
+            362 POP_JUMP_IF_FALSE       25 (to 414)
+
+211         364 LOAD_GLOBAL              9 (NULL + min)
+            374 LOAD_FAST                2 (page_size)
+            376 LOAD_CONST              10 (1200)
+            378 CALL                     2
+            386 STORE_FAST               2 (page_size)
+
+212         388 LOAD_FAST                0 (client)
+            390 LOAD_ATTR               20 (fs_files_aps)
+            410 STORE_DEREF             14 (fs_files)
+            412 JUMP_FORWARD            54 (to 522)
+
+214     >>  414 LOAD_FAST                5 (use_media_api)
+            416 POP_JUMP_IF_FALSE       13 (to 444)
+
+215         418 LOAD_FAST                0 (client)
+            420 LOAD_ATTR               22 (fs_files_media_app)
+            440 STORE_DEREF             14 (fs_files)
+            442 JUMP_FORWARD            12 (to 468)
+
+217     >>  444 LOAD_FAST                0 (client)
+            446 LOAD_ATTR               24 (fs_files_app)
+            466 STORE_DEREF             14 (fs_files)
+
+218     >>  468 LOAD_DEREF               4 (app)
+            470 LOAD_DEREF              10 (request_kwargs)
+            472 LOAD_CONST              11 ('app')
+            474 STORE_SUBSCR
+
+219         478 LOAD_DEREF              10 (request_kwargs)
+            480 LOAD_ATTR               17 (NULL|self + setdefault)
+            500 LOAD_CONST               8 ('base_url')
+            502 LOAD_GLOBAL             26 (get_proapi_origin)
+            512 CALL                     2
+            520 POP_TOP
+
+220     >>  522 LOAD_FAST                7 (cooldown)
+            524 POP_JUMP_IF_NOT_NONE    10 (to 546)
+
+221         526 LOAD_FAST                8 (max_workers)
+            528 LOAD_CONST               1 (0)
+            530 COMPARE_OP              40 (==)
+            534 POP_JUMP_IF_FALSE        3 (to 542)
+
+222         536 LOAD_CONST               1 (0)
+            538 STORE_FAST               7 (cooldown)
+            540 JUMP_FORWARD             2 (to 546)
+
+224     >>  542 LOAD_CONST              12 (0.5)
+            544 STORE_FAST               7 (cooldown)
+
+225     >>  546 LOAD_GLOBAL              1 (NULL + isinstance)
+            556 LOAD_FAST                1 (payload)
+            558 LOAD_GLOBAL             28 (int)
+            568 LOAD_GLOBAL              2 (str)
+            578 BUILD_TUPLE              2
+            580 CALL                     2
+            588 POP_JUMP_IF_FALSE       19 (to 628)
+
+226         590 LOAD_CONST              13 ('cid')
+            592 LOAD_FAST                0 (client)
+            594 LOAD_ATTR               31 (NULL|self + to_id)
+            614 LOAD_FAST                1 (payload)
+            616 CALL                     1
+            624 BUILD_MAP                1
+            626 STORE_FAST               1 (payload)
+
+228     >>  628 LOAD_CONST              14 (1)
+            630 LOAD_CONST               1 (0)
+            632 LOAD_CONST              14 (1)
+            634 LOAD_CONST              14 (1)
+            636 LOAD_CONST              15 ('user_ptime')
+
+229         638 LOAD_CONST              14 (1)
+
+227         640 LOAD_CONST              16 (('asc', 'cid', 'cur', 'fc_mix', 'o', 'show_dir'))
+            642 BUILD_CONST_KEY_MAP      6
+
+229         644 LOAD_FAST                1 (payload)
+
+227         646 DICT_UPDATE              1
+            648 STORE_FAST               1 (payload)
+
+231         650 LOAD_GLOBAL             29 (NULL + int)
+            660 LOAD_FAST                1 (payload)
+            662 LOAD_CONST              13 ('cid')
+            664 BINARY_SUBSCR
+            668 CALL                     1
+            676 STORE_DEREF             12 (cid)
+
+232         678 LOAD_DEREF               9 (async_)
+            680 POP_JUMP_IF_FALSE        9 (to 700)
+            682 LOAD_FAST                8 (max_workers)
+            684 POP_JUMP_IF_NONE         5 (to 696)
+            686 LOAD_FAST                8 (max_workers)
+            688 LOAD_CONST               1 (0)
+            690 COMPARE_OP               2 (<)
+            694 POP_JUMP_IF_FALSE        2 (to 700)
+
+233     >>  696 LOAD_CONST              17 (64)
+            698 STORE_FAST               8 (max_workers)
+
+234     >>  700 LOAD_CONST              18 (-1)
+            702 STORE_DEREF             13 (count)
+
+235         704 LOAD_GLOBAL             33 (NULL + as_gen_step)
+            714 LOAD_DEREF               9 (async_)
+            716 KW_NAMES                19 (('async_',))
+            718 CALL                     1
+
+236         726 LOAD_CONST              20 ('payload')
+            728 LOAD_GLOBAL             34 (dict)
+            738 BUILD_TUPLE              2
+            740 LOAD_CLOSURE             4 (app)
+            742 LOAD_CLOSURE             9 (async_)
+            744 LOAD_CLOSURE            12 (cid)
+            746 LOAD_CLOSURE            13 (count)
+            748 LOAD_CLOSURE            14 (fs_files)
+            750 LOAD_CLOSURE             6 (raise_for_changed_count)
+            752 LOAD_CLOSURE            10 (request_kwargs)
+            754 BUILD_TUPLE              7
+            756 LOAD_CONST              21 (<code object call at 0x9ed189500, file "p115client/tool/fs_files.py", line 235>)
+            758 MAKE_FUNCTION           12 (annotations, closure)
+
+235         760 CALL                     0
+
+236         768 STORE_FAST              11 (call)
+
+258         770 LOAD_GLOBAL             37 (NULL + iter_offset)
+
+259         780 LOAD_FAST               11 (call)
+
+260         782 LOAD_FAST                1 (payload)
+
+261         784 LOAD_CONST              22 (<code object <lambda> at 0x1082dcd40, file "p115client/tool/fs_files.py", line 261>)
+            786 MAKE_FUNCTION            0
+
+262         788 LOAD_CONST              23 (<code object <lambda> at 0x1082b1110, file "p115client/tool/fs_files.py", line 262>)
+            790 MAKE_FUNCTION            0
+
+263         792 LOAD_FAST                2 (page_size)
+
+264         794 LOAD_FAST                3 (first_page_size)
+
+265         796 LOAD_FAST                7 (cooldown)
+
+266         798 LOAD_FAST                8 (max_workers)
+
+267         800 LOAD_DEREF               9 (async_)
+
+258         802 KW_NAMES                24 (('check_for_stop', 'retry_for_exception', 'page_size', 'first_page_size', 'cooldown', 'max_workers', 'async_'))
+            804 CALL                     9
+            812 RETURN_VALUE
+QUALNAME fs_files_iter.<locals>.call SOURCE 235
+              0 COPY_FREE_VARS           7
+
+235           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+238           8 PUSH_NULL
+             10 LOAD_DEREF               8 (fs_files)
+             12 LOAD_FAST                0 (payload)
+             14 BUILD_TUPLE              1
+             16 LOAD_CONST               1 ('async_')
+             18 LOAD_DEREF               5 (async_)
+             20 BUILD_MAP                1
+             22 LOAD_DEREF              10 (request_kwargs)
+             24 DICT_MERGE               1
+             26 CALL_FUNCTION_EX         1
+             28 YIELD_VALUE              1
+             30 RESUME                   1
+             32 STORE_FAST               1 (resp)
+
+239          34 LOAD_GLOBAL              1 (NULL + check_response)
+             44 LOAD_FAST                1 (resp)
+             46 CALL                     1
+             54 POP_TOP
+
+240          56 LOAD_DEREF               6 (cid)
+             58 POP_JUMP_IF_FALSE       75 (to 210)
+             60 LOAD_GLOBAL              3 (NULL + int)
+             70 LOAD_FAST                1 (resp)
+             72 LOAD_CONST               2 ('cid')
+             74 BINARY_SUBSCR
+             78 CALL                     1
+             86 LOAD_DEREF               6 (cid)
+             88 COMPARE_OP              55 (!=)
+             92 POP_JUMP_IF_FALSE       58 (to 210)
+
+241          94 LOAD_DEREF               7 (count)
+             96 LOAD_CONST               3 (0)
+             98 COMPARE_OP               2 (<)
+            102 POP_JUMP_IF_FALSE       27 (to 158)
+
+242         104 LOAD_GLOBAL              5 (NULL + throw)
+            114 LOAD_GLOBAL              6 (errno)
+            124 LOAD_ATTR                8 (ENOTDIR)
+            144 LOAD_DEREF               6 (cid)
+            146 CALL                     2
+            154 POP_TOP
+            156 JUMP_FORWARD            26 (to 210)
+
+244     >>  158 LOAD_GLOBAL              5 (NULL + throw)
+            168 LOAD_GLOBAL              6 (errno)
+            178 LOAD_ATTR               10 (ENOENT)
+            198 LOAD_DEREF               6 (cid)
+            200 CALL                     2
+            208 POP_TOP
+
+245     >>  210 LOAD_GLOBAL              3 (NULL + int)
+            220 LOAD_FAST                1 (resp)
+            222 LOAD_CONST               4 ('count')
+            224 BINARY_SUBSCR
+            228 CALL                     1
+            236 STORE_FAST               2 (count_new)
+
+246         238 LOAD_DEREF               7 (count)
+            240 LOAD_CONST               3 (0)
+            242 COMPARE_OP               2 (<)
+            246 POP_JUMP_IF_FALSE       34 (to 316)
+
+247         248 LOAD_DEREF               4 (app)
+            250 LOAD_CONST               5 ('aps')
+            252 COMPARE_OP              40 (==)
+            256 POP_JUMP_IF_FALSE       25 (to 308)
+            258 LOAD_DEREF               7 (count)
+            260 LOAD_CONST               6 (1200)
+            262 COMPARE_OP              68 (>)
+            266 POP_JUMP_IF_FALSE       20 (to 308)
+
+248         268 LOAD_GLOBAL             13 (NULL + warn)
+            278 LOAD_CONST               7 ('aps api can get the first 1200 pieces of data approximately, but the total number is ')
+            280 LOAD_DEREF               7 (count)
+            282 FORMAT_VALUE             0
+            284 BUILD_STRING             2
+            286 LOAD_GLOBAL             14 (P115Warning)
+            296 KW_NAMES                 8 (('category',))
+            298 CALL                     2
+            306 POP_TOP
+
+249     >>  308 LOAD_FAST                2 (count_new)
+            310 STORE_DEREF              7 (count)
+
+257         312 LOAD_FAST                1 (resp)
+            314 RETURN_VALUE
+
+250     >>  316 LOAD_DEREF               7 (count)
+            318 LOAD_FAST                2 (count_new)
+            320 COMPARE_OP              55 (!=)
+            324 POP_JUMP_IF_FALSE       59 (to 444)
+
+251         326 LOAD_CONST               9 ('cid=')
+            328 LOAD_DEREF               6 (cid)
+            330 FORMAT_VALUE             0
+            332 LOAD_CONST              10 (' detected count changes during iteration: ')
+            334 LOAD_DEREF               7 (count)
+            336 FORMAT_VALUE             0
+            338 LOAD_CONST              11 (' -> ')
+            340 LOAD_FAST                2 (count_new)
+            342 FORMAT_VALUE             0
+            344 BUILD_STRING             6
+            346 STORE_FAST               3 (message)
+
+252         348 LOAD_DEREF               9 (raise_for_changed_count)
+            350 POP_JUMP_IF_FALSE       27 (to 406)
+
+253         352 LOAD_GLOBAL              5 (NULL + throw)
+            362 LOAD_GLOBAL              6 (errno)
+            372 LOAD_ATTR               16 (EBUSY)
+            392 LOAD_FAST                3 (message)
+            394 CALL                     2
+            402 POP_TOP
+            404 JUMP_FORWARD            17 (to 440)
+
+255     >>  406 LOAD_GLOBAL             13 (NULL + warn)
+            416 LOAD_FAST                3 (message)
+            418 LOAD_GLOBAL             14 (P115Warning)
+            428 KW_NAMES                 8 (('category',))
+            430 CALL                     2
+            438 POP_TOP
+
+256     >>  440 LOAD_FAST                2 (count_new)
+            442 STORE_DEREF              7 (count)
+
+257     >>  444 LOAD_FAST                1 (resp)
+            446 RETURN_VALUE
+        >>  448 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            450 RERAISE                  1
+ExceptionTable:
+  6 to 446 -> 448 [0] lasti
+QUALNAME fs_files_iter.<locals>.<lambda> SOURCE 261
+261           0 RESUME                   0
+              2 LOAD_FAST                0 (offset)
+              4 LOAD_FAST                2 (resp)
+              6 LOAD_CONST               1 ('offset')
+              8 BINARY_SUBSCR
+             12 COMPARE_OP              55 (!=)
+             16 COPY                     1
+             18 POP_JUMP_IF_TRUE        42 (to 104)
+             20 POP_TOP
+             22 LOAD_FAST                1 (limit)
+             24 LOAD_GLOBAL              1 (NULL + len)
+             34 LOAD_FAST                2 (resp)
+             36 LOAD_CONST               2 ('data')
+             38 BINARY_SUBSCR
+             42 CALL                     1
+             50 COMPARE_OP              68 (>)
+             54 COPY                     1
+             56 POP_JUMP_IF_TRUE        23 (to 104)
+             58 POP_TOP
+             60 LOAD_FAST                2 (resp)
+             62 LOAD_CONST               3 ('count')
+             64 BINARY_SUBSCR
+             68 LOAD_FAST                0 (offset)
+             70 LOAD_GLOBAL              1 (NULL + len)
+             80 LOAD_FAST                2 (resp)
+             82 LOAD_CONST               2 ('data')
+             84 BINARY_SUBSCR
+             88 CALL                     1
+             96 BINARY_OP                0 (+)
+            100 COMPARE_OP              26 (<=)
+        >>  104 RETURN_VALUE
+QUALNAME fs_files_iter.<locals>.<lambda> SOURCE 262
+262           0 RESUME                   0
+              2 LOAD_GLOBAL              1 (NULL + is_timeouterror)
+             12 LOAD_FAST                0 (e)
+             14 CALL                     1
+             22 COPY                     1
+             24 POP_JUMP_IF_TRUE        32 (to 90)
+             26 POP_TOP
+             28 LOAD_GLOBAL              3 (NULL + isinstance)
+             38 LOAD_FAST                0 (e)
+             40 LOAD_GLOBAL              4 (Exception)
+             50 CALL                     2
+             58 COPY                     1
+             60 POP_JUMP_IF_FALSE       14 (to 90)
+             62 POP_TOP
+             64 LOAD_GLOBAL              7 (NULL + get_status_code)
+             74 LOAD_FAST                0 (e)
+             76 CALL                     1
+             84 LOAD_CONST               1 (400)
+             86 COMPARE_OP               2 (<)
+        >>   90 RETURN_VALUE

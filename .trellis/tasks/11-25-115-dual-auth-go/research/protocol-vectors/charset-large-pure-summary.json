@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "schema_version": 1,
+    "version": "3.5.1",
+    "python": "3.12.13",
+    "locale_encoding": "UTF-8",
+    "md_module": "/Users/saki/Desktop/code/ebn/115-reference/charset_normalizer/src/charset_normalizer/md.py",
+    "cd_module": "/Users/saki/Desktop/code/ebn/115-reference/charset_normalizer/src/charset_normalizer/cd.py",
+    "generator_sha256": "05bdb8782739d3fdee50f4b56edb11ad404186cb7b3d6cf2a96bb9dad1ea8794"
+  },
+  "cases": [
+    {
+      "id": "cp1251/valid",
+      "size": 10000019,
+      "encoding": "windows-1251",
+      "language": "Russian",
+      "confidence": 1.0,
+      "exception": null,
+      "seconds": 0.06446424999739975,
+      "peak_rss": 109232128,
+      "api_branch_candidates": {}
+    },
+    {
+      "id": "cp1251/invalid-600001",
+      "size": 10000019,
+      "encoding": "ptcp154",
+      "language": "Russian",
+      "confidence": 1.0,
+      "exception": null,
+      "seconds": 0.0387943749956321,
+      "peak_rss": 160251904,
+      "api_branch_candidates": {}
+    },
+    {
+      "id": "cp1252/valid",
+      "size": 10000019,
+      "encoding": "windows-1250",
+      "language": "Hungarian",
+      "confidence": 1.0,
+      "exception": null,
+      "seconds": 0.38549145800061524,
+      "peak_rss": 406716416,
+      "api_branch_candidates": {}
+    },
+    {
+      "id": "cp1252/invalid-10000012",
+      "size": 10000019,
+      "encoding": "iso8859_10",
+      "language": "Hungarian",
+      "confidence": 1.0,
+      "exception": null,
+      "seconds": 0.3868266250065062,
+      "peak_rss": 423165952,
+      "api_branch_candidates": {}
+    },
+    {
+      "id": "gb18030/valid",
+      "size": 10000080,
+      "encoding": "GB18030",
+      "language": "Chinese",
+      "confidence": 1.0,
+      "exception": null,
+      "seconds": 0.23116249998565763,
+      "peak_rss": 566018048,
+      "api_branch_candidates": {}
+    }
+  ],
+  "fixture_sha256": "208bdf1a48553a384369c904ec99b1dae20f832adbf4a84ec31a3f3494dc05f9"
+}

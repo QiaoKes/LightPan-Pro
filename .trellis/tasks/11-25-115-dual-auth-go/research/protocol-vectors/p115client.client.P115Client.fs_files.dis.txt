@@ -1,0 +1,82 @@
+11502           0 RESUME                   0
+
+11652           2 LOAD_GLOBAL              1 (NULL + complete_url)
+               12 LOAD_CONST               1 ('/files')
+               14 LOAD_FAST                2 (base_url)
+               16 KW_NAMES                 2 (('base_url',))
+               18 CALL                     2
+               26 STORE_FAST               5 (api)
+
+11653          28 LOAD_FAST                1 (payload)
+               30 POP_JUMP_IF_NOT_NONE    21 (to 74)
+
+11654          32 PUSH_NULL
+               34 LOAD_FAST                0 (self)
+               36 LOAD_ATTR                2 (request)
+               56 LOAD_CONST              13 (())
+               58 LOAD_FAST                5 (api)
+               60 LOAD_FAST                3 (async_)
+               62 LOAD_CONST               3 (('url', 'async_'))
+               64 BUILD_CONST_KEY_MAP      2
+               66 LOAD_FAST                4 (request_kwargs)
+               68 DICT_MERGE               1
+               70 CALL_FUNCTION_EX         1
+               72 RETURN_VALUE
+
+11655     >>   74 LOAD_GLOBAL              5 (NULL + isinstance)
+               84 LOAD_FAST                1 (payload)
+               86 LOAD_GLOBAL              6 (int)
+               96 LOAD_GLOBAL              8 (str)
+              106 BUILD_TUPLE              2
+              108 CALL                     2
+              116 POP_JUMP_IF_FALSE        4 (to 126)
+
+11656         118 LOAD_CONST               4 ('cid')
+              120 LOAD_FAST                1 (payload)
+              122 BUILD_MAP                1
+              124 STORE_FAST               1 (payload)
+
+11658     >>  126 LOAD_CONST               5 (1)
+              128 LOAD_CONST               5 (1)
+              130 LOAD_CONST               6 (32)
+              132 LOAD_CONST               7 (0)
+
+11659         134 LOAD_CONST               5 (1)
+              136 LOAD_CONST               5 (1)
+              138 LOAD_CONST               7 (0)
+
+11657         140 LOAD_CONST               8 (('aid', 'count_folders', 'limit', 'offset', 'record_open_time', 'show_dir', 'cid'))
+              142 BUILD_CONST_KEY_MAP      7
+
+11659         144 LOAD_FAST                1 (payload)
+
+11657         146 DICT_UPDATE              1
+              148 STORE_FAST               1 (payload)
+
+11661         150 LOAD_FAST                1 (payload)
+              152 LOAD_ATTR               11 (NULL|self + keys)
+              172 CALL                     0
+              180 LOAD_GLOBAL             13 (NULL + frozenset)
+              190 LOAD_CONST               9 (('asc', 'fc_mix', 'o'))
+              192 CALL                     1
+              200 BINARY_OP                1 (&)
+              204 POP_JUMP_IF_FALSE        5 (to 216)
+
+11662         206 LOAD_CONST              10 (2)
+              208 LOAD_FAST                1 (payload)
+              210 LOAD_CONST              11 ('custom_order')
+              212 STORE_SUBSCR
+
+11663     >>  216 PUSH_NULL
+              218 LOAD_FAST                0 (self)
+              220 LOAD_ATTR                2 (request)
+              240 LOAD_CONST              13 (())
+              242 LOAD_FAST                5 (api)
+              244 LOAD_FAST                1 (payload)
+              246 LOAD_FAST                3 (async_)
+              248 LOAD_CONST              12 (('url', 'params', 'async_'))
+              250 BUILD_CONST_KEY_MAP      3
+              252 LOAD_FAST                4 (request_kwargs)
+              254 DICT_MERGE               1
+              256 CALL_FUNCTION_EX         1
+              258 RETURN_VALUE

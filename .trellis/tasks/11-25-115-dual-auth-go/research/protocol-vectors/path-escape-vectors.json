@@ -1,0 +1,30 @@
+{
+  "artifact_sha256": "4436ccebfc2f30d51ebc125072e638cdf1a765bfb490eba8ecd48bdba8e507f9",
+  "parse_dots": true,
+  "vectors": [
+    {
+      "input": "movie.mkv",
+      "escaped": "movie.mkv"
+    },
+    {
+      "input": "a/b",
+      "escaped": "a\\/b"
+    },
+    {
+      "input": "a\\b",
+      "escaped": "a\\\\b"
+    },
+    {
+      "input": ".",
+      "escaped": "\\."
+    },
+    {
+      "input": "..",
+      "escaped": "\\.."
+    },
+    {
+      "input": "a\\/b",
+      "escaped": "a\\\\\\/b"
+    }
+  ]
+}

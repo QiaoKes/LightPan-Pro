@@ -1,0 +1,32 @@
+{
+  "p115client": {
+    "pyz_payload_sha256": "3c9728db850a5576d7abe79b344a032045ec36290596caf7c9c958032fd9fdc5",
+    "vendor_payload_sha256": "3c9728db850a5576d7abe79b344a032045ec36290596caf7c9c958032fd9fdc5",
+    "equal": true
+  },
+  "p115client.client": {
+    "pyz_payload_sha256": "baf47027bc804ef88445b3da4f14224f029b2829b605e67f6fb072539b7eb6b0",
+    "vendor_payload_sha256": "baf47027bc804ef88445b3da4f14224f029b2829b605e67f6fb072539b7eb6b0",
+    "equal": true
+  },
+  "p115client.util": {
+    "pyz_payload_sha256": "aef25a07cf9aa7ff53aba1ca0622129de44654f2f151fa55b935e0dd19f21936",
+    "vendor_payload_sha256": "aef25a07cf9aa7ff53aba1ca0622129de44654f2f151fa55b935e0dd19f21936",
+    "equal": true
+  },
+  "p115cipher": {
+    "pyz_payload_sha256": "cda5c412efa4aea99d6a6c6a07de5c9f30fe5c2d4bb57741ad51b50fe0d4590e",
+    "vendor_payload_sha256": "cda5c412efa4aea99d6a6c6a07de5c9f30fe5c2d4bb57741ad51b50fe0d4590e",
+    "equal": true
+  },
+  "p115cipher.util": {
+    "pyz_payload_sha256": "218244eb1f7aaa33af4e733de139a6ee804a2b263078efed72bb31368a890904",
+    "vendor_payload_sha256": "218244eb1f7aaa33af4e733de139a6ee804a2b263078efed72bb31368a890904",
+    "equal": true
+  },
+  "p115cipher.aes": {
+    "pyz_payload_sha256": "b0cde26afa54cf190c5f0cd1467049caf8975e51d40037cfff7cb000d651ebd6",
+    "vendor_payload_sha256": "b0cde26afa54cf190c5f0cd1467049caf8975e51d40037cfff7cb000d651ebd6",
+    "equal": true
+  }
+}

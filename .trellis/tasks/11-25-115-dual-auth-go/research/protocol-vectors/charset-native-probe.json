@@ -1,0 +1,1495 @@
+{
+  "version": "3.5.1",
+  "md_module": "/Users/saki/Desktop/code/ebn/LitePan/.trellis/tasks/11-25-115-dual-auth-go/research/protocol-vectors/charset-native/charset_normalizer/md.cpython-312-darwin.so",
+  "cd_module": "/Users/saki/Desktop/code/ebn/LitePan/.trellis/tasks/11-25-115-dual-auth-go/research/protocol-vectors/charset-native/charset_normalizer/cd.cpython-312-darwin.so",
+  "scores": [
+    {
+      "text": "The mess detection ratio calculated for given content is not well adjusted!",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": [
+        [
+          "English",
+          0.6842
+        ],
+        [
+          "Dutch",
+          0.5789
+        ],
+        [
+          "Norwegian",
+          0.5789
+        ],
+        [
+          "Danish",
+          0.5789
+        ],
+        [
+          "Spanish",
+          0.5789
+        ],
+        [
+          "Czech",
+          0.5789
+        ],
+        [
+          "German",
+          0.5263
+        ],
+        [
+          "French",
+          0.5263
+        ],
+        [
+          "Swedish",
+          0.5263
+        ],
+        [
+          "Italian",
+          0.5263
+        ],
+        [
+          "Finnish",
+          0.4737
+        ],
+        [
+          "Indonesian",
+          0.4737
+        ],
+        [
+          "Hungarian",
+          0.4737
+        ],
+        [
+          "Portuguese",
+          0.4737
+        ],
+        [
+          "Slovene",
+          0.4211
+        ],
+        [
+          "Polish",
+          0.4211
+        ],
+        [
+          "Romanian",
+          0.3684
+        ],
+        [
+          "Croatian",
+          0.3684
+        ],
+        [
+          "Estonian",
+          0.3684
+        ],
+        [
+          "Slovak",
+          0.3684
+        ],
+        [
+          "Vietnamese",
+          0.3158
+        ],
+        [
+          "Lithuanian",
+          0.3158
+        ],
+        [
+          "Turkish",
+          0.2632
+        ]
+      ]
+    },
+    {
+      "text": "content, min_expected_ratio, max_expected_ratio",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": [
+        [
+          "English",
+          0.5
+        ],
+        [
+          "Hungarian",
+          0.3333
+        ],
+        [
+          "Dutch",
+          0.25
+        ],
+        [
+          "Swedish",
+          0.25
+        ],
+        [
+          "German",
+          0.25
+        ],
+        [
+          "Italian",
+          0.25
+        ],
+        [
+          "Spanish",
+          0.25
+        ],
+        [
+          "Norwegian",
+          0.25
+        ],
+        [
+          "Czech",
+          0.25
+        ],
+        [
+          "Slovene",
+          0.25
+        ],
+        [
+          "Croatian",
+          0.25
+        ],
+        [
+          "French",
+          0.1667
+        ],
+        [
+          "Polish",
+          0.1667
+        ],
+        [
+          "Portuguese",
+          0.1667
+        ],
+        [
+          "Finnish",
+          0.1667
+        ],
+        [
+          "Vietnamese",
+          0.1667
+        ],
+        [
+          "Romanian",
+          0.1667
+        ]
+      ]
+    },
+    {
+      "text": "character, property_name",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "range_a, range_b",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "transparent_range",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "plain\u001bANSI escape",
+      "mess_default": 1.0,
+      "mess_threshold1": 1.0,
+      "coherence": []
+    },
+    {
+      "text": "niezale¿n¹",
+      "mess_default": 1.0,
+      "mess_threshold1": 1.0,
+      "coherence": []
+    },
+    {
+      "text": "niezaleæn¹",
+      "mess_default": 1.0,
+      "mess_threshold1": 1.0,
+      "coherence": []
+    },
+    {
+      "text": "encyclopædia",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Combining Diacritical Marks",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Variation Selectors",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Emoticons",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Miscellaneous Symbols and Pictographs",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": [
+        [
+          "Spanish",
+          0.5556
+        ],
+        [
+          "Portuguese",
+          0.5556
+        ],
+        [
+          "Polish",
+          0.5
+        ],
+        [
+          "Vietnamese",
+          0.5
+        ],
+        [
+          "English",
+          0.4444
+        ],
+        [
+          "Lithuanian",
+          0.4444
+        ],
+        [
+          "Italian",
+          0.3889
+        ],
+        [
+          "Hungarian",
+          0.3889
+        ],
+        [
+          "Turkish",
+          0.3889
+        ],
+        [
+          "Estonian",
+          0.3889
+        ],
+        [
+          "Romanian",
+          0.3889
+        ],
+        [
+          "French",
+          0.3333
+        ],
+        [
+          "Dutch",
+          0.3333
+        ],
+        [
+          "Norwegian",
+          0.3333
+        ],
+        [
+          "Finnish",
+          0.3333
+        ],
+        [
+          "Slovene",
+          0.3333
+        ],
+        [
+          "Slovak",
+          0.3333
+        ],
+        [
+          "Swedish",
+          0.2778
+        ],
+        [
+          "Indonesian",
+          0.2778
+        ],
+        [
+          "Czech",
+          0.2778
+        ],
+        [
+          "Croatian",
+          0.2778
+        ],
+        [
+          "Danish",
+          0.2222
+        ],
+        [
+          "German",
+          0.1667
+        ]
+      ]
+    },
+    {
+      "text": "典肇乎庚辰年十二月廿一，及己丑年二月十九，收各方語言二百五十，合逾七百萬目；二十大卷佔八成，單英文卷亦過二百萬。悉文乃天下有志共筆而成；有意助之，幾網路、隨纂作，大典茁焉。",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "العقلية , التنويم المغناطيسي و / أو الاقتراح",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": [
+        [
+          "Arabic",
+          0.5625
+        ],
+        [
+          "Farsi",
+          0.25
+        ]
+      ]
+    },
+    {
+      "text": "RadoZ تـــعــــديــل الـــتــــوقــيــــت مـــن قــبــل",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Cehennemin Sava■þ²s²'da kim?",
+      "mess_default": 0.143,
+      "mess_threshold1": 0.143,
+      "coherence": []
+    },
+    {
+      "text": "´Á¥½³ø§i --  ±i®Ìºû, ³¯·Ø©v",
+      "mess_default": 0.593,
+      "mess_threshold1": 0.593,
+      "coherence": []
+    },
+    {
+      "text": "ïstanbul, T■rkiye'nin en kalabal»k, iktisadi ve k■lt■rel aÓ»dan en —nemli",
+      "mess_default": 0.482,
+      "mess_threshold1": 0.423,
+      "coherence": [
+        [
+          "Polish",
+          0.5882
+        ],
+        [
+          "Slovak",
+          0.5882
+        ],
+        [
+          "Finnish",
+          0.5294
+        ],
+        [
+          "Hungarian",
+          0.5294
+        ],
+        [
+          "Turkish",
+          0.5294
+        ],
+        [
+          "Spanish",
+          0.4706
+        ],
+        [
+          "Czech",
+          0.4706
+        ],
+        [
+          "Croatian",
+          0.4706
+        ],
+        [
+          "Dutch",
+          0.4118
+        ],
+        [
+          "Swedish",
+          0.4118
+        ],
+        [
+          "Danish",
+          0.4118
+        ],
+        [
+          "Estonian",
+          0.4118
+        ],
+        [
+          "Italian",
+          0.3529
+        ],
+        [
+          "Norwegian",
+          0.3529
+        ],
+        [
+          "Vietnamese",
+          0.2941
+        ],
+        [
+          "German",
+          0.2941
+        ],
+        [
+          "Romanian",
+          0.2941
+        ],
+        [
+          "French",
+          0.2353
+        ],
+        [
+          "Portuguese",
+          0.1765
+        ]
+      ]
+    },
+    {
+      "text": "<i>Parce que Óa, c'est la vÕritable histoire de la rencontre avec votre Tante Robin.</i>",
+      "mess_default": 0.022,
+      "mess_threshold1": 0.022,
+      "coherence": [
+        [
+          "Romanian",
+          0.6842
+        ],
+        [
+          "Spanish",
+          0.6316
+        ],
+        [
+          "French",
+          0.6316
+        ],
+        [
+          "Portuguese",
+          0.5789
+        ],
+        [
+          "Norwegian",
+          0.5789
+        ],
+        [
+          "Danish",
+          0.5789
+        ],
+        [
+          "Italian",
+          0.5263
+        ],
+        [
+          "Estonian",
+          0.5263
+        ],
+        [
+          "Dutch",
+          0.5263
+        ],
+        [
+          "Swedish",
+          0.5263
+        ],
+        [
+          "Vietnamese",
+          0.5263
+        ],
+        [
+          "Croatian",
+          0.5263
+        ],
+        [
+          "Hungarian",
+          0.4737
+        ],
+        [
+          "German",
+          0.4211
+        ],
+        [
+          "Polish",
+          0.4211
+        ],
+        [
+          "Finnish",
+          0.4211
+        ],
+        [
+          "Slovak",
+          0.4211
+        ],
+        [
+          "Czech",
+          0.3684
+        ],
+        [
+          "Turkish",
+          0.3684
+        ]
+      ]
+    },
+    {
+      "text": "ØĢØŠØģØ§ØĶŲ ŲŲ ØĢŲ Ø§ŲŲØ§Øģ ŲŲŲ ŲØ§ ØģŲŲŲØŠØģØ§ØĶŲŲŲØ ØŊØđŲØ§ ŲØģŲØđ ØđŲ (ŲØąŲØŊŲ) ŲØ§ŲØŪØ§ØŠŲ",
+      "mess_default": 1.562,
+      "mess_threshold1": 1.562,
+      "coherence": []
+    },
+    {
+      "text": "ÇáÚŞáíÉ , ÇáÊäæíã ÇáãÛäÇØíÓí æ / Ãæ ÇáÇŞÊÑÇÍ",
+      "mess_default": 1.37,
+      "mess_threshold1": 1.37,
+      "coherence": []
+    },
+    {
+      "text": "hishamkoc@yahoo.com ุชุฑุฌูููุฉ ููุดูููุงู ุงููููููููุงูRadoZ ุชูููุนููููุฏูููู ุงููููุชูููููููููููููุช ููููู ูููุจููู",
+      "mess_default": 0.5,
+      "mess_threshold1": 1.5,
+      "coherence": []
+    },
+    {
+      "text": "is_katakana",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "is_halfwidth_katakana",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "is_ligature",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "is_superscript",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "is_sentence_open_punctuation",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "CJK Unified Ideographs",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Bopomofo",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Basic Latin",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "IPA Extensions",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Phonetic Extensions",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Spacing Modifier Letters",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Alphabetic Presentation Forms",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Halfwidth and Fullwidth Forms",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Hangul Syllables",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Hiragana",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Kana Extended-A",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Cyrillic",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "iana_encoding, expected_languages",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "language, expected_have_accents, expected_pure_latin",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": [
+        [
+          "Italian",
+          0.625
+        ],
+        [
+          "French",
+          0.5
+        ],
+        [
+          "Spanish",
+          0.5
+        ],
+        [
+          "Norwegian",
+          0.5
+        ],
+        [
+          "Danish",
+          0.5
+        ],
+        [
+          "English",
+          0.4375
+        ],
+        [
+          "Swedish",
+          0.4375
+        ],
+        [
+          "Portuguese",
+          0.4375
+        ],
+        [
+          "Romanian",
+          0.4375
+        ],
+        [
+          "Slovene",
+          0.4375
+        ],
+        [
+          "Croatian",
+          0.4375
+        ],
+        [
+          "Czech",
+          0.4375
+        ],
+        [
+          "Dutch",
+          0.375
+        ],
+        [
+          "Indonesian",
+          0.375
+        ],
+        [
+          "Finnish",
+          0.375
+        ],
+        [
+          "Estonian",
+          0.375
+        ],
+        [
+          "Slovak",
+          0.375
+        ],
+        [
+          "German",
+          0.3125
+        ],
+        [
+          "Vietnamese",
+          0.25
+        ],
+        [
+          "Hungarian",
+          0.25
+        ],
+        [
+          "Turkish",
+          0.25
+        ],
+        [
+          "Lithuanian",
+          0.25
+        ],
+        [
+          "Polish",
+          0.1875
+        ]
+      ]
+    },
+    {
+      "text": "matches, expected_return",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Wrongly detected language for given code page",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": [
+        [
+          "English",
+          0.5882
+        ],
+        [
+          "German",
+          0.5882
+        ],
+        [
+          "Spanish",
+          0.5882
+        ],
+        [
+          "Dutch",
+          0.5294
+        ],
+        [
+          "Portuguese",
+          0.5294
+        ],
+        [
+          "Norwegian",
+          0.4706
+        ],
+        [
+          "Polish",
+          0.4706
+        ],
+        [
+          "Finnish",
+          0.4118
+        ],
+        [
+          "Indonesian",
+          0.4118
+        ],
+        [
+          "Danish",
+          0.4118
+        ],
+        [
+          "Slovene",
+          0.4118
+        ],
+        [
+          "Czech",
+          0.4118
+        ],
+        [
+          "Slovak",
+          0.4118
+        ],
+        [
+          "French",
+          0.3529
+        ],
+        [
+          "Italian",
+          0.3529
+        ],
+        [
+          "Hungarian",
+          0.3529
+        ],
+        [
+          "Turkish",
+          0.3529
+        ],
+        [
+          "Croatian",
+          0.3529
+        ],
+        [
+          "Swedish",
+          0.2941
+        ],
+        [
+          "Vietnamese",
+          0.2941
+        ],
+        [
+          "Romanian",
+          0.2941
+        ],
+        [
+          "Estonian",
+          0.2353
+        ],
+        [
+          "Lithuanian",
+          0.2353
+        ]
+      ]
+    },
+    {
+      "text": "shift_jis",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "mac_greek",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "iso2022_jp",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Vietnamese",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Latin Based",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "Japanese",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "English—",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    },
+    {
+      "text": "English——",
+      "mess_default": 0.0,
+      "mess_threshold1": 0.0,
+      "coherence": []
+    }
+  ],
+  "detect": [
+    {
+      "input_codec": "utf_8",
+      "hex": "726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "ascii",
+        "language": "English",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "utf_8_sig",
+      "hex": "efbbbf726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "UTF-8-SIG",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "utf_16",
+      "hex": "fffe72006f006f0074000a007c002d002d006d006f007600690065002e006d006b0076000a007c002d002d006d006f007600690065002e006e0066006f00",
+      "result": {
+        "encoding": "UTF-16",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "utf_16_le",
+      "hex": "72006f006f0074000a007c002d002d006d006f007600690065002e006d006b0076000a007c002d002d006d006f007600690065002e006e0066006f00",
+      "result": {
+        "encoding": "utf_16_le",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "utf_16_be",
+      "hex": "0072006f006f0074000a007c002d002d006d006f007600690065002e006d006b0076000a007c002d002d006d006f007600690065002e006e0066006f",
+      "result": {
+        "encoding": "utf_16_be",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "utf_32",
+      "hex": "fffe0000720000006f0000006f000000740000000a0000007c0000002d0000002d0000006d0000006f0000007600000069000000650000002e0000006d0000006b000000760000000a0000007c0000002d0000002d0000006d0000006f0000007600000069000000650000002e0000006e000000660000006f000000",
+      "result": {
+        "encoding": "UTF-32",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "gb18030",
+      "hex": "726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "ascii",
+        "language": "English",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "gbk",
+      "hex": "726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "ascii",
+        "language": "English",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "big5",
+      "hex": "726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "ascii",
+        "language": "English",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "cp932",
+      "hex": "726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "ascii",
+        "language": "English",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "euc_jp",
+      "hex": "726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "ascii",
+        "language": "English",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "cp1251",
+      "hex": "726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "ascii",
+        "language": "English",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "cp1252",
+      "hex": "726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "ascii",
+        "language": "English",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "cp1256",
+      "hex": "726f6f740a7c2d2d6d6f7669652e6d6b760a7c2d2d6d6f7669652e6e666f",
+      "result": {
+        "encoding": "ascii",
+        "language": "English",
+        "confidence": 1.0
+      },
+      "decoded": "root\n|--movie.mkv\n|--movie.nfo"
+    },
+    {
+      "input_codec": "utf_8",
+      "hex": "e6a0b9e79baee5bd950a7c2d2de794b5e5bdb10a7c207c2d2de7acac31e99b862e6d6b760a7c207c2d2de7acac31e99b862e6e666f",
+      "result": {
+        "encoding": "utf-8",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "根目录\n|--电影\n| |--第1集.mkv\n| |--第1集.nfo"
+    },
+    {
+      "input_codec": "utf_8_sig",
+      "hex": "efbbbfe6a0b9e79baee5bd950a7c2d2de794b5e5bdb10a7c207c2d2de7acac31e99b862e6d6b760a7c207c2d2de7acac31e99b862e6e666f",
+      "result": {
+        "encoding": "UTF-8-SIG",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "根目录\n|--电影\n| |--第1集.mkv\n| |--第1集.nfo"
+    },
+    {
+      "input_codec": "utf_16",
+      "hex": "fffe3968ee76555f0a007c002d002d003575715f0a007c0020007c002d002d002c7b3100c6962e006d006b0076000a007c0020007c002d002d002c7b3100c6962e006e0066006f00",
+      "result": {
+        "encoding": "UTF-16",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "根目录\n|--电影\n| |--第1集.mkv\n| |--第1集.nfo"
+    },
+    {
+      "input_codec": "utf_16_le",
+      "hex": "3968ee76555f0a007c002d002d003575715f0a007c0020007c002d002d002c7b3100c6962e006d006b0076000a007c0020007c002d002d002c7b3100c6962e006e0066006f00",
+      "result": {
+        "encoding": "utf_16_le",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "根目录\n|--电影\n| |--第1集.mkv\n| |--第1集.nfo"
+    },
+    {
+      "input_codec": "utf_16_be",
+      "hex": "683976ee5f55000a007c002d002d75355f71000a007c0020007c002d002d7b2c003196c6002e006d006b0076000a007c0020007c002d002d7b2c003196c6002e006e0066006f",
+      "result": {
+        "encoding": "utf_16_be",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "根目录\n|--电影\n| |--第1集.mkv\n| |--第1集.nfo"
+    },
+    {
+      "input_codec": "utf_32",
+      "hex": "fffe000039680000ee760000555f00000a0000007c0000002d0000002d00000035750000715f00000a0000007c000000200000007c0000002d0000002d0000002c7b000031000000c69600002e0000006d0000006b000000760000000a0000007c000000200000007c0000002d0000002d0000002c7b000031000000c69600002e0000006e000000660000006f000000",
+      "result": {
+        "encoding": "UTF-32",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "根目录\n|--电影\n| |--第1集.mkv\n| |--第1集.nfo"
+    },
+    {
+      "input_codec": "gb18030",
+      "hex": "b8f9c4bfc2bc0a7c2d2db5e7d3b00a7c207c2d2db5da31bcaf2e6d6b760a7c207c2d2db5da31bcaf2e6e666f",
+      "result": {
+        "encoding": "CP949",
+        "language": "Korean",
+        "confidence": 1.0
+      },
+      "decoded": "몽커쩌\n|--든緞\n| |--뒤1섞.mkv\n| |--뒤1섞.nfo"
+    },
+    {
+      "input_codec": "gbk",
+      "hex": "b8f9c4bfc2bc0a7c2d2db5e7d3b00a7c207c2d2db5da31bcaf2e6d6b760a7c207c2d2db5da31bcaf2e6e666f",
+      "result": {
+        "encoding": "CP949",
+        "language": "Korean",
+        "confidence": 1.0
+      },
+      "decoded": "몽커쩌\n|--든緞\n| |--뒤1섞.mkv\n| |--뒤1섞.nfo"
+    },
+    {
+      "input_codec": "utf_8",
+      "hex": "e697a5e69cace8aa9ee38387e382a3e383ace382afe38388e383aa0a7c2d2de698a0e794bb2e6d6b760a7c2d2de5ad97e5b9952e737274",
+      "result": {
+        "encoding": "utf-8",
+        "language": "",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "utf_8_sig",
+      "hex": "efbbbfe697a5e69cace8aa9ee38387e382a3e383ace382afe38388e383aa0a7c2d2de698a0e794bb2e6d6b760a7c2d2de5ad97e5b9952e737274",
+      "result": {
+        "encoding": "UTF-8-SIG",
+        "language": "",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "utf_16",
+      "hex": "fffee5652c679e8ac730a330ec30af30c830ea300a007c002d002d0020663b752e006d006b0076000a007c002d002d00575b555e2e00730072007400",
+      "result": {
+        "encoding": "UTF-16",
+        "language": "",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "utf_16_le",
+      "hex": "e5652c679e8ac730a330ec30af30c830ea300a007c002d002d0020663b752e006d006b0076000a007c002d002d00575b555e2e00730072007400",
+      "result": {
+        "encoding": "utf_16_le",
+        "language": "",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "utf_16_be",
+      "hex": "65e5672c8a9e30c730a330ec30af30c830ea000a007c002d002d6620753b002e006d006b0076000a007c002d002d5b575e55002e007300720074",
+      "result": {
+        "encoding": "utf_16_be",
+        "language": "",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "utf_32",
+      "hex": "fffe0000e56500002c6700009e8a0000c7300000a3300000ec300000af300000c8300000ea3000000a0000007c0000002d0000002d000000206600003b7500002e0000006d0000006b000000760000000a0000007c0000002d0000002d000000575b0000555e00002e000000730000007200000074000000",
+      "result": {
+        "encoding": "UTF-32",
+        "language": "",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "gb18030",
+      "hex": "c8d5b1bed55aa5c7a5a3a5eca5afa5c8a5ea0a7c2d2dd3b3bbad2e6d6b760a7c2d2dd7d6c4bb2e737274",
+      "result": {
+        "encoding": "GB18030",
+        "language": "Chinese",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "gbk",
+      "hex": "c8d5b1bed55aa5c7a5a3a5eca5afa5c8a5ea0a7c2d2dd3b3bbad2e6d6b760a7c2d2dd7d6c4bb2e737274",
+      "result": {
+        "encoding": "GB18030",
+        "language": "Chinese",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "cp932",
+      "hex": "93fa967b8cea83668342838c834e8367838a0a7c2d2d896689e62e6d6b760a7c2d2d8e9a968b2e737274",
+      "result": {
+        "encoding": "CP932",
+        "language": "Japanese",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "euc_jp",
+      "hex": "c6fccbdcb8eca5c7a5a3a5eca5afa5c8a5ea0a7c2d2db1c7b2e82e6d6b760a7c2d2dbbfacbeb2e737274",
+      "result": {
+        "encoding": "euc_jis_2004",
+        "language": "Japanese",
+        "confidence": 0.886
+      },
+      "decoded": "日本語ディレクトリ\n|--映画.mkv\n|--字幕.srt"
+    },
+    {
+      "input_codec": "utf_8",
+      "hex": "d0a0d183d181d181d0bad0b8d0b920d0bad0b0d182d0b0d0bbd0bed0b30a7c2d2dd184d0b8d0bbd18cd0bc2e6d6b76",
+      "result": {
+        "encoding": "utf-8",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "utf_8_sig",
+      "hex": "efbbbfd0a0d183d181d181d0bad0b8d0b920d0bad0b0d182d0b0d0bbd0bed0b30a7c2d2dd184d0b8d0bbd18cd0bc2e6d6b76",
+      "result": {
+        "encoding": "UTF-8-SIG",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "utf_16",
+      "hex": "fffe20044304410441043a043804390420003a043004420430043b043e0433040a007c002d002d00440438043b044c043c042e006d006b007600",
+      "result": {
+        "encoding": "UTF-16",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "utf_16_le",
+      "hex": "20044304410441043a043804390420003a043004420430043b043e0433040a007c002d002d00440438043b044c043c042e006d006b007600",
+      "result": {
+        "encoding": "utf_16_le",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "utf_16_be",
+      "hex": "0420044304410441043a043804390020043a043004420430043b043e0433000a007c002d002d04440438043b044c043c002e006d006b0076",
+      "result": {
+        "encoding": "utf_16_be",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "utf_32",
+      "hex": "fffe0000200400004304000041040000410400003a0400003804000039040000200000003a0400003004000042040000300400003b0400003e040000330400000a0000007c0000002d0000002d00000044040000380400003b0400004c0400003c0400002e0000006d0000006b00000076000000",
+      "result": {
+        "encoding": "UTF-32",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "gb18030",
+      "hex": "a7b2a7e5a7e3a7e3a7dca7daa7db20a7dca7d1a7e4a7d1a7dda7e0a7d40a7c2d2da7e6a7daa7dda7eea7de2e6d6b76",
+      "result": {
+        "encoding": "euc_jis_2004",
+        "language": "Japanese",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "gbk",
+      "hex": "a7b2a7e5a7e3a7e3a7dca7daa7db20a7dca7d1a7e4a7d1a7dda7e0a7d40a7c2d2da7e6a7daa7dda7eea7de2e6d6b76",
+      "result": {
+        "encoding": "euc_jis_2004",
+        "language": "Japanese",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "cp932",
+      "hex": "8451848584838483847b8479847a20847b847084848470847c848084730a7c2d2d84868479847c848e847d2e6d6b76",
+      "result": {
+        "encoding": "CP932",
+        "language": "Japanese",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "euc_jp",
+      "hex": "a7b2a7e5a7e3a7e3a7dca7daa7db20a7dca7d1a7e4a7d1a7dda7e0a7d40a7c2d2da7e6a7daa7dda7eea7de2e6d6b76",
+      "result": {
+        "encoding": "euc_jis_2004",
+        "language": "Japanese",
+        "confidence": 1.0
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "cp1251",
+      "hex": "d0f3f1f1eae8e920eae0f2e0ebeee30a7c2d2df4e8ebfcec2e6d6b76",
+      "result": {
+        "encoding": "windows-1251",
+        "language": "Russian",
+        "confidence": 0.8
+      },
+      "decoded": "Русский каталог\n|--фильм.mkv"
+    },
+    {
+      "input_codec": "utf_8",
+      "hex": "d8a7d984d8b9d982d984d98ad8a920d8a7d984d8aad986d988d98ad98520d8a7d984d985d8bad986d8a7d8b7d98ad8b3d98a",
+      "result": {
+        "encoding": "utf-8",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "العقلية التنويم المغناطيسي"
+    },
+    {
+      "input_codec": "utf_8_sig",
+      "hex": "efbbbfd8a7d984d8b9d982d984d98ad8a920d8a7d984d8aad986d988d98ad98520d8a7d984d985d8bad986d8a7d8b7d98ad8b3d98a",
+      "result": {
+        "encoding": "UTF-8-SIG",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "العقلية التنويم المغناطيسي"
+    },
+    {
+      "input_codec": "utf_16",
+      "hex": "fffe270644063906420644064a0629062000270644062a06460648064a06450620002706440645063a064606270637064a0633064a06",
+      "result": {
+        "encoding": "UTF-16",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "العقلية التنويم المغناطيسي"
+    },
+    {
+      "input_codec": "utf_16_le",
+      "hex": "270644063906420644064a0629062000270644062a06460648064a06450620002706440645063a064606270637064a0633064a06",
+      "result": {
+        "encoding": "utf_16_le",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "العقلية التنويم المغناطيسي"
+    },
+    {
+      "input_codec": "utf_16_be",
+      "hex": "06270644063906420644064a0629002006270644062a06460648064a06450020062706440645063a064606270637064a0633064a",
+      "result": {
+        "encoding": "utf_16_be",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "العقلية التنويم المغناطيسي"
+    },
+    {
+      "input_codec": "utf_32",
+      "hex": "fffe000027060000440600003906000042060000440600004a060000290600002000000027060000440600002a06000046060000480600004a06000045060000200000002706000044060000450600003a0600004606000027060000370600004a060000330600004a060000",
+      "result": {
+        "encoding": "UTF-32",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": "العقلية التنويم المغناطيسي"
+    },
+    {
+      "input_codec": "gb18030",
+      "hex": "8131833981318638813185378131863681318638813187348131843120813183398131863881318432813187308131873281318734813186392081318339813186388131863981318538813187308131833981318535813187348131853181318734",
+      "result": {
+        "encoding": "GB18030",
+        "language": "Chinese",
+        "confidence": 1.0
+      },
+      "decoded": "العقلية التنويم المغناطيسي"
+    },
+    {
+      "input_codec": "cp1256",
+      "hex": "c7e1dadee1edc920c7e1cae4e6ede320c7e1e3dbe4c7d8edd3ed",
+      "result": {
+        "encoding": "windows-1256",
+        "language": "Farsi",
+        "confidence": 0.8
+      },
+      "decoded": "العقلية التنويم المغناطيسي"
+    },
+    {
+      "input_codec": "adversarial",
+      "hex": "",
+      "result": {
+        "encoding": "utf-8",
+        "language": "",
+        "confidence": 1.0
+      },
+      "decoded": ""
+    },
+    {
+      "input_codec": "adversarial",
+      "hex": "fffe00",
+      "result": {
+        "encoding": null,
+        "language": "",
+        "confidence": null
+      },
+      "decoded": "\u0000"
+    },
+    {
+      "input_codec": "adversarial",
+      "hex": "616263ff80",
+      "result": {
+        "encoding": "cp1125",
+        "language": "Russian",
+        "confidence": 0.8
+      },
+      "decoded": "abc А"
+    },
+    {
+      "input_codec": "adversarial",
+      "hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+      "result": {
+        "encoding": null,
+        "language": "",
+        "confidence": null
+      },
+      "decoded": "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"
+    },
+    {
+      "input_codec": "adversarial",
+      "hex": "636f64696e673a206370313235310aff",
+      "result": {
+        "encoding": "cp1125",
+        "language": "Russian",
+        "confidence": 0.8
+      },
+      "decoded": "coding: cp1251\n "
+    },
+    {
+      "input_codec": "adversarial",
+      "hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "result": {
+        "encoding": "utf-8",
+        "language": "",
+        "confidence": 0.8
+      },
+      "decoded": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000"
+    }
+  ]
+}

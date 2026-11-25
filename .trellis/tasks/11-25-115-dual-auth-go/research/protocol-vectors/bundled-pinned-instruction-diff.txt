@@ -1,0 +1,360 @@
+--- bundled P115OpenClient.fs_files
+
++++ pinned P115OpenClient.fs_files
+
+@@ -48,9 +48,11 @@
+
+ CALL 1
+ BINARY_OP 1
+-POP_JUMP_IF_FALSE 214
++POP_JUMP_IF_FALSE 240
++LOAD_FAST 'payload'
++LOAD_ATTR 'setdefault'
++LOAD_CONST 'custom_order'
+ LOAD_CONST 2
+-LOAD_FAST 'payload'
+-LOAD_CONST 'custom_order'
+-STORE_SUBSCR None
++CALL 2
++POP_TOP None
+ PUSH_NULL None
+ LOAD_FAST 'self'
+--- bundled P115OpenClient.fs_video_subtitle
+
++++ pinned P115OpenClient.fs_video_subtitle
+
+@@ -8,7 +8,20 @@
+
+ LOAD_GLOBAL 'str'
+ CALL 2
+-POP_JUMP_IF_FALSE 66
++POP_JUMP_IF_FALSE 68
+ LOAD_CONST 'pick_code'
+ LOAD_FAST 'payload'
++BUILD_MAP 1
++STORE_FAST 'payload'
++JUMP_FORWARD 138
++LOAD_GLOBAL 'isinstance'
++LOAD_FAST 'payload'
++LOAD_GLOBAL 'int'
++CALL 2
++POP_JUMP_IF_FALSE 138
++LOAD_CONST 'pick_code'
++LOAD_FAST 'self'
++LOAD_ATTR 'to_pickcode'
++LOAD_FAST 'payload'
++CALL 1
+ BUILD_MAP 1
+ STORE_FAST 'payload'
+--- bundled P115Client.download_url_app
+
++++ pinned P115Client.download_url_app
+
+@@ -3,5 +3,5 @@
+
+ LOAD_CONST ('', 'chrome')
+ CONTAINS_OP 0
+-POP_JUMP_IF_FALSE 104
++POP_JUMP_IF_FALSE 184
+ LOAD_GLOBAL 'complete_url'
+ LOAD_CONST '/app/chrome/downurl'
+@@ -13,30 +13,43 @@
+
+ LOAD_GLOBAL 'str'
+ CALL 2
+-POP_JUMP_IF_FALSE 78
+-LOAD_CONST 'pickcode'
+-LOAD_FAST 'payload'
+-BUILD_MAP 1
+-STORE_FAST 'payload'
+-JUMP_FORWARD 486
++POP_JUMP_IF_FALSE 80
++LOAD_CONST 'pickcode'
++LOAD_FAST 'payload'
++BUILD_MAP 1
++STORE_FAST 'payload'
++JUMP_FORWARD 710
++LOAD_GLOBAL 'isinstance'
++LOAD_FAST 'payload'
++LOAD_GLOBAL 'int'
++CALL 2
++POP_JUMP_IF_FALSE 154
++LOAD_CONST 'pickcode'
++LOAD_FAST 'self'
++LOAD_ATTR 'to_pickcode'
++LOAD_FAST 'payload'
++CALL 1
++BUILD_MAP 1
++STORE_FAST 'payload'
++JUMP_FORWARD 710
+ LOAD_CONST 'pickcode'
+ LOAD_FAST 'payload'
+ CONTAINS_OP 1
+-POP_JUMP_IF_FALSE 486
+-LOAD_FAST 'payload'
+-LOAD_CONST 'pick_code'
+-BINARY_SUBSCR None
+-LOAD_FAST 'payload'
+-LOAD_CONST 'pickcode'
+-STORE_SUBSCR None
+-JUMP_FORWARD 486
++POP_JUMP_IF_FALSE 710
++LOAD_FAST 'payload'
++LOAD_CONST 'pick_code'
++BINARY_SUBSCR None
++LOAD_FAST 'payload'
++LOAD_CONST 'pickcode'
++STORE_SUBSCR None
++JUMP_FORWARD 710
+ LOAD_FAST 'app'
+ LOAD_CONST ('os_windows', 'os_mac', 'os_linux', 'windows', 'mac', 'linux')
+ CONTAINS_OP 0
+-POP_JUMP_IF_FALSE 392
++POP_JUMP_IF_FALSE 544
+ LOAD_FAST 'app'
+ LOAD_ATTR 'startswith'
+ LOAD_CONST 'os_'
+ CALL 1
+-POP_JUMP_IF_TRUE 156
++POP_JUMP_IF_TRUE 236
+ LOAD_CONST 'os_'
+ LOAD_FAST 'app'
+@@ -54,14 +67,27 @@
+
+ LOAD_GLOBAL 'str'
+ CALL 2
+-POP_JUMP_IF_FALSE 226
+-LOAD_CONST 'pickcode'
+-LOAD_FAST 'payload'
+-BUILD_MAP 1
+-STORE_FAST 'payload'
+-JUMP_FORWARD 250
++POP_JUMP_IF_FALSE 306
++LOAD_CONST 'pickcode'
++LOAD_FAST 'payload'
++BUILD_MAP 1
++STORE_FAST 'payload'
++JUMP_FORWARD 402
++LOAD_GLOBAL 'isinstance'
++LOAD_FAST 'payload'
++LOAD_GLOBAL 'int'
++CALL 2
++POP_JUMP_IF_FALSE 378
++LOAD_CONST 'pickcode'
++LOAD_FAST 'self'
++LOAD_ATTR 'to_pickcode'
++LOAD_FAST 'payload'
++CALL 1
++BUILD_MAP 1
++STORE_FAST 'payload'
++JUMP_FORWARD 402
+ LOAD_CONST 'pickcode'
+ LOAD_FAST 'payload'
+ CONTAINS_OP 1
+-POP_JUMP_IF_FALSE 250
++POP_JUMP_IF_FALSE 402
+ LOAD_FAST 'payload'
+ LOAD_CONST 'pick_code'
+@@ -91,5 +117,5 @@
+
+ CALL 2
+ POP_TOP None
+-JUMP_FORWARD 486
++JUMP_FORWARD 710
+ LOAD_GLOBAL 'complete_url'
+ LOAD_CONST '/2.0/ufile/download'
+@@ -103,14 +129,27 @@
+
+ LOAD_GLOBAL 'str'
+ CALL 2
+-POP_JUMP_IF_FALSE 462
+-LOAD_CONST 'pick_code'
+-LOAD_FAST 'payload'
+-BUILD_MAP 1
+-STORE_FAST 'payload'
+-JUMP_FORWARD 486
++POP_JUMP_IF_FALSE 614
++LOAD_CONST 'pick_code'
++LOAD_FAST 'payload'
++BUILD_MAP 1
++STORE_FAST 'payload'
++JUMP_FORWARD 710
++LOAD_GLOBAL 'isinstance'
++LOAD_FAST 'payload'
++LOAD_GLOBAL 'int'
++CALL 2
++POP_JUMP_IF_FALSE 686
++LOAD_CONST 'pick_code'
++LOAD_FAST 'self'
++LOAD_ATTR 'to_pickcode'
++LOAD_FAST 'payload'
++CALL 1
++BUILD_MAP 1
++STORE_FAST 'payload'
++JUMP_FORWARD 710
+ LOAD_CONST 'pick_code'
+ LOAD_FAST 'payload'
+ CONTAINS_OP 1
+-POP_JUMP_IF_FALSE 486
++POP_JUMP_IF_FALSE 710
+ LOAD_FAST 'payload'
+ LOAD_CONST 'pickcode'
+@@ -132,5 +171,5 @@
+
+ CALL 1
+ COPY 1
+-POP_JUMP_IF_TRUE 592
++POP_JUMP_IF_TRUE 816
+ POP_TOP None
+ LOAD_CONST ()
+@@ -142,5 +181,5 @@
+
+ STORE_SUBSCR None
+ LOAD_FAST 'user_agent'
+-POP_JUMP_IF_NOT_NONE 654
++POP_JUMP_IF_NOT_NONE 878
+ LOAD_DEREF 'headers'
+ LOAD_ATTR 'setdefault'
+@@ -149,5 +188,5 @@
+
+ CALL 2
+ POP_TOP None
+-JUMP_FORWARD 664
++JUMP_FORWARD 888
+ LOAD_FAST 'user_agent'
+ LOAD_DEREF 'headers'
+--- bundled P115Client.fs_files
+
++++ pinned P115Client.fs_files
+
+@@ -49,9 +49,11 @@
+
+ CALL 1
+ BINARY_OP 1
+-POP_JUMP_IF_FALSE 216
++POP_JUMP_IF_FALSE 242
++LOAD_FAST 'payload'
++LOAD_ATTR 'setdefault'
++LOAD_CONST 'custom_order'
+ LOAD_CONST 2
+-LOAD_FAST 'payload'
+-LOAD_CONST 'custom_order'
+-STORE_SUBSCR None
++CALL 2
++POP_TOP None
+ PUSH_NULL None
+ LOAD_FAST 'self'
+--- bundled P115Client.fs_video_subtitle
+
++++ pinned P115Client.fs_video_subtitle
+
+@@ -9,7 +9,20 @@
+
+ LOAD_GLOBAL 'str'
+ CALL 2
+-POP_JUMP_IF_FALSE 68
++POP_JUMP_IF_FALSE 70
+ LOAD_CONST 'pickcode'
+ LOAD_FAST 'payload'
++BUILD_MAP 1
++STORE_FAST 'payload'
++JUMP_FORWARD 140
++LOAD_GLOBAL 'isinstance'
++LOAD_FAST 'payload'
++LOAD_GLOBAL 'int'
++CALL 2
++POP_JUMP_IF_FALSE 140
++LOAD_CONST 'pickcode'
++LOAD_FAST 'self'
++LOAD_ATTR 'to_pickcode'
++LOAD_FAST 'payload'
++CALL 1
+ BUILD_MAP 1
+ STORE_FAST 'payload'
+--- bundled pad_pkcs1_v1_5
+
++++ pinned pad_pkcs1_v1_5
+
+@@ -5,5 +5,7 @@
+
+ LOAD_FAST 'data'
+ LOAD_CONST b'\x02'
+-LOAD_CONST 126
++LOAD_FAST 'size'
++LOAD_CONST 2
++BINARY_OP 10
+ LOAD_GLOBAL 'memoryview'
+ LOAD_FAST 'message'
+--- bundled rsa_encrypt_with_pubkey
+
++++ pinned rsa_encrypt_with_pubkey
+
+@@ -11,8 +11,10 @@
+
+ LOAD_FAST 'view'
+ CALL 1
+-LOAD_CONST 117
++LOAD_FAST 'block_size'
++LOAD_CONST 11
++BINARY_OP 10
+ CALL 3
+ GET_ITER None
+-FOR_ITER 208
++FOR_ITER 188
+ UNPACK_SEQUENCE 3
+ STORE_FAST 'l'
+@@ -27,17 +29,14 @@
+
+ LOAD_FAST 'r'
+ BINARY_SLICE None
+-CALL 1
+-LOAD_GLOBAL 'RSA_PUBKEY_PAIR'
+-LOAD_CONST 1
+-BINARY_SUBSCR None
+-LOAD_GLOBAL 'RSA_PUBKEY_PAIR'
+-LOAD_CONST 0
+-BINARY_SUBSCR None
++LOAD_FAST 'block_size'
++CALL 2
++LOAD_FAST 'e'
++LOAD_FAST 'n'
+ CALL 3
+-LOAD_CONST 128
++LOAD_FAST 'block_size'
+ CALL 2
+ BINARY_OP 13
+ STORE_FAST 'cipher_data'
+-JUMP_BACKWARD 88
++JUMP_BACKWARD 94
+ END_FOR None
+ LOAD_FAST 'cipher_data'
+--- bundled rsa_decrypt_with_pubkey
+
++++ pinned rsa_decrypt_with_pubkey
+
+@@ -11,8 +11,8 @@
+
+ LOAD_FAST 'view'
+ CALL 1
+-LOAD_CONST 128
++LOAD_FAST 'block_size'
+ CALL 3
+ GET_ITER None
+-FOR_ITER 316
++FOR_ITER 288
+ UNPACK_SEQUENCE 3
+ STORE_FAST 'l'
+@@ -26,10 +26,6 @@
+
+ BINARY_SLICE None
+ CALL 1
+-LOAD_GLOBAL 'RSA_PUBKEY_PAIR'
+-LOAD_CONST 1
+-BINARY_SUBSCR None
+-LOAD_GLOBAL 'RSA_PUBKEY_PAIR'
+-LOAD_CONST 0
+-BINARY_SUBSCR None
++LOAD_FAST 'e'
++LOAD_FAST 'n'
+ CALL 3
+ STORE_FAST 'p'

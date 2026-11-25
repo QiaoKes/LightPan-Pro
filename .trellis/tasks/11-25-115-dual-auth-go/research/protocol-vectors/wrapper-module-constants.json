@@ -1,0 +1,24 @@
+{
+  "_default_k_ec": [
+    "Instruction(opname='PUSH_NULL', opcode=2, arg=None, argval=None, argrepr='', offset=868, starts_line=None, is_jump_target=False, positions=Positions(lineno=73, end_lineno=73, col_offset=25, end_col_offset=42))",
+    "Instruction(opname='LOAD_NAME', opcode=101, arg=108, argval='ecdh_encode_token', argrepr='ecdh_encode_token', offset=870, starts_line=None, is_jump_target=False, positions=Positions(lineno=73, end_lineno=73, col_offset=25, end_col_offset=42))",
+    "Instruction(opname='LOAD_CONST', opcode=100, arg=0, argval=0, argrepr='0', offset=872, starts_line=None, is_jump_target=False, positions=Positions(lineno=73, end_lineno=73, col_offset=43, end_col_offset=44))",
+    "Instruction(opname='CALL', opcode=171, arg=1, argval=1, argrepr='', offset=874, starts_line=None, is_jump_target=False, positions=Positions(lineno=73, end_lineno=73, col_offset=25, end_col_offset=45))",
+    "Instruction(opname='EXTENDED_ARG', opcode=144, arg=1, argval=1, argrepr='', offset=882, starts_line=None, is_jump_target=False, positions=Positions(lineno=73, end_lineno=73, col_offset=25, end_col_offset=52))",
+    "Instruction(opname='LOAD_ATTR', opcode=106, arg=293, argval='decode', argrepr='NULL|self + decode', offset=884, starts_line=None, is_jump_target=False, positions=Positions(lineno=73, end_lineno=73, col_offset=25, end_col_offset=52))",
+    "Instruction(opname='CALL', opcode=171, arg=0, argval=0, argrepr='', offset=904, starts_line=None, is_jump_target=False, positions=Positions(lineno=73, end_lineno=73, col_offset=25, end_col_offset=54))",
+    "Instruction(opname='BUILD_MAP', opcode=105, arg=1, argval=1, argrepr='', offset=912, starts_line=None, is_jump_target=False, positions=Positions(lineno=73, end_lineno=73, col_offset=16, end_col_offset=55))",
+    "Instruction(opname='STORE_NAME', opcode=90, arg=147, argval='_default_k_ec', argrepr='_default_k_ec', offset=914, starts_line=None, is_jump_target=False, positions=Positions(lineno=73, end_lineno=73, col_offset=0, end_col_offset=13))"
+  ],
+  "_app_version": [
+    "Instruction(opname='CALL', opcode=171, arg=1, argval=1, argrepr='', offset=968, starts_line=None, is_jump_target=False, positions=Positions(lineno=75, end_lineno=75, col_offset=26, end_col_offset=60))",
+    "Instruction(opname='EXTENDED_ARG', opcode=144, arg=1, argval=1, argrepr='', offset=976, starts_line=None, is_jump_target=False, positions=Positions(lineno=75, end_lineno=75, col_offset=26, end_col_offset=67))",
+    "Instruction(opname='LOAD_ATTR', opcode=106, arg=293, argval='decode', argrepr='NULL|self + decode', offset=978, starts_line=None, is_jump_target=False, positions=Positions(lineno=75, end_lineno=75, col_offset=26, end_col_offset=67))",
+    "Instruction(opname='CALL', opcode=171, arg=0, argval=0, argrepr='', offset=998, starts_line=None, is_jump_target=False, positions=Positions(lineno=75, end_lineno=75, col_offset=26, end_col_offset=69))",
+    "Instruction(opname='STORE_NAME', opcode=90, arg=150, argval='_default_code_challenge', argrepr='_default_code_challenge', offset=1006, starts_line=None, is_jump_target=False, positions=Positions(lineno=75, end_lineno=75, col_offset=0, end_col_offset=23))",
+    "Instruction(opname='LOAD_CONST', opcode=100, arg=55, argval='md5', argrepr=\"'md5'\", offset=1008, starts_line=76, is_jump_target=False, positions=Positions(lineno=76, end_lineno=76, col_offset=33, end_col_offset=38))",
+    "Instruction(opname='STORE_NAME', opcode=90, arg=151, argval='_default_code_challenge_method', argrepr='_default_code_challenge_method', offset=1010, starts_line=None, is_jump_target=False, positions=Positions(lineno=76, end_lineno=76, col_offset=0, end_col_offset=30))",
+    "Instruction(opname='LOAD_CONST', opcode=100, arg=56, argval='36.2.28', argrepr=\"'36.2.28'\", offset=1012, starts_line=77, is_jump_target=False, positions=Positions(lineno=77, end_lineno=77, col_offset=15, end_col_offset=24))",
+    "Instruction(opname='STORE_NAME', opcode=90, arg=152, argval='_app_version', argrepr='_app_version', offset=1014, starts_line=None, is_jump_target=False, positions=Positions(lineno=77, end_lineno=77, col_offset=0, end_col_offset=12))"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "115-w2-auth",
+  "name": "115-w2-auth",
+  "title": "W2 双认证与独立健康状态",
+  "description": "W2 双认证与独立健康状态；严格遵守 EmbyNginx 参考行为。",
+  "status": "in_progress",
+  "dev_type": null,
+  "scope": null,
+  "package": null,
+  "priority": "P2",
+  "creator": "saki",
+  "assignee": "saki",
+  "createdAt": "2026-11-25",
+  "completedAt": null,
+  "branch": "codex/115-dual-auth-go",
+  "base_branch": "main",
+  "worktree_path": null,
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [],
+  "parent": "11-25-115-dual-auth-go",
+  "relatedFiles": [],
+  "notes": "",
+  "meta": {
+    "implementation_status": "offline_verified",
+    "acceptance_report": "../11-25-115-dual-auth-go/acceptance.md",
+    "live_acceptance": "deferred_by_user_D10",
+    "commit_status": "authorized_by_user",
+    "delivery_scope": "code_and_offline_acceptance",
+    "implementation_commit": "89fc7c4"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "splits_signature": "(path: str, /, unescape: None | collections.abc.Callable[[str], str] = <function unescape at 0x106d8b2e0>, parse_dots: bool = True, slash_escaped: bool = True) -> tuple[list[str], int]",
+  "part_pattern": "[^\\\\/]*(?:\\\\(?s:.)[^\\\\/]*)*",
+  "vectors": [
+    {
+      "path": "/base/a\\/b/file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "base",
+          "a/b",
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/base/a\\\\/b/file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "base",
+          "a\\",
+          "b",
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/base/a\\\\\\/b/file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "base",
+          "a\\/b",
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/base/\\./file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "base",
+          ".",
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/base/\\../file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "base",
+          "..",
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/base/a\\\\b/file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "base",
+          "a\\b",
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/base/./file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "base",
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/base/../file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/base/a\\q/file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "base",
+          "a\\q",
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/base/file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "base",
+          "file.nfo"
+        ],
+        0
+      ]
+    },
+    {
+      "path": "/file.nfo",
+      "dir_form": false,
+      "split": [
+        [
+          "file.nfo"
+        ],
+        0
+      ]
+    }
+  ]
+}

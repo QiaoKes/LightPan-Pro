@@ -1,0 +1,60 @@
+{
+  "case_count": 335,
+  "native_pure_exact_differences": [],
+  "candidate_entries": 99,
+  "unique_actual_codecs": 98,
+  "codec_skips": [],
+  "ascii_only_source_candidates": [
+    "ascii"
+  ],
+  "exceptions": [],
+  "groups": {
+    "codec-tree": 99,
+    "codec-prose": 99,
+    "tiny-malformed": 24,
+    "truncated": 25,
+    "corrupt": 25,
+    "binary": 12,
+    "controls": 6,
+    "declaration": 12,
+    "chunk-boundary": 28,
+    "lazy-boundary": 3,
+    "large-multibyte": 2
+  },
+  "fixture": "drivers/115/client/charset/testdata/detection-oracle.json.gz",
+  "fixture_sha256": "2f51a4891329e1c975c70398a2d71b363a810cc333574bbea86467607a799b82",
+  "generator_sha256": "2fc388fce87e1165ddffac5b16136dd55ca40ef679c9423ed4e5596afea95ad4",
+  "sort_semantic_counterexample": {
+    "input": [
+      {
+        "id": "A",
+        "chaos": 0,
+        "coherence": 0,
+        "usage": 0
+      },
+      {
+        "id": "B",
+        "chaos": 0.004,
+        "coherence": 0.03,
+        "usage": 0
+      },
+      {
+        "id": "C",
+        "chaos": 0.008,
+        "coherence": 0.06,
+        "usage": 0
+      }
+    ],
+    "python_sorted": [
+      "C",
+      "B",
+      "A"
+    ],
+    "go_short_insertion_model": [
+      "B",
+      "A",
+      "C"
+    ],
+    "actual_corpus_candidate_divergence": "not established; mathematical comparator issue"
+  }
+}

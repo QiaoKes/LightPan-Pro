@@ -1,0 +1,35 @@
+{
+  "count": 2350,
+  "groups": {
+    "short-random": 774,
+    "declaration-alias": 768,
+    "encoded-boundary": 480,
+    "encoded-malformed": 168,
+    "mixed-script-bom": 160
+  },
+  "exceptions": [],
+  "metadata": {
+    "schema_version": 1,
+    "version": "3.5.1",
+    "seed": 35111520261125,
+    "python": "3.12.13",
+    "unicode_version": "15.0.0",
+    "locale_encoding": "UTF-8",
+    "md_module": "/Users/saki/Desktop/code/ebn/115-reference/charset_normalizer/src/charset_normalizer/md.py",
+    "cd_module": "/Users/saki/Desktop/code/ebn/115-reference/charset_normalizer/src/charset_normalizer/cd.py",
+    "generator_sha256": "df674386d3292a5bcb20cba0132292a6775b194126f5afda37e22e7f6d60a70b",
+    "source_sha256": {
+      "md.py": "9b468a83ee27584ea59cb1b6e82584137ec413042a8133a5e8c558e81737e38a",
+      "version.py": "716889cab865a2b14d4b7ae2bf35f12a770da61a492aba6c7d5c7c42c7aeb869",
+      "legacy.py": "6e091d12fb9b4c238f94c28ecee10d5c73226ab877e956866d1bd64a522bd4a0",
+      "models.py": "f8350cead0964f25fc4d477ee0355a6005ce07f7311c686b45a4b66bf38e406b",
+      "__init__.py": "997c6fda6b13aee46c685bb1f96e6ee0d37c06702ac4cc38bfb30acce0f1f5b6",
+      "api.py": "55455aa5898f169c803379b698a9fdf808d94002312b238968abb870fc427f81",
+      "utils.py": "119ec0e7fb286ef4c8c58585b1f5ee56c9f6261c31c33addd3cb20105d05ae71",
+      "constant.py": "cf145218309b82e5d9936112263dbf8e36f6c082a2a279b4500cf32a5b0e753c",
+      "__main__.py": "cb3631311f8884a44763071295abc4bfca06770c6c47cf66af65f4f6a5c6769b",
+      "cd.py": "e9d24e66f774aeb1045af931e78900132f6a00ffee22e8963008b9c17f0e66c6"
+    }
+  },
+  "fixture_sha256": "cae604197e5d151efc4d8f970b1d4ec297f8ed0dc0db684232dce295a33ed7e3"
+}

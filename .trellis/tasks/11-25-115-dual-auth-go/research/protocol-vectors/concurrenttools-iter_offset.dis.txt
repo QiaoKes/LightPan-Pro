@@ -1,0 +1,4401 @@
+  0           0 RESUME                   0
+
+  4           2 BUILD_LIST               0
+              4 LOAD_CONST               0 (('iter_offset_threaded', 'iter_offset_async', 'iter_offset', 'iter_offset_multi_threaded', 'iter_offset_multi_async', 'iter_offset_multi'))
+              6 LIST_EXTEND              1
+              8 STORE_NAME               0 (__all__)
+
+ 10          10 LOAD_CONST               1 (0)
+             12 LOAD_CONST               2 (('shield', 'sleep', 'wait_for', 'TimeoutError', 'Semaphore', 'Task', 'TaskGroup'))
+             14 IMPORT_NAME              1 (asyncio)
+             16 IMPORT_FROM              2 (shield)
+             18 STORE_NAME               2 (shield)
+             20 IMPORT_FROM              3 (sleep)
+             22 STORE_NAME               4 (async_sleep)
+             24 IMPORT_FROM              5 (wait_for)
+             26 STORE_NAME               5 (wait_for)
+             28 IMPORT_FROM              6 (TimeoutError)
+             30 STORE_NAME               7 (AsyncTimeoutError)
+             32 IMPORT_FROM              8 (Semaphore)
+             34 STORE_NAME               9 (AsyncSemaphore)
+             36 IMPORT_FROM             10 (Task)
+             38 STORE_NAME              10 (Task)
+             40 IMPORT_FROM             11 (TaskGroup)
+             42 STORE_NAME              11 (TaskGroup)
+             44 POP_TOP
+
+ 14          46 LOAD_CONST               1 (0)
+             48 LOAD_CONST               3 (('deque',))
+             50 IMPORT_NAME             12 (collections)
+             52 IMPORT_FROM             13 (deque)
+             54 STORE_NAME              13 (deque)
+             56 POP_TOP
+
+ 15          58 LOAD_CONST               1 (0)
+             60 LOAD_CONST               4 (('AsyncIterator', 'Awaitable', 'Callable', 'Iterable', 'Iterator'))
+             62 IMPORT_NAME             14 (collections.abc)
+             64 IMPORT_FROM             15 (AsyncIterator)
+             66 STORE_NAME              15 (AsyncIterator)
+             68 IMPORT_FROM             16 (Awaitable)
+             70 STORE_NAME              16 (Awaitable)
+             72 IMPORT_FROM             17 (Callable)
+             74 STORE_NAME              17 (Callable)
+             76 IMPORT_FROM             18 (Iterable)
+             78 STORE_NAME              18 (Iterable)
+             80 IMPORT_FROM             19 (Iterator)
+             82 STORE_NAME              19 (Iterator)
+             84 POP_TOP
+
+ 16          86 LOAD_CONST               1 (0)
+             88 LOAD_CONST               5 (('Future', 'ThreadPoolExecutor'))
+             90 IMPORT_NAME             20 (concurrent.futures)
+             92 IMPORT_FROM             21 (Future)
+             94 STORE_NAME              21 (Future)
+             96 IMPORT_FROM             22 (ThreadPoolExecutor)
+             98 STORE_NAME              22 (ThreadPoolExecutor)
+            100 POP_TOP
+
+ 17         102 LOAD_CONST               1 (0)
+            104 LOAD_CONST               6 (('suppress',))
+            106 IMPORT_NAME             23 (contextlib)
+            108 IMPORT_FROM             24 (suppress)
+            110 STORE_NAME              24 (suppress)
+            112 POP_TOP
+
+ 18         114 LOAD_CONST               1 (0)
+            116 LOAD_CONST               7 (('copy',))
+            118 IMPORT_NAME             25 (copy)
+            120 IMPORT_FROM             25 (copy)
+            122 STORE_NAME              25 (copy)
+            124 POP_TOP
+
+ 19         126 LOAD_CONST               1 (0)
+            128 LOAD_CONST               8 (('sleep', 'time'))
+            130 IMPORT_NAME             26 (time)
+            132 IMPORT_FROM              3 (sleep)
+            134 STORE_NAME               3 (sleep)
+            136 IMPORT_FROM             26 (time)
+            138 STORE_NAME              26 (time)
+            140 POP_TOP
+
+ 20         142 LOAD_CONST               1 (0)
+            144 LOAD_CONST               9 (('cast', 'overload', 'Literal'))
+            146 IMPORT_NAME             27 (typing)
+            148 IMPORT_FROM             28 (cast)
+            150 STORE_NAME              28 (cast)
+            152 IMPORT_FROM             29 (overload)
+            154 STORE_NAME              29 (overload)
+            156 IMPORT_FROM             30 (Literal)
+            158 STORE_NAME              30 (Literal)
+            160 POP_TOP
+
+ 22         162 LOAD_CONST               1 (0)
+            164 LOAD_CONST              10 (('ensure_coroutine',))
+            166 IMPORT_NAME             31 (asynctools)
+            168 IMPORT_FROM             32 (ensure_coroutine)
+            170 STORE_NAME              32 (ensure_coroutine)
+            172 POP_TOP
+
+ 24         174 LOAD_CONST              11 (1)
+            176 LOAD_CONST              12 (('killable_executor',))
+            178 IMPORT_NAME             33 (basic)
+            180 IMPORT_FROM             34 (killable_executor)
+            182 STORE_NAME              34 (killable_executor)
+            184 POP_TOP
+
+ 27         186 PUSH_NULL
+
+ 32         188 NOP
+
+ 33         190 NOP
+
+ 34         192 NOP
+
+ 35         194 NOP
+
+ 36         196 NOP
+
+ 37         198 NOP
+
+ 38         200 NOP
+
+ 27         202 LOAD_CONST              26 ((None, 100, 0, 'offset', 'limit', 0, None))
+            204 LOAD_CONST              14 (<code object <generic parameters of iter_offset_threaded> at 0x103a38e30, file "concurrenttools/iter_offset.py", line 27>)
+            206 MAKE_FUNCTION            0
+            208 SWAP                     2
+            210 CALL                     1
+            218 STORE_NAME              35 (iter_offset_threaded)
+
+139         220 PUSH_NULL
+
+144         222 NOP
+
+145         224 NOP
+
+146         226 NOP
+
+147         228 NOP
+
+148         230 NOP
+
+149         232 NOP
+
+150         234 NOP
+
+139         236 LOAD_CONST              26 ((None, 100, 0, 'offset', 'limit', 0, None))
+            238 LOAD_CONST              15 (<code object <generic parameters of iter_offset_async> at 0xa5b20b700, file "concurrenttools/iter_offset.py", line 139>)
+            240 MAKE_FUNCTION            0
+            242 SWAP                     2
+            244 CALL                     1
+            252 STORE_NAME              36 (iter_offset_async)
+
+257         254 LOAD_NAME               29 (overload)
+
+258         256 PUSH_NULL
+
+263         258 NOP
+
+264         260 NOP
+
+265         262 NOP
+
+266         264 NOP
+
+267         266 NOP
+
+268         268 NOP
+
+269         270 NOP
+
+258         272 LOAD_CONST              26 ((None, 100, 0, 'offset', 'limit', 0, None))
+
+271         274 LOAD_CONST              16 (False)
+
+258         276 LOAD_CONST              17 (('async_',))
+            278 BUILD_CONST_KEY_MAP      1
+            280 SWAP                     2
+            282 LOAD_CONST              18 (<code object <generic parameters of iter_offset> at 0xa5b20b980, file "concurrenttools/iter_offset.py", line 257>)
+            284 MAKE_FUNCTION            0
+            286 SWAP                     3
+            288 CALL                     2
+
+257         296 CALL                     0
+
+258         304 STORE_NAME              37 (iter_offset)
+
+274         306 LOAD_NAME               29 (overload)
+
+275         308 PUSH_NULL
+
+280         310 NOP
+
+281         312 NOP
+
+282         314 NOP
+
+283         316 NOP
+
+284         318 NOP
+
+285         320 NOP
+
+286         322 NOP
+
+275         324 LOAD_CONST              26 ((None, 100, 0, 'offset', 'limit', 0, None))
+            326 LOAD_CONST              19 (<code object <generic parameters of iter_offset> at 0xa5b20bc00, file "concurrenttools/iter_offset.py", line 274>)
+            328 MAKE_FUNCTION            0
+            330 SWAP                     2
+            332 CALL                     1
+
+274         340 CALL                     0
+
+275         348 STORE_NAME              37 (iter_offset)
+
+291         350 PUSH_NULL
+
+296         352 NOP
+
+297         354 NOP
+
+298         356 NOP
+
+299         358 NOP
+
+300         360 NOP
+
+301         362 NOP
+
+302         364 NOP
+
+291         366 LOAD_CONST              26 ((None, 100, 0, 'offset', 'limit', 0, None))
+
+304         368 LOAD_CONST              16 (False)
+
+291         370 LOAD_CONST              17 (('async_',))
+            372 BUILD_CONST_KEY_MAP      1
+            374 SWAP                     2
+            376 LOAD_CONST              20 (<code object <generic parameters of iter_offset> at 0xa5b20aa80, file "concurrenttools/iter_offset.py", line 291>)
+            378 MAKE_FUNCTION            0
+            380 SWAP                     3
+            382 CALL                     2
+            390 STORE_NAME              37 (iter_offset)
+
+336         392 PUSH_NULL
+
+341         394 NOP
+
+342         396 NOP
+
+343         398 NOP
+
+344         400 NOP
+
+345         402 NOP
+
+346         404 NOP
+
+347         406 NOP
+
+336         408 LOAD_CONST              27 ((None, None, 100, 'offset', 'limit', 0, None))
+            410 LOAD_CONST              21 (<code object <generic parameters of iter_offset_multi_threaded> at 0xa5b1e2580, file "concurrenttools/iter_offset.py", line 336>)
+            412 MAKE_FUNCTION            0
+            414 SWAP                     2
+            416 CALL                     1
+            424 STORE_NAME              38 (iter_offset_multi_threaded)
+
+454         426 PUSH_NULL
+
+459         428 NOP
+
+460         430 NOP
+
+461         432 NOP
+
+462         434 NOP
+
+463         436 NOP
+
+464         438 NOP
+
+465         440 NOP
+
+454         442 LOAD_CONST              28 ((None, None, 100, 'offset', 'page_size', 0, None))
+            444 LOAD_CONST              22 (<code object <generic parameters of iter_offset_multi_async> at 0xa5b20ed00, file "concurrenttools/iter_offset.py", line 454>)
+            446 MAKE_FUNCTION            0
+            448 SWAP                     2
+            450 CALL                     1
+            458 STORE_NAME              39 (iter_offset_multi_async)
+
+579         460 LOAD_NAME               29 (overload)
+
+580         462 PUSH_NULL
+
+585         464 NOP
+
+586         466 NOP
+
+587         468 NOP
+
+588         470 NOP
+
+589         472 NOP
+
+590         474 NOP
+
+591         476 NOP
+
+580         478 LOAD_CONST              27 ((None, None, 100, 'offset', 'limit', 0, None))
+
+593         480 LOAD_CONST              16 (False)
+
+580         482 LOAD_CONST              17 (('async_',))
+            484 BUILD_CONST_KEY_MAP      1
+            486 SWAP                     2
+            488 LOAD_CONST              23 (<code object <generic parameters of iter_offset_multi> at 0xa5b20cf00, file "concurrenttools/iter_offset.py", line 579>)
+            490 MAKE_FUNCTION            0
+            492 SWAP                     3
+            494 CALL                     2
+
+579         502 CALL                     0
+
+580         510 STORE_NAME              40 (iter_offset_multi)
+
+596         512 LOAD_NAME               29 (overload)
+
+597         514 PUSH_NULL
+
+602         516 NOP
+
+603         518 NOP
+
+604         520 NOP
+
+605         522 NOP
+
+606         524 NOP
+
+607         526 NOP
+
+608         528 NOP
+
+597         530 LOAD_CONST              27 ((None, None, 100, 'offset', 'limit', 0, None))
+            532 LOAD_CONST              24 (<code object <generic parameters of iter_offset_multi> at 0xa5b20cc80, file "concurrenttools/iter_offset.py", line 596>)
+            534 MAKE_FUNCTION            0
+            536 SWAP                     2
+            538 CALL                     1
+
+596         546 CALL                     0
+
+597         554 STORE_NAME              40 (iter_offset_multi)
+
+613         556 PUSH_NULL
+
+618         558 NOP
+
+619         560 NOP
+
+620         562 NOP
+
+621         564 NOP
+
+622         566 NOP
+
+623         568 NOP
+
+624         570 NOP
+
+613         572 LOAD_CONST              27 ((None, None, 100, 'offset', 'limit', 0, None))
+
+626         574 LOAD_CONST              16 (False)
+
+613         576 LOAD_CONST              17 (('async_',))
+            578 BUILD_CONST_KEY_MAP      1
+            580 SWAP                     2
+            582 LOAD_CONST              25 (<code object <generic parameters of iter_offset_multi> at 0xa5b20d680, file "concurrenttools/iter_offset.py", line 613>)
+            584 MAKE_FUNCTION            0
+            586 SWAP                     3
+            588 CALL                     2
+            596 STORE_NAME              40 (iter_offset_multi)
+            598 RETURN_CONST            13 (None)
+
+Disassembly of <code object <generic parameters of iter_offset_threaded> at 0x103a38e30, file "concurrenttools/iter_offset.py", line 27>:
+ 27           0 RESUME                   0
+              2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               1 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('check_for_stop')
+
+ 31          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_GLOBAL              2 (int)
+             36 LOAD_GLOBAL              2 (int)
+             46 LOAD_FAST                1 (T)
+             48 BUILD_LIST               3
+             50 LOAD_GLOBAL              4 (bool)
+             60 BUILD_TUPLE              2
+             62 BINARY_SUBSCR
+
+ 27          66 LOAD_CONST               2 ('retry_for_exception')
+
+ 32          68 LOAD_CONST               3 (None)
+             70 LOAD_GLOBAL              0 (Callable)
+             80 LOAD_GLOBAL              6 (BaseException)
+             90 BUILD_LIST               1
+             92 LOAD_GLOBAL              4 (bool)
+            102 BUILD_TUPLE              2
+            104 BINARY_SUBSCR
+            108 BINARY_OP                7 (|)
+            112 LOAD_GLOBAL              8 (type)
+            122 LOAD_GLOBAL              6 (BaseException)
+            132 BINARY_SUBSCR
+            136 BINARY_OP                7 (|)
+            140 LOAD_GLOBAL             10 (tuple)
+            150 LOAD_GLOBAL              8 (type)
+            160 LOAD_GLOBAL              6 (BaseException)
+            170 BINARY_SUBSCR
+            174 LOAD_CONST               4 (Ellipsis)
+            176 BUILD_TUPLE              2
+            178 BINARY_SUBSCR
+            182 BINARY_OP                7 (|)
+
+ 27         186 LOAD_CONST               5 ('page_size')
+
+ 33         188 LOAD_GLOBAL              2 (int)
+
+ 27         198 LOAD_CONST               6 ('first_page_size')
+
+ 34         200 LOAD_GLOBAL              2 (int)
+
+ 27         210 LOAD_CONST               7 ('cooldown')
+
+ 37         212 LOAD_GLOBAL             12 (float)
+
+ 27         222 LOAD_CONST               8 ('max_workers')
+
+ 38         224 LOAD_CONST               3 (None)
+            226 LOAD_GLOBAL              2 (int)
+            236 BINARY_OP                7 (|)
+
+ 27         240 LOAD_CONST               9 ('call')
+
+ 28         242 LOAD_GLOBAL              0 (Callable)
+            252 LOAD_GLOBAL             14 (dict)
+            262 BUILD_LIST               1
+            264 LOAD_FAST                1 (T)
+            266 BUILD_TUPLE              2
+            268 BINARY_SUBSCR
+
+ 27         272 LOAD_CONST              10 ('payload')
+
+ 29         274 LOAD_GLOBAL             14 (dict)
+
+ 27         284 LOAD_CONST              11 ('return')
+
+ 39         286 LOAD_GLOBAL             16 (Iterator)
+            296 LOAD_FAST                1 (T)
+            298 BINARY_SUBSCR
+
+ 27         302 BUILD_TUPLE             18
+            304 LOAD_CONST              12 (<code object iter_offset_threaded at 0xa5b352a00, file "concurrenttools/iter_offset.py", line 27>)
+            306 MAKE_FUNCTION            5 (defaults, annotations)
+            308 SWAP                     2
+            310 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            312 RETURN_VALUE
+
+Disassembly of <code object iter_offset_threaded at 0xa5b352a00, file "concurrenttools/iter_offset.py", line 27>:
+              0 MAKE_CELL                0 (call)
+              2 MAKE_CELL               23 (last_call_ts)
+              4 MAKE_CELL               24 (submit)
+
+ 27           6 RETURN_GENERATOR
+              8 POP_TOP
+             10 RESUME                   0
+
+ 55          12 LOAD_FAST                4 (page_size)
+             14 LOAD_CONST               1 (0)
+             16 COMPARE_OP              68 (>)
+             20 POP_JUMP_IF_TRUE         2 (to 26)
+             22 LOAD_ASSERTION_ERROR
+             24 RAISE_VARARGS            1
+
+ 56     >>   26 LOAD_FAST                5 (first_page_size)
+             28 LOAD_CONST               1 (0)
+             30 COMPARE_OP              26 (<=)
+             34 POP_JUMP_IF_FALSE        2 (to 40)
+
+ 57          36 LOAD_FAST                4 (page_size)
+             38 STORE_FAST               5 (first_page_size)
+
+ 58     >>   40 LOAD_FAST                9 (max_workers)
+             42 POP_JUMP_IF_FALSE        7 (to 58)
+             44 LOAD_FAST                9 (max_workers)
+             46 LOAD_CONST               1 (0)
+             48 COMPARE_OP               2 (<)
+             52 POP_JUMP_IF_FALSE        2 (to 58)
+
+ 59          54 LOAD_CONST               2 (None)
+             56 STORE_FAST               9 (max_workers)
+
+ 60     >>   58 LOAD_FAST                3 (retry_for_exception)
+             60 POP_JUMP_IF_NOT_NONE     4 (to 70)
+
+ 61          62 LOAD_CONST               3 (<code object <lambda> at 0x103b35140, file "concurrenttools/iter_offset.py", line 61>)
+             64 MAKE_FUNCTION            0
+             66 STORE_FAST               3 (retry_for_exception)
+             68 JUMP_FORWARD            53 (to 176)
+
+ 62     >>   70 LOAD_GLOBAL              1 (NULL + isinstance)
+             80 LOAD_FAST                3 (retry_for_exception)
+             82 LOAD_GLOBAL              2 (type)
+             92 CALL                     2
+            100 POP_JUMP_IF_FALSE       16 (to 134)
+            102 LOAD_GLOBAL              5 (NULL + issubclass)
+            112 LOAD_FAST                3 (retry_for_exception)
+            114 LOAD_GLOBAL              6 (BaseException)
+            124 CALL                     2
+            132 POP_JUMP_IF_TRUE        16 (to 166)
+        >>  134 LOAD_GLOBAL              1 (NULL + isinstance)
+            144 LOAD_FAST                3 (retry_for_exception)
+            146 LOAD_GLOBAL              8 (tuple)
+            156 CALL                     2
+            164 POP_JUMP_IF_FALSE        5 (to 176)
+
+ 63     >>  166 LOAD_FAST                3 (retry_for_exception)
+            168 BUILD_TUPLE              1
+            170 LOAD_CONST               4 (<code object <lambda> at 0x103a379f0, file "concurrenttools/iter_offset.py", line 63>)
+            172 MAKE_FUNCTION            1 (defaults)
+            174 STORE_FAST               3 (retry_for_exception)
+
+ 64     >>  176 LOAD_GLOBAL             11 (NULL + cast)
+            186 LOAD_GLOBAL             12 (Callable)
+            196 LOAD_FAST                3 (retry_for_exception)
+            198 CALL                     2
+            206 STORE_FAST               3 (retry_for_exception)
+
+ 65         208 LOAD_FAST                1 (payload)
+            210 LOAD_ATTR               15 (NULL|self + setdefault)
+            230 LOAD_FAST                6 (key_offset)
+            232 LOAD_CONST               1 (0)
+            234 CALL                     2
+            242 STORE_FAST              10 (offset)
+
+ 66         244 LOAD_FAST                5 (first_page_size)
+            246 LOAD_FAST                1 (payload)
+            248 LOAD_FAST                7 (key_limit)
+            250 STORE_SUBSCR
+
+ 67         254 LOAD_FAST                5 (first_page_size)
+            256 STORE_FAST              11 (cur_page_size)
+
+ 68         258 LOAD_CONST               1 (0)
+            260 STORE_DEREF             23 (last_call_ts)
+
+ 69         262 LOAD_FAST                9 (max_workers)
+            264 LOAD_CONST               1 (0)
+            266 COMPARE_OP              40 (==)
+            270 POP_JUMP_IF_FALSE       99 (to 470)
+
+ 70         272 NOP
+
+ 71     >>  274 NOP
+
+ 72         276 LOAD_FAST                8 (cooldown)
+            278 LOAD_CONST               1 (0)
+            280 COMPARE_OP              68 (>)
+            284 POP_JUMP_IF_FALSE       32 (to 350)
+            286 LOAD_DEREF              23 (last_call_ts)
+            288 LOAD_FAST                8 (cooldown)
+            290 BINARY_OP                0 (+)
+            294 LOAD_GLOBAL             17 (NULL + time)
+            304 CALL                     0
+            312 BINARY_OP               10 (-)
+            316 COPY                     1
+            318 STORE_FAST              12 (delta)
+            320 LOAD_CONST               1 (0)
+            322 COMPARE_OP              68 (>)
+            326 POP_JUMP_IF_FALSE       11 (to 350)
+
+ 73         328 LOAD_GLOBAL             19 (NULL + sleep)
+            338 LOAD_FAST               12 (delta)
+            340 CALL                     1
+            348 POP_TOP
+
+ 74     >>  350 PUSH_NULL
+            352 LOAD_DEREF               0 (call)
+            354 LOAD_FAST                1 (payload)
+            356 CALL                     1
+            364 STORE_FAST              13 (resp)
+
+ 75         366 LOAD_GLOBAL             17 (NULL + time)
+            376 CALL                     0
+            384 STORE_DEREF             23 (last_call_ts)
+
+ 80         386 LOAD_FAST               13 (resp)
+            388 YIELD_VALUE              1
+            390 RESUME                   1
+            392 POP_TOP
+
+ 81         394 PUSH_NULL
+            396 LOAD_FAST                2 (check_for_stop)
+            398 LOAD_FAST               10 (offset)
+            400 LOAD_FAST               11 (cur_page_size)
+            402 LOAD_FAST               13 (resp)
+            404 CALL                     3
+            412 POP_JUMP_IF_FALSE        1 (to 416)
+
+ 82         414 RETURN_CONST             2 (None)
+
+ 84     >>  416 LOAD_FAST                1 (payload)
+            418 LOAD_FAST                6 (key_offset)
+            420 BINARY_SUBSCR
+            424 LOAD_FAST               11 (cur_page_size)
+            426 BINARY_OP                0 (+)
+            430 COPY                     1
+            432 STORE_FAST              10 (offset)
+            434 LOAD_FAST                1 (payload)
+            436 LOAD_FAST                6 (key_offset)
+            438 STORE_SUBSCR
+
+ 85         442 LOAD_FAST               11 (cur_page_size)
+            444 LOAD_FAST                4 (page_size)
+            446 COMPARE_OP              55 (!=)
+            450 POP_JUMP_IF_FALSE        8 (to 468)
+
+ 86         452 LOAD_FAST                4 (page_size)
+            454 LOAD_FAST                1 (payload)
+            456 LOAD_FAST                7 (key_limit)
+            458 STORE_SUBSCR
+
+ 87         462 LOAD_FAST                4 (page_size)
+            464 STORE_FAST              11 (cur_page_size)
+            466 NOP
+
+ 70     >>  468 JUMP_BACKWARD           98 (to 274)
+
+ 89     >>  470 LOAD_GLOBAL             21 (NULL + killable_executor)
+            480 LOAD_GLOBAL             23 (NULL + ThreadPoolExecutor)
+            490 LOAD_FAST                9 (max_workers)
+            492 CALL                     1
+            500 CALL                     1
+            508 BEFORE_WITH
+            510 STORE_FAST              15 (executor)
+
+ 90         512 LOAD_FAST               15 (executor)
+            514 LOAD_ATTR               24 (submit)
+            534 STORE_DEREF             24 (submit)
+
+ 91         536 LOAD_CONST               5 ('payload')
+            538 LOAD_GLOBAL             26 (dict)
+            548 LOAD_CONST               6 ('return')
+            550 LOAD_GLOBAL             28 (Future)
+            560 BUILD_TUPLE              4
+            562 LOAD_CLOSURE             0 (call)
+            564 LOAD_CLOSURE            23 (last_call_ts)
+            566 LOAD_CLOSURE            24 (submit)
+            568 BUILD_TUPLE              3
+            570 LOAD_CONST               7 (<code object make_future at 0x1084be130, file "concurrenttools/iter_offset.py", line 91>)
+            572 MAKE_FUNCTION           12 (annotations, closure)
+            574 STORE_FAST              16 (make_future)
+
+ 95         576 LOAD_GLOBAL             31 (NULL + deque)
+            586 CALL                     0
+            594 STORE_FAST              17 (dq)
+
+ 96         596 LOAD_FAST               17 (dq)
+            598 LOAD_ATTR               32 (append)
+            618 LOAD_FAST               17 (dq)
+            620 LOAD_ATTR               34 (popleft)
+            640 STORE_FAST              19 (pop)
+            642 STORE_FAST              18 (push)
+
+ 97         644 PUSH_NULL
+            646 LOAD_FAST               18 (push)
+            648 PUSH_NULL
+            650 LOAD_FAST               16 (make_future)
+            652 LOAD_FAST                1 (payload)
+            654 CALL                     1
+            662 LOAD_FAST               10 (offset)
+            664 BUILD_TUPLE              2
+            666 CALL                     1
+            674 POP_TOP
+
+ 98         676 LOAD_CONST               2 (None)
+            678 STORE_FAST              20 (max_offset)
+
+ 99     >>  680 LOAD_FAST               17 (dq)
+            682 POP_JUMP_IF_FALSE      214 (to 1112)
+
+100     >>  684 PUSH_NULL
+            686 LOAD_FAST               19 (pop)
+            688 CALL                     0
+            696 UNPACK_SEQUENCE          2
+            700 STORE_FAST              21 (future)
+            702 STORE_FAST              10 (offset)
+
+101         704 NOP
+
+102         706 LOAD_FAST               11 (cur_page_size)
+            708 LOAD_FAST                4 (page_size)
+            710 COMPARE_OP              40 (==)
+            714 POP_JUMP_IF_FALSE       42 (to 800)
+
+103         716 LOAD_FAST               21 (future)
+            718 LOAD_ATTR               37 (NULL|self + result)
+            738 LOAD_GLOBAL             39 (NULL + max)
+            748 LOAD_CONST               1 (0)
+            750 LOAD_DEREF              23 (last_call_ts)
+            752 LOAD_FAST                8 (cooldown)
+            754 BINARY_OP                0 (+)
+            758 LOAD_GLOBAL             17 (NULL + time)
+            768 CALL                     0
+            776 BINARY_OP               10 (-)
+            780 CALL                     2
+            788 CALL                     1
+            796 STORE_FAST              13 (resp)
+            798 JUMP_FORWARD            16 (to 832)
+
+105     >>  800 LOAD_FAST               21 (future)
+            802 LOAD_ATTR               37 (NULL|self + result)
+            822 CALL                     0
+            830 STORE_FAST              13 (resp)
+
+121     >>  832 LOAD_FAST               13 (resp)
+            834 YIELD_VALUE              2
+            836 RESUME                   1
+            838 POP_TOP
+
+122         840 PUSH_NULL
+            842 LOAD_FAST                2 (check_for_stop)
+            844 LOAD_FAST               10 (offset)
+            846 LOAD_FAST               11 (cur_page_size)
+            848 LOAD_FAST               13 (resp)
+            850 CALL                     3
+            858 POP_JUMP_IF_FALSE       76 (to 1012)
+
+123         860 LOAD_FAST               20 (max_offset)
+            862 POP_JUMP_IF_NONE         5 (to 874)
+            864 LOAD_FAST               20 (max_offset)
+            866 LOAD_FAST               10 (offset)
+            868 COMPARE_OP              68 (>)
+            872 POP_JUMP_IF_FALSE       69 (to 1012)
+
+124     >>  874 LOAD_FAST               10 (offset)
+            876 STORE_FAST              20 (max_offset)
+
+125         878 LOAD_GLOBAL             41 (NULL + range)
+            888 LOAD_GLOBAL             43 (NULL + len)
+            898 LOAD_FAST               17 (dq)
+            900 CALL                     1
+            908 CALL                     1
+            916 GET_ITER
+        >>  918 FOR_ITER                44 (to 1010)
+            922 STORE_FAST              22 (_)
+
+126         924 PUSH_NULL
+            926 LOAD_FAST               19 (pop)
+            928 CALL                     0
+            936 UNPACK_SEQUENCE          2
+            940 STORE_FAST              21 (future)
+            942 STORE_FAST              10 (offset)
+
+127         944 LOAD_FAST               10 (offset)
+            946 LOAD_FAST               20 (max_offset)
+            948 COMPARE_OP              68 (>)
+            952 POP_JUMP_IF_FALSE       17 (to 988)
+
+128         954 LOAD_FAST               21 (future)
+            956 LOAD_ATTR               45 (NULL|self + cancel)
+            976 CALL                     0
+            984 POP_TOP
+            986 JUMP_BACKWARD           35 (to 918)
+
+130     >>  988 PUSH_NULL
+            990 LOAD_FAST               18 (push)
+            992 LOAD_FAST               21 (future)
+            994 LOAD_FAST               10 (offset)
+            996 BUILD_TUPLE              2
+            998 CALL                     1
+           1006 POP_TOP
+           1008 JUMP_BACKWARD           46 (to 918)
+
+125     >> 1010 END_FOR
+
+131     >> 1012 LOAD_FAST               11 (cur_page_size)
+           1014 LOAD_FAST                4 (page_size)
+           1016 COMPARE_OP              55 (!=)
+           1020 POP_JUMP_IF_FALSE        8 (to 1038)
+
+132        1022 LOAD_FAST                4 (page_size)
+           1024 STORE_FAST              11 (cur_page_size)
+
+133        1026 LOAD_FAST                4 (page_size)
+           1028 LOAD_FAST                1 (payload)
+           1030 LOAD_FAST                7 (key_limit)
+           1032 STORE_SUBSCR
+           1036 NOP
+
+134     >> 1038 LOAD_FAST               20 (max_offset)
+           1040 POP_JUMP_IF_NOT_NONE    32 (to 1106)
+
+135        1042 LOAD_FAST                1 (payload)
+           1044 LOAD_FAST                6 (key_offset)
+           1046 COPY                     2
+           1048 COPY                     2
+           1050 BINARY_SUBSCR
+           1054 LOAD_FAST                4 (page_size)
+           1056 BINARY_OP               13 (+=)
+           1060 SWAP                     3
+           1062 SWAP                     2
+           1064 STORE_SUBSCR
+
+136        1068 PUSH_NULL
+           1070 LOAD_FAST               18 (push)
+           1072 PUSH_NULL
+           1074 LOAD_FAST               16 (make_future)
+           1076 LOAD_FAST                1 (payload)
+           1078 CALL                     1
+           1086 LOAD_FAST                1 (payload)
+           1088 LOAD_FAST                6 (key_offset)
+           1090 BINARY_SUBSCR
+           1094 BUILD_TUPLE              2
+           1096 CALL                     1
+           1104 POP_TOP
+
+ 99     >> 1106 LOAD_FAST               17 (dq)
+           1108 POP_JUMP_IF_FALSE        1 (to 1112)
+           1110 JUMP_BACKWARD          214 (to 684)
+
+ 89     >> 1112 LOAD_CONST               2 (None)
+           1114 LOAD_CONST               2 (None)
+           1116 LOAD_CONST               2 (None)
+           1118 CALL                     2
+           1126 POP_TOP
+           1128 RETURN_CONST             2 (None)
+        >> 1130 PUSH_EXC_INFO
+
+ 76        1132 LOAD_GLOBAL              6 (BaseException)
+           1142 CHECK_EXC_MATCH
+           1144 POP_JUMP_IF_FALSE       20 (to 1186)
+           1146 STORE_FAST              14 (e)
+
+ 77        1148 PUSH_NULL
+           1150 LOAD_FAST                3 (retry_for_exception)
+           1152 LOAD_FAST               14 (e)
+           1154 CALL                     1
+           1162 POP_JUMP_IF_TRUE         1 (to 1166)
+
+ 78        1164 RAISE_VARARGS            0
+
+ 77     >> 1166 POP_EXCEPT
+           1168 LOAD_CONST               2 (None)
+           1170 STORE_FAST              14 (e)
+           1172 DELETE_FAST             14 (e)
+           1174 EXTENDED_ARG             1
+           1176 JUMP_BACKWARD          355 (to 468)
+        >> 1178 LOAD_CONST               2 (None)
+           1180 STORE_FAST              14 (e)
+           1182 DELETE_FAST             14 (e)
+           1184 RERAISE                  1
+
+ 76     >> 1186 RERAISE                  0
+        >> 1188 COPY                     3
+           1190 POP_EXCEPT
+           1192 RERAISE                  1
+        >> 1194 PUSH_EXC_INFO
+
+106        1196 LOAD_GLOBAL              6 (BaseException)
+           1206 CHECK_EXC_MATCH
+           1208 POP_JUMP_IF_FALSE      137 (to 1484)
+           1210 STORE_FAST              14 (e)
+
+107        1212 LOAD_FAST               21 (future)
+           1214 LOAD_ATTR               47 (NULL|self + done)
+           1234 CALL                     0
+           1242 POP_JUMP_IF_FALSE       83 (to 1410)
+
+108        1244 LOAD_FAST               21 (future)
+           1246 LOAD_ATTR               49 (NULL|self + exception)
+           1266 CALL                     0
+           1274 LOAD_FAST               14 (e)
+           1276 IS_OP                    1
+           1278 POP_JUMP_IF_FALSE       33 (to 1346)
+
+109        1280 LOAD_GLOBAL              1 (NULL + isinstance)
+           1290 LOAD_FAST               14 (e)
+           1292 LOAD_GLOBAL             50 (TimeoutError)
+           1302 CALL                     2
+           1310 POP_JUMP_IF_TRUE         1 (to 1314)
+
+110        1312 RAISE_VARARGS            0
+
+111     >> 1314 PUSH_NULL
+           1316 LOAD_FAST               18 (push)
+           1318 LOAD_FAST               21 (future)
+           1320 LOAD_FAST               10 (offset)
+           1322 BUILD_TUPLE              2
+           1324 CALL                     1
+           1332 POP_TOP
+
+112        1334 POP_EXCEPT
+           1336 LOAD_CONST               2 (None)
+           1338 STORE_FAST              14 (e)
+           1340 DELETE_FAST             14 (e)
+           1342 EXTENDED_ARG             1
+           1344 JUMP_BACKWARD          333 (to 680)
+
+113     >> 1346 PUSH_NULL
+           1348 LOAD_FAST                3 (retry_for_exception)
+           1350 LOAD_FAST               14 (e)
+           1352 CALL                     1
+           1360 POP_JUMP_IF_TRUE         1 (to 1364)
+
+114        1362 RAISE_VARARGS            0
+
+115     >> 1364 PUSH_NULL
+           1366 LOAD_FAST               18 (push)
+           1368 PUSH_NULL
+           1370 LOAD_FAST               16 (make_future)
+           1372 BUILD_MAP                0
+           1374 LOAD_FAST                1 (payload)
+           1376 DICT_UPDATE              1
+           1378 LOAD_FAST                6 (key_offset)
+           1380 LOAD_FAST               10 (offset)
+           1382 BUILD_MAP                1
+           1384 DICT_UPDATE              1
+           1386 CALL                     1
+           1394 LOAD_FAST               10 (offset)
+           1396 BUILD_TUPLE              2
+           1398 CALL                     1
+           1406 POP_TOP
+           1408 JUMP_FORWARD            28 (to 1466)
+
+116     >> 1410 LOAD_GLOBAL              1 (NULL + isinstance)
+           1420 LOAD_FAST               14 (e)
+           1422 LOAD_GLOBAL             50 (TimeoutError)
+           1432 CALL                     2
+           1440 POP_JUMP_IF_FALSE       11 (to 1464)
+
+117        1442 PUSH_NULL
+           1444 LOAD_FAST               18 (push)
+           1446 LOAD_FAST               21 (future)
+           1448 LOAD_FAST               10 (offset)
+           1450 BUILD_TUPLE              2
+           1452 CALL                     1
+           1460 POP_TOP
+           1462 JUMP_FORWARD             1 (to 1466)
+
+119     >> 1464 RAISE_VARARGS            0
+        >> 1466 POP_EXCEPT
+           1468 LOAD_CONST               2 (None)
+           1470 STORE_FAST              14 (e)
+           1472 DELETE_FAST             14 (e)
+           1474 JUMP_BACKWARD          219 (to 1038)
+        >> 1476 LOAD_CONST               2 (None)
+           1478 STORE_FAST              14 (e)
+           1480 DELETE_FAST             14 (e)
+           1482 RERAISE                  1
+
+106     >> 1484 RERAISE                  0
+        >> 1486 COPY                     3
+           1488 POP_EXCEPT
+           1490 RERAISE                  1
+
+ 89     >> 1492 PUSH_EXC_INFO
+           1494 WITH_EXCEPT_START
+           1496 POP_JUMP_IF_TRUE         1 (to 1500)
+           1498 RERAISE                  2
+        >> 1500 POP_TOP
+           1502 POP_EXCEPT
+           1504 POP_TOP
+           1506 POP_TOP
+           1508 RETURN_CONST             2 (None)
+        >> 1510 COPY                     3
+           1512 POP_EXCEPT
+           1514 RERAISE                  1
+        >> 1516 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+           1518 RERAISE                  1
+ExceptionTable:
+  10 to 272 -> 1516 [0] lasti
+  276 to 384 -> 1130 [0]
+  386 to 508 -> 1516 [0] lasti
+  510 to 702 -> 1492 [1] lasti
+  706 to 830 -> 1194 [1]
+  832 to 1108 -> 1492 [1] lasti
+  1112 to 1128 -> 1516 [0] lasti
+  1130 to 1146 -> 1188 [1] lasti
+  1148 to 1164 -> 1178 [1] lasti
+  1166 to 1176 -> 1516 [0] lasti
+  1178 to 1186 -> 1188 [1] lasti
+  1188 to 1192 -> 1516 [0] lasti
+  1194 to 1210 -> 1486 [2] lasti
+  1212 to 1332 -> 1476 [2] lasti
+  1334 to 1344 -> 1492 [1] lasti
+  1346 to 1464 -> 1476 [2] lasti
+  1466 to 1474 -> 1492 [1] lasti
+  1476 to 1484 -> 1486 [2] lasti
+  1486 to 1490 -> 1492 [1] lasti
+  1492 to 1500 -> 1510 [3] lasti
+  1502 to 1514 -> 1516 [0] lasti
+
+Disassembly of <code object <lambda> at 0x103b35140, file "concurrenttools/iter_offset.py", line 61>:
+ 61           0 RESUME                   0
+              2 RETURN_CONST             1 (False)
+
+Disassembly of <code object <lambda> at 0x103a379f0, file "concurrenttools/iter_offset.py", line 63>:
+ 63           0 RESUME                   0
+              2 LOAD_GLOBAL              1 (NULL + isinstance)
+             12 LOAD_FAST                0 (e)
+             14 LOAD_FAST                1 (excs)
+             16 CALL                     2
+             24 RETURN_VALUE
+
+Disassembly of <code object make_future at 0x1084be130, file "concurrenttools/iter_offset.py", line 91>:
+              0 COPY_FREE_VARS           3
+
+ 91           2 RESUME                   0
+
+ 93           4 LOAD_GLOBAL              1 (NULL + time)
+             14 CALL                     0
+             22 STORE_DEREF              2 (last_call_ts)
+
+ 94          24 PUSH_NULL
+             26 LOAD_DEREF               3 (submit)
+             28 LOAD_DEREF               1 (call)
+             30 LOAD_GLOBAL              3 (NULL + copy)
+             40 LOAD_FAST                0 (payload)
+             42 CALL                     1
+             50 CALL                     2
+             58 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of iter_offset_async> at 0xa5b20b700, file "concurrenttools/iter_offset.py", line 139>:
+              0 MAKE_CELL                1 (T)
+
+139           2 RESUME                   0
+              4 LOAD_CONST               0 ('T')
+              6 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              8 COPY                     1
+             10 STORE_DEREF              1 (T)
+             12 BUILD_TUPLE              1
+             14 LOAD_FAST                0 (.defaults)
+             16 LOAD_CONST               1 ('check_for_stop')
+
+143          18 LOAD_GLOBAL              0 (Callable)
+             28 LOAD_GLOBAL              2 (int)
+             38 LOAD_GLOBAL              2 (int)
+             48 LOAD_DEREF               1 (T)
+             50 BUILD_LIST               3
+             52 LOAD_GLOBAL              4 (bool)
+             62 BUILD_TUPLE              2
+             64 BINARY_SUBSCR
+
+139          68 LOAD_CONST               2 ('retry_for_exception')
+
+144          70 LOAD_CONST               3 (None)
+             72 LOAD_GLOBAL              0 (Callable)
+             82 LOAD_GLOBAL              6 (BaseException)
+             92 BUILD_LIST               1
+             94 LOAD_GLOBAL              4 (bool)
+            104 BUILD_TUPLE              2
+            106 BINARY_SUBSCR
+            110 BINARY_OP                7 (|)
+            114 LOAD_GLOBAL              8 (type)
+            124 LOAD_GLOBAL              6 (BaseException)
+            134 BINARY_SUBSCR
+            138 BINARY_OP                7 (|)
+            142 LOAD_GLOBAL             10 (tuple)
+            152 LOAD_GLOBAL              8 (type)
+            162 LOAD_GLOBAL              6 (BaseException)
+            172 BINARY_SUBSCR
+            176 LOAD_CONST               4 (Ellipsis)
+            178 BUILD_TUPLE              2
+            180 BINARY_SUBSCR
+            184 BINARY_OP                7 (|)
+
+139         188 LOAD_CONST               5 ('page_size')
+
+145         190 LOAD_GLOBAL              2 (int)
+
+139         200 LOAD_CONST               6 ('first_page_size')
+
+146         202 LOAD_GLOBAL              2 (int)
+
+139         212 LOAD_CONST               7 ('cooldown')
+
+149         214 LOAD_GLOBAL             12 (float)
+
+139         224 LOAD_CONST               8 ('max_workers')
+
+150         226 LOAD_CONST               3 (None)
+            228 LOAD_GLOBAL              2 (int)
+            238 BINARY_OP                7 (|)
+
+139         242 LOAD_CONST               9 ('call')
+
+140         244 LOAD_GLOBAL              0 (Callable)
+            254 LOAD_GLOBAL             14 (dict)
+            264 BUILD_LIST               1
+            266 LOAD_GLOBAL             16 (Awaitable)
+            276 LOAD_DEREF               1 (T)
+            278 BINARY_SUBSCR
+            282 BUILD_TUPLE              2
+            284 BINARY_SUBSCR
+
+139         288 LOAD_CONST              10 ('payload')
+
+141         290 LOAD_GLOBAL             14 (dict)
+
+139         300 LOAD_CONST              11 ('return')
+
+151         302 LOAD_GLOBAL             18 (AsyncIterator)
+            312 LOAD_DEREF               1 (T)
+            314 BINARY_SUBSCR
+
+139         318 BUILD_TUPLE             18
+            320 LOAD_CLOSURE             1 (T)
+            322 BUILD_TUPLE              1
+            324 LOAD_CONST              12 (<code object iter_offset_async at 0xa5b34f000, file "concurrenttools/iter_offset.py", line 139>)
+            326 MAKE_FUNCTION           13 (defaults, annotations, closure)
+            328 SWAP                     2
+            330 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            332 RETURN_VALUE
+
+Disassembly of <code object iter_offset_async at 0xa5b34f000, file "concurrenttools/iter_offset.py", line 139>:
+              0 COPY_FREE_VARS           1
+              2 MAKE_CELL                0 (call)
+              4 MAKE_CELL               24 (create_task)
+              6 MAKE_CELL               25 (last_call_ts)
+              8 MAKE_CELL               26 (sema)
+
+139          10 RETURN_GENERATOR
+             12 POP_TOP
+             14 RESUME                   0
+
+167          16 LOAD_FAST                4 (page_size)
+             18 LOAD_CONST               1 (0)
+             20 COMPARE_OP              68 (>)
+             24 POP_JUMP_IF_TRUE         2 (to 30)
+             26 LOAD_ASSERTION_ERROR
+             28 RAISE_VARARGS            1
+
+168     >>   30 LOAD_FAST                5 (first_page_size)
+             32 LOAD_CONST               1 (0)
+             34 COMPARE_OP              26 (<=)
+             38 POP_JUMP_IF_FALSE        2 (to 44)
+
+169          40 LOAD_FAST                4 (page_size)
+             42 STORE_FAST               5 (first_page_size)
+
+170     >>   44 LOAD_FAST                3 (retry_for_exception)
+             46 POP_JUMP_IF_NOT_NONE     4 (to 56)
+
+171          48 LOAD_CONST               3 (<code object <lambda> at 0x103b35210, file "concurrenttools/iter_offset.py", line 171>)
+             50 MAKE_FUNCTION            0
+             52 STORE_FAST               3 (retry_for_exception)
+             54 JUMP_FORWARD            53 (to 162)
+
+172     >>   56 LOAD_GLOBAL              1 (NULL + isinstance)
+             66 LOAD_FAST                3 (retry_for_exception)
+             68 LOAD_GLOBAL              2 (type)
+             78 CALL                     2
+             86 POP_JUMP_IF_FALSE       16 (to 120)
+             88 LOAD_GLOBAL              5 (NULL + issubclass)
+             98 LOAD_FAST                3 (retry_for_exception)
+            100 LOAD_GLOBAL              6 (BaseException)
+            110 CALL                     2
+            118 POP_JUMP_IF_TRUE        16 (to 152)
+        >>  120 LOAD_GLOBAL              1 (NULL + isinstance)
+            130 LOAD_FAST                3 (retry_for_exception)
+            132 LOAD_GLOBAL              8 (tuple)
+            142 CALL                     2
+            150 POP_JUMP_IF_FALSE        5 (to 162)
+
+173     >>  152 LOAD_FAST                3 (retry_for_exception)
+            154 BUILD_TUPLE              1
+            156 LOAD_CONST               4 (<code object <lambda> at 0x103b18570, file "concurrenttools/iter_offset.py", line 173>)
+            158 MAKE_FUNCTION            1 (defaults)
+            160 STORE_FAST               3 (retry_for_exception)
+
+174     >>  162 LOAD_GLOBAL             11 (NULL + cast)
+            172 LOAD_GLOBAL             12 (Callable)
+            182 LOAD_FAST                3 (retry_for_exception)
+            184 CALL                     2
+            192 STORE_FAST               3 (retry_for_exception)
+
+175         194 LOAD_FAST                1 (payload)
+            196 LOAD_ATTR               15 (NULL|self + setdefault)
+            216 LOAD_FAST                6 (key_offset)
+            218 LOAD_CONST               1 (0)
+            220 CALL                     2
+            228 STORE_FAST              10 (offset)
+
+176         230 LOAD_FAST                5 (first_page_size)
+            232 LOAD_FAST                1 (payload)
+            234 LOAD_FAST                7 (key_limit)
+            236 STORE_SUBSCR
+
+177         240 LOAD_FAST                5 (first_page_size)
+            242 STORE_FAST              11 (cur_page_size)
+
+178         244 LOAD_CONST               1 (0)
+            246 STORE_DEREF             25 (last_call_ts)
+
+179         248 LOAD_FAST                9 (max_workers)
+            250 LOAD_CONST               1 (0)
+            252 COMPARE_OP              40 (==)
+            256 POP_JUMP_IF_FALSE      116 (to 490)
+
+180         258 NOP
+
+181     >>  260 NOP
+
+182         262 LOAD_FAST                8 (cooldown)
+            264 LOAD_CONST               1 (0)
+            266 COMPARE_OP              68 (>)
+            270 POP_JUMP_IF_FALSE       40 (to 352)
+            272 LOAD_DEREF              25 (last_call_ts)
+            274 LOAD_FAST                8 (cooldown)
+            276 BINARY_OP                0 (+)
+            280 LOAD_GLOBAL             17 (NULL + time)
+            290 CALL                     0
+            298 BINARY_OP               10 (-)
+            302 COPY                     1
+            304 STORE_FAST              12 (delta)
+            306 LOAD_CONST               1 (0)
+            308 COMPARE_OP              68 (>)
+            312 POP_JUMP_IF_FALSE       19 (to 352)
+
+183         314 LOAD_GLOBAL             19 (NULL + async_sleep)
+            324 LOAD_FAST               12 (delta)
+            326 CALL                     1
+            334 GET_AWAITABLE            0
+            336 LOAD_CONST               2 (None)
+        >>  338 SEND                     3 (to 348)
+            342 YIELD_VALUE              3
+            344 RESUME                   3
+            346 JUMP_BACKWARD_NO_INTERRUPT     5 (to 338)
+        >>  348 END_SEND
+            350 POP_TOP
+
+184     >>  352 PUSH_NULL
+            354 LOAD_DEREF               0 (call)
+            356 LOAD_FAST                1 (payload)
+            358 CALL                     1
+            366 GET_AWAITABLE            0
+            368 LOAD_CONST               2 (None)
+        >>  370 SEND                     3 (to 380)
+            374 YIELD_VALUE              3
+            376 RESUME                   3
+            378 JUMP_BACKWARD_NO_INTERRUPT     5 (to 370)
+        >>  380 END_SEND
+            382 STORE_FAST              13 (resp)
+
+185         384 LOAD_GLOBAL             17 (NULL + time)
+            394 CALL                     0
+            402 STORE_DEREF             25 (last_call_ts)
+
+190         404 LOAD_FAST               13 (resp)
+            406 CALL_INTRINSIC_1         4 (INTRINSIC_ASYNC_GEN_WRAP)
+            408 YIELD_VALUE              1
+            410 RESUME                   1
+            412 POP_TOP
+
+191         414 PUSH_NULL
+            416 LOAD_FAST                2 (check_for_stop)
+            418 LOAD_FAST               10 (offset)
+            420 LOAD_FAST               11 (cur_page_size)
+            422 LOAD_FAST               13 (resp)
+            424 CALL                     3
+            432 POP_JUMP_IF_FALSE        1 (to 436)
+
+192         434 RETURN_CONST             2 (None)
+
+194     >>  436 LOAD_FAST                1 (payload)
+            438 LOAD_FAST                6 (key_offset)
+            440 BINARY_SUBSCR
+            444 LOAD_FAST               11 (cur_page_size)
+            446 BINARY_OP                0 (+)
+            450 COPY                     1
+            452 STORE_FAST              10 (offset)
+            454 LOAD_FAST                1 (payload)
+            456 LOAD_FAST                6 (key_offset)
+            458 STORE_SUBSCR
+
+195         462 LOAD_FAST               11 (cur_page_size)
+            464 LOAD_FAST                4 (page_size)
+            466 COMPARE_OP              55 (!=)
+            470 POP_JUMP_IF_FALSE        8 (to 488)
+
+196         472 LOAD_FAST                4 (page_size)
+            474 STORE_FAST              11 (cur_page_size)
+
+197         476 LOAD_FAST                4 (page_size)
+            478 LOAD_FAST                1 (payload)
+            480 LOAD_FAST                7 (key_limit)
+            482 STORE_SUBSCR
+            486 NOP
+
+180     >>  488 JUMP_BACKWARD          115 (to 260)
+
+199     >>  490 LOAD_FAST                9 (max_workers)
+            492 POP_JUMP_IF_NONE        32 (to 558)
+            494 LOAD_FAST                9 (max_workers)
+            496 LOAD_CONST               1 (0)
+            498 COMPARE_OP               2 (<)
+            502 POP_JUMP_IF_TRUE        27 (to 558)
+
+200         504 LOAD_GLOBAL             21 (NULL + AsyncSemaphore)
+            514 LOAD_FAST                9 (max_workers)
+            516 CALL                     1
+            524 STORE_DEREF             26 (sema)
+
+201         526 LOAD_DEREF               0 (call)
+            528 BUILD_TUPLE              1
+            530 LOAD_CONST               5 ('payload')
+            532 LOAD_GLOBAL             22 (dict)
+            542 LOAD_CONST               6 ('return')
+            544 LOAD_DEREF              27 (T)
+            546 BUILD_TUPLE              4
+            548 LOAD_CLOSURE            26 (sema)
+            550 BUILD_TUPLE              1
+            552 LOAD_CONST               7 (<code object call at 0x103a90190, file "concurrenttools/iter_offset.py", line 201>)
+            554 MAKE_FUNCTION           13 (defaults, annotations, closure)
+            556 STORE_DEREF              0 (call)
+
+204     >>  558 LOAD_GLOBAL             25 (NULL + TaskGroup)
+            568 CALL                     0
+            576 BEFORE_ASYNC_WITH
+            578 GET_AWAITABLE            1
+            580 LOAD_CONST               2 (None)
+        >>  582 SEND                     3 (to 592)
+            586 YIELD_VALUE              2
+            588 RESUME                   3
+            590 JUMP_BACKWARD_NO_INTERRUPT     5 (to 582)
+        >>  592 END_SEND
+            594 STORE_FAST              15 (tg)
+
+205         596 LOAD_FAST               15 (tg)
+            598 LOAD_ATTR               26 (create_task)
+            618 STORE_DEREF             24 (create_task)
+
+206         620 LOAD_CONST               5 ('payload')
+            622 LOAD_GLOBAL             22 (dict)
+            632 LOAD_CONST               6 ('return')
+            634 LOAD_GLOBAL             28 (Task)
+            644 BUILD_TUPLE              4
+            646 LOAD_CLOSURE             0 (call)
+            648 LOAD_CLOSURE            24 (create_task)
+            650 LOAD_CLOSURE            25 (last_call_ts)
+            652 BUILD_TUPLE              3
+            654 LOAD_CONST               8 (<code object make_task at 0x103b1d9b0, file "concurrenttools/iter_offset.py", line 206>)
+            656 MAKE_FUNCTION           12 (annotations, closure)
+            658 STORE_FAST              16 (make_task)
+
+210         660 LOAD_GLOBAL             31 (NULL + deque)
+            670 CALL                     0
+            678 STORE_FAST              17 (dq)
+
+211         680 LOAD_FAST               17 (dq)
+            682 LOAD_ATTR               32 (append)
+            702 LOAD_FAST               17 (dq)
+            704 LOAD_ATTR               34 (popleft)
+            724 STORE_FAST              19 (pop)
+            726 STORE_FAST              18 (push)
+
+212         728 PUSH_NULL
+            730 LOAD_FAST               18 (push)
+            732 PUSH_NULL
+            734 LOAD_FAST               16 (make_task)
+            736 LOAD_FAST                1 (payload)
+            738 CALL                     1
+            746 LOAD_FAST               10 (offset)
+            748 BUILD_TUPLE              2
+            750 CALL                     1
+            758 POP_TOP
+
+213         760 LOAD_CONST               2 (None)
+            762 STORE_FAST              20 (max_offset)
+
+214         764 LOAD_CONST               2 (None)
+            766 STORE_FAST              21 (exc)
+
+215     >>  768 LOAD_FAST               17 (dq)
+            770 POP_JUMP_IF_FALSE      214 (to 1200)
+
+216     >>  772 PUSH_NULL
+            774 LOAD_FAST               19 (pop)
+            776 CALL                     0
+            784 UNPACK_SEQUENCE          2
+            788 STORE_FAST              22 (task)
+            790 STORE_FAST              10 (offset)
+
+217         792 NOP
+
+218         794 LOAD_FAST               11 (cur_page_size)
+            796 LOAD_FAST                4 (page_size)
+            798 COMPARE_OP              40 (==)
+            802 POP_JUMP_IF_FALSE       54 (to 912)
+
+219         804 LOAD_GLOBAL             37 (NULL + wait_for)
+            814 LOAD_GLOBAL             39 (NULL + shield)
+            824 LOAD_FAST               22 (task)
+            826 CALL                     1
+            834 LOAD_GLOBAL             41 (NULL + max)
+            844 LOAD_CONST               1 (0)
+            846 LOAD_DEREF              25 (last_call_ts)
+            848 LOAD_FAST                8 (cooldown)
+            850 BINARY_OP                0 (+)
+            854 LOAD_GLOBAL             17 (NULL + time)
+            864 CALL                     0
+            872 BINARY_OP               10 (-)
+            876 CALL                     2
+            884 CALL                     2
+            892 GET_AWAITABLE            0
+            894 LOAD_CONST               2 (None)
+        >>  896 SEND                     3 (to 906)
+            900 YIELD_VALUE              4
+            902 RESUME                   3
+            904 JUMP_BACKWARD_NO_INTERRUPT     5 (to 896)
+        >>  906 END_SEND
+            908 STORE_FAST              13 (resp)
+            910 JUMP_FORWARD            10 (to 932)
+
+221     >>  912 LOAD_FAST               22 (task)
+            914 GET_AWAITABLE            0
+            916 LOAD_CONST               2 (None)
+        >>  918 SEND                     3 (to 928)
+            922 YIELD_VALUE              4
+            924 RESUME                   3
+            926 JUMP_BACKWARD_NO_INTERRUPT     5 (to 918)
+        >>  928 END_SEND
+            930 STORE_FAST              13 (resp)
+
+238     >>  932 LOAD_FAST               13 (resp)
+            934 CALL_INTRINSIC_1         4 (INTRINSIC_ASYNC_GEN_WRAP)
+            936 YIELD_VALUE              2
+            938 RESUME                   1
+            940 POP_TOP
+
+239         942 PUSH_NULL
+            944 LOAD_FAST                2 (check_for_stop)
+            946 LOAD_FAST               10 (offset)
+            948 LOAD_FAST               11 (cur_page_size)
+            950 LOAD_FAST               13 (resp)
+            952 CALL                     3
+            960 POP_JUMP_IF_FALSE       69 (to 1100)
+
+240         962 LOAD_FAST               10 (offset)
+            964 STORE_FAST              20 (max_offset)
+
+241         966 LOAD_GLOBAL             43 (NULL + range)
+            976 LOAD_GLOBAL             45 (NULL + len)
+            986 LOAD_FAST               17 (dq)
+            988 CALL                     1
+            996 CALL                     1
+           1004 GET_ITER
+        >> 1006 FOR_ITER                44 (to 1098)
+           1010 STORE_FAST              23 (_)
+
+242        1012 PUSH_NULL
+           1014 LOAD_FAST               19 (pop)
+           1016 CALL                     0
+           1024 UNPACK_SEQUENCE          2
+           1028 STORE_FAST              22 (task)
+           1030 STORE_FAST              10 (offset)
+
+243        1032 LOAD_FAST               10 (offset)
+           1034 LOAD_FAST               20 (max_offset)
+           1036 COMPARE_OP              68 (>)
+           1040 POP_JUMP_IF_FALSE       17 (to 1076)
+
+244        1042 LOAD_FAST               22 (task)
+           1044 LOAD_ATTR               47 (NULL|self + cancel)
+           1064 CALL                     0
+           1072 POP_TOP
+           1074 JUMP_BACKWARD           35 (to 1006)
+
+246     >> 1076 PUSH_NULL
+           1078 LOAD_FAST               18 (push)
+           1080 LOAD_FAST               22 (task)
+           1082 LOAD_FAST               10 (offset)
+           1084 BUILD_TUPLE              2
+           1086 CALL                     1
+           1094 POP_TOP
+           1096 JUMP_BACKWARD           46 (to 1006)
+
+241     >> 1098 END_FOR
+
+247     >> 1100 LOAD_FAST               11 (cur_page_size)
+           1102 LOAD_FAST                4 (page_size)
+           1104 COMPARE_OP              55 (!=)
+           1108 POP_JUMP_IF_FALSE        8 (to 1126)
+
+248        1110 LOAD_FAST                4 (page_size)
+           1112 STORE_FAST              11 (cur_page_size)
+
+249        1114 LOAD_FAST                4 (page_size)
+           1116 LOAD_FAST                1 (payload)
+           1118 LOAD_FAST                7 (key_limit)
+           1120 STORE_SUBSCR
+           1124 NOP
+
+250     >> 1126 LOAD_FAST               20 (max_offset)
+           1128 POP_JUMP_IF_NOT_NONE    32 (to 1194)
+
+251        1130 LOAD_FAST                1 (payload)
+           1132 LOAD_FAST                6 (key_offset)
+           1134 COPY                     2
+           1136 COPY                     2
+           1138 BINARY_SUBSCR
+           1142 LOAD_FAST                4 (page_size)
+           1144 BINARY_OP               13 (+=)
+           1148 SWAP                     3
+           1150 SWAP                     2
+           1152 STORE_SUBSCR
+
+252        1156 PUSH_NULL
+           1158 LOAD_FAST               18 (push)
+           1160 PUSH_NULL
+           1162 LOAD_FAST               16 (make_task)
+           1164 LOAD_FAST                1 (payload)
+           1166 CALL                     1
+           1174 LOAD_FAST                1 (payload)
+           1176 LOAD_FAST                6 (key_offset)
+           1178 BINARY_SUBSCR
+           1182 BUILD_TUPLE              2
+           1184 CALL                     1
+           1192 POP_TOP
+
+215     >> 1194 LOAD_FAST               17 (dq)
+           1196 POP_JUMP_IF_FALSE        1 (to 1200)
+           1198 JUMP_BACKWARD          214 (to 772)
+
+204     >> 1200 LOAD_CONST               2 (None)
+           1202 LOAD_CONST               2 (None)
+           1204 LOAD_CONST               2 (None)
+           1206 CALL                     2
+           1214 GET_AWAITABLE            2
+           1216 LOAD_CONST               2 (None)
+        >> 1218 SEND                     3 (to 1228)
+           1222 YIELD_VALUE              2
+           1224 RESUME                   3
+           1226 JUMP_BACKWARD_NO_INTERRUPT     5 (to 1218)
+        >> 1228 END_SEND
+           1230 POP_TOP
+
+253     >> 1232 LOAD_FAST_CHECK         21 (exc)
+           1234 POP_JUMP_IF_NONE         2 (to 1240)
+
+254        1236 LOAD_FAST               21 (exc)
+           1238 RAISE_VARARGS            1
+
+253     >> 1240 RETURN_CONST             2 (None)
+
+183     >> 1242 CLEANUP_THROW
+           1244 EXTENDED_ARG             1
+           1246 JUMP_BACKWARD          450 (to 348)
+
+184     >> 1248 CLEANUP_THROW
+           1250 EXTENDED_ARG             1
+           1252 JUMP_BACKWARD          437 (to 380)
+        >> 1254 PUSH_EXC_INFO
+
+186        1256 LOAD_GLOBAL              6 (BaseException)
+           1266 CHECK_EXC_MATCH
+           1268 POP_JUMP_IF_FALSE       20 (to 1310)
+           1270 STORE_FAST              14 (e)
+
+187        1272 PUSH_NULL
+           1274 LOAD_FAST                3 (retry_for_exception)
+           1276 LOAD_FAST               14 (e)
+           1278 CALL                     1
+           1286 POP_JUMP_IF_TRUE         1 (to 1290)
+
+188        1288 RAISE_VARARGS            0
+
+187     >> 1290 POP_EXCEPT
+           1292 LOAD_CONST               2 (None)
+           1294 STORE_FAST              14 (e)
+           1296 DELETE_FAST             14 (e)
+           1298 EXTENDED_ARG             1
+           1300 JUMP_BACKWARD          407 (to 488)
+        >> 1302 LOAD_CONST               2 (None)
+           1304 STORE_FAST              14 (e)
+           1306 DELETE_FAST             14 (e)
+           1308 RERAISE                  1
+
+186     >> 1310 RERAISE                  0
+        >> 1312 COPY                     3
+           1314 POP_EXCEPT
+           1316 RERAISE                  1
+
+204     >> 1318 CLEANUP_THROW
+           1320 EXTENDED_ARG             1
+           1322 JUMP_BACKWARD          366 (to 592)
+
+219     >> 1324 CLEANUP_THROW
+           1326 JUMP_BACKWARD          211 (to 906)
+
+221     >> 1328 CLEANUP_THROW
+           1330 JUMP_BACKWARD          202 (to 928)
+        >> 1332 PUSH_EXC_INFO
+
+222        1334 LOAD_GLOBAL              6 (BaseException)
+           1344 CHECK_EXC_MATCH
+           1346 POP_JUMP_IF_FALSE      143 (to 1634)
+           1348 STORE_FAST              14 (e)
+
+223        1350 LOAD_FAST               22 (task)
+           1352 LOAD_ATTR               49 (NULL|self + done)
+           1372 CALL                     0
+           1380 POP_JUMP_IF_FALSE       89 (to 1560)
+
+224        1382 LOAD_FAST               22 (task)
+           1384 LOAD_ATTR               51 (NULL|self + exception)
+           1404 CALL                     0
+           1412 LOAD_FAST               14 (e)
+           1414 IS_OP                    1
+           1416 POP_JUMP_IF_FALSE       33 (to 1484)
+
+225        1418 LOAD_GLOBAL              1 (NULL + isinstance)
+           1428 LOAD_FAST               14 (e)
+           1430 LOAD_GLOBAL             52 (AsyncTimeoutError)
+           1440 CALL                     2
+           1448 POP_JUMP_IF_TRUE         1 (to 1452)
+
+226        1450 RAISE_VARARGS            0
+
+227     >> 1452 PUSH_NULL
+           1454 LOAD_FAST               18 (push)
+           1456 LOAD_FAST               22 (task)
+           1458 LOAD_FAST               10 (offset)
+           1460 BUILD_TUPLE              2
+           1462 CALL                     1
+           1470 POP_TOP
+
+228        1472 POP_EXCEPT
+           1474 LOAD_CONST               2 (None)
+           1476 STORE_FAST              14 (e)
+           1478 DELETE_FAST             14 (e)
+           1480 EXTENDED_ARG             1
+           1482 JUMP_BACKWARD          358 (to 768)
+
+229     >> 1484 PUSH_NULL
+           1486 LOAD_FAST                3 (retry_for_exception)
+           1488 LOAD_FAST               14 (e)
+           1490 CALL                     1
+           1498 POP_JUMP_IF_TRUE         7 (to 1514)
+
+230        1500 LOAD_FAST               14 (e)
+           1502 STORE_FAST              21 (exc)
+
+231        1504 POP_EXCEPT
+           1506 LOAD_CONST               2 (None)
+           1508 STORE_FAST              14 (e)
+           1510 DELETE_FAST             14 (e)
+           1512 JUMP_BACKWARD          157 (to 1200)
+
+232     >> 1514 PUSH_NULL
+           1516 LOAD_FAST               18 (push)
+           1518 PUSH_NULL
+           1520 LOAD_FAST               16 (make_task)
+           1522 BUILD_MAP                0
+           1524 LOAD_FAST                1 (payload)
+           1526 DICT_UPDATE              1
+           1528 LOAD_FAST                6 (key_offset)
+           1530 LOAD_FAST               10 (offset)
+           1532 BUILD_MAP                1
+           1534 DICT_UPDATE              1
+           1536 CALL                     1
+           1544 LOAD_FAST               10 (offset)
+           1546 BUILD_TUPLE              2
+           1548 CALL                     1
+           1556 POP_TOP
+           1558 JUMP_FORWARD            28 (to 1616)
+
+233     >> 1560 LOAD_GLOBAL              1 (NULL + isinstance)
+           1570 LOAD_FAST               14 (e)
+           1572 LOAD_GLOBAL             52 (AsyncTimeoutError)
+           1582 CALL                     2
+           1590 POP_JUMP_IF_FALSE       11 (to 1614)
+
+234        1592 PUSH_NULL
+           1594 LOAD_FAST               18 (push)
+           1596 LOAD_FAST               22 (task)
+           1598 LOAD_FAST               10 (offset)
+           1600 BUILD_TUPLE              2
+           1602 CALL                     1
+           1610 POP_TOP
+           1612 JUMP_FORWARD             1 (to 1616)
+
+236     >> 1614 RAISE_VARARGS            0
+        >> 1616 POP_EXCEPT
+           1618 LOAD_CONST               2 (None)
+           1620 STORE_FAST              14 (e)
+           1622 DELETE_FAST             14 (e)
+           1624 JUMP_BACKWARD          250 (to 1126)
+        >> 1626 LOAD_CONST               2 (None)
+           1628 STORE_FAST              14 (e)
+           1630 DELETE_FAST             14 (e)
+           1632 RERAISE                  1
+
+222     >> 1634 RERAISE                  0
+        >> 1636 COPY                     3
+           1638 POP_EXCEPT
+           1640 RERAISE                  1
+
+204     >> 1642 CLEANUP_THROW
+           1644 JUMP_BACKWARD          209 (to 1228)
+        >> 1646 PUSH_EXC_INFO
+           1648 WITH_EXCEPT_START
+           1650 GET_AWAITABLE            2
+           1652 LOAD_CONST               2 (None)
+        >> 1654 SEND                     4 (to 1666)
+           1658 YIELD_VALUE              3
+           1660 RESUME                   3
+           1662 JUMP_BACKWARD_NO_INTERRUPT     5 (to 1654)
+        >> 1664 CLEANUP_THROW
+        >> 1666 END_SEND
+           1668 POP_JUMP_IF_TRUE         1 (to 1672)
+           1670 RERAISE                  2
+        >> 1672 POP_TOP
+           1674 POP_EXCEPT
+           1676 POP_TOP
+           1678 POP_TOP
+           1680 JUMP_BACKWARD          225 (to 1232)
+        >> 1682 COPY                     3
+           1684 POP_EXCEPT
+           1686 RERAISE                  1
+        >> 1688 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+           1690 RERAISE                  1
+ExceptionTable:
+  14 to 258 -> 1688 [0] lasti
+  262 to 340 -> 1254 [0]
+  342 to 342 -> 1242 [2]
+  344 to 372 -> 1254 [0]
+  374 to 374 -> 1248 [2]
+  376 to 402 -> 1254 [0]
+  404 to 584 -> 1688 [0] lasti
+  586 to 586 -> 1318 [3]
+  588 to 592 -> 1688 [0] lasti
+  594 to 790 -> 1646 [1] lasti
+  794 to 898 -> 1332 [1]
+  900 to 900 -> 1324 [3]
+  902 to 920 -> 1332 [1]
+  922 to 922 -> 1328 [3]
+  924 to 930 -> 1332 [1]
+  932 to 1196 -> 1646 [1] lasti
+  1200 to 1220 -> 1688 [0] lasti
+  1222 to 1222 -> 1642 [2]
+  1224 to 1240 -> 1688 [0] lasti
+  1242 to 1242 -> 1254 [0]
+  1248 to 1248 -> 1254 [0]
+  1254 to 1270 -> 1312 [1] lasti
+  1272 to 1288 -> 1302 [1] lasti
+  1290 to 1300 -> 1688 [0] lasti
+  1302 to 1310 -> 1312 [1] lasti
+  1312 to 1318 -> 1688 [0] lasti
+  1324 to 1324 -> 1332 [1]
+  1328 to 1328 -> 1332 [1]
+  1332 to 1348 -> 1636 [2] lasti
+  1350 to 1470 -> 1626 [2] lasti
+  1472 to 1482 -> 1646 [1] lasti
+  1484 to 1502 -> 1626 [2] lasti
+  1504 to 1512 -> 1646 [1] lasti
+  1514 to 1614 -> 1626 [2] lasti
+  1616 to 1624 -> 1646 [1] lasti
+  1626 to 1634 -> 1636 [2] lasti
+  1636 to 1640 -> 1646 [1] lasti
+  1642 to 1642 -> 1688 [0] lasti
+  1646 to 1656 -> 1682 [3] lasti
+  1658 to 1658 -> 1664 [6]
+  1660 to 1672 -> 1682 [3] lasti
+  1674 to 1686 -> 1688 [0] lasti
+
+Disassembly of <code object <lambda> at 0x103b35210, file "concurrenttools/iter_offset.py", line 171>:
+171           0 RESUME                   0
+              2 RETURN_CONST             1 (False)
+
+Disassembly of <code object <lambda> at 0x103b18570, file "concurrenttools/iter_offset.py", line 173>:
+173           0 RESUME                   0
+              2 LOAD_GLOBAL              1 (NULL + isinstance)
+             12 LOAD_FAST                0 (e)
+             14 LOAD_FAST                1 (excs)
+             16 CALL                     2
+             24 RETURN_VALUE
+
+Disassembly of <code object call at 0x103a90190, file "concurrenttools/iter_offset.py", line 201>:
+              0 COPY_FREE_VARS           1
+
+201           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+202           8 LOAD_DEREF               2 (sema)
+             10 BEFORE_ASYNC_WITH
+             12 GET_AWAITABLE            1
+             14 LOAD_CONST               0 (None)
+        >>   16 SEND                     3 (to 26)
+             20 YIELD_VALUE              2
+             22 RESUME                   3
+             24 JUMP_BACKWARD_NO_INTERRUPT     5 (to 16)
+        >>   26 END_SEND
+             28 POP_TOP
+
+203          30 PUSH_NULL
+             32 LOAD_FAST                1 (call)
+             34 LOAD_FAST                0 (payload)
+             36 CALL                     1
+             44 GET_AWAITABLE            0
+             46 LOAD_CONST               0 (None)
+        >>   48 SEND                     3 (to 58)
+             52 YIELD_VALUE              3
+             54 RESUME                   3
+             56 JUMP_BACKWARD_NO_INTERRUPT     5 (to 48)
+        >>   58 END_SEND
+
+202          60 SWAP                     2
+             62 LOAD_CONST               0 (None)
+             64 LOAD_CONST               0 (None)
+             66 LOAD_CONST               0 (None)
+             68 CALL                     2
+             76 GET_AWAITABLE            2
+             78 LOAD_CONST               0 (None)
+        >>   80 SEND                     3 (to 90)
+             84 YIELD_VALUE              2
+             86 RESUME                   3
+             88 JUMP_BACKWARD_NO_INTERRUPT     5 (to 80)
+        >>   90 END_SEND
+             92 POP_TOP
+             94 RETURN_VALUE
+        >>   96 CLEANUP_THROW
+             98 JUMP_BACKWARD           37 (to 26)
+
+203     >>  100 CLEANUP_THROW
+            102 JUMP_BACKWARD           23 (to 58)
+
+202     >>  104 CLEANUP_THROW
+            106 JUMP_BACKWARD            9 (to 90)
+        >>  108 PUSH_EXC_INFO
+            110 WITH_EXCEPT_START
+            112 GET_AWAITABLE            2
+            114 LOAD_CONST               0 (None)
+        >>  116 SEND                     4 (to 128)
+            120 YIELD_VALUE              3
+            122 RESUME                   3
+            124 JUMP_BACKWARD_NO_INTERRUPT     5 (to 116)
+        >>  126 CLEANUP_THROW
+        >>  128 END_SEND
+            130 POP_JUMP_IF_TRUE         1 (to 134)
+            132 RERAISE                  2
+        >>  134 POP_TOP
+            136 POP_EXCEPT
+            138 POP_TOP
+            140 POP_TOP
+            142 RETURN_CONST             0 (None)
+        >>  144 COPY                     3
+            146 POP_EXCEPT
+            148 RERAISE                  1
+        >>  150 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            152 RERAISE                  1
+ExceptionTable:
+  6 to 18 -> 150 [0] lasti
+  20 to 20 -> 96 [3]
+  22 to 26 -> 150 [0] lasti
+  28 to 50 -> 108 [1] lasti
+  52 to 52 -> 100 [3]
+  54 to 58 -> 108 [1] lasti
+  60 to 82 -> 150 [0] lasti
+  84 to 84 -> 104 [3]
+  86 to 96 -> 150 [0] lasti
+  100 to 100 -> 108 [1] lasti
+  104 to 104 -> 150 [0] lasti
+  108 to 118 -> 144 [3] lasti
+  120 to 120 -> 126 [6]
+  122 to 134 -> 144 [3] lasti
+  136 to 148 -> 150 [0] lasti
+
+Disassembly of <code object make_task at 0x103b1d9b0, file "concurrenttools/iter_offset.py", line 206>:
+              0 COPY_FREE_VARS           3
+
+206           2 RESUME                   0
+
+208           4 LOAD_GLOBAL              1 (NULL + time)
+             14 CALL                     0
+             22 STORE_DEREF              3 (last_call_ts)
+
+209          24 PUSH_NULL
+             26 LOAD_DEREF               2 (create_task)
+             28 LOAD_GLOBAL              3 (NULL + ensure_coroutine)
+             38 PUSH_NULL
+             40 LOAD_DEREF               1 (call)
+             42 LOAD_FAST                0 (payload)
+             44 CALL                     1
+             52 CALL                     1
+             60 CALL                     1
+             68 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of iter_offset> at 0xa5b20b980, file "concurrenttools/iter_offset.py", line 257>:
+257           0 RESUME                   0
+
+258           2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_FAST                1 (.kwdefaults)
+             16 LOAD_CONST               1 ('check_for_stop')
+
+262          18 LOAD_GLOBAL              0 (Callable)
+             28 LOAD_GLOBAL              2 (int)
+             38 LOAD_GLOBAL              2 (int)
+             48 LOAD_FAST                2 (T)
+             50 BUILD_LIST               3
+             52 LOAD_GLOBAL              4 (bool)
+             62 BUILD_TUPLE              2
+             64 BINARY_SUBSCR
+
+258          68 LOAD_CONST               2 ('retry_for_exception')
+
+263          70 LOAD_CONST               3 (None)
+             72 LOAD_GLOBAL              0 (Callable)
+             82 LOAD_GLOBAL              6 (BaseException)
+             92 BUILD_LIST               1
+             94 LOAD_GLOBAL              4 (bool)
+            104 BUILD_TUPLE              2
+            106 BINARY_SUBSCR
+            110 BINARY_OP                7 (|)
+            114 LOAD_GLOBAL              8 (type)
+            124 LOAD_GLOBAL              6 (BaseException)
+            134 BINARY_SUBSCR
+            138 BINARY_OP                7 (|)
+            142 LOAD_GLOBAL             10 (tuple)
+            152 LOAD_GLOBAL              8 (type)
+            162 LOAD_GLOBAL              6 (BaseException)
+            172 BINARY_SUBSCR
+            176 LOAD_CONST               4 (Ellipsis)
+            178 BUILD_TUPLE              2
+            180 BINARY_SUBSCR
+            184 BINARY_OP                7 (|)
+
+258         188 LOAD_CONST               5 ('page_size')
+
+264         190 LOAD_GLOBAL              2 (int)
+
+258         200 LOAD_CONST               6 ('first_page_size')
+
+265         202 LOAD_GLOBAL              2 (int)
+
+258         212 LOAD_CONST               7 ('cooldown')
+
+268         214 LOAD_GLOBAL             12 (float)
+
+258         224 LOAD_CONST               8 ('max_workers')
+
+269         226 LOAD_CONST               3 (None)
+            228 LOAD_GLOBAL              2 (int)
+            238 BINARY_OP                7 (|)
+
+258         242 LOAD_CONST               9 ('call')
+
+259         244 LOAD_GLOBAL              0 (Callable)
+            254 LOAD_GLOBAL             14 (dict)
+            264 BUILD_LIST               1
+            266 LOAD_FAST                2 (T)
+            268 BUILD_TUPLE              2
+            270 BINARY_SUBSCR
+
+258         274 LOAD_CONST              10 ('payload')
+
+260         276 LOAD_GLOBAL             14 (dict)
+
+258         286 LOAD_CONST              11 ('async_')
+
+271         288 LOAD_GLOBAL             16 (Literal)
+            298 LOAD_CONST              12 (False)
+            300 BINARY_SUBSCR
+
+258         304 LOAD_CONST              13 ('return')
+
+272         306 LOAD_GLOBAL             18 (Iterator)
+            316 LOAD_FAST                2 (T)
+            318 BINARY_SUBSCR
+
+258         322 BUILD_TUPLE             20
+            324 LOAD_CONST              14 (<code object iter_offset at 0x103b35d70, file "concurrenttools/iter_offset.py", line 257>)
+            326 MAKE_FUNCTION            7 (defaults, kwdefaults, annotations)
+            328 SWAP                     2
+            330 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            332 RETURN_VALUE
+
+Disassembly of <code object iter_offset at 0x103b35d70, file "concurrenttools/iter_offset.py", line 257>:
+257           0 RESUME                   0
+
+273           2 RETURN_CONST             0 (None)
+
+Disassembly of <code object <generic parameters of iter_offset> at 0xa5b20bc00, file "concurrenttools/iter_offset.py", line 274>:
+274           0 RESUME                   0
+
+275           2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               1 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('check_for_stop')
+
+279          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_GLOBAL              2 (int)
+             36 LOAD_GLOBAL              2 (int)
+             46 LOAD_FAST                1 (T)
+             48 BUILD_LIST               3
+             50 LOAD_GLOBAL              4 (bool)
+             60 BUILD_TUPLE              2
+             62 BINARY_SUBSCR
+
+275          66 LOAD_CONST               2 ('retry_for_exception')
+
+280          68 LOAD_CONST               3 (None)
+             70 LOAD_GLOBAL              0 (Callable)
+             80 LOAD_GLOBAL              6 (BaseException)
+             90 BUILD_LIST               1
+             92 LOAD_GLOBAL              4 (bool)
+            102 BUILD_TUPLE              2
+            104 BINARY_SUBSCR
+            108 BINARY_OP                7 (|)
+            112 LOAD_GLOBAL              8 (type)
+            122 LOAD_GLOBAL              6 (BaseException)
+            132 BINARY_SUBSCR
+            136 BINARY_OP                7 (|)
+            140 LOAD_GLOBAL             10 (tuple)
+            150 LOAD_GLOBAL              8 (type)
+            160 LOAD_GLOBAL              6 (BaseException)
+            170 BINARY_SUBSCR
+            174 LOAD_CONST               4 (Ellipsis)
+            176 BUILD_TUPLE              2
+            178 BINARY_SUBSCR
+            182 BINARY_OP                7 (|)
+
+275         186 LOAD_CONST               5 ('page_size')
+
+281         188 LOAD_GLOBAL              2 (int)
+
+275         198 LOAD_CONST               6 ('first_page_size')
+
+282         200 LOAD_GLOBAL              2 (int)
+
+275         210 LOAD_CONST               7 ('cooldown')
+
+285         212 LOAD_GLOBAL             12 (float)
+
+275         222 LOAD_CONST               8 ('max_workers')
+
+286         224 LOAD_CONST               3 (None)
+            226 LOAD_GLOBAL              2 (int)
+            236 BINARY_OP                7 (|)
+
+275         240 LOAD_CONST               9 ('call')
+
+276         242 LOAD_GLOBAL              0 (Callable)
+            252 LOAD_GLOBAL             14 (dict)
+            262 BUILD_LIST               1
+            264 LOAD_GLOBAL             16 (Awaitable)
+            274 LOAD_FAST                1 (T)
+            276 BINARY_SUBSCR
+            280 BUILD_TUPLE              2
+            282 BINARY_SUBSCR
+
+275         286 LOAD_CONST              10 ('payload')
+
+277         288 LOAD_GLOBAL             14 (dict)
+
+275         298 LOAD_CONST              11 ('async_')
+
+288         300 LOAD_GLOBAL             18 (Literal)
+            310 LOAD_CONST              12 (True)
+            312 BINARY_SUBSCR
+
+275         316 LOAD_CONST              13 ('return')
+
+289         318 LOAD_GLOBAL             20 (AsyncIterator)
+            328 LOAD_FAST                1 (T)
+            330 BINARY_SUBSCR
+
+275         334 BUILD_TUPLE             20
+            336 LOAD_CONST              14 (<code object iter_offset at 0x103b34030, file "concurrenttools/iter_offset.py", line 274>)
+            338 MAKE_FUNCTION            5 (defaults, annotations)
+            340 SWAP                     2
+            342 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            344 RETURN_VALUE
+
+Disassembly of <code object iter_offset at 0x103b34030, file "concurrenttools/iter_offset.py", line 274>:
+274           0 RESUME                   0
+
+290           2 RETURN_CONST             0 (None)
+
+Disassembly of <code object <generic parameters of iter_offset> at 0xa5b20aa80, file "concurrenttools/iter_offset.py", line 291>:
+291           0 RESUME                   0
+              2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_FAST                1 (.kwdefaults)
+             16 LOAD_CONST               1 ('check_for_stop')
+
+295          18 LOAD_GLOBAL              0 (Callable)
+             28 LOAD_GLOBAL              2 (int)
+             38 LOAD_GLOBAL              2 (int)
+             48 LOAD_FAST                2 (T)
+             50 BUILD_LIST               3
+             52 LOAD_GLOBAL              4 (bool)
+             62 BUILD_TUPLE              2
+             64 BINARY_SUBSCR
+
+291          68 LOAD_CONST               2 ('retry_for_exception')
+
+296          70 LOAD_CONST               3 (None)
+             72 LOAD_GLOBAL              0 (Callable)
+             82 LOAD_GLOBAL              6 (BaseException)
+             92 BUILD_LIST               1
+             94 LOAD_GLOBAL              4 (bool)
+            104 BUILD_TUPLE              2
+            106 BINARY_SUBSCR
+            110 BINARY_OP                7 (|)
+            114 LOAD_GLOBAL              8 (type)
+            124 LOAD_GLOBAL              6 (BaseException)
+            134 BINARY_SUBSCR
+            138 BINARY_OP                7 (|)
+            142 LOAD_GLOBAL             10 (tuple)
+            152 LOAD_GLOBAL              8 (type)
+            162 LOAD_GLOBAL              6 (BaseException)
+            172 BINARY_SUBSCR
+            176 LOAD_CONST               4 (Ellipsis)
+            178 BUILD_TUPLE              2
+            180 BINARY_SUBSCR
+            184 BINARY_OP                7 (|)
+
+291         188 LOAD_CONST               5 ('page_size')
+
+297         190 LOAD_GLOBAL              2 (int)
+
+291         200 LOAD_CONST               6 ('first_page_size')
+
+298         202 LOAD_GLOBAL              2 (int)
+
+291         212 LOAD_CONST               7 ('cooldown')
+
+301         214 LOAD_GLOBAL             12 (float)
+
+291         224 LOAD_CONST               8 ('max_workers')
+
+302         226 LOAD_CONST               3 (None)
+            228 LOAD_GLOBAL              2 (int)
+            238 BINARY_OP                7 (|)
+
+291         242 LOAD_CONST               9 ('call')
+
+292         244 LOAD_GLOBAL              0 (Callable)
+            254 LOAD_GLOBAL             14 (dict)
+            264 BUILD_LIST               1
+            266 LOAD_FAST                2 (T)
+            268 BUILD_TUPLE              2
+            270 BINARY_SUBSCR
+            274 LOAD_GLOBAL              0 (Callable)
+            284 LOAD_GLOBAL             14 (dict)
+            294 BUILD_LIST               1
+            296 LOAD_GLOBAL             16 (Awaitable)
+            306 LOAD_FAST                2 (T)
+            308 BINARY_SUBSCR
+            312 BUILD_TUPLE              2
+            314 BINARY_SUBSCR
+            318 BINARY_OP                7 (|)
+
+291         322 LOAD_CONST              10 ('payload')
+
+293         324 LOAD_GLOBAL             14 (dict)
+
+291         334 LOAD_CONST              11 ('async_')
+
+304         336 LOAD_GLOBAL             18 (Literal)
+            346 LOAD_CONST              12 ((False, True))
+            348 BINARY_SUBSCR
+
+291         352 LOAD_CONST              13 ('return')
+
+305         354 LOAD_GLOBAL             20 (Iterator)
+            364 LOAD_FAST                2 (T)
+            366 BINARY_SUBSCR
+            370 LOAD_GLOBAL             22 (AsyncIterator)
+            380 LOAD_FAST                2 (T)
+            382 BINARY_SUBSCR
+            386 BINARY_OP                7 (|)
+
+291         390 BUILD_TUPLE             20
+            392 LOAD_CONST              14 (<code object iter_offset at 0x1084be430, file "concurrenttools/iter_offset.py", line 291>)
+            394 MAKE_FUNCTION            7 (defaults, kwdefaults, annotations)
+            396 SWAP                     2
+            398 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            400 RETURN_VALUE
+
+Disassembly of <code object iter_offset at 0x1084be430, file "concurrenttools/iter_offset.py", line 291>:
+291           0 RESUME                   0
+
+322           2 PUSH_NULL
+              4 LOAD_FAST               10 (async_)
+              6 POP_JUMP_IF_FALSE        6 (to 20)
+              8 LOAD_GLOBAL              0 (iter_offset_async)
+             18 JUMP_FORWARD             5 (to 30)
+        >>   20 LOAD_GLOBAL              2 (iter_offset_threaded)
+
+323     >>   30 LOAD_FAST                0 (call)
+
+324          32 LOAD_FAST                1 (payload)
+
+325          34 LOAD_FAST                2 (check_for_stop)
+
+326          36 LOAD_FAST                3 (retry_for_exception)
+
+327          38 LOAD_FAST                4 (page_size)
+
+328          40 LOAD_FAST                5 (first_page_size)
+
+329          42 LOAD_FAST                6 (key_offset)
+
+330          44 LOAD_FAST                7 (key_limit)
+
+331          46 LOAD_FAST                8 (cooldown)
+
+332          48 LOAD_FAST                9 (max_workers)
+
+322          50 KW_NAMES                 1 (('check_for_stop', 'retry_for_exception', 'page_size', 'first_page_size', 'key_offset', 'key_limit', 'cooldown', 'max_workers'))
+             52 CALL                    10
+             60 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of iter_offset_multi_threaded> at 0xa5b1e2580, file "concurrenttools/iter_offset.py", line 336>:
+336           0 RESUME                   0
+              2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               1 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('check_for_stop')
+
+340          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_GLOBAL              2 (int)
+             36 LOAD_GLOBAL              2 (int)
+             46 LOAD_FAST                1 (T)
+             48 BUILD_LIST               3
+             50 LOAD_GLOBAL              4 (bool)
+             60 BUILD_TUPLE              2
+             62 BINARY_SUBSCR
+
+336          66 LOAD_CONST               2 ('retry_for_exception')
+
+341          68 LOAD_CONST               3 (None)
+             70 LOAD_GLOBAL              0 (Callable)
+             80 LOAD_GLOBAL              6 (BaseException)
+             90 BUILD_LIST               1
+             92 LOAD_GLOBAL              4 (bool)
+            102 BUILD_TUPLE              2
+            104 BINARY_SUBSCR
+            108 BINARY_OP                7 (|)
+            112 LOAD_GLOBAL              8 (type)
+            122 LOAD_GLOBAL              6 (BaseException)
+            132 BINARY_SUBSCR
+            136 BINARY_OP                7 (|)
+            140 LOAD_GLOBAL             10 (tuple)
+            150 LOAD_GLOBAL              8 (type)
+            160 LOAD_GLOBAL              6 (BaseException)
+            170 BINARY_SUBSCR
+            174 LOAD_CONST               4 (Ellipsis)
+            176 BUILD_TUPLE              2
+            178 BINARY_SUBSCR
+            182 BINARY_OP                7 (|)
+
+336         186 LOAD_CONST               5 ('payload')
+
+342         188 LOAD_CONST               3 (None)
+            190 LOAD_GLOBAL             12 (dict)
+            200 BINARY_OP                7 (|)
+
+336         204 LOAD_CONST               6 ('page_size')
+
+343         206 LOAD_GLOBAL              2 (int)
+
+336         216 LOAD_CONST               7 ('cooldown')
+
+346         218 LOAD_GLOBAL             14 (float)
+
+336         228 LOAD_CONST               8 ('max_workers')
+
+347         230 LOAD_CONST               3 (None)
+            232 LOAD_GLOBAL              2 (int)
+            242 BINARY_OP                7 (|)
+
+336         246 LOAD_CONST               9 ('call')
+
+337         248 LOAD_GLOBAL              0 (Callable)
+            258 LOAD_GLOBAL             12 (dict)
+            268 BUILD_LIST               1
+            270 LOAD_FAST                1 (T)
+            272 BUILD_TUPLE              2
+            274 BINARY_SUBSCR
+
+336         278 LOAD_CONST              10 ('iter_payload')
+
+338         280 LOAD_GLOBAL             16 (Iterable)
+            290 LOAD_GLOBAL             12 (dict)
+            300 BINARY_SUBSCR
+
+336         304 LOAD_CONST              11 ('return')
+
+348         306 LOAD_GLOBAL             18 (Iterator)
+            316 LOAD_FAST                1 (T)
+            318 BINARY_SUBSCR
+
+336         322 BUILD_TUPLE             18
+            324 LOAD_CONST              12 (<code object iter_offset_multi_threaded at 0xa5b3b4000, file "concurrenttools/iter_offset.py", line 336>)
+            326 MAKE_FUNCTION            5 (defaults, annotations)
+            328 SWAP                     2
+            330 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            332 RETURN_VALUE
+
+Disassembly of <code object iter_offset_multi_threaded at 0xa5b3b4000, file "concurrenttools/iter_offset.py", line 336>:
+              0 MAKE_CELL                0 (call)
+              2 MAKE_CELL                5 (page_size)
+              4 MAKE_CELL                6 (key_offset)
+              6 MAKE_CELL               25 (d_max_page)
+              8 MAKE_CELL               26 (dq_payload)
+             10 MAKE_CELL               27 (get_payload)
+             12 MAKE_CELL               28 (last_call_ts)
+             14 MAKE_CELL               29 (put_payload)
+             16 MAKE_CELL               30 (submit)
+
+336          18 RETURN_GENERATOR
+             20 POP_TOP
+             22 RESUME                   0
+
+364          24 LOAD_DEREF               5 (page_size)
+             26 LOAD_CONST               1 (0)
+             28 COMPARE_OP              68 (>)
+             32 POP_JUMP_IF_TRUE         2 (to 38)
+             34 LOAD_ASSERTION_ERROR
+             36 RAISE_VARARGS            1
+
+365     >>   38 LOAD_FAST                9 (max_workers)
+             40 POP_JUMP_IF_FALSE        7 (to 56)
+             42 LOAD_FAST                9 (max_workers)
+             44 LOAD_CONST               1 (0)
+             46 COMPARE_OP               2 (<)
+             50 POP_JUMP_IF_FALSE        2 (to 56)
+
+366          52 LOAD_CONST               2 (None)
+             54 STORE_FAST               9 (max_workers)
+
+367     >>   56 LOAD_FAST                3 (retry_for_exception)
+             58 POP_JUMP_IF_NOT_NONE     4 (to 68)
+
+368          60 LOAD_CONST               3 (<code object <lambda> at 0x103b35fe0, file "concurrenttools/iter_offset.py", line 368>)
+             62 MAKE_FUNCTION            0
+             64 STORE_FAST               3 (retry_for_exception)
+             66 JUMP_FORWARD            53 (to 174)
+
+369     >>   68 LOAD_GLOBAL              1 (NULL + isinstance)
+             78 LOAD_FAST                3 (retry_for_exception)
+             80 LOAD_GLOBAL              2 (type)
+             90 CALL                     2
+             98 POP_JUMP_IF_FALSE       16 (to 132)
+            100 LOAD_GLOBAL              5 (NULL + issubclass)
+            110 LOAD_FAST                3 (retry_for_exception)
+            112 LOAD_GLOBAL              6 (BaseException)
+            122 CALL                     2
+            130 POP_JUMP_IF_TRUE        16 (to 164)
+        >>  132 LOAD_GLOBAL              1 (NULL + isinstance)
+            142 LOAD_FAST                3 (retry_for_exception)
+            144 LOAD_GLOBAL              8 (tuple)
+            154 CALL                     2
+            162 POP_JUMP_IF_FALSE        5 (to 174)
+
+370     >>  164 LOAD_FAST                3 (retry_for_exception)
+            166 BUILD_TUPLE              1
+            168 LOAD_CONST               4 (<code object <lambda> at 0x103b18e30, file "concurrenttools/iter_offset.py", line 370>)
+            170 MAKE_FUNCTION            1 (defaults)
+            172 STORE_FAST               3 (retry_for_exception)
+
+371     >>  174 LOAD_GLOBAL             11 (NULL + cast)
+            184 LOAD_GLOBAL             12 (Callable)
+            194 LOAD_FAST                3 (retry_for_exception)
+            196 CALL                     2
+            204 STORE_FAST               3 (retry_for_exception)
+
+372         206 LOAD_CONST               1 (0)
+            208 STORE_DEREF             28 (last_call_ts)
+
+373         210 LOAD_GLOBAL             15 (NULL + deque)
+            220 LOAD_FAST                1 (iter_payload)
+            222 CALL                     1
+            230 STORE_DEREF             26 (dq_payload)
+
+374         232 LOAD_DEREF              26 (dq_payload)
+            234 POP_JUMP_IF_TRUE         1 (to 238)
+
+375         236 RETURN_CONST             2 (None)
+
+376     >>  238 LOAD_DEREF              26 (dq_payload)
+            240 GET_ITER
+        >>  242 FOR_ITER                44 (to 334)
+            246 STORE_FAST              10 (payload_)
+
+377         248 LOAD_FAST                4 (payload)
+            250 POP_JUMP_IF_FALSE       17 (to 286)
+
+378         252 LOAD_FAST               10 (payload_)
+            254 LOAD_ATTR               17 (NULL|self + update)
+            274 LOAD_FAST                4 (payload)
+            276 CALL                     1
+            284 POP_TOP
+
+379     >>  286 LOAD_FAST               10 (payload_)
+            288 LOAD_ATTR               19 (NULL|self + setdefault)
+            308 LOAD_DEREF               6 (key_offset)
+            310 LOAD_CONST               1 (0)
+            312 CALL                     2
+            320 POP_TOP
+
+380         322 LOAD_DEREF               5 (page_size)
+            324 LOAD_FAST               10 (payload_)
+            326 LOAD_FAST                7 (key_limit)
+            328 STORE_SUBSCR
+            332 JUMP_BACKWARD           46 (to 242)
+
+376     >>  334 END_FOR
+
+381         336 LOAD_DEREF              26 (dq_payload)
+            338 LOAD_ATTR               20 (popleft)
+            358 LOAD_DEREF              26 (dq_payload)
+            360 LOAD_ATTR               22 (append)
+            380 SWAP                     2
+            382 STORE_DEREF             27 (get_payload)
+            384 STORE_DEREF             29 (put_payload)
+
+382         386 LOAD_FAST                9 (max_workers)
+            388 LOAD_CONST               1 (0)
+            390 COMPARE_OP              40 (==)
+            394 POP_JUMP_IF_FALSE      109 (to 614)
+
+383         396 LOAD_DEREF              26 (dq_payload)
+            398 POP_JUMP_IF_FALSE      106 (to 612)
+
+384     >>  400 PUSH_NULL
+            402 LOAD_DEREF              27 (get_payload)
+            404 CALL                     0
+            412 STORE_FAST               4 (payload)
+
+385         414 NOP
+
+386         416 LOAD_FAST                8 (cooldown)
+            418 LOAD_CONST               1 (0)
+            420 COMPARE_OP              68 (>)
+            424 POP_JUMP_IF_FALSE       32 (to 490)
+            426 LOAD_DEREF              28 (last_call_ts)
+            428 LOAD_FAST                8 (cooldown)
+            430 BINARY_OP                0 (+)
+            434 LOAD_GLOBAL             25 (NULL + time)
+            444 CALL                     0
+            452 BINARY_OP               10 (-)
+            456 COPY                     1
+            458 STORE_FAST              11 (delta)
+            460 LOAD_CONST               1 (0)
+            462 COMPARE_OP              68 (>)
+            466 POP_JUMP_IF_FALSE       11 (to 490)
+
+387         468 LOAD_GLOBAL             27 (NULL + sleep)
+            478 LOAD_FAST               11 (delta)
+            480 CALL                     1
+            488 POP_TOP
+
+388     >>  490 PUSH_NULL
+            492 LOAD_DEREF               0 (call)
+            494 LOAD_FAST                4 (payload)
+            496 CALL                     1
+            504 STORE_FAST              12 (resp)
+
+389         506 LOAD_GLOBAL             25 (NULL + time)
+            516 CALL                     0
+            524 STORE_DEREF             28 (last_call_ts)
+
+394         526 LOAD_FAST               12 (resp)
+            528 YIELD_VALUE              1
+            530 RESUME                   1
+            532 POP_TOP
+
+395         534 PUSH_NULL
+            536 LOAD_FAST                2 (check_for_stop)
+            538 LOAD_FAST                4 (payload)
+            540 LOAD_DEREF               6 (key_offset)
+            542 BINARY_SUBSCR
+            546 LOAD_DEREF               5 (page_size)
+            548 LOAD_FAST               12 (resp)
+            550 CALL                     3
+            558 POP_JUMP_IF_TRUE        22 (to 604)
+
+396         560 LOAD_FAST                4 (payload)
+            562 LOAD_DEREF               6 (key_offset)
+            564 COPY                     2
+            566 COPY                     2
+            568 BINARY_SUBSCR
+            572 LOAD_DEREF               5 (page_size)
+            574 BINARY_OP               13 (+=)
+            578 SWAP                     3
+            580 SWAP                     2
+            582 STORE_SUBSCR
+
+397         586 PUSH_NULL
+            588 LOAD_DEREF              29 (put_payload)
+            590 LOAD_FAST                4 (payload)
+            592 CALL                     1
+            600 POP_TOP
+            602 NOP
+
+383     >>  604 LOAD_DEREF              26 (dq_payload)
+            606 POP_JUMP_IF_FALSE        1 (to 610)
+            608 JUMP_BACKWARD          105 (to 400)
+        >>  610 RETURN_CONST             2 (None)
+        >>  612 RETURN_CONST             2 (None)
+
+399     >>  614 LOAD_CLOSURE            25 (d_max_page)
+            616 LOAD_CLOSURE            26 (dq_payload)
+            618 LOAD_CLOSURE            27 (get_payload)
+            620 LOAD_CLOSURE             6 (key_offset)
+            622 LOAD_CLOSURE             5 (page_size)
+            624 LOAD_CLOSURE            29 (put_payload)
+            626 BUILD_TUPLE              6
+            628 LOAD_CONST               5 (<code object _iter_payload at 0x103a79a70, file "concurrenttools/iter_offset.py", line 399>)
+            630 MAKE_FUNCTION            8 (closure)
+            632 STORE_FAST              14 (_iter_payload)
+
+406         634 PUSH_NULL
+            636 LOAD_FAST               14 (_iter_payload)
+            638 CALL                     0
+            646 LOAD_ATTR               28 (__next__)
+            666 STORE_FAST              15 (next_payload)
+
+407         668 LOAD_GLOBAL             31 (NULL + killable_executor)
+            678 LOAD_GLOBAL             33 (NULL + ThreadPoolExecutor)
+            688 LOAD_FAST                9 (max_workers)
+            690 CALL                     1
+            698 CALL                     1
+            706 BEFORE_WITH
+            708 STORE_FAST              16 (executor)
+
+408         710 LOAD_FAST               16 (executor)
+            712 LOAD_ATTR               34 (submit)
+            732 STORE_DEREF             30 (submit)
+
+409         734 LOAD_CONST               6 ('payload')
+            736 LOAD_GLOBAL             36 (dict)
+            746 LOAD_CONST               7 ('return')
+            748 LOAD_GLOBAL             38 (Future)
+            758 BUILD_TUPLE              4
+            760 LOAD_CLOSURE             0 (call)
+            762 LOAD_CLOSURE            28 (last_call_ts)
+            764 LOAD_CLOSURE            30 (submit)
+            766 BUILD_TUPLE              3
+            768 LOAD_CONST               8 (<code object make_future at 0x1084be530, file "concurrenttools/iter_offset.py", line 409>)
+            770 MAKE_FUNCTION           12 (annotations, closure)
+            772 STORE_FAST              17 (make_future)
+
+413         774 LOAD_GLOBAL             15 (NULL + deque)
+            784 CALL                     0
+            792 STORE_FAST              18 (dq_futures)
+
+414         794 LOAD_FAST               18 (dq_futures)
+            796 LOAD_ATTR               20 (popleft)
+            816 LOAD_FAST               18 (dq_futures)
+            818 LOAD_ATTR               22 (append)
+            838 STORE_FAST              20 (put_future)
+            840 STORE_FAST              19 (get_future)
+
+415         842 LOAD_DEREF              26 (dq_payload)
+            844 POP_JUMP_IF_FALSE       30 (to 906)
+
+416     >>  846 PUSH_NULL
+            848 LOAD_DEREF              27 (get_payload)
+            850 CALL                     0
+            858 STORE_FAST               4 (payload)
+
+417         860 PUSH_NULL
+            862 LOAD_FAST               20 (put_future)
+            864 PUSH_NULL
+            866 LOAD_FAST               17 (make_future)
+            868 LOAD_FAST                4 (payload)
+            870 CALL                     1
+            878 LOAD_FAST                4 (payload)
+            880 LOAD_DEREF               6 (key_offset)
+            882 BINARY_SUBSCR
+            886 LOAD_FAST                4 (payload)
+            888 BUILD_TUPLE              3
+            890 CALL                     1
+            898 POP_TOP
+
+415         900 LOAD_DEREF              26 (dq_payload)
+            902 POP_JUMP_IF_FALSE        1 (to 906)
+            904 JUMP_BACKWARD           30 (to 846)
+
+418     >>  906 BUILD_MAP                0
+            908 STORE_DEREF             25 (d_max_page)
+
+419     >>  910 LOAD_FAST               18 (dq_futures)
+            912 POP_JUMP_IF_FALSE      244 (to 1402)
+
+420     >>  914 PUSH_NULL
+            916 LOAD_FAST               19 (get_future)
+            918 CALL                     0
+            926 UNPACK_SEQUENCE          3
+            930 STORE_FAST              21 (future)
+            932 STORE_FAST              22 (offset)
+            934 STORE_FAST               4 (payload)
+
+421         936 NOP
+
+422         938 LOAD_FAST               21 (future)
+            940 LOAD_ATTR               41 (NULL|self + result)
+            960 LOAD_GLOBAL             43 (NULL + max)
+            970 LOAD_CONST               1 (0)
+            972 LOAD_DEREF              28 (last_call_ts)
+            974 LOAD_FAST                8 (cooldown)
+            976 BINARY_OP                0 (+)
+            980 LOAD_GLOBAL             25 (NULL + time)
+            990 CALL                     0
+            998 BINARY_OP               10 (-)
+           1002 CALL                     2
+           1010 CALL                     1
+           1018 STORE_FAST              12 (resp)
+
+438        1020 LOAD_FAST               12 (resp)
+           1022 YIELD_VALUE              2
+           1024 RESUME                   1
+           1026 POP_TOP
+
+439        1028 PUSH_NULL
+           1030 LOAD_FAST                2 (check_for_stop)
+           1032 LOAD_FAST               22 (offset)
+           1034 LOAD_DEREF               5 (page_size)
+           1036 LOAD_FAST               12 (resp)
+           1038 CALL                     3
+           1046 POP_JUMP_IF_FALSE      123 (to 1294)
+
+440        1048 LOAD_DEREF              25 (d_max_page)
+           1050 LOAD_ATTR               45 (NULL|self + get)
+           1070 LOAD_GLOBAL             47 (NULL + id)
+           1080 LOAD_FAST                4 (payload)
+           1082 CALL                     1
+           1090 CALL                     1
+           1098 STORE_FAST              23 (max_page)
+
+441        1100 LOAD_FAST               23 (max_page)
+           1102 POP_JUMP_IF_NONE         5 (to 1114)
+           1104 LOAD_FAST               23 (max_page)
+           1106 LOAD_FAST               22 (offset)
+           1108 COMPARE_OP              68 (>)
+           1112 POP_JUMP_IF_FALSE       90 (to 1294)
+
+442     >> 1114 LOAD_FAST               22 (offset)
+           1116 COPY                     1
+           1118 STORE_FAST              23 (max_page)
+           1120 LOAD_DEREF              25 (d_max_page)
+           1122 LOAD_GLOBAL             47 (NULL + id)
+           1132 LOAD_FAST                4 (payload)
+           1134 CALL                     1
+           1142 STORE_SUBSCR
+
+443        1146 LOAD_GLOBAL             49 (NULL + range)
+           1156 LOAD_GLOBAL             51 (NULL + len)
+           1166 LOAD_FAST               18 (dq_futures)
+           1168 CALL                     1
+           1176 CALL                     1
+           1184 GET_ITER
+        >> 1186 FOR_ITER                50 (to 1290)
+           1190 STORE_FAST              24 (_)
+
+444        1192 PUSH_NULL
+           1194 LOAD_FAST               19 (get_future)
+           1196 CALL                     0
+           1204 UNPACK_SEQUENCE          3
+           1208 STORE_FAST              21 (future)
+           1210 STORE_FAST              22 (offset)
+           1212 STORE_FAST              10 (payload_)
+
+445        1214 LOAD_FAST                4 (payload)
+           1216 LOAD_FAST               10 (payload_)
+           1218 IS_OP                    0
+           1220 POP_JUMP_IF_FALSE       22 (to 1266)
+           1222 LOAD_FAST               22 (offset)
+           1224 LOAD_FAST               23 (max_page)
+           1226 COMPARE_OP              68 (>)
+           1230 POP_JUMP_IF_FALSE       17 (to 1266)
+
+446        1232 LOAD_FAST               21 (future)
+           1234 LOAD_ATTR               53 (NULL|self + cancel)
+           1254 CALL                     0
+           1262 POP_TOP
+           1264 JUMP_BACKWARD           40 (to 1186)
+
+448     >> 1266 PUSH_NULL
+           1268 LOAD_FAST               20 (put_future)
+           1270 LOAD_FAST               21 (future)
+           1272 LOAD_FAST               22 (offset)
+           1274 LOAD_FAST               10 (payload_)
+           1276 BUILD_TUPLE              3
+           1278 CALL                     1
+           1286 POP_TOP
+           1288 JUMP_BACKWARD           52 (to 1186)
+
+443     >> 1290 END_FOR
+           1292 NOP
+
+449     >> 1294 LOAD_GLOBAL             61 (NULL + suppress)
+           1304 LOAD_GLOBAL             62 (StopIteration)
+           1314 CALL                     1
+           1322 BEFORE_WITH
+           1324 POP_TOP
+
+450        1326 PUSH_NULL
+           1328 LOAD_FAST               15 (next_payload)
+           1330 CALL                     0
+           1338 STORE_FAST               4 (payload)
+
+451        1340 PUSH_NULL
+           1342 LOAD_FAST               20 (put_future)
+           1344 PUSH_NULL
+           1346 LOAD_FAST               17 (make_future)
+           1348 LOAD_FAST                4 (payload)
+           1350 CALL                     1
+           1358 LOAD_FAST                4 (payload)
+           1360 LOAD_DEREF               6 (key_offset)
+           1362 BINARY_SUBSCR
+           1366 LOAD_FAST                4 (payload)
+           1368 BUILD_TUPLE              3
+           1370 CALL                     1
+           1378 POP_TOP
+
+449        1380 LOAD_CONST               2 (None)
+           1382 LOAD_CONST               2 (None)
+           1384 LOAD_CONST               2 (None)
+           1386 CALL                     2
+           1394 POP_TOP
+
+419     >> 1396 LOAD_FAST               18 (dq_futures)
+           1398 POP_JUMP_IF_FALSE        1 (to 1402)
+           1400 JUMP_BACKWARD          244 (to 914)
+
+407     >> 1402 LOAD_CONST               2 (None)
+           1404 LOAD_CONST               2 (None)
+           1406 LOAD_CONST               2 (None)
+           1408 CALL                     2
+           1416 POP_TOP
+           1418 RETURN_CONST             2 (None)
+        >> 1420 PUSH_EXC_INFO
+
+390        1422 LOAD_GLOBAL              6 (BaseException)
+           1432 CHECK_EXC_MATCH
+           1434 POP_JUMP_IF_FALSE       20 (to 1476)
+           1436 STORE_FAST              13 (e)
+
+391        1438 PUSH_NULL
+           1440 LOAD_FAST                3 (retry_for_exception)
+           1442 LOAD_FAST               13 (e)
+           1444 CALL                     1
+           1452 POP_JUMP_IF_TRUE         1 (to 1456)
+
+392        1454 RAISE_VARARGS            0
+
+391     >> 1456 POP_EXCEPT
+           1458 LOAD_CONST               2 (None)
+           1460 STORE_FAST              13 (e)
+           1462 DELETE_FAST             13 (e)
+           1464 EXTENDED_ARG             1
+           1466 JUMP_BACKWARD          432 (to 604)
+        >> 1468 LOAD_CONST               2 (None)
+           1470 STORE_FAST              13 (e)
+           1472 DELETE_FAST             13 (e)
+           1474 RERAISE                  1
+
+390     >> 1476 RERAISE                  0
+        >> 1478 COPY                     3
+           1480 POP_EXCEPT
+           1482 RERAISE                  1
+        >> 1484 PUSH_EXC_INFO
+
+423        1486 LOAD_GLOBAL              6 (BaseException)
+           1496 CHECK_EXC_MATCH
+           1498 POP_JUMP_IF_FALSE      140 (to 1780)
+           1500 STORE_FAST              13 (e)
+
+424        1502 LOAD_FAST               21 (future)
+           1504 LOAD_ATTR               55 (NULL|self + done)
+           1524 CALL                     0
+           1532 POP_JUMP_IF_FALSE       85 (to 1704)
+
+425        1534 LOAD_FAST               21 (future)
+           1536 LOAD_ATTR               57 (NULL|self + exception)
+           1556 CALL                     0
+           1564 LOAD_FAST               13 (e)
+           1566 IS_OP                    1
+           1568 POP_JUMP_IF_FALSE       34 (to 1638)
+
+426        1570 LOAD_GLOBAL              1 (NULL + isinstance)
+           1580 LOAD_FAST               13 (e)
+           1582 LOAD_GLOBAL             58 (TimeoutError)
+           1592 CALL                     2
+           1600 POP_JUMP_IF_TRUE         1 (to 1604)
+
+427        1602 RAISE_VARARGS            0
+
+428     >> 1604 PUSH_NULL
+           1606 LOAD_FAST               20 (put_future)
+           1608 LOAD_FAST               21 (future)
+           1610 LOAD_FAST               22 (offset)
+           1612 LOAD_FAST                4 (payload)
+           1614 BUILD_TUPLE              3
+           1616 CALL                     1
+           1624 POP_TOP
+
+429        1626 POP_EXCEPT
+           1628 LOAD_CONST               2 (None)
+           1630 STORE_FAST              13 (e)
+           1632 DELETE_FAST             13 (e)
+           1634 EXTENDED_ARG             1
+           1636 JUMP_BACKWARD          364 (to 910)
+
+430     >> 1638 PUSH_NULL
+           1640 LOAD_FAST                3 (retry_for_exception)
+           1642 LOAD_FAST               13 (e)
+           1644 CALL                     1
+           1652 POP_JUMP_IF_TRUE         1 (to 1656)
+
+431        1654 RAISE_VARARGS            0
+
+432     >> 1656 PUSH_NULL
+           1658 LOAD_FAST               20 (put_future)
+           1660 PUSH_NULL
+           1662 LOAD_FAST               17 (make_future)
+           1664 BUILD_MAP                0
+           1666 LOAD_FAST                4 (payload)
+           1668 DICT_UPDATE              1
+           1670 LOAD_DEREF               6 (key_offset)
+           1672 LOAD_FAST               22 (offset)
+           1674 BUILD_MAP                1
+           1676 DICT_UPDATE              1
+           1678 CALL                     1
+           1686 LOAD_FAST               22 (offset)
+           1688 LOAD_FAST                4 (payload)
+           1690 BUILD_TUPLE              3
+           1692 CALL                     1
+           1700 POP_TOP
+           1702 JUMP_FORWARD            29 (to 1762)
+
+433     >> 1704 LOAD_GLOBAL              1 (NULL + isinstance)
+           1714 LOAD_FAST               13 (e)
+           1716 LOAD_GLOBAL             58 (TimeoutError)
+           1726 CALL                     2
+           1734 POP_JUMP_IF_FALSE       12 (to 1760)
+
+434        1736 PUSH_NULL
+           1738 LOAD_FAST               20 (put_future)
+           1740 LOAD_FAST               21 (future)
+           1742 LOAD_FAST               22 (offset)
+           1744 LOAD_FAST                4 (payload)
+           1746 BUILD_TUPLE              3
+           1748 CALL                     1
+           1756 POP_TOP
+           1758 JUMP_FORWARD             1 (to 1762)
+
+436     >> 1760 RAISE_VARARGS            0
+        >> 1762 POP_EXCEPT
+           1764 LOAD_CONST               2 (None)
+           1766 STORE_FAST              13 (e)
+           1768 DELETE_FAST             13 (e)
+           1770 JUMP_BACKWARD          239 (to 1294)
+        >> 1772 LOAD_CONST               2 (None)
+           1774 STORE_FAST              13 (e)
+           1776 DELETE_FAST             13 (e)
+           1778 RERAISE                  1
+
+423     >> 1780 RERAISE                  0
+        >> 1782 COPY                     3
+           1784 POP_EXCEPT
+           1786 RERAISE                  1
+
+449     >> 1788 PUSH_EXC_INFO
+           1790 WITH_EXCEPT_START
+           1792 POP_JUMP_IF_TRUE         1 (to 1796)
+           1794 RERAISE                  2
+        >> 1796 POP_TOP
+           1798 POP_EXCEPT
+           1800 POP_TOP
+           1802 POP_TOP
+           1804 JUMP_BACKWARD          205 (to 1396)
+        >> 1806 COPY                     3
+           1808 POP_EXCEPT
+           1810 RERAISE                  1
+
+407     >> 1812 PUSH_EXC_INFO
+           1814 WITH_EXCEPT_START
+           1816 POP_JUMP_IF_TRUE         1 (to 1820)
+           1818 RERAISE                  2
+        >> 1820 POP_TOP
+           1822 POP_EXCEPT
+           1824 POP_TOP
+           1826 POP_TOP
+           1828 RETURN_CONST             2 (None)
+        >> 1830 COPY                     3
+           1832 POP_EXCEPT
+           1834 RERAISE                  1
+        >> 1836 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+           1838 RERAISE                  1
+ExceptionTable:
+  22 to 412 -> 1836 [0] lasti
+  416 to 524 -> 1420 [0]
+  526 to 606 -> 1836 [0] lasti
+  610 to 706 -> 1836 [0] lasti
+  708 to 902 -> 1812 [1] lasti
+  906 to 934 -> 1812 [1] lasti
+  938 to 1018 -> 1484 [1]
+  1020 to 1322 -> 1812 [1] lasti
+  1324 to 1378 -> 1788 [2] lasti
+  1380 to 1398 -> 1812 [1] lasti
+  1402 to 1418 -> 1836 [0] lasti
+  1420 to 1436 -> 1478 [1] lasti
+  1438 to 1454 -> 1468 [1] lasti
+  1456 to 1466 -> 1836 [0] lasti
+  1468 to 1476 -> 1478 [1] lasti
+  1478 to 1482 -> 1836 [0] lasti
+  1484 to 1500 -> 1782 [2] lasti
+  1502 to 1624 -> 1772 [2] lasti
+  1626 to 1636 -> 1812 [1] lasti
+  1638 to 1760 -> 1772 [2] lasti
+  1762 to 1770 -> 1812 [1] lasti
+  1772 to 1780 -> 1782 [2] lasti
+  1782 to 1786 -> 1812 [1] lasti
+  1788 to 1796 -> 1806 [4] lasti
+  1798 to 1810 -> 1812 [1] lasti
+  1812 to 1820 -> 1830 [3] lasti
+  1822 to 1834 -> 1836 [0] lasti
+
+Disassembly of <code object <lambda> at 0x103b35fe0, file "concurrenttools/iter_offset.py", line 368>:
+368           0 RESUME                   0
+              2 RETURN_CONST             1 (False)
+
+Disassembly of <code object <lambda> at 0x103b18e30, file "concurrenttools/iter_offset.py", line 370>:
+370           0 RESUME                   0
+              2 LOAD_GLOBAL              1 (NULL + isinstance)
+             12 LOAD_FAST                0 (e)
+             14 LOAD_FAST                1 (excs)
+             16 CALL                     2
+             24 RETURN_VALUE
+
+Disassembly of <code object _iter_payload at 0x103a79a70, file "concurrenttools/iter_offset.py", line 399>:
+              0 COPY_FREE_VARS           6
+
+399           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+400           8 LOAD_DEREF               2 (dq_payload)
+             10 POP_JUMP_IF_FALSE       62 (to 136)
+
+401     >>   12 PUSH_NULL
+             14 LOAD_DEREF               3 (get_payload)
+             16 CALL                     0
+             24 STORE_FAST               0 (payload)
+
+402          26 LOAD_DEREF               1 (d_max_page)
+             28 LOAD_ATTR                1 (NULL|self + get)
+             48 LOAD_GLOBAL              3 (NULL + id)
+             58 LOAD_FAST                0 (payload)
+             60 CALL                     1
+             68 CALL                     1
+             76 POP_JUMP_IF_NOT_NONE    25 (to 128)
+
+403          78 LOAD_FAST                0 (payload)
+             80 LOAD_DEREF               4 (key_offset)
+             82 COPY                     2
+             84 COPY                     2
+             86 BINARY_SUBSCR
+             90 LOAD_DEREF               5 (page_size)
+             92 BINARY_OP               13 (+=)
+             96 SWAP                     3
+             98 SWAP                     2
+            100 STORE_SUBSCR
+
+404         104 LOAD_FAST                0 (payload)
+            106 YIELD_VALUE              1
+            108 RESUME                   1
+            110 POP_TOP
+
+405         112 PUSH_NULL
+            114 LOAD_DEREF               6 (put_payload)
+            116 LOAD_FAST                0 (payload)
+            118 CALL                     1
+            126 POP_TOP
+
+400     >>  128 LOAD_DEREF               2 (dq_payload)
+            130 POP_JUMP_IF_FALSE        1 (to 134)
+            132 JUMP_BACKWARD           61 (to 12)
+        >>  134 RETURN_CONST             0 (None)
+        >>  136 RETURN_CONST             0 (None)
+        >>  138 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            140 RERAISE                  1
+ExceptionTable:
+  6 to 130 -> 138 [0] lasti
+  134 to 136 -> 138 [0] lasti
+
+Disassembly of <code object make_future at 0x1084be530, file "concurrenttools/iter_offset.py", line 409>:
+              0 COPY_FREE_VARS           3
+
+409           2 RESUME                   0
+
+411           4 LOAD_GLOBAL              1 (NULL + time)
+             14 CALL                     0
+             22 STORE_DEREF              2 (last_call_ts)
+
+412          24 PUSH_NULL
+             26 LOAD_DEREF               3 (submit)
+             28 LOAD_DEREF               1 (call)
+             30 LOAD_GLOBAL              3 (NULL + copy)
+             40 LOAD_FAST                0 (payload)
+             42 CALL                     1
+             50 CALL                     2
+             58 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of iter_offset_multi_async> at 0xa5b20ed00, file "concurrenttools/iter_offset.py", line 454>:
+              0 MAKE_CELL                1 (T)
+
+454           2 RESUME                   0
+              4 LOAD_CONST               0 ('T')
+              6 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              8 COPY                     1
+             10 STORE_DEREF              1 (T)
+             12 BUILD_TUPLE              1
+             14 LOAD_FAST                0 (.defaults)
+             16 LOAD_CONST               1 ('check_for_stop')
+
+458          18 LOAD_GLOBAL              0 (Callable)
+             28 LOAD_GLOBAL              2 (int)
+             38 LOAD_GLOBAL              2 (int)
+             48 LOAD_DEREF               1 (T)
+             50 BUILD_LIST               3
+             52 LOAD_GLOBAL              4 (bool)
+             62 BUILD_TUPLE              2
+             64 BINARY_SUBSCR
+
+454          68 LOAD_CONST               2 ('retry_for_exception')
+
+459          70 LOAD_CONST               3 (None)
+             72 LOAD_GLOBAL              0 (Callable)
+             82 LOAD_GLOBAL              6 (BaseException)
+             92 BUILD_LIST               1
+             94 LOAD_GLOBAL              4 (bool)
+            104 BUILD_TUPLE              2
+            106 BINARY_SUBSCR
+            110 BINARY_OP                7 (|)
+            114 LOAD_GLOBAL              8 (type)
+            124 LOAD_GLOBAL              6 (BaseException)
+            134 BINARY_SUBSCR
+            138 BINARY_OP                7 (|)
+            142 LOAD_GLOBAL             10 (tuple)
+            152 LOAD_GLOBAL              8 (type)
+            162 LOAD_GLOBAL              6 (BaseException)
+            172 BINARY_SUBSCR
+            176 LOAD_CONST               4 (Ellipsis)
+            178 BUILD_TUPLE              2
+            180 BINARY_SUBSCR
+            184 BINARY_OP                7 (|)
+
+454         188 LOAD_CONST               5 ('payload')
+
+460         190 LOAD_CONST               3 (None)
+            192 LOAD_GLOBAL             12 (dict)
+            202 BINARY_OP                7 (|)
+
+454         206 LOAD_CONST               6 ('page_size')
+
+461         208 LOAD_GLOBAL              2 (int)
+
+454         218 LOAD_CONST               7 ('cooldown')
+
+464         220 LOAD_GLOBAL             14 (float)
+
+454         230 LOAD_CONST               8 ('max_workers')
+
+465         232 LOAD_CONST               3 (None)
+            234 LOAD_GLOBAL              2 (int)
+            244 BINARY_OP                7 (|)
+
+454         248 LOAD_CONST               9 ('call')
+
+455         250 LOAD_GLOBAL              0 (Callable)
+            260 LOAD_GLOBAL             12 (dict)
+            270 BUILD_LIST               1
+            272 LOAD_GLOBAL             16 (Awaitable)
+            282 LOAD_DEREF               1 (T)
+            284 BINARY_SUBSCR
+            288 BUILD_TUPLE              2
+            290 BINARY_SUBSCR
+
+454         294 LOAD_CONST              10 ('iter_payload')
+
+456         296 LOAD_GLOBAL             18 (Iterable)
+            306 LOAD_GLOBAL             12 (dict)
+            316 BINARY_SUBSCR
+
+454         320 LOAD_CONST              11 ('return')
+
+466         322 LOAD_GLOBAL             20 (AsyncIterator)
+            332 LOAD_DEREF               1 (T)
+            334 BINARY_SUBSCR
+
+454         338 BUILD_TUPLE             18
+            340 LOAD_CLOSURE             1 (T)
+            342 BUILD_TUPLE              1
+            344 LOAD_CONST              12 (<code object iter_offset_multi_async at 0xa5b2b6800, file "concurrenttools/iter_offset.py", line 454>)
+            346 MAKE_FUNCTION           13 (defaults, annotations, closure)
+            348 SWAP                     2
+            350 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            352 RETURN_VALUE
+
+Disassembly of <code object iter_offset_multi_async at 0xa5b2b6800, file "concurrenttools/iter_offset.py", line 454>:
+              0 COPY_FREE_VARS           1
+              2 MAKE_CELL                0 (call)
+              4 MAKE_CELL                5 (page_size)
+              6 MAKE_CELL                6 (key_offset)
+              8 MAKE_CELL               26 (create_task)
+             10 MAKE_CELL               27 (d_max_page)
+             12 MAKE_CELL               28 (dq_payload)
+             14 MAKE_CELL               29 (get_payload)
+             16 MAKE_CELL               30 (last_call_ts)
+             18 MAKE_CELL               31 (put_payload)
+             20 MAKE_CELL               32 (sema)
+
+454          22 RETURN_GENERATOR
+             24 POP_TOP
+             26 RESUME                   0
+
+482          28 LOAD_DEREF               5 (page_size)
+             30 LOAD_CONST               1 (0)
+             32 COMPARE_OP              68 (>)
+             36 POP_JUMP_IF_TRUE         2 (to 42)
+             38 LOAD_ASSERTION_ERROR
+             40 RAISE_VARARGS            1
+
+483     >>   42 LOAD_FAST                3 (retry_for_exception)
+             44 POP_JUMP_IF_NOT_NONE     4 (to 54)
+
+484          46 LOAD_CONST               3 (<code object <lambda> at 0x103b36180, file "concurrenttools/iter_offset.py", line 484>)
+             48 MAKE_FUNCTION            0
+             50 STORE_FAST               3 (retry_for_exception)
+             52 JUMP_FORWARD            53 (to 160)
+
+485     >>   54 LOAD_GLOBAL              1 (NULL + isinstance)
+             64 LOAD_FAST                3 (retry_for_exception)
+             66 LOAD_GLOBAL              2 (type)
+             76 CALL                     2
+             84 POP_JUMP_IF_FALSE       16 (to 118)
+             86 LOAD_GLOBAL              5 (NULL + issubclass)
+             96 LOAD_FAST                3 (retry_for_exception)
+             98 LOAD_GLOBAL              6 (BaseException)
+            108 CALL                     2
+            116 POP_JUMP_IF_TRUE        16 (to 150)
+        >>  118 LOAD_GLOBAL              1 (NULL + isinstance)
+            128 LOAD_FAST                3 (retry_for_exception)
+            130 LOAD_GLOBAL              8 (tuple)
+            140 CALL                     2
+            148 POP_JUMP_IF_FALSE        5 (to 160)
+
+486     >>  150 LOAD_FAST                3 (retry_for_exception)
+            152 BUILD_TUPLE              1
+            154 LOAD_CONST               4 (<code object <lambda> at 0x103b18f10, file "concurrenttools/iter_offset.py", line 486>)
+            156 MAKE_FUNCTION            1 (defaults)
+            158 STORE_FAST               3 (retry_for_exception)
+
+487     >>  160 LOAD_GLOBAL             11 (NULL + cast)
+            170 LOAD_GLOBAL             12 (Callable)
+            180 LOAD_FAST                3 (retry_for_exception)
+            182 CALL                     2
+            190 STORE_FAST               3 (retry_for_exception)
+
+488         192 LOAD_CONST               1 (0)
+            194 STORE_DEREF             30 (last_call_ts)
+
+489         196 LOAD_GLOBAL             15 (NULL + deque)
+            206 LOAD_FAST                1 (iter_payload)
+            208 CALL                     1
+            216 STORE_DEREF             28 (dq_payload)
+
+490         218 LOAD_DEREF              28 (dq_payload)
+            220 POP_JUMP_IF_TRUE         1 (to 224)
+
+491         222 RETURN_CONST             2 (None)
+
+492     >>  224 LOAD_DEREF              28 (dq_payload)
+            226 GET_ITER
+        >>  228 FOR_ITER                44 (to 320)
+            232 STORE_FAST              10 (payload_)
+
+493         234 LOAD_FAST                4 (payload)
+            236 POP_JUMP_IF_FALSE       17 (to 272)
+
+494         238 LOAD_FAST               10 (payload_)
+            240 LOAD_ATTR               17 (NULL|self + update)
+            260 LOAD_FAST                4 (payload)
+            262 CALL                     1
+            270 POP_TOP
+
+495     >>  272 LOAD_FAST               10 (payload_)
+            274 LOAD_ATTR               19 (NULL|self + setdefault)
+            294 LOAD_DEREF               6 (key_offset)
+            296 LOAD_CONST               1 (0)
+            298 CALL                     2
+            306 POP_TOP
+
+496         308 LOAD_DEREF               5 (page_size)
+            310 LOAD_FAST               10 (payload_)
+            312 LOAD_FAST                7 (key_limit)
+            314 STORE_SUBSCR
+            318 JUMP_BACKWARD           46 (to 228)
+
+492     >>  320 END_FOR
+
+497         322 LOAD_DEREF              28 (dq_payload)
+            324 LOAD_ATTR               20 (popleft)
+            344 LOAD_DEREF              28 (dq_payload)
+            346 LOAD_ATTR               22 (append)
+            366 SWAP                     2
+            368 STORE_DEREF             29 (get_payload)
+            370 STORE_DEREF             31 (put_payload)
+
+498         372 LOAD_FAST                9 (max_workers)
+            374 LOAD_CONST               1 (0)
+            376 COMPARE_OP              40 (==)
+            380 POP_JUMP_IF_FALSE      126 (to 634)
+
+499         382 LOAD_DEREF              28 (dq_payload)
+            384 POP_JUMP_IF_FALSE      123 (to 632)
+
+500     >>  386 PUSH_NULL
+            388 LOAD_DEREF              29 (get_payload)
+            390 CALL                     0
+            398 STORE_FAST               4 (payload)
+
+501         400 NOP
+
+502         402 LOAD_FAST                8 (cooldown)
+            404 LOAD_CONST               1 (0)
+            406 COMPARE_OP              68 (>)
+            410 POP_JUMP_IF_FALSE       40 (to 492)
+            412 LOAD_DEREF              30 (last_call_ts)
+            414 LOAD_FAST                8 (cooldown)
+            416 BINARY_OP                0 (+)
+            420 LOAD_GLOBAL             25 (NULL + time)
+            430 CALL                     0
+            438 BINARY_OP               10 (-)
+            442 COPY                     1
+            444 STORE_FAST              11 (delta)
+            446 LOAD_CONST               1 (0)
+            448 COMPARE_OP              68 (>)
+            452 POP_JUMP_IF_FALSE       19 (to 492)
+
+503         454 LOAD_GLOBAL             27 (NULL + async_sleep)
+            464 LOAD_FAST               11 (delta)
+            466 CALL                     1
+            474 GET_AWAITABLE            0
+            476 LOAD_CONST               2 (None)
+        >>  478 SEND                     3 (to 488)
+            482 YIELD_VALUE              3
+            484 RESUME                   3
+            486 JUMP_BACKWARD_NO_INTERRUPT     5 (to 478)
+        >>  488 END_SEND
+            490 POP_TOP
+
+504     >>  492 PUSH_NULL
+            494 LOAD_DEREF               0 (call)
+            496 LOAD_FAST                4 (payload)
+            498 CALL                     1
+            506 GET_AWAITABLE            0
+            508 LOAD_CONST               2 (None)
+        >>  510 SEND                     3 (to 520)
+            514 YIELD_VALUE              3
+            516 RESUME                   3
+            518 JUMP_BACKWARD_NO_INTERRUPT     5 (to 510)
+        >>  520 END_SEND
+            522 STORE_FAST              12 (resp)
+
+505         524 LOAD_GLOBAL             25 (NULL + time)
+            534 CALL                     0
+            542 STORE_DEREF             30 (last_call_ts)
+
+510         544 LOAD_FAST               12 (resp)
+            546 CALL_INTRINSIC_1         4 (INTRINSIC_ASYNC_GEN_WRAP)
+            548 YIELD_VALUE              1
+            550 RESUME                   1
+            552 POP_TOP
+
+511         554 PUSH_NULL
+            556 LOAD_FAST                2 (check_for_stop)
+            558 LOAD_FAST                4 (payload)
+            560 LOAD_DEREF               6 (key_offset)
+            562 BINARY_SUBSCR
+            566 LOAD_DEREF               5 (page_size)
+            568 LOAD_FAST               12 (resp)
+            570 CALL                     3
+            578 POP_JUMP_IF_TRUE        22 (to 624)
+
+512         580 LOAD_FAST                4 (payload)
+            582 LOAD_DEREF               6 (key_offset)
+            584 COPY                     2
+            586 COPY                     2
+            588 BINARY_SUBSCR
+            592 LOAD_DEREF               5 (page_size)
+            594 BINARY_OP               13 (+=)
+            598 SWAP                     3
+            600 SWAP                     2
+            602 STORE_SUBSCR
+
+513         606 PUSH_NULL
+            608 LOAD_DEREF              31 (put_payload)
+            610 LOAD_FAST                4 (payload)
+            612 CALL                     1
+            620 POP_TOP
+            622 NOP
+
+499     >>  624 LOAD_DEREF              28 (dq_payload)
+            626 POP_JUMP_IF_FALSE        1 (to 630)
+            628 JUMP_BACKWARD          122 (to 386)
+        >>  630 RETURN_CONST             2 (None)
+        >>  632 RETURN_CONST             2 (None)
+
+515     >>  634 LOAD_CLOSURE            27 (d_max_page)
+            636 LOAD_CLOSURE            28 (dq_payload)
+            638 LOAD_CLOSURE            29 (get_payload)
+            640 LOAD_CLOSURE             6 (key_offset)
+            642 LOAD_CLOSURE             5 (page_size)
+            644 LOAD_CLOSURE            31 (put_payload)
+            646 BUILD_TUPLE              6
+            648 LOAD_CONST               5 (<code object _iter_payload at 0x103a79bc0, file "concurrenttools/iter_offset.py", line 515>)
+            650 MAKE_FUNCTION            8 (closure)
+            652 STORE_FAST              14 (_iter_payload)
+
+522         654 PUSH_NULL
+            656 LOAD_FAST               14 (_iter_payload)
+            658 CALL                     0
+            666 LOAD_ATTR               28 (__next__)
+            686 STORE_FAST              15 (next_payload)
+
+523         688 LOAD_FAST                9 (max_workers)
+            690 POP_JUMP_IF_NONE        32 (to 756)
+            692 LOAD_FAST                9 (max_workers)
+            694 LOAD_CONST               1 (0)
+            696 COMPARE_OP               2 (<)
+            700 POP_JUMP_IF_TRUE        27 (to 756)
+
+524         702 LOAD_GLOBAL             31 (NULL + AsyncSemaphore)
+            712 LOAD_FAST                9 (max_workers)
+            714 CALL                     1
+            722 STORE_DEREF             32 (sema)
+
+525         724 LOAD_DEREF               0 (call)
+            726 BUILD_TUPLE              1
+            728 LOAD_CONST               6 ('payload')
+            730 LOAD_GLOBAL             32 (dict)
+            740 LOAD_CONST               7 ('return')
+            742 LOAD_DEREF              33 (T)
+            744 BUILD_TUPLE              4
+            746 LOAD_CLOSURE            32 (sema)
+            748 BUILD_TUPLE              1
+            750 LOAD_CONST               8 (<code object call at 0x103a902f0, file "concurrenttools/iter_offset.py", line 525>)
+            752 MAKE_FUNCTION           13 (defaults, annotations, closure)
+            754 STORE_DEREF              0 (call)
+
+528     >>  756 LOAD_GLOBAL             35 (NULL + TaskGroup)
+            766 CALL                     0
+            774 BEFORE_ASYNC_WITH
+            776 GET_AWAITABLE            1
+            778 LOAD_CONST               2 (None)
+        >>  780 SEND                     3 (to 790)
+            784 YIELD_VALUE              2
+            786 RESUME                   3
+            788 JUMP_BACKWARD_NO_INTERRUPT     5 (to 780)
+        >>  790 END_SEND
+            792 STORE_FAST              16 (tg)
+
+529         794 LOAD_FAST               16 (tg)
+            796 LOAD_ATTR               36 (create_task)
+            816 STORE_DEREF             26 (create_task)
+
+530         818 LOAD_CONST               6 ('payload')
+            820 LOAD_GLOBAL             32 (dict)
+            830 LOAD_CONST               7 ('return')
+            832 LOAD_GLOBAL             38 (Task)
+            842 BUILD_TUPLE              4
+            844 LOAD_CLOSURE             0 (call)
+            846 LOAD_CLOSURE            26 (create_task)
+            848 LOAD_CLOSURE            30 (last_call_ts)
+            850 BUILD_TUPLE              3
+            852 LOAD_CONST               9 (<code object make_task at 0x103b1dce0, file "concurrenttools/iter_offset.py", line 530>)
+            854 MAKE_FUNCTION           12 (annotations, closure)
+            856 STORE_FAST              17 (make_task)
+
+534         858 LOAD_GLOBAL             15 (NULL + deque)
+            868 CALL                     0
+            876 STORE_FAST              18 (dq_tasks)
+
+535         878 LOAD_FAST               18 (dq_tasks)
+            880 LOAD_ATTR               20 (popleft)
+            900 LOAD_FAST               18 (dq_tasks)
+            902 LOAD_ATTR               22 (append)
+            922 STORE_FAST              20 (put_task)
+            924 STORE_FAST              19 (get_task)
+
+536         926 LOAD_DEREF              28 (dq_payload)
+            928 POP_JUMP_IF_FALSE       30 (to 990)
+
+537     >>  930 PUSH_NULL
+            932 LOAD_DEREF              29 (get_payload)
+            934 CALL                     0
+            942 STORE_FAST               4 (payload)
+
+538         944 PUSH_NULL
+            946 LOAD_FAST               20 (put_task)
+            948 PUSH_NULL
+            950 LOAD_FAST               17 (make_task)
+            952 LOAD_FAST                4 (payload)
+            954 CALL                     1
+            962 LOAD_FAST                4 (payload)
+            964 LOAD_DEREF               6 (key_offset)
+            966 BINARY_SUBSCR
+            970 LOAD_FAST                4 (payload)
+            972 BUILD_TUPLE              3
+            974 CALL                     1
+            982 POP_TOP
+
+536         984 LOAD_DEREF              28 (dq_payload)
+            986 POP_JUMP_IF_FALSE        1 (to 990)
+            988 JUMP_BACKWARD           30 (to 930)
+
+539     >>  990 BUILD_MAP                0
+            992 STORE_DEREF             27 (d_max_page)
+
+540         994 LOAD_CONST               2 (None)
+            996 STORE_FAST              21 (exc)
+
+541     >>  998 LOAD_FAST               18 (dq_tasks)
+           1000 EXTENDED_ARG             1
+           1002 POP_JUMP_IF_FALSE      258 (to 1520)
+
+542     >> 1004 PUSH_NULL
+           1006 LOAD_FAST               19 (get_task)
+           1008 CALL                     0
+           1016 UNPACK_SEQUENCE          3
+           1020 STORE_FAST              22 (task)
+           1022 STORE_FAST              23 (offset)
+           1024 STORE_FAST               4 (payload)
+
+543        1026 NOP
+
+544        1028 LOAD_GLOBAL             41 (NULL + wait_for)
+           1038 LOAD_GLOBAL             43 (NULL + shield)
+           1048 LOAD_FAST               22 (task)
+           1050 CALL                     1
+           1058 LOAD_GLOBAL             45 (NULL + max)
+           1068 LOAD_CONST               1 (0)
+           1070 LOAD_DEREF              30 (last_call_ts)
+           1072 LOAD_FAST                8 (cooldown)
+           1074 BINARY_OP                0 (+)
+           1078 LOAD_GLOBAL             25 (NULL + time)
+           1088 CALL                     0
+           1096 BINARY_OP               10 (-)
+           1100 CALL                     2
+           1108 CALL                     2
+           1116 GET_AWAITABLE            0
+           1118 LOAD_CONST               2 (None)
+        >> 1120 SEND                     3 (to 1130)
+           1124 YIELD_VALUE              4
+           1126 RESUME                   3
+           1128 JUMP_BACKWARD_NO_INTERRUPT     5 (to 1120)
+        >> 1130 END_SEND
+           1132 STORE_FAST              12 (resp)
+
+561        1134 LOAD_FAST               12 (resp)
+           1136 CALL_INTRINSIC_1         4 (INTRINSIC_ASYNC_GEN_WRAP)
+           1138 YIELD_VALUE              2
+           1140 RESUME                   1
+           1142 POP_TOP
+
+562        1144 PUSH_NULL
+           1146 LOAD_FAST                2 (check_for_stop)
+           1148 LOAD_FAST               23 (offset)
+           1150 LOAD_DEREF               5 (page_size)
+           1152 LOAD_FAST               12 (resp)
+           1154 CALL                     3
+           1162 POP_JUMP_IF_FALSE      123 (to 1410)
+
+563        1164 LOAD_DEREF              27 (d_max_page)
+           1166 LOAD_ATTR               47 (NULL|self + get)
+           1186 LOAD_GLOBAL             49 (NULL + id)
+           1196 LOAD_FAST                4 (payload)
+           1198 CALL                     1
+           1206 CALL                     1
+           1214 STORE_FAST              24 (max_page)
+
+564        1216 LOAD_FAST               24 (max_page)
+           1218 POP_JUMP_IF_NONE         5 (to 1230)
+           1220 LOAD_FAST               24 (max_page)
+           1222 LOAD_FAST               23 (offset)
+           1224 COMPARE_OP              68 (>)
+           1228 POP_JUMP_IF_FALSE       90 (to 1410)
+
+565     >> 1230 LOAD_FAST               23 (offset)
+           1232 COPY                     1
+           1234 STORE_FAST              24 (max_page)
+           1236 LOAD_DEREF              27 (d_max_page)
+           1238 LOAD_GLOBAL             49 (NULL + id)
+           1248 LOAD_FAST                4 (payload)
+           1250 CALL                     1
+           1258 STORE_SUBSCR
+
+566        1262 LOAD_GLOBAL             51 (NULL + range)
+           1272 LOAD_GLOBAL             53 (NULL + len)
+           1282 LOAD_FAST               18 (dq_tasks)
+           1284 CALL                     1
+           1292 CALL                     1
+           1300 GET_ITER
+        >> 1302 FOR_ITER                50 (to 1406)
+           1306 STORE_FAST              25 (_)
+
+567        1308 PUSH_NULL
+           1310 LOAD_FAST               19 (get_task)
+           1312 CALL                     0
+           1320 UNPACK_SEQUENCE          3
+           1324 STORE_FAST              22 (task)
+           1326 STORE_FAST              23 (offset)
+           1328 STORE_FAST              10 (payload_)
+
+568        1330 LOAD_FAST                4 (payload)
+           1332 LOAD_FAST               10 (payload_)
+           1334 IS_OP                    0
+           1336 POP_JUMP_IF_FALSE       22 (to 1382)
+           1338 LOAD_FAST               23 (offset)
+           1340 LOAD_FAST               24 (max_page)
+           1342 COMPARE_OP              68 (>)
+           1346 POP_JUMP_IF_FALSE       17 (to 1382)
+
+569        1348 LOAD_FAST               22 (task)
+           1350 LOAD_ATTR               55 (NULL|self + cancel)
+           1370 CALL                     0
+           1378 POP_TOP
+           1380 JUMP_BACKWARD           40 (to 1302)
+
+571     >> 1382 PUSH_NULL
+           1384 LOAD_FAST               20 (put_task)
+           1386 LOAD_FAST               22 (task)
+           1388 LOAD_FAST               23 (offset)
+           1390 LOAD_FAST               10 (payload_)
+           1392 BUILD_TUPLE              3
+           1394 CALL                     1
+           1402 POP_TOP
+           1404 JUMP_BACKWARD           52 (to 1302)
+
+566     >> 1406 END_FOR
+           1408 NOP
+
+572     >> 1410 LOAD_GLOBAL             63 (NULL + suppress)
+           1420 LOAD_GLOBAL             64 (StopIteration)
+           1430 CALL                     1
+           1438 BEFORE_WITH
+           1440 POP_TOP
+
+573        1442 PUSH_NULL
+           1444 LOAD_FAST               15 (next_payload)
+           1446 CALL                     0
+           1454 STORE_FAST               4 (payload)
+
+574        1456 PUSH_NULL
+           1458 LOAD_FAST               20 (put_task)
+           1460 PUSH_NULL
+           1462 LOAD_FAST               17 (make_task)
+           1464 LOAD_FAST                4 (payload)
+           1466 CALL                     1
+           1474 LOAD_FAST                4 (payload)
+           1476 LOAD_DEREF               6 (key_offset)
+           1478 BINARY_SUBSCR
+           1482 LOAD_FAST                4 (payload)
+           1484 BUILD_TUPLE              3
+           1486 CALL                     1
+           1494 POP_TOP
+
+572        1496 LOAD_CONST               2 (None)
+           1498 LOAD_CONST               2 (None)
+           1500 LOAD_CONST               2 (None)
+           1502 CALL                     2
+           1510 POP_TOP
+
+541     >> 1512 LOAD_FAST               18 (dq_tasks)
+           1514 POP_JUMP_IF_FALSE        2 (to 1520)
+           1516 EXTENDED_ARG             1
+           1518 JUMP_BACKWARD          258 (to 1004)
+
+528     >> 1520 LOAD_CONST               2 (None)
+           1522 LOAD_CONST               2 (None)
+           1524 LOAD_CONST               2 (None)
+           1526 CALL                     2
+           1534 GET_AWAITABLE            2
+           1536 LOAD_CONST               2 (None)
+        >> 1538 SEND                     3 (to 1548)
+           1542 YIELD_VALUE              2
+           1544 RESUME                   3
+           1546 JUMP_BACKWARD_NO_INTERRUPT     5 (to 1538)
+        >> 1548 END_SEND
+           1550 POP_TOP
+
+575     >> 1552 LOAD_FAST_CHECK         21 (exc)
+           1554 POP_JUMP_IF_NONE         2 (to 1560)
+
+576        1556 LOAD_FAST               21 (exc)
+           1558 RAISE_VARARGS            1
+
+575     >> 1560 RETURN_CONST             2 (None)
+
+503     >> 1562 CLEANUP_THROW
+           1564 EXTENDED_ARG             2
+           1566 JUMP_BACKWARD          540 (to 488)
+
+504     >> 1568 CLEANUP_THROW
+           1570 EXTENDED_ARG             2
+           1572 JUMP_BACKWARD          527 (to 520)
+        >> 1574 PUSH_EXC_INFO
+
+506        1576 LOAD_GLOBAL              6 (BaseException)
+           1586 CHECK_EXC_MATCH
+           1588 POP_JUMP_IF_FALSE       20 (to 1630)
+           1590 STORE_FAST              13 (e)
+
+507        1592 PUSH_NULL
+           1594 LOAD_FAST                3 (retry_for_exception)
+           1596 LOAD_FAST               13 (e)
+           1598 CALL                     1
+           1606 POP_JUMP_IF_TRUE         1 (to 1610)
+
+508        1608 RAISE_VARARGS            0
+
+507     >> 1610 POP_EXCEPT
+           1612 LOAD_CONST               2 (None)
+           1614 STORE_FAST              13 (e)
+           1616 DELETE_FAST             13 (e)
+           1618 EXTENDED_ARG             1
+           1620 JUMP_BACKWARD          499 (to 624)
+        >> 1622 LOAD_CONST               2 (None)
+           1624 STORE_FAST              13 (e)
+           1626 DELETE_FAST             13 (e)
+           1628 RERAISE                  1
+
+506     >> 1630 RERAISE                  0
+        >> 1632 COPY                     3
+           1634 POP_EXCEPT
+           1636 RERAISE                  1
+
+528     >> 1638 CLEANUP_THROW
+           1640 EXTENDED_ARG             1
+           1642 JUMP_BACKWARD          427 (to 790)
+
+544     >> 1644 CLEANUP_THROW
+           1646 EXTENDED_ARG             1
+           1648 JUMP_BACKWARD          260 (to 1130)
+        >> 1650 PUSH_EXC_INFO
+
+545        1652 LOAD_GLOBAL              6 (BaseException)
+           1662 CHECK_EXC_MATCH
+           1664 POP_JUMP_IF_FALSE      147 (to 1960)
+           1666 STORE_FAST              13 (e)
+
+546        1668 LOAD_FAST               22 (task)
+           1670 LOAD_ATTR               57 (NULL|self + done)
+           1690 CALL                     0
+           1698 POP_JUMP_IF_FALSE       91 (to 1882)
+
+547        1700 LOAD_FAST               22 (task)
+           1702 LOAD_ATTR               59 (NULL|self + exception)
+           1722 CALL                     0
+           1730 LOAD_FAST               13 (e)
+           1732 IS_OP                    1
+           1734 POP_JUMP_IF_FALSE       34 (to 1804)
+
+548        1736 LOAD_GLOBAL              1 (NULL + isinstance)
+           1746 LOAD_FAST               13 (e)
+           1748 LOAD_GLOBAL             60 (AsyncTimeoutError)
+           1758 CALL                     2
+           1766 POP_JUMP_IF_TRUE         1 (to 1770)
+
+549        1768 RAISE_VARARGS            0
+
+550     >> 1770 PUSH_NULL
+           1772 LOAD_FAST               20 (put_task)
+           1774 LOAD_FAST               22 (task)
+           1776 LOAD_FAST               23 (offset)
+           1778 LOAD_FAST                4 (payload)
+           1780 BUILD_TUPLE              3
+           1782 CALL                     1
+           1790 POP_TOP
+
+551        1792 POP_EXCEPT
+           1794 LOAD_CONST               2 (None)
+           1796 STORE_FAST              13 (e)
+           1798 DELETE_FAST             13 (e)
+           1800 EXTENDED_ARG             1
+           1802 JUMP_BACKWARD          403 (to 998)
+
+552     >> 1804 PUSH_NULL
+           1806 LOAD_FAST                3 (retry_for_exception)
+           1808 LOAD_FAST               13 (e)
+           1810 CALL                     1
+           1818 POP_JUMP_IF_TRUE         7 (to 1834)
+
+553        1820 LOAD_FAST               13 (e)
+           1822 STORE_FAST              21 (exc)
+
+554        1824 POP_EXCEPT
+           1826 LOAD_CONST               2 (None)
+           1828 STORE_FAST              13 (e)
+           1830 DELETE_FAST             13 (e)
+           1832 JUMP_BACKWARD          157 (to 1520)
+
+555     >> 1834 PUSH_NULL
+           1836 LOAD_FAST               20 (put_task)
+           1838 PUSH_NULL
+           1840 LOAD_FAST               17 (make_task)
+           1842 BUILD_MAP                0
+           1844 LOAD_FAST                4 (payload)
+           1846 DICT_UPDATE              1
+           1848 LOAD_DEREF               6 (key_offset)
+           1850 LOAD_FAST               23 (offset)
+           1852 BUILD_MAP                1
+           1854 DICT_UPDATE              1
+           1856 CALL                     1
+           1864 LOAD_FAST               23 (offset)
+           1866 LOAD_FAST                4 (payload)
+           1868 BUILD_TUPLE              3
+           1870 CALL                     1
+           1878 POP_TOP
+           1880 JUMP_FORWARD            29 (to 1940)
+
+556     >> 1882 LOAD_GLOBAL              1 (NULL + isinstance)
+           1892 LOAD_FAST               13 (e)
+           1894 LOAD_GLOBAL             60 (AsyncTimeoutError)
+           1904 CALL                     2
+           1912 POP_JUMP_IF_FALSE       12 (to 1938)
+
+557        1914 PUSH_NULL
+           1916 LOAD_FAST               20 (put_task)
+           1918 LOAD_FAST               22 (task)
+           1920 LOAD_FAST               23 (offset)
+           1922 LOAD_FAST                4 (payload)
+           1924 BUILD_TUPLE              3
+           1926 CALL                     1
+           1934 POP_TOP
+           1936 JUMP_FORWARD             1 (to 1940)
+
+559     >> 1938 RAISE_VARARGS            0
+        >> 1940 POP_EXCEPT
+           1942 LOAD_CONST               2 (None)
+           1944 STORE_FAST              13 (e)
+           1946 DELETE_FAST             13 (e)
+           1948 EXTENDED_ARG             1
+           1950 JUMP_BACKWARD          271 (to 1410)
+        >> 1952 LOAD_CONST               2 (None)
+           1954 STORE_FAST              13 (e)
+           1956 DELETE_FAST             13 (e)
+           1958 RERAISE                  1
+
+545     >> 1960 RERAISE                  0
+        >> 1962 COPY                     3
+           1964 POP_EXCEPT
+           1966 RERAISE                  1
+
+572     >> 1968 PUSH_EXC_INFO
+           1970 WITH_EXCEPT_START
+           1972 POP_JUMP_IF_TRUE         1 (to 1976)
+           1974 RERAISE                  2
+        >> 1976 POP_TOP
+           1978 POP_EXCEPT
+           1980 POP_TOP
+           1982 POP_TOP
+           1984 JUMP_BACKWARD          237 (to 1512)
+        >> 1986 COPY                     3
+           1988 POP_EXCEPT
+           1990 RERAISE                  1
+
+528     >> 1992 CLEANUP_THROW
+           1994 JUMP_BACKWARD          224 (to 1548)
+        >> 1996 PUSH_EXC_INFO
+           1998 WITH_EXCEPT_START
+           2000 GET_AWAITABLE            2
+           2002 LOAD_CONST               2 (None)
+        >> 2004 SEND                     4 (to 2016)
+           2008 YIELD_VALUE              3
+           2010 RESUME                   3
+           2012 JUMP_BACKWARD_NO_INTERRUPT     5 (to 2004)
+        >> 2014 CLEANUP_THROW
+        >> 2016 END_SEND
+           2018 POP_JUMP_IF_TRUE         1 (to 2022)
+           2020 RERAISE                  2
+        >> 2022 POP_TOP
+           2024 POP_EXCEPT
+           2026 POP_TOP
+           2028 POP_TOP
+           2030 JUMP_BACKWARD          240 (to 1552)
+        >> 2032 COPY                     3
+           2034 POP_EXCEPT
+           2036 RERAISE                  1
+        >> 2038 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+           2040 RERAISE                  1
+ExceptionTable:
+  26 to 398 -> 2038 [0] lasti
+  402 to 480 -> 1574 [0]
+  482 to 482 -> 1562 [2]
+  484 to 512 -> 1574 [0]
+  514 to 514 -> 1568 [2]
+  516 to 542 -> 1574 [0]
+  544 to 626 -> 2038 [0] lasti
+  630 to 782 -> 2038 [0] lasti
+  784 to 784 -> 1638 [3]
+  786 to 790 -> 2038 [0] lasti
+  792 to 986 -> 1996 [1] lasti
+  990 to 1024 -> 1996 [1] lasti
+  1028 to 1122 -> 1650 [1]
+  1124 to 1124 -> 1644 [3]
+  1126 to 1132 -> 1650 [1]
+  1134 to 1438 -> 1996 [1] lasti
+  1440 to 1494 -> 1968 [2] lasti
+  1496 to 1514 -> 1996 [1] lasti
+  1520 to 1540 -> 2038 [0] lasti
+  1542 to 1542 -> 1992 [2]
+  1544 to 1560 -> 2038 [0] lasti
+  1562 to 1562 -> 1574 [0]
+  1568 to 1568 -> 1574 [0]
+  1574 to 1590 -> 1632 [1] lasti
+  1592 to 1608 -> 1622 [1] lasti
+  1610 to 1620 -> 2038 [0] lasti
+  1622 to 1630 -> 1632 [1] lasti
+  1632 to 1638 -> 2038 [0] lasti
+  1644 to 1644 -> 1650 [1]
+  1650 to 1666 -> 1962 [2] lasti
+  1668 to 1790 -> 1952 [2] lasti
+  1792 to 1802 -> 1996 [1] lasti
+  1804 to 1822 -> 1952 [2] lasti
+  1824 to 1832 -> 1996 [1] lasti
+  1834 to 1938 -> 1952 [2] lasti
+  1940 to 1950 -> 1996 [1] lasti
+  1952 to 1960 -> 1962 [2] lasti
+  1962 to 1966 -> 1996 [1] lasti
+  1968 to 1976 -> 1986 [4] lasti
+  1978 to 1990 -> 1996 [1] lasti
+  1992 to 1992 -> 2038 [0] lasti
+  1996 to 2006 -> 2032 [3] lasti
+  2008 to 2008 -> 2014 [6]
+  2010 to 2022 -> 2032 [3] lasti
+  2024 to 2036 -> 2038 [0] lasti
+
+Disassembly of <code object <lambda> at 0x103b36180, file "concurrenttools/iter_offset.py", line 484>:
+484           0 RESUME                   0
+              2 RETURN_CONST             1 (False)
+
+Disassembly of <code object <lambda> at 0x103b18f10, file "concurrenttools/iter_offset.py", line 486>:
+486           0 RESUME                   0
+              2 LOAD_GLOBAL              1 (NULL + isinstance)
+             12 LOAD_FAST                0 (e)
+             14 LOAD_FAST                1 (excs)
+             16 CALL                     2
+             24 RETURN_VALUE
+
+Disassembly of <code object _iter_payload at 0x103a79bc0, file "concurrenttools/iter_offset.py", line 515>:
+              0 COPY_FREE_VARS           6
+
+515           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+516           8 LOAD_DEREF               2 (dq_payload)
+             10 POP_JUMP_IF_FALSE       62 (to 136)
+
+517     >>   12 PUSH_NULL
+             14 LOAD_DEREF               3 (get_payload)
+             16 CALL                     0
+             24 STORE_FAST               0 (payload)
+
+518          26 LOAD_DEREF               1 (d_max_page)
+             28 LOAD_ATTR                1 (NULL|self + get)
+             48 LOAD_GLOBAL              3 (NULL + id)
+             58 LOAD_FAST                0 (payload)
+             60 CALL                     1
+             68 CALL                     1
+             76 POP_JUMP_IF_NOT_NONE    25 (to 128)
+
+519          78 LOAD_FAST                0 (payload)
+             80 LOAD_DEREF               4 (key_offset)
+             82 COPY                     2
+             84 COPY                     2
+             86 BINARY_SUBSCR
+             90 LOAD_DEREF               5 (page_size)
+             92 BINARY_OP               13 (+=)
+             96 SWAP                     3
+             98 SWAP                     2
+            100 STORE_SUBSCR
+
+520         104 LOAD_FAST                0 (payload)
+            106 YIELD_VALUE              1
+            108 RESUME                   1
+            110 POP_TOP
+
+521         112 PUSH_NULL
+            114 LOAD_DEREF               6 (put_payload)
+            116 LOAD_FAST                0 (payload)
+            118 CALL                     1
+            126 POP_TOP
+
+516     >>  128 LOAD_DEREF               2 (dq_payload)
+            130 POP_JUMP_IF_FALSE        1 (to 134)
+            132 JUMP_BACKWARD           61 (to 12)
+        >>  134 RETURN_CONST             0 (None)
+        >>  136 RETURN_CONST             0 (None)
+        >>  138 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            140 RERAISE                  1
+ExceptionTable:
+  6 to 130 -> 138 [0] lasti
+  134 to 136 -> 138 [0] lasti
+
+Disassembly of <code object call at 0x103a902f0, file "concurrenttools/iter_offset.py", line 525>:
+              0 COPY_FREE_VARS           1
+
+525           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+526           8 LOAD_DEREF               2 (sema)
+             10 BEFORE_ASYNC_WITH
+             12 GET_AWAITABLE            1
+             14 LOAD_CONST               0 (None)
+        >>   16 SEND                     3 (to 26)
+             20 YIELD_VALUE              2
+             22 RESUME                   3
+             24 JUMP_BACKWARD_NO_INTERRUPT     5 (to 16)
+        >>   26 END_SEND
+             28 POP_TOP
+
+527          30 PUSH_NULL
+             32 LOAD_FAST                1 (call)
+             34 LOAD_FAST                0 (payload)
+             36 CALL                     1
+             44 GET_AWAITABLE            0
+             46 LOAD_CONST               0 (None)
+        >>   48 SEND                     3 (to 58)
+             52 YIELD_VALUE              3
+             54 RESUME                   3
+             56 JUMP_BACKWARD_NO_INTERRUPT     5 (to 48)
+        >>   58 END_SEND
+
+526          60 SWAP                     2
+             62 LOAD_CONST               0 (None)
+             64 LOAD_CONST               0 (None)
+             66 LOAD_CONST               0 (None)
+             68 CALL                     2
+             76 GET_AWAITABLE            2
+             78 LOAD_CONST               0 (None)
+        >>   80 SEND                     3 (to 90)
+             84 YIELD_VALUE              2
+             86 RESUME                   3
+             88 JUMP_BACKWARD_NO_INTERRUPT     5 (to 80)
+        >>   90 END_SEND
+             92 POP_TOP
+             94 RETURN_VALUE
+        >>   96 CLEANUP_THROW
+             98 JUMP_BACKWARD           37 (to 26)
+
+527     >>  100 CLEANUP_THROW
+            102 JUMP_BACKWARD           23 (to 58)
+
+526     >>  104 CLEANUP_THROW
+            106 JUMP_BACKWARD            9 (to 90)
+        >>  108 PUSH_EXC_INFO
+            110 WITH_EXCEPT_START
+            112 GET_AWAITABLE            2
+            114 LOAD_CONST               0 (None)
+        >>  116 SEND                     4 (to 128)
+            120 YIELD_VALUE              3
+            122 RESUME                   3
+            124 JUMP_BACKWARD_NO_INTERRUPT     5 (to 116)
+        >>  126 CLEANUP_THROW
+        >>  128 END_SEND
+            130 POP_JUMP_IF_TRUE         1 (to 134)
+            132 RERAISE                  2
+        >>  134 POP_TOP
+            136 POP_EXCEPT
+            138 POP_TOP
+            140 POP_TOP
+            142 RETURN_CONST             0 (None)
+        >>  144 COPY                     3
+            146 POP_EXCEPT
+            148 RERAISE                  1
+        >>  150 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            152 RERAISE                  1
+ExceptionTable:
+  6 to 18 -> 150 [0] lasti
+  20 to 20 -> 96 [3]
+  22 to 26 -> 150 [0] lasti
+  28 to 50 -> 108 [1] lasti
+  52 to 52 -> 100 [3]
+  54 to 58 -> 108 [1] lasti
+  60 to 82 -> 150 [0] lasti
+  84 to 84 -> 104 [3]
+  86 to 96 -> 150 [0] lasti
+  100 to 100 -> 108 [1] lasti
+  104 to 104 -> 150 [0] lasti
+  108 to 118 -> 144 [3] lasti
+  120 to 120 -> 126 [6]
+  122 to 134 -> 144 [3] lasti
+  136 to 148 -> 150 [0] lasti
+
+Disassembly of <code object make_task at 0x103b1dce0, file "concurrenttools/iter_offset.py", line 530>:
+              0 COPY_FREE_VARS           3
+
+530           2 RESUME                   0
+
+532           4 LOAD_GLOBAL              1 (NULL + time)
+             14 CALL                     0
+             22 STORE_DEREF              3 (last_call_ts)
+
+533          24 PUSH_NULL
+             26 LOAD_DEREF               2 (create_task)
+             28 LOAD_GLOBAL              3 (NULL + ensure_coroutine)
+             38 PUSH_NULL
+             40 LOAD_DEREF               1 (call)
+             42 LOAD_FAST                0 (payload)
+             44 CALL                     1
+             52 CALL                     1
+             60 CALL                     1
+             68 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of iter_offset_multi> at 0xa5b20cf00, file "concurrenttools/iter_offset.py", line 579>:
+579           0 RESUME                   0
+
+580           2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_FAST                1 (.kwdefaults)
+             16 LOAD_CONST               1 ('check_for_stop')
+
+584          18 LOAD_GLOBAL              0 (Callable)
+             28 LOAD_GLOBAL              2 (int)
+             38 LOAD_GLOBAL              2 (int)
+             48 LOAD_FAST                2 (T)
+             50 BUILD_LIST               3
+             52 LOAD_GLOBAL              4 (bool)
+             62 BUILD_TUPLE              2
+             64 BINARY_SUBSCR
+
+580          68 LOAD_CONST               2 ('retry_for_exception')
+
+585          70 LOAD_CONST               3 (None)
+             72 LOAD_GLOBAL              0 (Callable)
+             82 LOAD_GLOBAL              6 (BaseException)
+             92 BUILD_LIST               1
+             94 LOAD_GLOBAL              4 (bool)
+            104 BUILD_TUPLE              2
+            106 BINARY_SUBSCR
+            110 BINARY_OP                7 (|)
+            114 LOAD_GLOBAL              8 (type)
+            124 LOAD_GLOBAL              6 (BaseException)
+            134 BINARY_SUBSCR
+            138 BINARY_OP                7 (|)
+            142 LOAD_GLOBAL             10 (tuple)
+            152 LOAD_GLOBAL              8 (type)
+            162 LOAD_GLOBAL              6 (BaseException)
+            172 BINARY_SUBSCR
+            176 LOAD_CONST               4 (Ellipsis)
+            178 BUILD_TUPLE              2
+            180 BINARY_SUBSCR
+            184 BINARY_OP                7 (|)
+
+580         188 LOAD_CONST               5 ('payload')
+
+586         190 LOAD_CONST               3 (None)
+            192 LOAD_GLOBAL             12 (dict)
+            202 BINARY_OP                7 (|)
+
+580         206 LOAD_CONST               6 ('page_size')
+
+587         208 LOAD_GLOBAL              2 (int)
+
+580         218 LOAD_CONST               7 ('cooldown')
+
+590         220 LOAD_GLOBAL             14 (float)
+
+580         230 LOAD_CONST               8 ('max_workers')
+
+591         232 LOAD_CONST               3 (None)
+            234 LOAD_GLOBAL              2 (int)
+            244 BINARY_OP                7 (|)
+
+580         248 LOAD_CONST               9 ('call')
+
+581         250 LOAD_GLOBAL              0 (Callable)
+            260 LOAD_GLOBAL             12 (dict)
+            270 BUILD_LIST               1
+            272 LOAD_FAST                2 (T)
+            274 BUILD_TUPLE              2
+            276 BINARY_SUBSCR
+
+580         280 LOAD_CONST              10 ('iter_payload')
+
+582         282 LOAD_GLOBAL             16 (Iterable)
+            292 LOAD_GLOBAL             12 (dict)
+            302 BINARY_SUBSCR
+
+580         306 LOAD_CONST              11 ('async_')
+
+593         308 LOAD_GLOBAL             18 (Literal)
+            318 LOAD_CONST              12 (False)
+            320 BINARY_SUBSCR
+
+580         324 LOAD_CONST              13 ('return')
+
+594         326 LOAD_GLOBAL             20 (Iterator)
+            336 LOAD_FAST                2 (T)
+            338 BINARY_SUBSCR
+
+580         342 BUILD_TUPLE             20
+            344 LOAD_CONST              14 (<code object iter_offset_multi at 0x103b36250, file "concurrenttools/iter_offset.py", line 579>)
+            346 MAKE_FUNCTION            7 (defaults, kwdefaults, annotations)
+            348 SWAP                     2
+            350 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            352 RETURN_VALUE
+
+Disassembly of <code object iter_offset_multi at 0x103b36250, file "concurrenttools/iter_offset.py", line 579>:
+579           0 RESUME                   0
+
+595           2 RETURN_CONST             0 (None)
+
+Disassembly of <code object <generic parameters of iter_offset_multi> at 0xa5b20cc80, file "concurrenttools/iter_offset.py", line 596>:
+596           0 RESUME                   0
+
+597           2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               1 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('check_for_stop')
+
+601          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_GLOBAL              2 (int)
+             36 LOAD_GLOBAL              2 (int)
+             46 LOAD_FAST                1 (T)
+             48 BUILD_LIST               3
+             50 LOAD_GLOBAL              4 (bool)
+             60 BUILD_TUPLE              2
+             62 BINARY_SUBSCR
+
+597          66 LOAD_CONST               2 ('retry_for_exception')
+
+602          68 LOAD_CONST               3 (None)
+             70 LOAD_GLOBAL              0 (Callable)
+             80 LOAD_GLOBAL              6 (BaseException)
+             90 BUILD_LIST               1
+             92 LOAD_GLOBAL              4 (bool)
+            102 BUILD_TUPLE              2
+            104 BINARY_SUBSCR
+            108 BINARY_OP                7 (|)
+            112 LOAD_GLOBAL              8 (type)
+            122 LOAD_GLOBAL              6 (BaseException)
+            132 BINARY_SUBSCR
+            136 BINARY_OP                7 (|)
+            140 LOAD_GLOBAL             10 (tuple)
+            150 LOAD_GLOBAL              8 (type)
+            160 LOAD_GLOBAL              6 (BaseException)
+            170 BINARY_SUBSCR
+            174 LOAD_CONST               4 (Ellipsis)
+            176 BUILD_TUPLE              2
+            178 BINARY_SUBSCR
+            182 BINARY_OP                7 (|)
+
+597         186 LOAD_CONST               5 ('payload')
+
+603         188 LOAD_CONST               3 (None)
+            190 LOAD_GLOBAL             12 (dict)
+            200 BINARY_OP                7 (|)
+
+597         204 LOAD_CONST               6 ('page_size')
+
+604         206 LOAD_GLOBAL              2 (int)
+
+597         216 LOAD_CONST               7 ('cooldown')
+
+607         218 LOAD_GLOBAL             14 (float)
+
+597         228 LOAD_CONST               8 ('max_workers')
+
+608         230 LOAD_CONST               3 (None)
+            232 LOAD_GLOBAL              2 (int)
+            242 BINARY_OP                7 (|)
+
+597         246 LOAD_CONST               9 ('call')
+
+598         248 LOAD_GLOBAL              0 (Callable)
+            258 LOAD_GLOBAL             12 (dict)
+            268 BUILD_LIST               1
+            270 LOAD_GLOBAL             16 (Awaitable)
+            280 LOAD_FAST                1 (T)
+            282 BINARY_SUBSCR
+            286 BUILD_TUPLE              2
+            288 BINARY_SUBSCR
+
+597         292 LOAD_CONST              10 ('iter_payload')
+
+599         294 LOAD_GLOBAL             18 (Iterable)
+            304 LOAD_GLOBAL             12 (dict)
+            314 BINARY_SUBSCR
+
+597         318 LOAD_CONST              11 ('async_')
+
+610         320 LOAD_GLOBAL             20 (Literal)
+            330 LOAD_CONST              12 (True)
+            332 BINARY_SUBSCR
+
+597         336 LOAD_CONST              13 ('return')
+
+611         338 LOAD_GLOBAL             22 (AsyncIterator)
+            348 LOAD_FAST                1 (T)
+            350 BINARY_SUBSCR
+
+597         354 BUILD_TUPLE             20
+            356 LOAD_CONST              14 (<code object iter_offset_multi at 0x103b36320, file "concurrenttools/iter_offset.py", line 596>)
+            358 MAKE_FUNCTION            5 (defaults, annotations)
+            360 SWAP                     2
+            362 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            364 RETURN_VALUE
+
+Disassembly of <code object iter_offset_multi at 0x103b36320, file "concurrenttools/iter_offset.py", line 596>:
+596           0 RESUME                   0
+
+612           2 RETURN_CONST             0 (None)
+
+Disassembly of <code object <generic parameters of iter_offset_multi> at 0xa5b20d680, file "concurrenttools/iter_offset.py", line 613>:
+613           0 RESUME                   0
+              2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_FAST                1 (.kwdefaults)
+             16 LOAD_CONST               1 ('check_for_stop')
+
+617          18 LOAD_GLOBAL              0 (Callable)
+             28 LOAD_GLOBAL              2 (int)
+             38 LOAD_GLOBAL              2 (int)
+             48 LOAD_FAST                2 (T)
+             50 BUILD_LIST               3
+             52 LOAD_GLOBAL              4 (bool)
+             62 BUILD_TUPLE              2
+             64 BINARY_SUBSCR
+
+613          68 LOAD_CONST               2 ('retry_for_exception')
+
+618          70 LOAD_CONST               3 (None)
+             72 LOAD_GLOBAL              0 (Callable)
+             82 LOAD_GLOBAL              6 (BaseException)
+             92 BUILD_LIST               1
+             94 LOAD_GLOBAL              4 (bool)
+            104 BUILD_TUPLE              2
+            106 BINARY_SUBSCR
+            110 BINARY_OP                7 (|)
+            114 LOAD_GLOBAL              8 (type)
+            124 LOAD_GLOBAL              6 (BaseException)
+            134 BINARY_SUBSCR
+            138 BINARY_OP                7 (|)
+            142 LOAD_GLOBAL             10 (tuple)
+            152 LOAD_GLOBAL              8 (type)
+            162 LOAD_GLOBAL              6 (BaseException)
+            172 BINARY_SUBSCR
+            176 LOAD_CONST               4 (Ellipsis)
+            178 BUILD_TUPLE              2
+            180 BINARY_SUBSCR
+            184 BINARY_OP                7 (|)
+
+613         188 LOAD_CONST               5 ('payload')
+
+619         190 LOAD_CONST               3 (None)
+            192 LOAD_GLOBAL             12 (dict)
+            202 BINARY_OP                7 (|)
+
+613         206 LOAD_CONST               6 ('page_size')
+
+620         208 LOAD_GLOBAL              2 (int)
+
+613         218 LOAD_CONST               7 ('cooldown')
+
+623         220 LOAD_GLOBAL             14 (float)
+
+613         230 LOAD_CONST               8 ('max_workers')
+
+624         232 LOAD_CONST               3 (None)
+            234 LOAD_GLOBAL              2 (int)
+            244 BINARY_OP                7 (|)
+
+613         248 LOAD_CONST               9 ('call')
+
+614         250 LOAD_GLOBAL              0 (Callable)
+            260 LOAD_GLOBAL             12 (dict)
+            270 BUILD_LIST               1
+            272 LOAD_FAST                2 (T)
+            274 BUILD_TUPLE              2
+            276 BINARY_SUBSCR
+            280 LOAD_GLOBAL              0 (Callable)
+            290 LOAD_GLOBAL             12 (dict)
+            300 BUILD_LIST               1
+            302 LOAD_GLOBAL             16 (Awaitable)
+            312 LOAD_FAST                2 (T)
+            314 BINARY_SUBSCR
+            318 BUILD_TUPLE              2
+            320 BINARY_SUBSCR
+            324 BINARY_OP                7 (|)
+
+613         328 LOAD_CONST              10 ('iter_payload')
+
+615         330 LOAD_GLOBAL             18 (Iterable)
+            340 LOAD_GLOBAL             12 (dict)
+            350 BINARY_SUBSCR
+
+613         354 LOAD_CONST              11 ('async_')
+
+626         356 LOAD_GLOBAL             20 (Literal)
+            366 LOAD_CONST              12 ((False, True))
+            368 BINARY_SUBSCR
+
+613         372 LOAD_CONST              13 ('return')
+
+627         374 LOAD_GLOBAL             22 (Iterator)
+            384 LOAD_FAST                2 (T)
+            386 BINARY_SUBSCR
+            390 LOAD_GLOBAL             24 (AsyncIterator)
+            400 LOAD_FAST                2 (T)
+            402 BINARY_SUBSCR
+            406 BINARY_OP                7 (|)
+
+613         410 BUILD_TUPLE             20
+            412 LOAD_CONST              14 (<code object iter_offset_multi at 0x1084be830, file "concurrenttools/iter_offset.py", line 613>)
+            414 MAKE_FUNCTION            7 (defaults, kwdefaults, annotations)
+            416 SWAP                     2
+            418 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            420 RETURN_VALUE
+
+Disassembly of <code object iter_offset_multi at 0x1084be830, file "concurrenttools/iter_offset.py", line 613>:
+613           0 RESUME                   0
+
+644           2 PUSH_NULL
+              4 LOAD_FAST               10 (async_)
+              6 POP_JUMP_IF_FALSE        6 (to 20)
+              8 LOAD_GLOBAL              0 (iter_offset_multi_async)
+             18 JUMP_FORWARD             5 (to 30)
+        >>   20 LOAD_GLOBAL              2 (iter_offset_multi_threaded)
+
+645     >>   30 LOAD_FAST                0 (call)
+
+646          32 LOAD_FAST                1 (iter_payload)
+
+647          34 LOAD_FAST                2 (check_for_stop)
+
+648          36 LOAD_FAST                3 (retry_for_exception)
+
+649          38 LOAD_FAST                4 (payload)
+
+650          40 LOAD_FAST                5 (page_size)
+
+651          42 LOAD_FAST                6 (key_offset)
+
+652          44 LOAD_FAST                7 (key_limit)
+
+653          46 LOAD_FAST                8 (cooldown)
+
+654          48 LOAD_FAST                9 (max_workers)
+
+644          50 KW_NAMES                 1 (('check_for_stop', 'retry_for_exception', 'payload', 'page_size', 'key_offset', 'key_limit', 'cooldown', 'max_workers'))
+             52 CALL                    10
+             60 RETURN_VALUE

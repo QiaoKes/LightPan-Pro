@@ -1,0 +1,79 @@
+get_status_code 34
+ 34           0 RESUME                   0
+
+ 35           2 LOAD_CONST               1 (('status', 'code', 'status_code'))
+              4 GET_ITER
+        >>    6 FOR_ITER                35 (to 80)
+             10 STORE_FAST               1 (attr)
+
+ 36          12 LOAD_GLOBAL              1 (NULL + isinstance)
+             22 LOAD_GLOBAL              3 (NULL + getattr)
+             32 LOAD_FAST                0 (response)
+             34 LOAD_FAST                1 (attr)
+             36 LOAD_CONST               0 (None)
+             38 CALL                     3
+             46 COPY                     1
+             48 STORE_FAST               2 (status)
+             50 LOAD_GLOBAL              4 (int)
+             60 CALL                     2
+             68 POP_JUMP_IF_TRUE         1 (to 72)
+             70 JUMP_BACKWARD           33 (to 6)
+
+ 37     >>   72 LOAD_FAST                2 (status)
+             74 SWAP                     2
+             76 POP_TOP
+             78 RETURN_VALUE
+
+ 35     >>   80 END_FOR
+
+ 38          82 LOAD_GLOBAL              3 (NULL + getattr)
+             92 LOAD_FAST                0 (response)
+             94 LOAD_CONST               2 ('response')
+             96 LOAD_CONST               0 (None)
+             98 CALL                     3
+            106 COPY                     1
+            108 STORE_FAST               0 (response)
+            110 POP_JUMP_IF_FALSE       11 (to 134)
+
+ 39         112 LOAD_GLOBAL              7 (NULL + get_status_code)
+            122 LOAD_FAST                0 (response)
+            124 CALL                     1
+            132 RETURN_VALUE
+
+ 40     >>  134 RETURN_CONST             3 (0)
+is_timeouterror 43
+ 43           0 RESUME                   0
+
+ 46           2 LOAD_GLOBAL              1 (NULL + type)
+             12 LOAD_FAST                0 (exc)
+             14 CALL                     1
+             22 STORE_FAST               1 (exctype)
+
+ 47          24 LOAD_GLOBAL              3 (NULL + issubclass)
+             34 LOAD_FAST                1 (exctype)
+             36 LOAD_GLOBAL              4 (TimeoutError)
+             46 CALL                     2
+             54 POP_JUMP_IF_FALSE        1 (to 58)
+
+ 48          56 RETURN_CONST             1 (True)
+
+ 49     >>   58 LOAD_FAST                1 (exctype)
+             60 LOAD_ATTR                7 (NULL|self + mro)
+             80 CALL                     0
+             88 GET_ITER
+        >>   90 FOR_ITER                18 (to 130)
+             94 STORE_FAST               1 (exctype)
+
+ 50          96 LOAD_CONST               2 ('Timeout')
+             98 LOAD_FAST                1 (exctype)
+            100 LOAD_ATTR                8 (__name__)
+            120 CONTAINS_OP              0
+            122 POP_JUMP_IF_TRUE         1 (to 126)
+            124 JUMP_BACKWARD           18 (to 90)
+
+ 51     >>  126 POP_TOP
+            128 RETURN_CONST             1 (True)
+
+ 49     >>  130 END_FOR
+
+ 52         132 RETURN_CONST             3 (False)

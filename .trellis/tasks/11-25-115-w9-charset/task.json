@@ -1,0 +1,31 @@
+{
+  "id": "115-w9-charset",
+  "name": "115-w9-charset",
+  "title": "W9 目录树字符集探测严格移植",
+  "description": "按用户 D11 补齐参考内置 charset_normalizer 3.5.1 的纯 Go 字符集探测、解码与目录树接线，使用固定 Python 离线 oracle 对照验证；不新增115请求。",
+  "status": "in_progress",
+  "dev_type": null,
+  "scope": null,
+  "package": null,
+  "priority": "P2",
+  "creator": "saki",
+  "assignee": "saki",
+  "createdAt": "2026-11-25",
+  "completedAt": null,
+  "branch": "codex/115-dual-auth-go",
+  "base_branch": "main",
+  "worktree_path": null,
+  "commit": null,
+  "pr_url": null,
+  "subtasks": [],
+  "children": [],
+  "parent": "11-25-115-dual-auth-go",
+  "relatedFiles": [],
+  "notes": "",
+  "meta": {
+    "implementation_status": "offline_verified",
+    "live_acceptance": "deferred_by_user_D10",
+    "commit_status": "authorized_by_user",
+    "implementation_commit": "89fc7c4"
+  }
+}

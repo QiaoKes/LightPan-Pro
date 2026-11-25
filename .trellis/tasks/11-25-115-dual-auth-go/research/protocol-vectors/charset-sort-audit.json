@@ -1,0 +1,4650 @@
+{
+  "case_count": 335,
+  "sort_count": 227,
+  "max_candidates": 22,
+  "differences": [],
+  "observations": [
+    {
+      "id": "codec/001/big5/tree",
+      "count": 1,
+      "input": [
+        "big5"
+      ],
+      "python": [
+        "big5"
+      ],
+      "go_short": [
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/001/big5/prose",
+      "count": 1,
+      "input": [
+        "big5"
+      ],
+      "python": [
+        "big5"
+      ],
+      "go_short": [
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/002/big5hkscs/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/002/big5hkscs/prose",
+      "count": 2,
+      "input": [
+        "big5hkscs",
+        "gb18030"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/003/cp037/tree",
+      "count": 4,
+      "input": [
+        "cp037",
+        "cp1026",
+        "cp273",
+        "cp500"
+      ],
+      "python": [
+        "cp1026",
+        "cp273",
+        "cp037",
+        "cp500"
+      ],
+      "go_short": [
+        "cp1026",
+        "cp273",
+        "cp037",
+        "cp500"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/003/cp037/prose",
+      "count": 2,
+      "input": [
+        "cp037",
+        "cp1026"
+      ],
+      "python": [
+        "cp1026",
+        "cp037"
+      ],
+      "go_short": [
+        "cp1026",
+        "cp037"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/004/cp1006/tree",
+      "count": 3,
+      "input": [
+        "cp932",
+        "cp874",
+        "iso8859_5"
+      ],
+      "python": [
+        "cp932",
+        "cp874",
+        "iso8859_5"
+      ],
+      "go_short": [
+        "cp932",
+        "cp874",
+        "iso8859_5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/005/cp1026/tree",
+      "count": 4,
+      "input": [
+        "cp037",
+        "cp1026",
+        "cp273",
+        "cp500"
+      ],
+      "python": [
+        "cp037",
+        "cp1026",
+        "cp500",
+        "cp273"
+      ],
+      "go_short": [
+        "cp037",
+        "cp1026",
+        "cp500",
+        "cp273"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/006/cp1125/tree",
+      "count": 3,
+      "input": [
+        "cp1125",
+        "cp720",
+        "cp737"
+      ],
+      "python": [
+        "cp1125",
+        "cp720",
+        "cp737"
+      ],
+      "go_short": [
+        "cp1125",
+        "cp720",
+        "cp737"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/006/cp1125/prose",
+      "count": 1,
+      "input": [
+        "cp1125"
+      ],
+      "python": [
+        "cp1125"
+      ],
+      "go_short": [
+        "cp1125"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/007/cp1140/tree",
+      "count": 4,
+      "input": [
+        "cp037",
+        "cp1026",
+        "cp273",
+        "cp500"
+      ],
+      "python": [
+        "cp1026",
+        "cp273",
+        "cp037",
+        "cp500"
+      ],
+      "go_short": [
+        "cp1026",
+        "cp273",
+        "cp037",
+        "cp500"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/007/cp1140/prose",
+      "count": 2,
+      "input": [
+        "cp037",
+        "cp1026"
+      ],
+      "python": [
+        "cp1026",
+        "cp037"
+      ],
+      "go_short": [
+        "cp1026",
+        "cp037"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/008/cp1250/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/008/cp1250/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/009/cp1251/tree",
+      "count": 4,
+      "input": [
+        "cp1125",
+        "cp1251",
+        "cp866",
+        "iso8859_5"
+      ],
+      "python": [
+        "cp1251",
+        "iso8859_5",
+        "cp1125",
+        "cp866"
+      ],
+      "go_short": [
+        "cp1251",
+        "iso8859_5",
+        "cp1125",
+        "cp866"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/009/cp1251/prose",
+      "count": 2,
+      "input": [
+        "cp1251",
+        "koi8_r"
+      ],
+      "python": [
+        "cp1251",
+        "koi8_r"
+      ],
+      "go_short": [
+        "cp1251",
+        "koi8_r"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/010/cp1252/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/010/cp1252/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/011/cp1253/tree",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/011/cp1253/prose",
+      "count": 6,
+      "input": [
+        "cp1251",
+        "cp1253",
+        "iso8859_5",
+        "koi8_r",
+        "mac_cyrillic",
+        "mac_greek"
+      ],
+      "python": [
+        "cp1253",
+        "mac_cyrillic",
+        "iso8859_5",
+        "mac_greek",
+        "cp1251",
+        "koi8_r"
+      ],
+      "go_short": [
+        "cp1253",
+        "mac_cyrillic",
+        "iso8859_5",
+        "mac_greek",
+        "cp1251",
+        "koi8_r"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/012/cp1254/tree",
+      "count": 2,
+      "input": [
+        "big5hkscs",
+        "gb18030"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/012/cp1254/prose",
+      "count": 9,
+      "input": [
+        "cp1250",
+        "cp1252",
+        "cp1254",
+        "cp1257",
+        "cp1258",
+        "cp775",
+        "cp850",
+        "cp852",
+        "iso8859_14"
+      ],
+      "python": [
+        "cp1250",
+        "cp1252",
+        "cp1257",
+        "iso8859_14",
+        "cp1254",
+        "cp850",
+        "cp1258",
+        "cp775",
+        "cp852"
+      ],
+      "go_short": [
+        "cp1250",
+        "cp1252",
+        "cp1257",
+        "iso8859_14",
+        "cp1254",
+        "cp850",
+        "cp1258",
+        "cp775",
+        "cp852"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/013/cp1255/tree",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/013/cp1255/prose",
+      "count": 8,
+      "input": [
+        "cp1125",
+        "cp1251",
+        "cp1253",
+        "cp1255",
+        "cp874",
+        "iso8859_5",
+        "koi8_r",
+        "mac_greek"
+      ],
+      "python": [
+        "cp1253",
+        "mac_greek",
+        "cp1255",
+        "cp1251",
+        "koi8_r",
+        "cp874",
+        "iso8859_5",
+        "cp1125"
+      ],
+      "go_short": [
+        "cp1253",
+        "mac_greek",
+        "cp1255",
+        "cp1251",
+        "koi8_r",
+        "cp874",
+        "iso8859_5",
+        "cp1125"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/014/cp1256/tree",
+      "count": 1,
+      "input": [
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004"
+      ],
+      "go_short": [
+        "euc_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/014/cp1256/prose",
+      "count": 1,
+      "input": [
+        "cp1256"
+      ],
+      "python": [
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/015/cp1257/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/015/cp1257/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/016/cp1258/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/016/cp1258/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/017/cp273/tree",
+      "count": 4,
+      "input": [
+        "cp037",
+        "cp1026",
+        "cp273",
+        "cp500"
+      ],
+      "python": [
+        "cp037",
+        "cp500",
+        "cp1026",
+        "cp273"
+      ],
+      "go_short": [
+        "cp037",
+        "cp500",
+        "cp1026",
+        "cp273"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/017/cp273/prose",
+      "count": 1,
+      "input": [
+        "cp875"
+      ],
+      "python": [
+        "cp875"
+      ],
+      "go_short": [
+        "cp875"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/018/cp424/tree",
+      "count": 2,
+      "input": [
+        "cp424",
+        "cp875"
+      ],
+      "python": [
+        "cp424",
+        "cp875"
+      ],
+      "go_short": [
+        "cp424",
+        "cp875"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/019/cp437/tree",
+      "count": 2,
+      "input": [
+        "cp949",
+        "gb18030"
+      ],
+      "python": [
+        "cp949",
+        "gb18030"
+      ],
+      "go_short": [
+        "cp949",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/019/cp437/prose",
+      "count": 9,
+      "input": [
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp860",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/020/cp500/tree",
+      "count": 4,
+      "input": [
+        "cp037",
+        "cp1026",
+        "cp273",
+        "cp500"
+      ],
+      "python": [
+        "cp1026",
+        "cp273",
+        "cp037",
+        "cp500"
+      ],
+      "go_short": [
+        "cp1026",
+        "cp273",
+        "cp037",
+        "cp500"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/020/cp500/prose",
+      "count": 2,
+      "input": [
+        "cp037",
+        "cp1026"
+      ],
+      "python": [
+        "cp1026",
+        "cp037"
+      ],
+      "go_short": [
+        "cp1026",
+        "cp037"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/021/cp720/tree",
+      "count": 6,
+      "input": [
+        "cp1251",
+        "cp720",
+        "cp737",
+        "cp855",
+        "kz1048",
+        "ptcp154"
+      ],
+      "python": [
+        "cp720",
+        "ptcp154",
+        "cp1251",
+        "kz1048",
+        "cp737",
+        "cp855"
+      ],
+      "go_short": [
+        "cp720",
+        "ptcp154",
+        "cp1251",
+        "kz1048",
+        "cp737",
+        "cp855"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/021/cp720/prose",
+      "count": 1,
+      "input": [
+        "cp720"
+      ],
+      "python": [
+        "cp720"
+      ],
+      "go_short": [
+        "cp720"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/022/cp737/tree",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/022/cp737/prose",
+      "count": 2,
+      "input": [
+        "cp737",
+        "cp855"
+      ],
+      "python": [
+        "cp737",
+        "cp855"
+      ],
+      "go_short": [
+        "cp737",
+        "cp855"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/023/cp775/tree",
+      "count": 2,
+      "input": [
+        "cp949",
+        "gb18030"
+      ],
+      "python": [
+        "cp949",
+        "gb18030"
+      ],
+      "go_short": [
+        "cp949",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/023/cp775/prose",
+      "count": 9,
+      "input": [
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp860",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/024/cp850/tree",
+      "count": 2,
+      "input": [
+        "cp949",
+        "gb18030"
+      ],
+      "python": [
+        "cp949",
+        "gb18030"
+      ],
+      "go_short": [
+        "cp949",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/024/cp850/prose",
+      "count": 9,
+      "input": [
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp860",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/025/cp852/tree",
+      "count": 2,
+      "input": [
+        "cp949",
+        "gb18030"
+      ],
+      "python": [
+        "cp949",
+        "gb18030"
+      ],
+      "go_short": [
+        "cp949",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/025/cp852/prose",
+      "count": 9,
+      "input": [
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp860",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/026/cp855/tree",
+      "count": 2,
+      "input": [
+        "cp855",
+        "iso8859_5"
+      ],
+      "python": [
+        "cp855",
+        "iso8859_5"
+      ],
+      "go_short": [
+        "cp855",
+        "iso8859_5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/026/cp855/prose",
+      "count": 2,
+      "input": [
+        "cp855",
+        "iso8859_5"
+      ],
+      "python": [
+        "cp855",
+        "iso8859_5"
+      ],
+      "go_short": [
+        "cp855",
+        "iso8859_5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/027/cp856/tree",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/027/cp856/prose",
+      "count": 3,
+      "input": [
+        "cp1125",
+        "cp737",
+        "cp856"
+      ],
+      "python": [
+        "cp856",
+        "cp1125",
+        "cp737"
+      ],
+      "go_short": [
+        "cp856",
+        "cp1125",
+        "cp737"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/028/cp857/tree",
+      "count": 3,
+      "input": [
+        "cp949",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "cp949",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "cp949",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/028/cp857/prose",
+      "count": 6,
+      "input": [
+        "cp437",
+        "cp775",
+        "cp852",
+        "cp857",
+        "mac_iceland",
+        "mac_latin2"
+      ],
+      "python": [
+        "cp857",
+        "cp437",
+        "cp775",
+        "cp852",
+        "mac_iceland",
+        "mac_latin2"
+      ],
+      "go_short": [
+        "cp857",
+        "cp437",
+        "cp775",
+        "cp852",
+        "mac_iceland",
+        "mac_latin2"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/029/cp858/tree",
+      "count": 2,
+      "input": [
+        "cp949",
+        "gb18030"
+      ],
+      "python": [
+        "cp949",
+        "gb18030"
+      ],
+      "go_short": [
+        "cp949",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/029/cp858/prose",
+      "count": 9,
+      "input": [
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp860",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/030/cp860/tree",
+      "count": 2,
+      "input": [
+        "cp1250",
+        "cp775"
+      ],
+      "python": [
+        "cp1250",
+        "cp775"
+      ],
+      "go_short": [
+        "cp1250",
+        "cp775"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/030/cp860/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp775",
+        "cp850",
+        "cp852",
+        "mac_iceland",
+        "mac_latin2"
+      ],
+      "python": [
+        "cp850",
+        "mac_latin2",
+        "cp775",
+        "cp852",
+        "cp1250",
+        "mac_iceland"
+      ],
+      "go_short": [
+        "cp850",
+        "mac_latin2",
+        "cp775",
+        "cp852",
+        "cp1250",
+        "mac_iceland"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/031/cp861/tree",
+      "count": 2,
+      "input": [
+        "cp949",
+        "gb18030"
+      ],
+      "python": [
+        "cp949",
+        "gb18030"
+      ],
+      "go_short": [
+        "cp949",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/031/cp861/prose",
+      "count": 9,
+      "input": [
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp860",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/032/cp862/tree",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/032/cp862/prose",
+      "count": 3,
+      "input": [
+        "cp1125",
+        "cp737",
+        "cp856"
+      ],
+      "python": [
+        "cp856",
+        "cp1125",
+        "cp737"
+      ],
+      "go_short": [
+        "cp856",
+        "cp1125",
+        "cp737"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/033/cp863/tree",
+      "count": 2,
+      "input": [
+        "cp1250",
+        "cp775"
+      ],
+      "python": [
+        "cp1250",
+        "cp775"
+      ],
+      "go_short": [
+        "cp1250",
+        "cp775"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/033/cp863/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp775",
+        "cp850",
+        "cp852",
+        "mac_iceland",
+        "mac_latin2"
+      ],
+      "python": [
+        "cp850",
+        "mac_latin2",
+        "cp775",
+        "cp852",
+        "cp1250",
+        "mac_iceland"
+      ],
+      "go_short": [
+        "cp850",
+        "mac_latin2",
+        "cp775",
+        "cp852",
+        "cp1250",
+        "mac_iceland"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/035/cp865/tree",
+      "count": 2,
+      "input": [
+        "cp949",
+        "gb18030"
+      ],
+      "python": [
+        "cp949",
+        "gb18030"
+      ],
+      "go_short": [
+        "cp949",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/035/cp865/prose",
+      "count": 9,
+      "input": [
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp860",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp437",
+        "cp860",
+        "mac_iceland",
+        "mac_greek",
+        "mac_latin2",
+        "cp1251",
+        "cp1256",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/036/cp866/tree",
+      "count": 3,
+      "input": [
+        "cp1125",
+        "cp720",
+        "cp737"
+      ],
+      "python": [
+        "cp1125",
+        "cp720",
+        "cp737"
+      ],
+      "go_short": [
+        "cp1125",
+        "cp720",
+        "cp737"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/036/cp866/prose",
+      "count": 1,
+      "input": [
+        "cp1125"
+      ],
+      "python": [
+        "cp1125"
+      ],
+      "go_short": [
+        "cp1125"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/037/cp869/tree",
+      "count": 1,
+      "input": [
+        "cp869"
+      ],
+      "python": [
+        "cp869"
+      ],
+      "go_short": [
+        "cp869"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/037/cp869/prose",
+      "count": 2,
+      "input": [
+        "cp855",
+        "cp869"
+      ],
+      "python": [
+        "cp869",
+        "cp855"
+      ],
+      "go_short": [
+        "cp869",
+        "cp855"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/038/cp874/tree",
+      "count": 1,
+      "input": [
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004"
+      ],
+      "go_short": [
+        "euc_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/038/cp874/prose",
+      "count": 1,
+      "input": [
+        "cp874"
+      ],
+      "python": [
+        "cp874"
+      ],
+      "go_short": [
+        "cp874"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/039/cp875/tree",
+      "count": 1,
+      "input": [
+        "cp875"
+      ],
+      "python": [
+        "cp875"
+      ],
+      "go_short": [
+        "cp875"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/039/cp875/prose",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/040/cp932/tree",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/040/cp932/prose",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/041/cp949/tree",
+      "count": 2,
+      "input": [
+        "big5",
+        "cp949"
+      ],
+      "python": [
+        "cp949",
+        "big5"
+      ],
+      "go_short": [
+        "cp949",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/041/cp949/prose",
+      "count": 2,
+      "input": [
+        "big5",
+        "cp949"
+      ],
+      "python": [
+        "cp949",
+        "big5"
+      ],
+      "go_short": [
+        "cp949",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/042/cp950/tree",
+      "count": 1,
+      "input": [
+        "big5"
+      ],
+      "python": [
+        "big5"
+      ],
+      "go_short": [
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/042/cp950/prose",
+      "count": 1,
+      "input": [
+        "big5"
+      ],
+      "python": [
+        "big5"
+      ],
+      "go_short": [
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/043/euc_jis_2004/tree",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/043/euc_jis_2004/prose",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/044/euc_jisx0213/tree",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/044/euc_jisx0213/prose",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/045/euc_jp/tree",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/045/euc_jp/prose",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/046/euc_kr/tree",
+      "count": 2,
+      "input": [
+        "big5",
+        "cp949"
+      ],
+      "python": [
+        "cp949",
+        "big5"
+      ],
+      "go_short": [
+        "cp949",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/046/euc_kr/prose",
+      "count": 2,
+      "input": [
+        "big5",
+        "cp949"
+      ],
+      "python": [
+        "cp949",
+        "big5"
+      ],
+      "go_short": [
+        "cp949",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/047/gb18030/tree",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/047/gb18030/prose",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/048/gb2312/tree",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/048/gb2312/prose",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/049/gbk/tree",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/049/gbk/prose",
+      "count": 2,
+      "input": [
+        "big5",
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/050/hp_roman8/tree",
+      "count": 4,
+      "input": [
+        "big5",
+        "cp932",
+        "gb18030",
+        "johab"
+      ],
+      "python": [
+        "big5",
+        "gb18030",
+        "johab",
+        "cp932"
+      ],
+      "go_short": [
+        "big5",
+        "gb18030",
+        "johab",
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/050/hp_roman8/prose",
+      "count": 15,
+      "input": [
+        "cp1250",
+        "cp1252",
+        "cp1254",
+        "cp1257",
+        "cp1258",
+        "hp_roman8",
+        "iso8859_10",
+        "iso8859_14",
+        "iso8859_16",
+        "iso8859_3",
+        "iso8859_4",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "hp_roman8",
+        "cp1258",
+        "mac_latin2",
+        "iso8859_16",
+        "mac_iceland",
+        "mac_turkish",
+        "cp1252",
+        "cp1257",
+        "iso8859_10",
+        "mac_roman",
+        "cp1250",
+        "cp1254",
+        "iso8859_14",
+        "iso8859_3",
+        "iso8859_4"
+      ],
+      "go_short": [
+        "hp_roman8",
+        "cp1258",
+        "mac_latin2",
+        "iso8859_16",
+        "mac_iceland",
+        "mac_turkish",
+        "cp1252",
+        "cp1257",
+        "iso8859_10",
+        "mac_roman",
+        "cp1250",
+        "cp1254",
+        "iso8859_14",
+        "iso8859_3",
+        "iso8859_4"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/051/hz/tree",
+      "count": 1,
+      "input": [
+        "hz"
+      ],
+      "python": [
+        "hz"
+      ],
+      "go_short": [
+        "hz"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/051/hz/prose",
+      "count": 1,
+      "input": [
+        "hz"
+      ],
+      "python": [
+        "hz"
+      ],
+      "go_short": [
+        "hz"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/052/iso2022_jp/tree",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/052/iso2022_jp/prose",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/053/iso2022_jp_1/tree",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/053/iso2022_jp_1/prose",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/054/iso2022_jp_2/tree",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/054/iso2022_jp_2/prose",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/055/iso2022_jp_2004/tree",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/055/iso2022_jp_2004/prose",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/056/iso2022_jp_3/tree",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/056/iso2022_jp_3/prose",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/057/iso2022_jp_ext/tree",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/057/iso2022_jp_ext/prose",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/058/iso2022_kr/tree",
+      "count": 1,
+      "input": [
+        "iso2022_kr"
+      ],
+      "python": [
+        "iso2022_kr"
+      ],
+      "go_short": [
+        "iso2022_kr"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/058/iso2022_kr/prose",
+      "count": 1,
+      "input": [
+        "iso2022_kr"
+      ],
+      "python": [
+        "iso2022_kr"
+      ],
+      "go_short": [
+        "iso2022_kr"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/059/iso8859_10/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/059/iso8859_10/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/060/iso8859_11/tree",
+      "count": 1,
+      "input": [
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004"
+      ],
+      "go_short": [
+        "euc_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/060/iso8859_11/prose",
+      "count": 1,
+      "input": [
+        "cp874"
+      ],
+      "python": [
+        "cp874"
+      ],
+      "go_short": [
+        "cp874"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/061/iso8859_13/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/061/iso8859_13/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/062/iso8859_14/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/062/iso8859_14/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/063/iso8859_15/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/063/iso8859_15/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/064/iso8859_16/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/064/iso8859_16/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/065/iso8859_2/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/065/iso8859_2/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/066/iso8859_3/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/066/iso8859_3/prose",
+      "count": 5,
+      "input": [
+        "cp1250",
+        "cp1252",
+        "cp1257",
+        "iso8859_10",
+        "iso8859_14"
+      ],
+      "python": [
+        "cp1252",
+        "cp1257",
+        "cp1250",
+        "iso8859_10",
+        "iso8859_14"
+      ],
+      "go_short": [
+        "cp1252",
+        "cp1257",
+        "cp1250",
+        "iso8859_10",
+        "iso8859_14"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/067/iso8859_4/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/067/iso8859_4/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/068/iso8859_5/tree",
+      "count": 2,
+      "input": [
+        "cp949",
+        "gb18030"
+      ],
+      "python": [
+        "gb18030",
+        "cp949"
+      ],
+      "go_short": [
+        "gb18030",
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/068/iso8859_5/prose",
+      "count": 1,
+      "input": [
+        "iso8859_5"
+      ],
+      "python": [
+        "iso8859_5"
+      ],
+      "go_short": [
+        "iso8859_5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/069/iso8859_6/tree",
+      "count": 4,
+      "input": [
+        "cp874",
+        "iso8859_6",
+        "mac_cyrillic",
+        "mac_greek"
+      ],
+      "python": [
+        "cp874",
+        "iso8859_6",
+        "mac_greek",
+        "mac_cyrillic"
+      ],
+      "go_short": [
+        "cp874",
+        "iso8859_6",
+        "mac_greek",
+        "mac_cyrillic"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/069/iso8859_6/prose",
+      "count": 2,
+      "input": [
+        "cp874",
+        "iso8859_6"
+      ],
+      "python": [
+        "iso8859_6",
+        "cp874"
+      ],
+      "go_short": [
+        "iso8859_6",
+        "cp874"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/070/iso8859_7/tree",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/070/iso8859_7/prose",
+      "count": 6,
+      "input": [
+        "cp1251",
+        "cp1253",
+        "iso8859_5",
+        "koi8_r",
+        "mac_cyrillic",
+        "mac_greek"
+      ],
+      "python": [
+        "cp1253",
+        "mac_cyrillic",
+        "iso8859_5",
+        "mac_greek",
+        "cp1251",
+        "koi8_r"
+      ],
+      "go_short": [
+        "cp1253",
+        "mac_cyrillic",
+        "iso8859_5",
+        "mac_greek",
+        "cp1251",
+        "koi8_r"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/071/iso8859_8/tree",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/071/iso8859_8/prose",
+      "count": 8,
+      "input": [
+        "cp1125",
+        "cp1251",
+        "cp1253",
+        "cp1255",
+        "cp874",
+        "iso8859_5",
+        "koi8_r",
+        "mac_greek"
+      ],
+      "python": [
+        "cp1253",
+        "mac_greek",
+        "cp1255",
+        "cp1251",
+        "koi8_r",
+        "cp874",
+        "iso8859_5",
+        "cp1125"
+      ],
+      "go_short": [
+        "cp1253",
+        "mac_greek",
+        "cp1255",
+        "cp1251",
+        "koi8_r",
+        "cp874",
+        "iso8859_5",
+        "cp1125"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/072/iso8859_9/tree",
+      "count": 2,
+      "input": [
+        "big5hkscs",
+        "gb18030"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/072/iso8859_9/prose",
+      "count": 9,
+      "input": [
+        "cp1250",
+        "cp1252",
+        "cp1254",
+        "cp1257",
+        "cp1258",
+        "cp775",
+        "cp850",
+        "cp852",
+        "iso8859_14"
+      ],
+      "python": [
+        "cp1250",
+        "cp1252",
+        "cp1257",
+        "iso8859_14",
+        "cp1254",
+        "cp850",
+        "cp1258",
+        "cp775",
+        "cp852"
+      ],
+      "go_short": [
+        "cp1250",
+        "cp1252",
+        "cp1257",
+        "iso8859_14",
+        "cp1254",
+        "cp850",
+        "cp1258",
+        "cp775",
+        "cp852"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/073/johab/tree",
+      "count": 2,
+      "input": [
+        "cp949",
+        "johab"
+      ],
+      "python": [
+        "johab",
+        "cp949"
+      ],
+      "go_short": [
+        "johab",
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/073/johab/prose",
+      "count": 2,
+      "input": [
+        "cp949",
+        "johab"
+      ],
+      "python": [
+        "johab",
+        "cp949"
+      ],
+      "go_short": [
+        "johab",
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/074/koi8_r/tree",
+      "count": 2,
+      "input": [
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "go_short": [
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/074/koi8_r/prose",
+      "count": 3,
+      "input": [
+        "cp1251",
+        "cp874",
+        "koi8_r"
+      ],
+      "python": [
+        "koi8_r",
+        "cp874",
+        "cp1251"
+      ],
+      "go_short": [
+        "koi8_r",
+        "cp874",
+        "cp1251"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/075/koi8_r/tree",
+      "count": 2,
+      "input": [
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "go_short": [
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/075/koi8_r/prose",
+      "count": 3,
+      "input": [
+        "cp1251",
+        "cp874",
+        "koi8_r"
+      ],
+      "python": [
+        "koi8_r",
+        "cp874",
+        "cp1251"
+      ],
+      "go_short": [
+        "koi8_r",
+        "cp874",
+        "cp1251"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/076/koi8_t/tree",
+      "count": 2,
+      "input": [
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "go_short": [
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/076/koi8_t/prose",
+      "count": 3,
+      "input": [
+        "cp1251",
+        "cp874",
+        "koi8_r"
+      ],
+      "python": [
+        "koi8_r",
+        "cp874",
+        "cp1251"
+      ],
+      "go_short": [
+        "koi8_r",
+        "cp874",
+        "cp1251"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/077/koi8_u/tree",
+      "count": 2,
+      "input": [
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "go_short": [
+        "shift_jis_2004",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/077/koi8_u/prose",
+      "count": 3,
+      "input": [
+        "cp1251",
+        "cp874",
+        "koi8_r"
+      ],
+      "python": [
+        "koi8_r",
+        "cp874",
+        "cp1251"
+      ],
+      "go_short": [
+        "koi8_r",
+        "cp874",
+        "cp1251"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/078/kz1048/tree",
+      "count": 4,
+      "input": [
+        "cp1125",
+        "cp1251",
+        "cp866",
+        "iso8859_5"
+      ],
+      "python": [
+        "cp1251",
+        "iso8859_5",
+        "cp1125",
+        "cp866"
+      ],
+      "go_short": [
+        "cp1251",
+        "iso8859_5",
+        "cp1125",
+        "cp866"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/078/kz1048/prose",
+      "count": 2,
+      "input": [
+        "cp1251",
+        "koi8_r"
+      ],
+      "python": [
+        "cp1251",
+        "koi8_r"
+      ],
+      "go_short": [
+        "cp1251",
+        "koi8_r"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/079/latin_1/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/079/latin_1/prose",
+      "count": 6,
+      "input": [
+        "cp1250",
+        "cp1256",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "go_short": [
+        "cp1250",
+        "mac_latin2",
+        "mac_iceland",
+        "mac_turkish",
+        "mac_roman",
+        "cp1256"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/080/mac_cyrillic/tree",
+      "count": 7,
+      "input": [
+        "cp1251",
+        "cp1253",
+        "koi8_r",
+        "koi8_t",
+        "mac_cyrillic",
+        "mac_greek",
+        "ptcp154"
+      ],
+      "python": [
+        "cp1253",
+        "mac_cyrillic",
+        "cp1251",
+        "koi8_t",
+        "ptcp154",
+        "koi8_r",
+        "mac_greek"
+      ],
+      "go_short": [
+        "cp1253",
+        "mac_cyrillic",
+        "cp1251",
+        "koi8_t",
+        "ptcp154",
+        "koi8_r",
+        "mac_greek"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/080/mac_cyrillic/prose",
+      "count": 5,
+      "input": [
+        "cp1251",
+        "koi8_r",
+        "koi8_t",
+        "mac_cyrillic",
+        "ptcp154"
+      ],
+      "python": [
+        "mac_cyrillic",
+        "cp1251",
+        "ptcp154",
+        "koi8_r",
+        "koi8_t"
+      ],
+      "go_short": [
+        "mac_cyrillic",
+        "cp1251",
+        "ptcp154",
+        "koi8_r",
+        "koi8_t"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/081/mac_greek/tree",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/081/mac_greek/prose",
+      "count": 4,
+      "input": [
+        "cp1251",
+        "cp1253",
+        "iso8859_5",
+        "mac_greek"
+      ],
+      "python": [
+        "mac_greek",
+        "cp1253",
+        "iso8859_5",
+        "cp1251"
+      ],
+      "go_short": [
+        "mac_greek",
+        "cp1253",
+        "iso8859_5",
+        "cp1251"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/082/mac_iceland/tree",
+      "count": 5,
+      "input": [
+        "big5hkscs",
+        "cp932",
+        "cp949",
+        "gb18030",
+        "johab"
+      ],
+      "python": [
+        "big5hkscs",
+        "cp932",
+        "cp949",
+        "gb18030",
+        "johab"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "cp932",
+        "cp949",
+        "gb18030",
+        "johab"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/082/mac_iceland/prose",
+      "count": 7,
+      "input": [
+        "cp1250",
+        "cp1252",
+        "cp437",
+        "cp720",
+        "cp852",
+        "cp857",
+        "mac_iceland"
+      ],
+      "python": [
+        "mac_iceland",
+        "cp857",
+        "cp1250",
+        "cp1252",
+        "cp437",
+        "cp852",
+        "cp720"
+      ],
+      "go_short": [
+        "mac_iceland",
+        "cp857",
+        "cp1250",
+        "cp1252",
+        "cp437",
+        "cp852",
+        "cp720"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/083/mac_latin2/tree",
+      "count": 5,
+      "input": [
+        "big5hkscs",
+        "cp932",
+        "cp949",
+        "gb18030",
+        "johab"
+      ],
+      "python": [
+        "big5hkscs",
+        "cp932",
+        "cp949",
+        "gb18030",
+        "johab"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "cp932",
+        "cp949",
+        "gb18030",
+        "johab"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/083/mac_latin2/prose",
+      "count": 7,
+      "input": [
+        "cp1250",
+        "cp1252",
+        "cp437",
+        "cp720",
+        "cp852",
+        "cp857",
+        "mac_iceland"
+      ],
+      "python": [
+        "mac_iceland",
+        "cp857",
+        "cp1250",
+        "cp1252",
+        "cp437",
+        "cp852",
+        "cp720"
+      ],
+      "go_short": [
+        "mac_iceland",
+        "cp857",
+        "cp1250",
+        "cp1252",
+        "cp437",
+        "cp852",
+        "cp720"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/084/mac_roman/tree",
+      "count": 5,
+      "input": [
+        "big5hkscs",
+        "cp932",
+        "cp949",
+        "gb18030",
+        "johab"
+      ],
+      "python": [
+        "big5hkscs",
+        "cp932",
+        "cp949",
+        "gb18030",
+        "johab"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "cp932",
+        "cp949",
+        "gb18030",
+        "johab"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/084/mac_roman/prose",
+      "count": 7,
+      "input": [
+        "cp1250",
+        "cp1252",
+        "cp437",
+        "cp720",
+        "cp852",
+        "cp857",
+        "mac_iceland"
+      ],
+      "python": [
+        "mac_iceland",
+        "cp857",
+        "cp1250",
+        "cp1252",
+        "cp437",
+        "cp852",
+        "cp720"
+      ],
+      "go_short": [
+        "mac_iceland",
+        "cp857",
+        "cp1250",
+        "cp1252",
+        "cp437",
+        "cp852",
+        "cp720"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/085/mac_turkish/tree",
+      "count": 3,
+      "input": [
+        "big5hkscs",
+        "cp932",
+        "gb18030"
+      ],
+      "python": [
+        "big5hkscs",
+        "gb18030",
+        "cp932"
+      ],
+      "go_short": [
+        "big5hkscs",
+        "gb18030",
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/085/mac_turkish/prose",
+      "count": 8,
+      "input": [
+        "cp1250",
+        "cp1252",
+        "cp1254",
+        "cp852",
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish"
+      ],
+      "python": [
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish",
+        "cp1250",
+        "cp852",
+        "cp1252",
+        "cp1254"
+      ],
+      "go_short": [
+        "mac_iceland",
+        "mac_latin2",
+        "mac_roman",
+        "mac_turkish",
+        "cp1250",
+        "cp852",
+        "cp1252",
+        "cp1254"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/086/ptcp154/tree",
+      "count": 4,
+      "input": [
+        "cp1125",
+        "cp1251",
+        "cp866",
+        "iso8859_5"
+      ],
+      "python": [
+        "cp1251",
+        "iso8859_5",
+        "cp1125",
+        "cp866"
+      ],
+      "go_short": [
+        "cp1251",
+        "iso8859_5",
+        "cp1125",
+        "cp866"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/086/ptcp154/prose",
+      "count": 2,
+      "input": [
+        "cp1251",
+        "koi8_r"
+      ],
+      "python": [
+        "cp1251",
+        "koi8_r"
+      ],
+      "go_short": [
+        "cp1251",
+        "koi8_r"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/087/shift_jis/tree",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/087/shift_jis/prose",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/088/shift_jis_2004/tree",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/088/shift_jis_2004/prose",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/089/shift_jisx0213/tree",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/089/shift_jisx0213/prose",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/090/tis_620/tree",
+      "count": 1,
+      "input": [
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004"
+      ],
+      "go_short": [
+        "euc_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/090/tis_620/prose",
+      "count": 1,
+      "input": [
+        "cp874"
+      ],
+      "python": [
+        "cp874"
+      ],
+      "go_short": [
+        "cp874"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/092/utf_16_be/tree",
+      "count": 1,
+      "input": [
+        "utf_16_be"
+      ],
+      "python": [
+        "utf_16_be"
+      ],
+      "go_short": [
+        "utf_16_be"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/092/utf_16_be/prose",
+      "count": 1,
+      "input": [
+        "utf_16_be"
+      ],
+      "python": [
+        "utf_16_be"
+      ],
+      "go_short": [
+        "utf_16_be"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/093/utf_16_le/tree",
+      "count": 1,
+      "input": [
+        "utf_16_le"
+      ],
+      "python": [
+        "utf_16_le"
+      ],
+      "go_short": [
+        "utf_16_le"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/093/utf_16_le/prose",
+      "count": 1,
+      "input": [
+        "utf_16_le"
+      ],
+      "python": [
+        "utf_16_le"
+      ],
+      "go_short": [
+        "utf_16_le"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/095/utf_32_be/tree",
+      "count": 1,
+      "input": [
+        "utf_32_be"
+      ],
+      "python": [
+        "utf_32_be"
+      ],
+      "go_short": [
+        "utf_32_be"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/095/utf_32_be/prose",
+      "count": 1,
+      "input": [
+        "utf_32_be"
+      ],
+      "python": [
+        "utf_32_be"
+      ],
+      "go_short": [
+        "utf_32_be"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/096/utf_32_le/tree",
+      "count": 1,
+      "input": [
+        "utf_32_le"
+      ],
+      "python": [
+        "utf_32_le"
+      ],
+      "go_short": [
+        "utf_32_le"
+      ],
+      "equal": true
+    },
+    {
+      "id": "codec/096/utf_32_le/prose",
+      "count": 1,
+      "input": [
+        "utf_32_le"
+      ],
+      "python": [
+        "utf_32_le"
+      ],
+      "go_short": [
+        "utf_32_le"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/02",
+      "count": 1,
+      "input": [
+        "utf_8"
+      ],
+      "python": [
+        "utf_8"
+      ],
+      "go_short": [
+        "utf_8"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/03",
+      "count": 9,
+      "input": [
+        "cp1006",
+        "cp1125",
+        "cp1251",
+        "cp1252",
+        "cp1256",
+        "iso8859_10",
+        "iso8859_5",
+        "koi8_r",
+        "mac_iceland"
+      ],
+      "python": [
+        "cp1006",
+        "cp1125",
+        "cp1251",
+        "cp1252",
+        "cp1256",
+        "iso8859_10",
+        "iso8859_5",
+        "koi8_r",
+        "mac_iceland"
+      ],
+      "go_short": [
+        "cp1006",
+        "cp1125",
+        "cp1251",
+        "cp1252",
+        "cp1256",
+        "iso8859_10",
+        "iso8859_5",
+        "koi8_r",
+        "mac_iceland"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/04",
+      "count": 16,
+      "input": [
+        "cp037",
+        "cp1006",
+        "cp1250",
+        "cp1251",
+        "cp1252",
+        "cp1253",
+        "cp1254",
+        "cp1257",
+        "iso8859_14",
+        "iso8859_16",
+        "iso8859_3",
+        "iso8859_4",
+        "iso8859_5",
+        "koi8_r",
+        "mac_greek",
+        "mac_latin2"
+      ],
+      "python": [
+        "cp037",
+        "cp1006",
+        "cp1250",
+        "cp1251",
+        "cp1252",
+        "cp1253",
+        "cp1254",
+        "cp1257",
+        "iso8859_14",
+        "iso8859_16",
+        "iso8859_3",
+        "iso8859_4",
+        "iso8859_5",
+        "koi8_r",
+        "mac_greek",
+        "mac_latin2"
+      ],
+      "go_short": [
+        "cp037",
+        "cp1006",
+        "cp1250",
+        "cp1251",
+        "cp1252",
+        "cp1253",
+        "cp1254",
+        "cp1257",
+        "iso8859_14",
+        "iso8859_16",
+        "iso8859_3",
+        "iso8859_4",
+        "iso8859_5",
+        "koi8_r",
+        "mac_greek",
+        "mac_latin2"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/05",
+      "count": 11,
+      "input": [
+        "cp037",
+        "cp1125",
+        "cp1251",
+        "cp437",
+        "cp737",
+        "cp775",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "mac_greek",
+        "ptcp154"
+      ],
+      "python": [
+        "cp037",
+        "cp1125",
+        "cp1251",
+        "cp437",
+        "cp737",
+        "cp775",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "mac_greek",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp037",
+        "cp1125",
+        "cp1251",
+        "cp437",
+        "cp737",
+        "cp775",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "mac_greek",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/06",
+      "count": 13,
+      "input": [
+        "cp037",
+        "cp1125",
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp737",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "cp037",
+        "cp1125",
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp737",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp037",
+        "cp1125",
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp737",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/10",
+      "count": 7,
+      "input": [
+        "big5",
+        "cp949",
+        "euc_jis_2004",
+        "gb18030",
+        "johab",
+        "shift_jis_2004",
+        "utf_16_le"
+      ],
+      "python": [
+        "big5",
+        "cp949",
+        "euc_jis_2004",
+        "gb18030",
+        "johab",
+        "shift_jis_2004",
+        "utf_16_le"
+      ],
+      "go_short": [
+        "big5",
+        "cp949",
+        "euc_jis_2004",
+        "gb18030",
+        "johab",
+        "shift_jis_2004",
+        "utf_16_le"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/14",
+      "count": 8,
+      "input": [
+        "big5",
+        "cp932",
+        "cp949",
+        "euc_jis_2004",
+        "gb18030",
+        "johab",
+        "utf_16_be",
+        "utf_16_le"
+      ],
+      "python": [
+        "big5",
+        "cp949",
+        "euc_jis_2004",
+        "gb18030",
+        "johab",
+        "utf_16_be",
+        "utf_16_le",
+        "cp932"
+      ],
+      "go_short": [
+        "big5",
+        "cp949",
+        "euc_jis_2004",
+        "gb18030",
+        "johab",
+        "utf_16_be",
+        "utf_16_le",
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/15",
+      "count": 6,
+      "input": [
+        "cp1125",
+        "cp1251",
+        "cp437",
+        "cp855",
+        "cp862",
+        "ptcp154"
+      ],
+      "python": [
+        "cp1125",
+        "cp1251",
+        "cp437",
+        "cp855",
+        "cp862",
+        "ptcp154"
+      ],
+      "go_short": [
+        "cp1125",
+        "cp1251",
+        "cp437",
+        "cp855",
+        "cp862",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/16",
+      "count": 9,
+      "input": [
+        "utf_16_le",
+        "cp1125",
+        "cp1251",
+        "cp737",
+        "cp855",
+        "cp856",
+        "cp866",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "python": [
+        "utf_16_le",
+        "cp1125",
+        "cp1251",
+        "cp737",
+        "cp855",
+        "cp856",
+        "cp866",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "go_short": [
+        "utf_16_le",
+        "cp1125",
+        "cp1251",
+        "cp737",
+        "cp855",
+        "cp856",
+        "cp866",
+        "koi8_t",
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/18",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/19",
+      "count": 1,
+      "input": [
+        "utf_8"
+      ],
+      "python": [
+        "utf_8"
+      ],
+      "go_short": [
+        "utf_8"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/20",
+      "count": 3,
+      "input": [
+        "hz",
+        "utf_16_be",
+        "utf_16_le"
+      ],
+      "python": [
+        "hz",
+        "utf_16_be",
+        "utf_16_le"
+      ],
+      "go_short": [
+        "hz",
+        "utf_16_be",
+        "utf_16_le"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/22",
+      "count": 1,
+      "input": [
+        "utf_8"
+      ],
+      "python": [
+        "utf_8"
+      ],
+      "go_short": [
+        "utf_8"
+      ],
+      "equal": true
+    },
+    {
+      "id": "tiny/23",
+      "count": 1,
+      "input": [
+        "ptcp154"
+      ],
+      "python": [
+        "ptcp154"
+      ],
+      "go_short": [
+        "ptcp154"
+      ],
+      "equal": true
+    },
+    {
+      "id": "corrupt/utf_7",
+      "count": 22,
+      "input": [
+        "cp932",
+        "cp1006",
+        "cp1125",
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp720",
+        "cp737",
+        "cp855",
+        "cp856",
+        "iso8859_10",
+        "iso8859_13",
+        "iso8859_14",
+        "iso8859_2",
+        "iso8859_5",
+        "koi8_r",
+        "koi8_t",
+        "mac_cyrillic",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "mac_iceland",
+        "mac_latin2",
+        "cp437",
+        "cp1125",
+        "cp1251",
+        "cp1256",
+        "cp737",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "ptcp154",
+        "mac_cyrillic",
+        "iso8859_13",
+        "iso8859_2",
+        "iso8859_10",
+        "iso8859_14",
+        "cp932",
+        "cp720",
+        "mac_greek",
+        "cp1006",
+        "iso8859_5",
+        "koi8_r"
+      ],
+      "go_short": [
+        "mac_iceland",
+        "mac_latin2",
+        "cp437",
+        "cp1125",
+        "cp1251",
+        "cp1256",
+        "cp737",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "ptcp154",
+        "mac_cyrillic",
+        "iso8859_13",
+        "iso8859_2",
+        "iso8859_10",
+        "iso8859_14",
+        "cp932",
+        "cp720",
+        "mac_greek",
+        "cp1006",
+        "iso8859_5",
+        "koi8_r"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/gb18030",
+      "count": 1,
+      "input": [
+        "gb18030"
+      ],
+      "python": [
+        "gb18030"
+      ],
+      "go_short": [
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/gbk",
+      "count": 1,
+      "input": [
+        "gb18030"
+      ],
+      "python": [
+        "gb18030"
+      ],
+      "go_short": [
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/gb2312",
+      "count": 1,
+      "input": [
+        "gb18030"
+      ],
+      "python": [
+        "gb18030"
+      ],
+      "go_short": [
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/big5",
+      "count": 1,
+      "input": [
+        "big5"
+      ],
+      "python": [
+        "big5"
+      ],
+      "go_short": [
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/big5hkscs",
+      "count": 1,
+      "input": [
+        "big5"
+      ],
+      "python": [
+        "big5"
+      ],
+      "go_short": [
+        "big5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/cp932",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/shift_jis",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/shift_jis_2004",
+      "count": 1,
+      "input": [
+        "shift_jis_2004"
+      ],
+      "python": [
+        "shift_jis_2004"
+      ],
+      "go_short": [
+        "shift_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/euc_jp",
+      "count": 4,
+      "input": [
+        "big5",
+        "big5hkscs",
+        "euc_jis_2004",
+        "gb18030"
+      ],
+      "python": [
+        "euc_jis_2004",
+        "big5",
+        "big5hkscs",
+        "gb18030"
+      ],
+      "go_short": [
+        "euc_jis_2004",
+        "big5",
+        "big5hkscs",
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/euc_jis_2004",
+      "count": 1,
+      "input": [
+        "euc_jis_2004"
+      ],
+      "python": [
+        "euc_jis_2004"
+      ],
+      "go_short": [
+        "euc_jis_2004"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/euc_kr",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/cp949",
+      "count": 1,
+      "input": [
+        "cp949"
+      ],
+      "python": [
+        "cp949"
+      ],
+      "go_short": [
+        "cp949"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/johab",
+      "count": 1,
+      "input": [
+        "johab"
+      ],
+      "python": [
+        "johab"
+      ],
+      "go_short": [
+        "johab"
+      ],
+      "equal": true
+    },
+    {
+      "id": "corrupt/hz",
+      "count": 21,
+      "input": [
+        "cp1006",
+        "cp1125",
+        "cp1251",
+        "cp1256",
+        "cp437",
+        "cp720",
+        "cp737",
+        "cp855",
+        "cp856",
+        "iso8859_10",
+        "iso8859_13",
+        "iso8859_14",
+        "iso8859_2",
+        "iso8859_5",
+        "koi8_r",
+        "koi8_t",
+        "mac_cyrillic",
+        "mac_greek",
+        "mac_iceland",
+        "mac_latin2",
+        "ptcp154"
+      ],
+      "python": [
+        "mac_iceland",
+        "mac_latin2",
+        "cp437",
+        "cp1125",
+        "cp1251",
+        "cp1256",
+        "cp737",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "ptcp154",
+        "mac_cyrillic",
+        "iso8859_10",
+        "iso8859_14",
+        "iso8859_13",
+        "iso8859_2",
+        "cp720",
+        "koi8_r",
+        "mac_greek",
+        "cp1006",
+        "iso8859_5"
+      ],
+      "go_short": [
+        "mac_iceland",
+        "mac_latin2",
+        "cp437",
+        "cp1125",
+        "cp1251",
+        "cp1256",
+        "cp737",
+        "cp855",
+        "cp856",
+        "koi8_t",
+        "ptcp154",
+        "mac_cyrillic",
+        "iso8859_10",
+        "iso8859_14",
+        "iso8859_13",
+        "iso8859_2",
+        "cp720",
+        "koi8_r",
+        "mac_greek",
+        "cp1006",
+        "iso8859_5"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/iso2022_jp",
+      "count": 1,
+      "input": [
+        "iso2022_jp"
+      ],
+      "python": [
+        "iso2022_jp"
+      ],
+      "go_short": [
+        "iso2022_jp"
+      ],
+      "equal": true
+    },
+    {
+      "id": "truncated/iso2022_kr",
+      "count": 1,
+      "input": [
+        "iso2022_kr"
+      ],
+      "python": [
+        "iso2022_kr"
+      ],
+      "go_short": [
+        "iso2022_kr"
+      ],
+      "equal": true
+    },
+    {
+      "id": "controls/01",
+      "count": 1,
+      "input": [
+        "utf_8"
+      ],
+      "python": [
+        "utf_8"
+      ],
+      "go_short": [
+        "utf_8"
+      ],
+      "equal": true
+    },
+    {
+      "id": "controls/02",
+      "count": 1,
+      "input": [
+        "utf_8"
+      ],
+      "python": [
+        "utf_8"
+      ],
+      "go_short": [
+        "utf_8"
+      ],
+      "equal": true
+    },
+    {
+      "id": "controls/03",
+      "count": 1,
+      "input": [
+        "utf_8"
+      ],
+      "python": [
+        "utf_8"
+      ],
+      "go_short": [
+        "utf_8"
+      ],
+      "equal": true
+    },
+    {
+      "id": "controls/04",
+      "count": 1,
+      "input": [
+        "utf_16_le"
+      ],
+      "python": [
+        "utf_16_le"
+      ],
+      "go_short": [
+        "utf_16_le"
+      ],
+      "equal": true
+    },
+    {
+      "id": "controls/05",
+      "count": 1,
+      "input": [
+        "utf_16_be"
+      ],
+      "python": [
+        "utf_16_be"
+      ],
+      "go_short": [
+        "utf_16_be"
+      ],
+      "equal": true
+    },
+    {
+      "id": "declaration/cp1251/coding",
+      "count": 1,
+      "input": [
+        "cp1251"
+      ],
+      "python": [
+        "cp1251"
+      ],
+      "go_short": [
+        "cp1251"
+      ],
+      "equal": true
+    },
+    {
+      "id": "boundary/gb18030/512",
+      "count": 1,
+      "input": [
+        "gb18030"
+      ],
+      "python": [
+        "gb18030"
+      ],
+      "go_short": [
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "boundary/gb18030/2560",
+      "count": 1,
+      "input": [
+        "gb18030"
+      ],
+      "python": [
+        "gb18030"
+      ],
+      "go_short": [
+        "gb18030"
+      ],
+      "equal": true
+    },
+    {
+      "id": "boundary/cp932/512",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "boundary/cp932/2560",
+      "count": 1,
+      "input": [
+        "cp932"
+      ],
+      "python": [
+        "cp932"
+      ],
+      "go_short": [
+        "cp932"
+      ],
+      "equal": true
+    },
+    {
+      "id": "boundary/utf_16_le/512",
+      "count": 1,
+      "input": [
+        "utf_16_le"
+      ],
+      "python": [
+        "utf_16_le"
+      ],
+      "go_short": [
+        "utf_16_le"
+      ],
+      "equal": true
+    },
+    {
+      "id": "boundary/utf_16_le/2560",
+      "count": 1,
+      "input": [
+        "utf_16_le"
+      ],
+      "python": [
+        "utf_16_le"
+      ],
+      "go_short": [
+        "utf_16_le"
+      ],
+      "equal": true
+    },
+    {
+      "id": "alignment-large/gb18030",
+      "count": 1,
+      "input": [
+        "gb18030"
+      ],
+      "python": [
+        "gb18030"
+      ],
+      "go_short": [
+        "gb18030"
+      ],
+      "equal": true
+    }
+  ]
+}

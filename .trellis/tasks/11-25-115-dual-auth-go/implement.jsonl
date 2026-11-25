@@ -1,0 +1,9 @@
+{"file": ".trellis/tasks/11-25-115-dual-auth-go/contracts.md", "reason": "Frozen cross-worker signatures and exclusive ownership"}
+{"file": ".trellis/tasks/11-25-115-dual-auth-go/prd.md", "reason": "Authoritative requirements including R15 source fidelity and A13 request traces"}
+{"file": ".trellis/tasks/11-25-115-dual-auth-go/reference-contract.md", "reason": "Mandatory user instruction: strict EmbyNginx behavior, source mapping and no unapproved deviations"}
+{"file": ".trellis/tasks/11-25-115-dual-auth-go/research/sources.md", "reason": "Pinned references, protocol evidence and unresolved gates"}
+{"file": ".trellis/tasks/11-25-115-dual-auth-go/design.md", "reason": "Architecture, invariants and proposed contracts"}
+{"file": ".trellis/tasks/11-25-115-dual-auth-go/roadmap.md", "reason": "Ownership, dependency and acceptance matrix"}
+{"file": ".trellis/spec/backend/index.md", "reason": "Existing backend guideline discovery; entries remain bootstrap placeholders"}
+{"file": ".trellis/tasks/11-25-115-dual-auth-go/research/playback-parity.md", "reason": "Reference full playback behavior and parity acceptance"}
+{"file": ".trellis/spec/backend/115-reference-contract.md", "reason": "Executable dual-auth, request fidelity, playback, tree/event and ownership contract"}

@@ -1,0 +1,14 @@
+# QR driver implementation
+
+Source mapping: util_115.py:316–353,369–423 -> qr.go Cookie token/status/exchange; util_115_open.py:59–97 -> qr.go Open token/status/exchange. Wire bytes and multipart belong client helpers. Server session lifecycle is the approved R4 adaptation.
+
+Ordered traces: Cookie token GET -> status GET (up to five, seven seconds between unsuccessful polls) -> confirmed status 2 -> Cookie exchange POST, consume session. Open authDeviceCode POST with 128-character random URL-safe verifier -> status GET with no added delay -> status 2 -> deviceCodeToToken POST -> consume session. Unknown status remains waiting; no unverified numeric expiry/cancel interpretation. Empty status data and protocol errors terminate. Client cancellation cancels an active request, removes on failure; explicit cancel removes server state and cancels in-flight I/O. Different purpose cannot read or cancel a session. Start and poll may use different Driver objects.
+
+Validation: go test -race ./drivers/115 passes. Controlled transport checks server identity, PKCE verifier length, exchange exactly once across driver recreation, purpose mismatch and explicit cancellation. Wire multipart tests are W1 scope. No live upstream credentials tested.
+
+Limitations: abandoned sessions have no automatic expiry because reference expiry duration is not established; explicit cancel and terminal consumption remove them. Cookie background polling is represented by bounded caller polls and server-enforced spacing, not a detached task. The router concurrent standalone-status path needs coordinator parity review. Device options currently passed through; default qandroid preserved.
+
+## Follow-up status evidence and resource bounds
+Pinned SDK p115client/client.py:2135–2149 explicitly maps 0 waiting, 1 scanned, 2 signed in, -1 expired, -2 canceled. Driver now reports scanned/cancelled/expired and removes terminal sessions. Business standalone util_115.py:332–340 only returns boolean status==2; it does not establish TTL. SDK polling catches exceptions and continues (:2124–2134); transient transport errors now retain the session for subsequent polling. No invented verification status/code is mapped: no supporting wire evidence was found.
+
+No QR expiry duration found; ExpiresIn stays zero and UI owner removed its artificial countdown. Coordinator approved a purely local resource limit of 1024 sessions: inserting beyond capacity evicts oldest-created entry and cancels local I/O, with no upstream request. This is not represented as upstream expiry. Verifier/sign storage becomes unreachable after removal and outstanding operation completion. Explicit cancel and successful/terminal status also remove storage. Tests cover statuses, transient recovery, purpose isolation, one-time exchange, and oldest-first capacity cancellation. Final go test -race ./drivers/115 passed (18.428s).

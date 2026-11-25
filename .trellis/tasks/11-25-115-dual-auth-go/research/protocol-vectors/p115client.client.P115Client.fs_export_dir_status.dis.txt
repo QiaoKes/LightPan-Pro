@@ -1,0 +1,35 @@
+11310           0 RESUME                   0
+
+11326           2 LOAD_GLOBAL              1 (NULL + complete_url)
+               12 LOAD_CONST               1 ('/files/export_dir')
+               14 LOAD_FAST                2 (base_url)
+               16 KW_NAMES                 2 (('base_url',))
+               18 CALL                     2
+               26 STORE_FAST               5 (api)
+
+11327          28 LOAD_GLOBAL              3 (NULL + isinstance)
+               38 LOAD_FAST                1 (payload)
+               40 LOAD_GLOBAL              4 (int)
+               50 LOAD_GLOBAL              6 (str)
+               60 BUILD_TUPLE              2
+               62 CALL                     2
+               70 POP_JUMP_IF_FALSE        4 (to 80)
+
+11328          72 LOAD_CONST               3 ('export_id')
+               74 LOAD_FAST                1 (payload)
+               76 BUILD_MAP                1
+               78 STORE_FAST               1 (payload)
+
+11329     >>   80 PUSH_NULL
+               82 LOAD_FAST                0 (self)
+               84 LOAD_ATTR                8 (request)
+              104 LOAD_CONST               5 (())
+              106 LOAD_FAST                5 (api)
+              108 LOAD_FAST                1 (payload)
+              110 LOAD_FAST                3 (async_)
+              112 LOAD_CONST               4 (('url', 'params', 'async_'))
+              114 BUILD_CONST_KEY_MAP      3
+              116 LOAD_FAST                4 (request_kwargs)
+              118 DICT_MERGE               1
+              120 CALL_FUNCTION_EX         1
+              122 RETURN_VALUE

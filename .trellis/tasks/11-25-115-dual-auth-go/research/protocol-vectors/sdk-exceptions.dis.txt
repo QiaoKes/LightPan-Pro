@@ -1,0 +1,926 @@
+  0           0 RESUME                   0
+
+  4           2 SETUP_ANNOTATIONS
+              4 BUILD_LIST               0
+              6 LOAD_CONST               0 (('P115Error', 'P115Warning', 'P115OSError', 'P115AccessError', 'P115AuthenticationError', 'P115BusyOSError', 'P115DataError', 'P115FileNotFoundError', 'P115DownloadFileNotFoundError', 'P115OperationalError', 'P115FileTooBig', 'P115ExceededError', 'P115InvalidArgumentError', 'P115NoSpaceError', 'P115NotSupportedError', 'P115LoginError', 'P115AccessTokenError', 'P115OpenAppAuthLimitExceeded', 'P115BadDownloadUrl', 'P115BadFile', 'error', 'throw', 'errno2error'))
+              8 LIST_EXTEND              1
+             10 STORE_NAME               0 (__all__)
+
+ 13          12 LOAD_CONST               1 ('各种异常类和相关的帮助函数')
+             14 STORE_NAME               1 (__doc__)
+
+ 15          16 LOAD_CONST               2 (0)
+             18 LOAD_CONST               3 (None)
+             20 IMPORT_NAME              2 (warnings)
+             22 STORE_NAME               2 (warnings)
+
+ 17          24 LOAD_CONST               2 (0)
+             26 LOAD_CONST               4 (('count',))
+             28 IMPORT_NAME              3 (itertools)
+             30 IMPORT_FROM              4 (count)
+             32 STORE_NAME               4 (count)
+             34 POP_TOP
+
+ 18          36 LOAD_CONST               2 (0)
+             38 LOAD_CONST               5 (('Mapping',))
+             40 IMPORT_NAME              5 (collections.abc)
+             42 IMPORT_FROM              6 (Mapping)
+             44 STORE_NAME               6 (Mapping)
+             46 POP_TOP
+
+ 19          48 LOAD_CONST               2 (0)
+             50 LOAD_CONST               6 (('cached_property',))
+             52 IMPORT_NAME              7 (functools)
+             54 IMPORT_FROM              8 (cached_property)
+             56 STORE_NAME               8 (cached_property)
+             58 POP_TOP
+
+ 20          60 LOAD_CONST               2 (0)
+             62 LOAD_CONST               7 (('Never',))
+             64 IMPORT_NAME              9 (typing)
+             66 IMPORT_FROM             10 (Never)
+             68 STORE_NAME              10 (Never)
+             70 POP_TOP
+
+ 22          72 LOAD_CONST               2 (0)
+             74 LOAD_CONST               8 (('errno', 'errno2error'))
+             76 IMPORT_NAME             11 (errno2)
+             78 IMPORT_FROM             12 (errno)
+             80 STORE_NAME              12 (errno)
+             82 IMPORT_FROM             13 (errno2error)
+             84 STORE_NAME              14 (_errno2error)
+             86 POP_TOP
+
+ 25          88 PUSH_NULL
+             90 LOAD_NAME                2 (warnings)
+             92 LOAD_ATTR               30 (filterwarnings)
+            112 LOAD_CONST               9 ('always')
+            114 LOAD_NAME               16 (UserWarning)
+            116 KW_NAMES                10 (('category',))
+            118 CALL                     2
+            126 POP_TOP
+
+ 26         128 PUSH_NULL
+            130 LOAD_NAME               17 (setattr)
+            132 LOAD_NAME                2 (warnings)
+            134 LOAD_CONST              11 ('formatwarning')
+            136 LOAD_CONST               3 (None)
+            138 PUSH_NULL
+            140 LOAD_NAME                4 (count)
+            142 LOAD_CONST              12 (1)
+            144 CALL                     1
+            152 LOAD_ATTR               36 (__next__)
+            172 BUILD_TUPLE              2
+            174 LOAD_CONST              13 (<code object <lambda> at 0x109e389c0, file "p115client/exception.py", line 26>)
+            176 MAKE_FUNCTION            1 (defaults)
+            178 CALL                     3
+            186 POP_TOP
+
+ 31         188 PUSH_NULL
+            190 LOAD_BUILD_CLASS
+            192 LOAD_CONST              14 (<code object P115Error at 0x109e069a0, file "p115client/exception.py", line 31>)
+            194 MAKE_FUNCTION            0
+            196 LOAD_CONST              15 ('P115Error')
+            198 LOAD_NAME               19 (Exception)
+            200 CALL                     3
+            208 STORE_NAME              20 (P115Error)
+
+ 36         210 PUSH_NULL
+            212 LOAD_BUILD_CLASS
+            214 LOAD_CONST              16 (<code object P115Warning at 0x109e06a70, file "p115client/exception.py", line 36>)
+            216 MAKE_FUNCTION            0
+            218 LOAD_CONST              17 ('P115Warning')
+            220 LOAD_NAME               20 (P115Error)
+            222 LOAD_NAME               16 (UserWarning)
+            224 CALL                     4
+            232 STORE_NAME              21 (P115Warning)
+
+ 41         234 PUSH_NULL
+            236 LOAD_BUILD_CLASS
+            238 LOAD_CONST              18 (<code object P115OSError at 0x109dfa880, file "p115client/exception.py", line 41>)
+            240 MAKE_FUNCTION            0
+            242 LOAD_CONST              19 ('P115OSError')
+            244 LOAD_NAME               20 (P115Error)
+            246 LOAD_NAME               22 (OSError)
+            248 CALL                     4
+            256 STORE_NAME              23 (P115OSError)
+
+ 64         258 PUSH_NULL
+            260 LOAD_BUILD_CLASS
+            262 LOAD_CONST              20 (<code object P115AuthenticationError at 0x109e06b40, file "p115client/exception.py", line 64>)
+            264 MAKE_FUNCTION            0
+            266 LOAD_CONST              21 ('P115AuthenticationError')
+            268 LOAD_NAME               23 (P115OSError)
+            270 CALL                     3
+            278 STORE_NAME              24 (P115AuthenticationError)
+
+ 69         280 PUSH_NULL
+            282 LOAD_BUILD_CLASS
+            284 LOAD_CONST              22 (<code object P115BusyOSError at 0x109e06c10, file "p115client/exception.py", line 69>)
+            286 MAKE_FUNCTION            0
+            288 LOAD_CONST              23 ('P115BusyOSError')
+            290 LOAD_NAME               23 (P115OSError)
+            292 CALL                     3
+            300 STORE_NAME              25 (P115BusyOSError)
+
+ 74         302 PUSH_NULL
+            304 LOAD_BUILD_CLASS
+            306 LOAD_CONST              24 (<code object P115DataError at 0x109e06ce0, file "p115client/exception.py", line 74>)
+            308 MAKE_FUNCTION            0
+            310 LOAD_CONST              25 ('P115DataError')
+            312 LOAD_NAME               23 (P115OSError)
+            314 CALL                     3
+            322 STORE_NAME              26 (P115DataError)
+
+ 79         324 PUSH_NULL
+            326 LOAD_BUILD_CLASS
+            328 LOAD_CONST              26 (<code object P115FileNotFoundError at 0x109e06db0, file "p115client/exception.py", line 79>)
+            330 MAKE_FUNCTION            0
+            332 LOAD_CONST              27 ('P115FileNotFoundError')
+            334 LOAD_NAME               23 (P115OSError)
+            336 LOAD_NAME               27 (FileNotFoundError)
+            338 CALL                     4
+            346 STORE_NAME              28 (P115FileNotFoundError)
+
+ 84         348 PUSH_NULL
+            350 LOAD_BUILD_CLASS
+            352 LOAD_CONST              28 (<code object P115DownloadFileNotFoundError at 0x109e06e80, file "p115client/exception.py", line 84>)
+            354 MAKE_FUNCTION            0
+            356 LOAD_CONST              29 ('P115DownloadFileNotFoundError')
+            358 LOAD_NAME               28 (P115FileNotFoundError)
+            360 CALL                     3
+            368 STORE_NAME              29 (P115DownloadFileNotFoundError)
+
+ 89         370 PUSH_NULL
+            372 LOAD_BUILD_CLASS
+            374 LOAD_CONST              30 (<code object P115OperationalError at 0x109e06f50, file "p115client/exception.py", line 89>)
+            376 MAKE_FUNCTION            0
+            378 LOAD_CONST              31 ('P115OperationalError')
+            380 LOAD_NAME               23 (P115OSError)
+            382 CALL                     3
+            390 STORE_NAME              30 (P115OperationalError)
+
+ 94         392 PUSH_NULL
+            394 LOAD_BUILD_CLASS
+            396 LOAD_CONST              32 (<code object P115AccessError at 0x109e07020, file "p115client/exception.py", line 94>)
+            398 MAKE_FUNCTION            0
+            400 LOAD_CONST              33 ('P115AccessError')
+            402 LOAD_NAME               30 (P115OperationalError)
+            404 LOAD_NAME               31 (PermissionError)
+            406 CALL                     4
+            414 STORE_NAME              32 (P115AccessError)
+
+ 99         416 PUSH_NULL
+            418 LOAD_BUILD_CLASS
+            420 LOAD_CONST              34 (<code object P115FileTooBig at 0x109e070f0, file "p115client/exception.py", line 99>)
+            422 MAKE_FUNCTION            0
+            424 LOAD_CONST              35 ('P115FileTooBig')
+            426 LOAD_NAME               30 (P115OperationalError)
+            428 LOAD_NAME               31 (PermissionError)
+            430 CALL                     4
+            438 STORE_NAME              33 (P115FileTooBig)
+
+104         440 PUSH_NULL
+            442 LOAD_BUILD_CLASS
+            444 LOAD_CONST              36 (<code object P115ExceededError at 0x109e071c0, file "p115client/exception.py", line 104>)
+            446 MAKE_FUNCTION            0
+            448 LOAD_CONST              37 ('P115ExceededError')
+            450 LOAD_NAME               30 (P115OperationalError)
+            452 LOAD_NAME               31 (PermissionError)
+            454 CALL                     4
+            462 STORE_NAME              34 (P115ExceededError)
+
+109         464 PUSH_NULL
+            466 LOAD_BUILD_CLASS
+            468 LOAD_CONST              38 (<code object P115InvalidArgumentError at 0x109e07290, file "p115client/exception.py", line 109>)
+            470 MAKE_FUNCTION            0
+            472 LOAD_CONST              39 ('P115InvalidArgumentError')
+            474 LOAD_NAME               30 (P115OperationalError)
+            476 LOAD_NAME               35 (ValueError)
+            478 CALL                     4
+            486 STORE_NAME              36 (P115InvalidArgumentError)
+
+114         488 PUSH_NULL
+            490 LOAD_BUILD_CLASS
+            492 LOAD_CONST              40 (<code object P115NoSpaceError at 0x109e07360, file "p115client/exception.py", line 114>)
+            494 MAKE_FUNCTION            0
+            496 LOAD_CONST              41 ('P115NoSpaceError')
+            498 LOAD_NAME               30 (P115OperationalError)
+            500 LOAD_NAME               31 (PermissionError)
+            502 CALL                     4
+            510 STORE_NAME              37 (P115NoSpaceError)
+
+119         512 PUSH_NULL
+            514 LOAD_BUILD_CLASS
+            516 LOAD_CONST              42 (<code object P115NotSupportedError at 0x109e07430, file "p115client/exception.py", line 119>)
+            518 MAKE_FUNCTION            0
+            520 LOAD_CONST              43 ('P115NotSupportedError')
+            522 LOAD_NAME               30 (P115OperationalError)
+            524 CALL                     3
+            532 STORE_NAME              38 (P115NotSupportedError)
+
+124         534 PUSH_NULL
+            536 LOAD_BUILD_CLASS
+            538 LOAD_CONST              44 (<code object P115LoginError at 0x109e07500, file "p115client/exception.py", line 124>)
+            540 MAKE_FUNCTION            0
+            542 LOAD_CONST              45 ('P115LoginError')
+            544 LOAD_NAME               24 (P115AuthenticationError)
+            546 CALL                     3
+            554 STORE_NAME              39 (P115LoginError)
+
+129         556 PUSH_NULL
+            558 LOAD_BUILD_CLASS
+            560 LOAD_CONST              46 (<code object P115AccessTokenError at 0x109e075d0, file "p115client/exception.py", line 129>)
+            562 MAKE_FUNCTION            0
+            564 LOAD_CONST              47 ('P115AccessTokenError')
+            566 LOAD_NAME               23 (P115OSError)
+            568 LOAD_NAME               35 (ValueError)
+            570 CALL                     4
+            578 STORE_NAME              40 (P115AccessTokenError)
+
+134         580 PUSH_NULL
+            582 LOAD_BUILD_CLASS
+            584 LOAD_CONST              48 (<code object P115OpenAppAuthLimitExceeded at 0x109e076a0, file "p115client/exception.py", line 134>)
+            586 MAKE_FUNCTION            0
+            588 LOAD_CONST              49 ('P115OpenAppAuthLimitExceeded')
+            590 LOAD_NAME               24 (P115AuthenticationError)
+            592 CALL                     3
+            600 STORE_NAME              41 (P115OpenAppAuthLimitExceeded)
+
+139         602 PUSH_NULL
+            604 LOAD_BUILD_CLASS
+            606 LOAD_CONST              50 (<code object P115BadDownloadUrl at 0x109dae030, file "p115client/exception.py", line 139>)
+            608 MAKE_FUNCTION            0
+            610 LOAD_CONST              51 ('P115BadDownloadUrl')
+            612 LOAD_NAME               23 (P115OSError)
+            614 CALL                     3
+            622 STORE_NAME              42 (P115BadDownloadUrl)
+
+149         624 PUSH_NULL
+            626 LOAD_BUILD_CLASS
+            628 LOAD_CONST              52 (<code object P115BadFile at 0x109e07840, file "p115client/exception.py", line 149>)
+            630 MAKE_FUNCTION            0
+            632 LOAD_CONST              53 ('P115BadFile')
+            634 LOAD_NAME               23 (P115OSError)
+            636 CALL                     3
+            644 STORE_NAME              43 (P115BadFile)
+
+154         646 LOAD_CONST              54 ('return')
+            648 LOAD_NAME               44 (BaseException)
+            650 BUILD_TUPLE              2
+            652 LOAD_CONST              55 (<code object error at 0x10530dc50, file "p115client/exception.py", line 154>)
+            654 MAKE_FUNCTION            4 (annotations)
+            656 STORE_NAME              45 (error)
+
+175         658 LOAD_CONST              54 ('return')
+            660 LOAD_NAME               10 (Never)
+            662 BUILD_TUPLE              2
+            664 LOAD_CONST              56 (<code object throw at 0x109d2ded0, file "p115client/exception.py", line 175>)
+            666 MAKE_FUNCTION            4 (annotations)
+            668 STORE_NAME              46 (throw)
+
+191         670 LOAD_NAME               12 (errno)
+            672 LOAD_ATTR               94 (EACCES)
+            692 LOAD_NAME               32 (P115AccessError)
+
+192         694 LOAD_NAME               12 (errno)
+            696 LOAD_ATTR               96 (EBADF)
+            716 LOAD_NAME               43 (P115BadFile)
+
+193         718 LOAD_NAME               12 (errno)
+            720 LOAD_ATTR               98 (EFBIG)
+            740 LOAD_NAME               33 (P115FileTooBig)
+
+194         742 LOAD_NAME               12 (errno)
+            744 LOAD_ATTR              100 (EAUTH)
+            764 LOAD_NAME               24 (P115AuthenticationError)
+
+195         766 LOAD_NAME               12 (errno)
+            768 LOAD_ATTR              102 (EBUSY)
+            788 LOAD_NAME               25 (P115BusyOSError)
+
+196         790 LOAD_NAME               12 (errno)
+            792 LOAD_ATTR              104 (ENODATA)
+            812 LOAD_NAME               26 (P115DataError)
+
+197         814 LOAD_NAME               12 (errno)
+            816 LOAD_ATTR              106 (ENOENT)
+            836 LOAD_NAME               28 (P115FileNotFoundError)
+
+198         838 LOAD_NAME               12 (errno)
+            840 LOAD_ATTR              108 (EINVAL)
+            860 LOAD_NAME               36 (P115InvalidArgumentError)
+
+199         862 LOAD_NAME               12 (errno)
+            864 LOAD_ATTR              110 (ENOSPC)
+            884 LOAD_NAME               37 (P115NoSpaceError)
+
+200         886 LOAD_NAME               12 (errno)
+            888 LOAD_ATTR              112 (ENOTSUP)
+            908 LOAD_NAME               38 (P115NotSupportedError)
+
+201         910 LOAD_NAME               12 (errno)
+            912 LOAD_ATTR              114 (ENOSYS)
+            932 LOAD_NAME               38 (P115NotSupportedError)
+
+202         934 LOAD_NAME               12 (errno)
+            936 LOAD_ATTR              116 (ERANGE)
+            956 LOAD_NAME               34 (P115ExceededError)
+
+190         958 BUILD_MAP               12
+            960 STORE_NAME              13 (errno2error)
+            962 LOAD_NAME               59 (dict)
+            964 LOAD_NAME               12 (errno)
+            966 LOAD_NAME               60 (type)
+            968 LOAD_NAME               20 (P115Error)
+            970 BINARY_SUBSCR
+            974 BUILD_TUPLE              2
+            976 BINARY_SUBSCR
+            980 LOAD_NAME               61 (__annotations__)
+            982 LOAD_CONST              57 ('errno2error')
+            984 STORE_SUBSCR
+
+205         988 PUSH_NULL
+            990 LOAD_NAME               62 (globals)
+            992 CALL                     0
+           1000 STORE_NAME              63 (_modns)
+
+206        1002 PUSH_NULL
+           1004 LOAD_NAME               14 (_errno2error)
+           1006 LOAD_ATTR              128 (items)
+           1026 CALL                     0
+           1034 GET_ITER
+        >> 1036 FOR_ITER                76 (to 1192)
+           1040 UNPACK_SEQUENCE          2
+           1044 STORE_NAME              65 (errcode)
+           1046 STORE_NAME              66 (exctype)
+
+207        1048 LOAD_CONST              58 ('P115')
+           1050 LOAD_NAME               66 (exctype)
+           1052 LOAD_ATTR              134 (__name__)
+           1072 BINARY_OP                0 (+)
+           1076 STORE_NAME              68 (typename)
+
+208        1078 LOAD_NAME               68 (typename)
+           1080 LOAD_NAME               63 (_modns)
+           1082 CONTAINS_OP              1
+           1084 POP_JUMP_IF_TRUE         1 (to 1088)
+           1086 JUMP_BACKWARD           26 (to 1036)
+
+209     >> 1088 PUSH_NULL
+           1090 LOAD_NAME               60 (type)
+           1092 LOAD_NAME               68 (typename)
+           1094 LOAD_NAME               23 (P115OSError)
+           1096 LOAD_NAME               66 (exctype)
+           1098 BUILD_TUPLE              2
+           1100 LOAD_CONST              59 ('__doc__')
+           1102 LOAD_NAME               65 (errcode)
+           1104 LOAD_ATTR              138 (description)
+           1124 BUILD_MAP                1
+           1126 CALL                     3
+           1134 COPY                     1
+           1136 STORE_NAME              70 (cls)
+           1138 LOAD_NAME               63 (_modns)
+           1140 LOAD_NAME               68 (typename)
+           1142 STORE_SUBSCR
+
+210        1146 LOAD_NAME                0 (__all__)
+           1148 LOAD_ATTR              143 (NULL|self + append)
+           1168 LOAD_NAME               68 (typename)
+           1170 CALL                     1
+           1178 POP_TOP
+
+211        1180 LOAD_NAME               70 (cls)
+           1182 LOAD_NAME               13 (errno2error)
+           1184 LOAD_NAME               65 (errcode)
+           1186 STORE_SUBSCR
+           1190 JUMP_BACKWARD           78 (to 1036)
+
+206     >> 1192 END_FOR
+
+214        1194 LOAD_CONST              60 ('attr')
+           1196 LOAD_NAME               72 (str)
+           1198 LOAD_CONST              54 ('return')
+           1200 LOAD_NAME               60 (type)
+           1202 LOAD_NAME               23 (P115OSError)
+           1204 BINARY_SUBSCR
+           1208 BUILD_TUPLE              4
+           1210 LOAD_CONST              61 (<code object __getattr__ at 0x109d2edb0, file "p115client/exception.py", line 214>)
+           1212 MAKE_FUNCTION            4 (annotations)
+           1214 STORE_NAME              73 (__getattr__)
+           1216 RETURN_CONST             3 (None)
+
+Disassembly of <code object <lambda> at 0x109e389c0, file "p115client/exception.py", line 26>:
+ 26           0 RESUME                   0
+
+ 27           2 LOAD_CONST               1 ('\r\x1b[K\x1b[1;31;43m')
+              4 LOAD_FAST                1 (category)
+              6 LOAD_ATTR                0 (__qualname__)
+             26 FORMAT_VALUE             0
+             28 LOAD_CONST               2 ('\x1b[0m(\x1b[32m')
+             30 PUSH_NULL
+             32 LOAD_FAST                5 (_getid)
+             34 CALL                     0
+             42 FORMAT_VALUE             0
+             44 LOAD_CONST               3 ('\x1b[0m) @ \x1b[3;4;34m')
+             46 LOAD_FAST                2 (filename)
+             48 FORMAT_VALUE             0
+             50 LOAD_CONST               4 ('\x1b[0m:\x1b[36m')
+             52 LOAD_FAST                3 (lineno)
+             54 FORMAT_VALUE             0
+             56 LOAD_CONST               5 ('\x1b[0m \x1b[5;31m➜\x1b[0m \x1b[1m')
+             58 LOAD_FAST                0 (message)
+             60 FORMAT_VALUE             0
+             62 LOAD_CONST               6 ('\x1b[0m\n')
+             64 BUILD_STRING            11
+
+ 26          66 RETURN_VALUE
+
+Disassembly of <code object P115Error at 0x109e069a0, file "p115client/exception.py", line 31>:
+ 31           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115Error')
+              8 STORE_NAME               2 (__qualname__)
+
+ 32          10 LOAD_CONST               1 ('本模块的最基础异常类\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115Warning at 0x109e06a70, file "p115client/exception.py", line 36>:
+ 36           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115Warning')
+              8 STORE_NAME               2 (__qualname__)
+
+ 37          10 LOAD_CONST               1 ('本模块的最基础警示类\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115OSError at 0x109dfa880, file "p115client/exception.py", line 41>:
+ 41           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115OSError')
+              8 STORE_NAME               2 (__qualname__)
+
+ 42          10 LOAD_CONST               1 ('本模块的最基础输出输出异常类\n    ')
+             12 STORE_NAME               3 (__doc__)
+
+ 44          14 LOAD_CONST               2 (<code object __getattr__ at 0x109e38ad0, file "p115client/exception.py", line 44>)
+             16 MAKE_FUNCTION            0
+             18 STORE_NAME               4 (__getattr__)
+
+ 50          20 LOAD_CONST               3 (<code object __getitem__ at 0x109e40930, file "p115client/exception.py", line 50>)
+             22 MAKE_FUNCTION            0
+             24 STORE_NAME               5 (__getitem__)
+
+ 56          26 LOAD_NAME                6 (cached_property)
+
+ 57          28 LOAD_CONST               4 (<code object message at 0x109d3d7f0, file "p115client/exception.py", line 56>)
+             30 MAKE_FUNCTION            0
+
+ 56          32 CALL                     0
+
+ 57          40 STORE_NAME               7 (message)
+             42 RETURN_CONST             5 (None)
+
+Disassembly of <code object __getattr__ at 0x109e38ad0, file "p115client/exception.py", line 44>:
+ 44           0 RESUME                   0
+
+ 45           2 NOP
+
+ 46           4 LOAD_FAST                0 (self)
+              6 LOAD_FAST                1 (attr)
+              8 BINARY_SUBSCR
+             12 RETURN_VALUE
+        >>   14 PUSH_EXC_INFO
+
+ 47          16 LOAD_GLOBAL              0 (KeyError)
+             26 CHECK_EXC_MATCH
+             28 POP_JUMP_IF_FALSE       17 (to 64)
+             30 STORE_FAST               2 (e)
+
+ 48          32 LOAD_GLOBAL              3 (NULL + AttributeError)
+             42 LOAD_FAST                1 (attr)
+             44 CALL                     1
+             52 LOAD_FAST                2 (e)
+             54 RAISE_VARARGS            2
+        >>   56 LOAD_CONST               0 (None)
+             58 STORE_FAST               2 (e)
+             60 DELETE_FAST              2 (e)
+             62 RERAISE                  1
+
+ 47     >>   64 RERAISE                  0
+        >>   66 COPY                     3
+             68 POP_EXCEPT
+             70 RERAISE                  1
+ExceptionTable:
+  4 to 10 -> 14 [0]
+  14 to 30 -> 66 [1] lasti
+  32 to 54 -> 56 [1] lasti
+  56 to 64 -> 66 [1] lasti
+
+Disassembly of <code object __getitem__ at 0x109e40930, file "p115client/exception.py", line 50>:
+ 50           0 RESUME                   0
+
+ 51           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (message)
+             24 STORE_FAST               2 (message)
+
+ 52          26 LOAD_GLOBAL              3 (NULL + isinstance)
+             36 LOAD_FAST                2 (message)
+             38 LOAD_GLOBAL              4 (Mapping)
+             48 CALL                     2
+             56 POP_JUMP_IF_FALSE        5 (to 68)
+
+ 53          58 LOAD_FAST                2 (message)
+             60 LOAD_FAST                1 (key)
+             62 BINARY_SUBSCR
+             66 RETURN_VALUE
+
+ 54     >>   68 LOAD_GLOBAL              7 (NULL + KeyError)
+             78 LOAD_FAST                1 (key)
+             80 CALL                     1
+             88 RAISE_VARARGS            1
+
+Disassembly of <code object message at 0x109d3d7f0, file "p115client/exception.py", line 56>:
+ 56           0 RESUME                   0
+
+ 58           2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                0 (args)
+             24 COPY                     1
+             26 STORE_FAST               1 (args)
+             28 POP_JUMP_IF_FALSE       43 (to 116)
+
+ 59          30 LOAD_GLOBAL              3 (NULL + len)
+             40 LOAD_FAST                1 (args)
+             42 CALL                     1
+             50 LOAD_CONST               1 (2)
+             52 COMPARE_OP              92 (>=)
+             56 POP_JUMP_IF_FALSE       24 (to 106)
+             58 LOAD_GLOBAL              5 (NULL + isinstance)
+             68 LOAD_FAST                1 (args)
+             70 LOAD_CONST               2 (0)
+             72 BINARY_SUBSCR
+             76 LOAD_GLOBAL              6 (int)
+             86 CALL                     2
+             94 POP_JUMP_IF_FALSE        5 (to 106)
+
+ 60          96 LOAD_FAST                1 (args)
+             98 LOAD_CONST               3 (1)
+            100 BINARY_SUBSCR
+            104 RETURN_VALUE
+
+ 61     >>  106 LOAD_FAST                1 (args)
+            108 LOAD_CONST               2 (0)
+            110 BINARY_SUBSCR
+            114 RETURN_VALUE
+
+ 58     >>  116 RETURN_CONST             0 (None)
+
+Disassembly of <code object P115AuthenticationError at 0x109e06b40, file "p115client/exception.py", line 64>:
+ 64           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115AuthenticationError')
+              8 STORE_NAME               2 (__qualname__)
+
+ 65          10 LOAD_CONST               1 ('当登录状态无效时抛出\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115BusyOSError at 0x109e06c10, file "p115client/exception.py", line 69>:
+ 69           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115BusyOSError')
+              8 STORE_NAME               2 (__qualname__)
+
+ 70          10 LOAD_CONST               1 ('当操作繁忙时抛出（115 网盘的复制、移动、删除、还原只允许最多一个操作进行中）\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115DataError at 0x109e06ce0, file "p115client/exception.py", line 74>:
+ 74           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115DataError')
+              8 STORE_NAME               2 (__qualname__)
+
+ 75          10 LOAD_CONST               1 ('当响应数据解析失败时抛出\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115FileNotFoundError at 0x109e06db0, file "p115client/exception.py", line 79>:
+ 79           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115FileNotFoundError')
+              8 STORE_NAME               2 (__qualname__)
+
+ 80          10 LOAD_CONST               1 ('当文件不存在时抛出\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115DownloadFileNotFoundError at 0x109e06e80, file "p115client/exception.py", line 84>:
+ 84           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115DownloadFileNotFoundError')
+              8 STORE_NAME               2 (__qualname__)
+
+ 85          10 LOAD_CONST               1 ('当下载文件不存在时抛出\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115OperationalError at 0x109e06f50, file "p115client/exception.py", line 89>:
+ 89           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115OperationalError')
+              8 STORE_NAME               2 (__qualname__)
+
+ 90          10 LOAD_CONST               1 ('当接口使用方法错误时抛出，例如参数错误、空间不足、超出允许数量范围等\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115AccessError at 0x109e07020, file "p115client/exception.py", line 94>:
+ 94           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115AccessError')
+              8 STORE_NAME               2 (__qualname__)
+
+ 95          10 LOAD_CONST               1 ('当不可访问时抛出，可能是文件被和谐了\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115FileTooBig at 0x109e070f0, file "p115client/exception.py", line 99>:
+ 99           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115FileTooBig')
+              8 STORE_NAME               2 (__qualname__)
+
+100          10 LOAD_CONST               1 ('文件过大\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115ExceededError at 0x109e071c0, file "p115client/exception.py", line 104>:
+104           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115ExceededError')
+              8 STORE_NAME               2 (__qualname__)
+
+105          10 LOAD_CONST               1 ('超出允许数量范围\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115InvalidArgumentError at 0x109e07290, file "p115client/exception.py", line 109>:
+109           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115InvalidArgumentError')
+              8 STORE_NAME               2 (__qualname__)
+
+110          10 LOAD_CONST               1 ('参数错误\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115NoSpaceError at 0x109e07360, file "p115client/exception.py", line 114>:
+114           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115NoSpaceError')
+              8 STORE_NAME               2 (__qualname__)
+
+115          10 LOAD_CONST               1 ('空间不足\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115NotSupportedError at 0x109e07430, file "p115client/exception.py", line 119>:
+119           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115NotSupportedError')
+              8 STORE_NAME               2 (__qualname__)
+
+120          10 LOAD_CONST               1 ('当调用不存在的接口或者接口不支持此操作时抛出\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115LoginError at 0x109e07500, file "p115client/exception.py", line 124>:
+124           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115LoginError')
+              8 STORE_NAME               2 (__qualname__)
+
+125          10 LOAD_CONST               1 ('当登录失败时抛出\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115AccessTokenError at 0x109e075d0, file "p115client/exception.py", line 129>:
+129           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115AccessTokenError')
+              8 STORE_NAME               2 (__qualname__)
+
+130          10 LOAD_CONST               1 ('access_token 错误或者无效\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115OpenAppAuthLimitExceeded at 0x109e076a0, file "p115client/exception.py", line 134>:
+134           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115OpenAppAuthLimitExceeded')
+              8 STORE_NAME               2 (__qualname__)
+
+135          10 LOAD_CONST               1 ('当授权应用数达到上限时抛出\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object P115BadDownloadUrl at 0x109dae030, file "p115client/exception.py", line 139>:
+              0 MAKE_CELL                0 (__classdict__)
+
+139           2 RESUME                   0
+              4 LOAD_NAME                0 (__name__)
+              6 STORE_NAME               1 (__module__)
+              8 LOAD_CONST               0 ('P115BadDownloadUrl')
+             10 STORE_NAME               2 (__qualname__)
+             12 LOAD_LOCALS
+             14 STORE_DEREF              0 (__classdict__)
+
+140          16 LOAD_CONST               1 ('获得了一个不可用的下载链接\n    ')
+             18 STORE_NAME               3 (__doc__)
+
+142          20 LOAD_NAME                4 (classmethod)
+
+143          22 PUSH_NULL
+             24 LOAD_CLOSURE             0 (__classdict__)
+             26 BUILD_TUPLE              1
+             28 LOAD_CONST               2 (<code object <generic parameters of raise_for_bad> at 0x109dfa970, file "p115client/exception.py", line 142>)
+             30 MAKE_FUNCTION            8 (closure)
+             32 CALL                     0
+
+142          40 CALL                     0
+
+143          48 STORE_NAME               5 (raise_for_bad)
+             50 LOAD_CLOSURE             0 (__classdict__)
+             52 STORE_NAME               6 (__classdictcell__)
+             54 RETURN_CONST             3 (None)
+
+Disassembly of <code object <generic parameters of raise_for_bad> at 0x109dfa970, file "p115client/exception.py", line 142>:
+              0 COPY_FREE_VARS           1
+
+142           2 RESUME                   0
+
+143           4 LOAD_CONST               0 ('Url')
+              6 LOAD_CLOSURE             2 (__classdict__)
+              8 BUILD_TUPLE              1
+             10 LOAD_CONST               1 (<code object Url at 0x109e07770, file "p115client/exception.py", line 143>)
+             12 MAKE_FUNCTION            8 (closure)
+             14 CALL_INTRINSIC_2         2 (INTRINSIC_TYPEVAR_WITH_BOUND)
+             16 COPY                     1
+             18 STORE_FAST               1 (Url)
+             20 BUILD_TUPLE              1
+             22 LOAD_CONST               2 ('url')
+             24 LOAD_FAST                1 (Url)
+             26 LOAD_CONST               3 ('return')
+             28 LOAD_FAST                1 (Url)
+             30 BUILD_TUPLE              4
+             32 LOAD_CONST               4 (<code object raise_for_bad at 0x109e406f0, file "p115client/exception.py", line 142>)
+             34 MAKE_FUNCTION            4 (annotations)
+             36 SWAP                     2
+             38 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+             40 RETURN_VALUE
+
+Disassembly of <code object Url at 0x109e07770, file "p115client/exception.py", line 143>:
+              0 COPY_FREE_VARS           1
+
+143           2 RESUME                   0
+              4 LOAD_DEREF               0 (__classdict__)
+              6 LOAD_FROM_DICT_OR_GLOBALS     0 (str)
+              8 RETURN_VALUE
+
+Disassembly of <code object raise_for_bad at 0x109e406f0, file "p115client/exception.py", line 142>:
+142           0 RESUME                   0
+
+144           2 LOAD_FAST                1 (url)
+              4 LOAD_ATTR                1 (NULL|self + startswith)
+             24 LOAD_CONST               1 (('https:///', 'http:///'))
+             26 CALL                     1
+             34 POP_JUMP_IF_FALSE       23 (to 82)
+
+145          36 PUSH_NULL
+             38 LOAD_FAST                0 (cls)
+             40 LOAD_GLOBAL              2 (errno)
+             50 LOAD_ATTR                4 (EFAULT)
+             70 LOAD_FAST                1 (url)
+             72 CALL                     2
+             80 RAISE_VARARGS            1
+
+146     >>   82 LOAD_FAST                1 (url)
+             84 RETURN_VALUE
+
+Disassembly of <code object P115BadFile at 0x109e07840, file "p115client/exception.py", line 149>:
+149           0 RESUME                   0
+              2 LOAD_NAME                0 (__name__)
+              4 STORE_NAME               1 (__module__)
+              6 LOAD_CONST               0 ('P115BadFile')
+              8 STORE_NAME               2 (__qualname__)
+
+150          10 LOAD_CONST               1 ('发现了一个有问题的文件，和文件信息不一致，例如 sha1 或 size 不同\n    ')
+             12 STORE_NAME               3 (__doc__)
+             14 RETURN_CONST             2 (None)
+
+Disassembly of <code object error at 0x10530dc50, file "p115client/exception.py", line 154>:
+154           0 RESUME                   0
+
+165           2 LOAD_FAST                0 (args)
+              4 POP_JUMP_IF_FALSE       30 (to 66)
+              6 LOAD_GLOBAL              1 (NULL + isinstance)
+             16 LOAD_FAST                0 (args)
+             18 LOAD_CONST               1 (0)
+             20 BINARY_SUBSCR
+             24 LOAD_GLOBAL              2 (errno)
+             34 CALL                     2
+             42 POP_JUMP_IF_FALSE       11 (to 66)
+
+166          44 LOAD_FAST                0 (args)
+             46 LOAD_CONST               1 (0)
+             48 BINARY_SUBSCR
+             52 STORE_FAST               2 (errcode)
+
+167          54 LOAD_FAST                0 (args)
+             56 LOAD_CONST               2 (1)
+             58 LOAD_CONST               3 (None)
+             60 BINARY_SLICE
+             62 STORE_FAST               0 (args)
+             64 JUMP_FORWARD            16 (to 98)
+
+169     >>   66 LOAD_GLOBAL              2 (errno)
+             76 LOAD_ATTR                4 (EIO)
+             96 STORE_FAST               2 (errcode)
+
+170     >>   98 LOAD_FAST                0 (args)
+            100 POP_JUMP_IF_FALSE       38 (to 178)
+            102 LOAD_GLOBAL              1 (NULL + isinstance)
+            112 LOAD_FAST                0 (args)
+            114 LOAD_CONST               1 (0)
+            116 BINARY_SUBSCR
+            120 LOAD_GLOBAL              6 (type)
+            130 CALL                     2
+            138 POP_JUMP_IF_FALSE       19 (to 178)
+            140 LOAD_GLOBAL              9 (NULL + issubclass)
+            150 LOAD_FAST                0 (args)
+            152 LOAD_CONST               1 (0)
+            154 BINARY_SUBSCR
+            158 LOAD_GLOBAL             10 (BaseException)
+            168 CALL                     2
+            176 POP_JUMP_IF_TRUE        30 (to 238)
+
+171     >>  178 LOAD_GLOBAL             12 (errno2error)
+            188 LOAD_ATTR               15 (NULL|self + get)
+            208 LOAD_FAST                2 (errcode)
+            210 LOAD_GLOBAL             16 (P115OSError)
+            220 CALL                     2
+            228 BUILD_LIST               1
+            230 LOAD_FAST                0 (args)
+            232 LIST_EXTEND              1
+            234 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+            236 STORE_FAST               0 (args)
+
+172     >>  238 PUSH_NULL
+            240 LOAD_FAST                2 (errcode)
+            242 LOAD_ATTR               18 (error)
+            262 LOAD_FAST                0 (args)
+            264 BUILD_MAP                0
+            266 LOAD_FAST                1 (kwds)
+            268 DICT_MERGE               1
+            270 CALL_FUNCTION_EX         1
+            272 RETURN_VALUE
+
+Disassembly of <code object throw at 0x109d2ded0, file "p115client/exception.py", line 175>:
+175           0 RESUME                   0
+
+186           2 LOAD_GLOBAL              1 (NULL + error)
+             12 LOAD_FAST                0 (args)
+             14 BUILD_MAP                0
+             16 LOAD_FAST                1 (kwds)
+             18 DICT_MERGE               1
+             20 CALL_FUNCTION_EX         1
+             22 RAISE_VARARGS            1
+
+Disassembly of <code object __getattr__ at 0x109d2edb0, file "p115client/exception.py", line 214>:
+214           0 RESUME                   0
+
+215           2 LOAD_GLOBAL              1 (NULL + AttributeError)
+             12 LOAD_FAST                0 (attr)
+             14 CALL                     1
+             22 RAISE_VARARGS            1

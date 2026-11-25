@@ -1,0 +1,3960 @@
+  0           0 RESUME                   0
+
+  4           2 BUILD_LIST               0
+              4 LOAD_CONST               0 (('killable_executor', 'thread_batch', 'thread_pool_batch', 'async_batch', 'threaded', 'run_as_thread', 'asynchronized', 'run_as_async', 'threadpool_map', 'taskgroup_map', 'conmap', 'conmap_wrap'))
+              6 LIST_EXTEND              1
+              8 STORE_NAME               0 (__all__)
+
+ 11          10 LOAD_CONST               1 (0)
+             12 LOAD_CONST               2 (('ensure_future', 'get_event_loop', 'BaseEventLoop', 'CancelledError', 'Future', 'Queue', 'Semaphore', 'TaskGroup'))
+             14 IMPORT_NAME              1 (asyncio)
+             16 IMPORT_FROM              2 (ensure_future)
+             18 STORE_NAME               2 (ensure_future)
+             20 IMPORT_FROM              3 (get_event_loop)
+             22 STORE_NAME               3 (get_event_loop)
+             24 IMPORT_FROM              4 (BaseEventLoop)
+             26 STORE_NAME               4 (BaseEventLoop)
+             28 IMPORT_FROM              5 (CancelledError)
+             30 STORE_NAME               6 (AsyncCancelledError)
+             32 IMPORT_FROM              7 (Future)
+             34 STORE_NAME               8 (AsyncFuture)
+             36 IMPORT_FROM              9 (Queue)
+             38 STORE_NAME              10 (AsyncQueue)
+             40 IMPORT_FROM             11 (Semaphore)
+             42 STORE_NAME              12 (AsyncSemaphore)
+             44 IMPORT_FROM             13 (TaskGroup)
+             46 STORE_NAME              13 (TaskGroup)
+             48 POP_TOP
+
+ 15          50 LOAD_CONST               1 (0)
+             52 LOAD_CONST               3 (('AsyncIterable', 'AsyncIterator', 'Awaitable', 'Callable', 'Coroutine', 'Iterable', 'Iterator'))
+             54 IMPORT_NAME             14 (collections.abc)
+             56 IMPORT_FROM             15 (AsyncIterable)
+             58 STORE_NAME              15 (AsyncIterable)
+             60 IMPORT_FROM             16 (AsyncIterator)
+             62 STORE_NAME              16 (AsyncIterator)
+             64 IMPORT_FROM             17 (Awaitable)
+             66 STORE_NAME              17 (Awaitable)
+             68 IMPORT_FROM             18 (Callable)
+             70 STORE_NAME              18 (Callable)
+             72 IMPORT_FROM             19 (Coroutine)
+             74 STORE_NAME              19 (Coroutine)
+             76 IMPORT_FROM             20 (Iterable)
+             78 STORE_NAME              20 (Iterable)
+             80 IMPORT_FROM             21 (Iterator)
+             82 STORE_NAME              21 (Iterator)
+             84 POP_TOP
+
+ 19          86 LOAD_CONST               1 (0)
+             88 LOAD_CONST               4 (('Executor', 'Future', 'ThreadPoolExecutor'))
+             90 IMPORT_NAME             22 (concurrent.futures)
+             92 IMPORT_FROM             23 (Executor)
+             94 STORE_NAME              23 (Executor)
+             96 IMPORT_FROM              7 (Future)
+             98 STORE_NAME               7 (Future)
+            100 IMPORT_FROM             24 (ThreadPoolExecutor)
+            102 STORE_NAME              24 (ThreadPoolExecutor)
+            104 POP_TOP
+
+ 20         106 LOAD_CONST               1 (0)
+            108 LOAD_CONST               5 (('contextmanager',))
+            110 IMPORT_NAME             25 (contextlib)
+            112 IMPORT_FROM             26 (contextmanager)
+            114 STORE_NAME              26 (contextmanager)
+            116 POP_TOP
+
+ 21         118 LOAD_CONST               1 (0)
+            120 LOAD_CONST               6 (('partial', 'update_wrapper'))
+            122 IMPORT_NAME             27 (functools)
+            124 IMPORT_FROM             28 (partial)
+            126 STORE_NAME              28 (partial)
+            128 IMPORT_FROM             29 (update_wrapper)
+            130 STORE_NAME              29 (update_wrapper)
+            132 POP_TOP
+
+ 22         134 LOAD_CONST               1 (0)
+            136 LOAD_CONST               7 (('isawaitable', 'iscoroutinefunction'))
+            138 IMPORT_NAME             30 (inspect)
+            140 IMPORT_FROM             31 (isawaitable)
+            142 STORE_NAME              31 (isawaitable)
+            144 IMPORT_FROM             32 (iscoroutinefunction)
+            146 STORE_NAME              32 (iscoroutinefunction)
+            148 POP_TOP
+
+ 23         150 LOAD_CONST               1 (0)
+            152 LOAD_CONST               8 (('cpu_count',))
+            154 IMPORT_NAME             33 (os)
+            156 IMPORT_FROM             34 (cpu_count)
+            158 STORE_NAME              34 (cpu_count)
+            160 POP_TOP
+
+ 24         162 LOAD_CONST               1 (0)
+            164 LOAD_CONST               9 (('Queue', 'SimpleQueue', 'Empty'))
+            166 IMPORT_NAME             35 (queue)
+            168 IMPORT_FROM              9 (Queue)
+            170 STORE_NAME               9 (Queue)
+            172 IMPORT_FROM             36 (SimpleQueue)
+            174 STORE_NAME              36 (SimpleQueue)
+            176 IMPORT_FROM             37 (Empty)
+            178 STORE_NAME              37 (Empty)
+            180 POP_TOP
+
+ 25         182 LOAD_CONST               1 (0)
+            184 LOAD_CONST              10 (('start_new_thread',))
+            186 IMPORT_NAME             38 (_thread)
+            188 IMPORT_FROM             39 (start_new_thread)
+            190 STORE_NAME              39 (start_new_thread)
+            192 POP_TOP
+
+ 26         194 LOAD_CONST               1 (0)
+            196 LOAD_CONST              11 (('Event', 'Lock', 'Semaphore', 'Thread'))
+            198 IMPORT_NAME             40 (threading)
+            200 IMPORT_FROM             41 (Event)
+            202 STORE_NAME              41 (Event)
+            204 IMPORT_FROM             42 (Lock)
+            206 STORE_NAME              42 (Lock)
+            208 IMPORT_FROM             11 (Semaphore)
+            210 STORE_NAME              11 (Semaphore)
+            212 IMPORT_FROM             43 (Thread)
+            214 STORE_NAME              43 (Thread)
+            216 POP_TOP
+
+ 27         218 LOAD_CONST               1 (0)
+            220 LOAD_CONST              12 (('cast', 'overload', 'Any', 'ContextManager', 'Literal'))
+            222 IMPORT_NAME             44 (typing)
+            224 IMPORT_FROM             45 (cast)
+            226 STORE_NAME              45 (cast)
+            228 IMPORT_FROM             46 (overload)
+            230 STORE_NAME              46 (overload)
+            232 IMPORT_FROM             47 (Any)
+            234 STORE_NAME              47 (Any)
+            236 IMPORT_FROM             48 (ContextManager)
+            238 STORE_NAME              48 (ContextManager)
+            240 IMPORT_FROM             49 (Literal)
+            242 STORE_NAME              49 (Literal)
+            244 POP_TOP
+
+ 29         246 LOAD_CONST               1 (0)
+            248 LOAD_CONST              13 (('argcount', 'has_keyword_arg'))
+            250 IMPORT_NAME             50 (argtools)
+            252 IMPORT_FROM             51 (argcount)
+            254 STORE_NAME              51 (argcount)
+            256 IMPORT_FROM             52 (has_keyword_arg)
+            258 STORE_NAME              52 (has_keyword_arg)
+            260 POP_TOP
+
+ 30         262 LOAD_CONST               1 (0)
+            264 LOAD_CONST              14 (('async_map', 'async_zip', 'ensure_coroutine', 'run_async'))
+            266 IMPORT_NAME             53 (asynctools)
+            268 IMPORT_FROM             54 (async_map)
+            270 STORE_NAME              54 (async_map)
+            272 IMPORT_FROM             55 (async_zip)
+            274 STORE_NAME              55 (async_zip)
+            276 IMPORT_FROM             56 (ensure_coroutine)
+            278 STORE_NAME              56 (ensure_coroutine)
+            280 IMPORT_FROM             57 (run_async)
+            282 STORE_NAME              57 (run_async)
+            284 POP_TOP
+
+ 31         286 LOAD_CONST               1 (0)
+            288 LOAD_CONST              15 (('optional',))
+            290 IMPORT_NAME             58 (decotools)
+            292 IMPORT_FROM             59 (optional)
+            294 STORE_NAME              59 (optional)
+            296 POP_TOP
+
+ 34         298 LOAD_CONST              16 ('__del__')
+            300 LOAD_NAME               24 (ThreadPoolExecutor)
+            302 LOAD_ATTR              120 (__dict__)
+            322 CONTAINS_OP              1
+            324 POP_JUMP_IF_FALSE       11 (to 348)
+
+ 35         326 PUSH_NULL
+            328 LOAD_NAME               61 (setattr)
+            330 LOAD_NAME               24 (ThreadPoolExecutor)
+            332 LOAD_CONST              16 ('__del__')
+            334 LOAD_CONST              17 (<code object <lambda> at 0x103aa2970, file "concurrenttools/basic.py", line 35>)
+            336 MAKE_FUNCTION            0
+            338 CALL                     3
+            346 POP_TOP
+
+ 36     >>  348 LOAD_CONST              16 ('__del__')
+            350 LOAD_NAME               13 (TaskGroup)
+            352 LOAD_ATTR              120 (__dict__)
+            372 CONTAINS_OP              1
+            374 POP_JUMP_IF_FALSE       11 (to 398)
+
+ 37         376 PUSH_NULL
+            378 LOAD_NAME               61 (setattr)
+            380 LOAD_NAME               13 (TaskGroup)
+            382 LOAD_CONST              16 ('__del__')
+            384 LOAD_CONST              18 (<code object <lambda> at 0x1084bd030, file "concurrenttools/basic.py", line 37>)
+            386 MAKE_FUNCTION            0
+            388 CALL                     3
+            396 POP_TOP
+
+ 40     >>  398 LOAD_NAME               26 (contextmanager)
+
+ 41         400 LOAD_CONST              19 ('executor')
+            402 LOAD_NAME               23 (Executor)
+            404 BUILD_TUPLE              2
+            406 LOAD_CONST              20 (<code object killable_executor at 0x103877b50, file "concurrenttools/basic.py", line 40>)
+            408 MAKE_FUNCTION            4 (annotations)
+
+ 40         410 CALL                     0
+
+ 41         418 STORE_NAME              62 (killable_executor)
+
+ 49         420 PUSH_NULL
+
+ 52         422 NOP
+
+ 53         424 NOP
+
+ 49         426 LOAD_CONST              40 ((None, None))
+            428 LOAD_CONST              22 (<code object <generic parameters of thread_batch> at 0x1038b7630, file "concurrenttools/basic.py", line 49>)
+            430 MAKE_FUNCTION            0
+            432 SWAP                     2
+            434 CALL                     1
+            442 STORE_NAME              63 (thread_batch)
+
+111         444 PUSH_NULL
+
+114         446 NOP
+
+115         448 NOP
+
+111         450 LOAD_CONST              40 ((None, None))
+            452 LOAD_CONST              23 (<code object <generic parameters of thread_pool_batch> at 0x1038b77b0, file "concurrenttools/basic.py", line 111>)
+            454 MAKE_FUNCTION            0
+            456 SWAP                     2
+            458 CALL                     1
+            466 STORE_NAME              64 (thread_pool_batch)
+
+157         468 PUSH_NULL
+
+160         470 NOP
+
+161         472 NOP
+
+157         474 LOAD_CONST              40 ((None, None))
+            476 LOAD_CONST              24 (<code object <generic parameters of async_batch> at 0x1038f2a30, file "concurrenttools/basic.py", line 157>)
+            478 MAKE_FUNCTION            0
+            480 SWAP                     2
+            482 CALL                     1
+            490 STORE_NAME              65 (async_batch)
+
+204         492 LOAD_NAME               59 (optional)
+
+205         494 PUSH_NULL
+
+208         496 NOP
+
+205         498 LOAD_CONST              41 ((None,))
+            500 LOAD_CONST              25 (<code object <generic parameters of threaded> at 0x103a79530, file "concurrenttools/basic.py", line 204>)
+            502 MAKE_FUNCTION            0
+            504 SWAP                     2
+            506 CALL                     1
+
+204         514 CALL                     0
+
+205         522 STORE_NAME              66 (threaded)
+
+234         524 PUSH_NULL
+            526 LOAD_CONST              26 (<code object <generic parameters of run_as_thread> at 0x1039b25b0, file "concurrenttools/basic.py", line 234>)
+            528 MAKE_FUNCTION            0
+            530 CALL                     0
+            538 STORE_NAME              67 (run_as_thread)
+
+243         540 LOAD_NAME               59 (optional)
+
+244         542 PUSH_NULL
+
+247         544 NOP
+
+248         546 NOP
+
+249         548 NOP
+
+244         550 LOAD_CONST              42 ((None, False, None))
+            552 LOAD_CONST              28 (<code object <generic parameters of asynchronized> at 0x103afc8d0, file "concurrenttools/basic.py", line 243>)
+            554 MAKE_FUNCTION            0
+            556 SWAP                     2
+            558 CALL                     1
+
+243         566 CALL                     0
+
+244         574 STORE_NAME              68 (asynchronized)
+
+270         576 PUSH_NULL
+            578 LOAD_CONST              29 (<code object <generic parameters of run_as_async> at 0x1039b2970, file "concurrenttools/basic.py", line 270>)
+            580 MAKE_FUNCTION            0
+            582 CALL                     0
+            590 STORE_NAME              69 (run_as_async)
+
+279         592 PUSH_NULL
+
+284         594 LOAD_CONST              21 (None)
+
+279         596 LOAD_CONST              30 (('max_workers',))
+            598 BUILD_CONST_KEY_MAP      1
+            600 LOAD_CONST              31 (<code object <generic parameters of threadpool_map> at 0x103af5230, file "concurrenttools/basic.py", line 279>)
+            602 MAKE_FUNCTION            0
+            604 SWAP                     2
+            606 CALL                     1
+            614 STORE_NAME              70 (threadpool_map)
+
+321         616 PUSH_NULL
+
+326         618 LOAD_CONST              21 (None)
+
+321         620 LOAD_CONST              30 (('max_workers',))
+            622 BUILD_CONST_KEY_MAP      1
+            624 LOAD_CONST              32 (<code object <generic parameters of taskgroup_map> at 0x1039b2bf0, file "concurrenttools/basic.py", line 321>)
+            626 MAKE_FUNCTION            0
+            628 SWAP                     2
+            630 CALL                     1
+            638 STORE_NAME              71 (taskgroup_map)
+
+367         640 LOAD_NAME               46 (overload)
+
+368         642 PUSH_NULL
+
+373         644 LOAD_CONST              21 (None)
+
+374         646 LOAD_CONST              27 (False)
+
+368         648 LOAD_CONST              33 (('max_workers', 'async_'))
+            650 BUILD_CONST_KEY_MAP      2
+            652 LOAD_CONST              34 (<code object <generic parameters of conmap> at 0x1038ff930, file "concurrenttools/basic.py", line 367>)
+            654 MAKE_FUNCTION            0
+            656 SWAP                     2
+            658 CALL                     1
+
+367         666 CALL                     0
+
+368         674 STORE_NAME              72 (conmap)
+
+377         676 LOAD_NAME               46 (overload)
+
+378         678 PUSH_NULL
+
+383         680 LOAD_CONST              21 (None)
+
+378         682 LOAD_CONST              30 (('max_workers',))
+            684 BUILD_CONST_KEY_MAP      1
+            686 LOAD_CONST              35 (<code object <generic parameters of conmap> at 0x1039b2d30, file "concurrenttools/basic.py", line 377>)
+            688 MAKE_FUNCTION            0
+            690 SWAP                     2
+            692 CALL                     1
+
+377         700 CALL                     0
+
+378         708 STORE_NAME              72 (conmap)
+
+387         710 PUSH_NULL
+
+392         712 LOAD_CONST              21 (None)
+
+393         714 LOAD_CONST              27 (False)
+
+387         716 LOAD_CONST              33 (('max_workers', 'async_'))
+            718 BUILD_CONST_KEY_MAP      2
+            720 LOAD_CONST              36 (<code object <generic parameters of conmap> at 0x103877e10, file "concurrenttools/basic.py", line 387>)
+            722 MAKE_FUNCTION            0
+            724 SWAP                     2
+            726 CALL                     1
+            734 STORE_NAME              72 (conmap)
+
+406         736 LOAD_NAME               46 (overload)
+
+407         738 PUSH_NULL
+
+412         740 LOAD_CONST              21 (None)
+
+413         742 LOAD_CONST              27 (False)
+
+407         744 LOAD_CONST              33 (('max_workers', 'async_'))
+            746 BUILD_CONST_KEY_MAP      2
+            748 LOAD_CONST              37 (<code object <generic parameters of conmap_wrap> at 0x103877cb0, file "concurrenttools/basic.py", line 406>)
+            750 MAKE_FUNCTION            0
+            752 SWAP                     2
+            754 CALL                     1
+
+406         762 CALL                     0
+
+407         770 STORE_NAME              73 (conmap_wrap)
+
+416         772 LOAD_NAME               46 (overload)
+
+417         774 PUSH_NULL
+
+422         776 LOAD_CONST              21 (None)
+
+417         778 LOAD_CONST              30 (('max_workers',))
+            780 BUILD_CONST_KEY_MAP      1
+            782 LOAD_CONST              38 (<code object <generic parameters of conmap_wrap> at 0x103afca40, file "concurrenttools/basic.py", line 416>)
+            784 MAKE_FUNCTION            0
+            786 SWAP                     2
+            788 CALL                     1
+
+416         796 CALL                     0
+
+417         804 STORE_NAME              73 (conmap_wrap)
+
+426         806 PUSH_NULL
+
+431         808 LOAD_CONST              21 (None)
+
+432         810 LOAD_CONST              27 (False)
+
+426         812 LOAD_CONST              33 (('max_workers', 'async_'))
+            814 BUILD_CONST_KEY_MAP      2
+            816 LOAD_CONST              39 (<code object <generic parameters of conmap_wrap> at 0x1038f2db0, file "concurrenttools/basic.py", line 426>)
+            818 MAKE_FUNCTION            0
+            820 SWAP                     2
+            822 CALL                     1
+            830 STORE_NAME              73 (conmap_wrap)
+            832 RETURN_CONST            21 (None)
+
+Disassembly of <code object <lambda> at 0x103aa2970, file "concurrenttools/basic.py", line 35>:
+ 35           0 RESUME                   0
+              2 LOAD_FAST                0 (self)
+              4 LOAD_ATTR                1 (NULL|self + shutdown)
+             24 LOAD_CONST               1 (False)
+             26 LOAD_CONST               2 (True)
+             28 KW_NAMES                 3 (('wait', 'cancel_futures'))
+             30 CALL                     2
+             38 RETURN_VALUE
+
+Disassembly of <code object <lambda> at 0x1084bd030, file "concurrenttools/basic.py", line 37>:
+ 37           0 RESUME                   0
+              2 LOAD_GLOBAL              1 (NULL + run_async)
+             12 LOAD_FAST                0 (self)
+             14 LOAD_ATTR                3 (NULL|self + __aexit__)
+             34 LOAD_CONST               0 (None)
+             36 LOAD_CONST               0 (None)
+             38 LOAD_CONST               0 (None)
+             40 CALL                     3
+             48 CALL                     1
+             56 RETURN_VALUE
+
+Disassembly of <code object killable_executor at 0x103877b50, file "concurrenttools/basic.py", line 40>:
+ 40           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+
+ 42           6 NOP
+
+ 43           8 LOAD_FAST                0 (executor)
+             10 BEFORE_WITH
+             12 POP_TOP
+
+ 44          14 LOAD_FAST                0 (executor)
+             16 YIELD_VALUE              3
+             18 RESUME                   1
+             20 POP_TOP
+
+ 43          22 LOAD_CONST               0 (None)
+             24 LOAD_CONST               0 (None)
+             26 LOAD_CONST               0 (None)
+             28 CALL                     2
+             36 POP_TOP
+
+ 46     >>   38 LOAD_FAST                0 (executor)
+             40 LOAD_ATTR                1 (NULL|self + shutdown)
+             60 LOAD_CONST               1 (False)
+             62 LOAD_CONST               2 (True)
+             64 KW_NAMES                 3 (('wait', 'cancel_futures'))
+             66 CALL                     2
+             74 POP_TOP
+             76 RETURN_CONST             0 (None)
+
+ 43     >>   78 PUSH_EXC_INFO
+             80 WITH_EXCEPT_START
+             82 POP_JUMP_IF_TRUE         1 (to 86)
+             84 RERAISE                  2
+        >>   86 POP_TOP
+             88 POP_EXCEPT
+             90 POP_TOP
+             92 POP_TOP
+             94 JUMP_BACKWARD           29 (to 38)
+        >>   96 COPY                     3
+             98 POP_EXCEPT
+            100 RERAISE                  1
+        >>  102 PUSH_EXC_INFO
+
+ 46         104 LOAD_FAST                0 (executor)
+            106 LOAD_ATTR                1 (NULL|self + shutdown)
+            126 LOAD_CONST               1 (False)
+            128 LOAD_CONST               2 (True)
+            130 KW_NAMES                 3 (('wait', 'cancel_futures'))
+            132 CALL                     2
+            140 POP_TOP
+            142 RERAISE                  0
+        >>  144 COPY                     3
+            146 POP_EXCEPT
+            148 RERAISE                  1
+        >>  150 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            152 RERAISE                  1
+ExceptionTable:
+  4 to 4 -> 150 [0] lasti
+  8 to 10 -> 102 [0]
+  12 to 20 -> 78 [1] lasti
+  22 to 36 -> 102 [0]
+  38 to 76 -> 150 [0] lasti
+  78 to 86 -> 96 [3] lasti
+  88 to 100 -> 102 [0]
+  102 to 142 -> 144 [1] lasti
+  144 to 148 -> 150 [0] lasti
+
+Disassembly of <code object <generic parameters of thread_batch> at 0x1038b7630, file "concurrenttools/basic.py", line 49>:
+              0 MAKE_CELL                1 (T)
+              2 MAKE_CELL                2 (V)
+
+ 49           4 RESUME                   0
+              6 LOAD_CONST               0 ('T')
+              8 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             10 COPY                     1
+             12 STORE_DEREF              1 (T)
+             14 LOAD_CONST               1 ('V')
+             16 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             18 COPY                     1
+             20 STORE_DEREF              2 (V)
+             22 BUILD_TUPLE              2
+             24 LOAD_FAST                0 (.defaults)
+             26 LOAD_CONST               2 ('work')
+
+ 50          28 LOAD_GLOBAL              0 (Callable)
+             38 LOAD_DEREF               1 (T)
+             40 BUILD_LIST               1
+             42 LOAD_DEREF               2 (V)
+             44 BUILD_TUPLE              2
+             46 BINARY_SUBSCR
+             50 LOAD_GLOBAL              0 (Callable)
+             60 LOAD_DEREF               1 (T)
+             62 LOAD_GLOBAL              0 (Callable)
+             72 BUILD_LIST               2
+             74 LOAD_DEREF               2 (V)
+             76 BUILD_TUPLE              2
+             78 BINARY_SUBSCR
+             82 BINARY_OP                7 (|)
+
+ 49          86 LOAD_CONST               3 ('tasks')
+
+ 51          88 LOAD_GLOBAL              2 (Iterable)
+             98 LOAD_DEREF               1 (T)
+            100 BINARY_SUBSCR
+
+ 49         104 LOAD_CONST               4 ('callback')
+
+ 52         106 LOAD_CONST               5 (None)
+            108 LOAD_GLOBAL              0 (Callable)
+            118 LOAD_DEREF               2 (V)
+            120 BUILD_LIST               1
+            122 LOAD_GLOBAL              4 (Any)
+            132 BUILD_TUPLE              2
+            134 BINARY_SUBSCR
+            138 BINARY_OP                7 (|)
+
+ 49         142 LOAD_CONST               6 ('max_workers')
+
+ 53         144 LOAD_CONST               5 (None)
+            146 LOAD_GLOBAL              6 (int)
+            156 BINARY_OP                7 (|)
+
+ 49         160 BUILD_TUPLE              8
+            162 LOAD_CLOSURE             1 (T)
+            164 LOAD_CLOSURE             2 (V)
+            166 BUILD_TUPLE              2
+            168 LOAD_CONST               7 (<code object thread_batch at 0xa5a53d880, file "concurrenttools/basic.py", line 49>)
+            170 MAKE_FUNCTION           13 (defaults, annotations, closure)
+            172 SWAP                     2
+            174 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            176 RETURN_VALUE
+
+Disassembly of <code object thread_batch at 0xa5a53d880, file "concurrenttools/basic.py", line 49>:
+              0 COPY_FREE_VARS           2
+              2 MAKE_CELL                0 (work)
+              4 MAKE_CELL                2 (callback)
+              6 MAKE_CELL                3 (max_workers)
+              8 MAKE_CELL                7 (get)
+             10 MAKE_CELL                8 (lock)
+             12 MAKE_CELL                9 (nthreads)
+             14 MAKE_CELL               10 (put)
+             16 MAKE_CELL               11 (running)
+             18 MAKE_CELL               12 (sentinal)
+             20 MAKE_CELL               13 (submit)
+             22 MAKE_CELL               14 (task_done)
+             24 MAKE_CELL               15 (with_submit)
+             26 MAKE_CELL               16 (worker)
+
+ 49          28 RESUME                   0
+
+ 55          30 LOAD_GLOBAL              1 (NULL + argcount)
+             40 LOAD_DEREF               0 (work)
+             42 CALL                     1
+             50 STORE_FAST               4 (ac)
+
+ 56          52 LOAD_FAST                4 (ac)
+             54 LOAD_CONST               1 (1)
+             56 COMPARE_OP               2 (<)
+             60 POP_JUMP_IF_FALSE       14 (to 90)
+
+ 57          62 LOAD_GLOBAL              3 (NULL + TypeError)
+             72 LOAD_DEREF               0 (work)
+             74 FORMAT_VALUE             2 (repr)
+             76 LOAD_CONST               2 (' should accept a positional argument as task')
+             78 BUILD_STRING             2
+             80 CALL                     1
+             88 RAISE_VARARGS            1
+
+ 58     >>   90 LOAD_FAST                4 (ac)
+             92 LOAD_CONST               1 (1)
+             94 COMPARE_OP              68 (>)
+             98 STORE_DEREF             15 (with_submit)
+
+ 59         100 LOAD_DEREF               3 (max_workers)
+            102 POP_JUMP_IF_NONE         5 (to 114)
+            104 LOAD_DEREF               3 (max_workers)
+            106 LOAD_CONST               3 (0)
+            108 COMPARE_OP              26 (<=)
+            112 POP_JUMP_IF_FALSE       27 (to 168)
+
+ 60     >>  114 LOAD_GLOBAL              5 (NULL + min)
+            124 LOAD_CONST               4 (32)
+            126 LOAD_GLOBAL              7 (NULL + cpu_count)
+            136 CALL                     0
+            144 COPY                     1
+            146 POP_JUMP_IF_TRUE         2 (to 152)
+            148 POP_TOP
+            150 LOAD_CONST               1 (1)
+        >>  152 LOAD_CONST               5 (4)
+            154 BINARY_OP                0 (+)
+            158 CALL                     2
+            166 STORE_DEREF              3 (max_workers)
+
+ 62     >>  168 LOAD_GLOBAL              9 (NULL + Queue)
+            178 CALL                     0
+            186 STORE_FAST               5 (q)
+
+ 63         188 LOAD_FAST                5 (q)
+            190 LOAD_ATTR               10 (get)
+            210 LOAD_FAST                5 (q)
+            212 LOAD_ATTR               12 (put)
+            232 LOAD_FAST                5 (q)
+            234 LOAD_ATTR               14 (task_done)
+            254 SWAP                     3
+            256 STORE_DEREF              7 (get)
+            258 STORE_DEREF             10 (put)
+            260 STORE_DEREF             14 (task_done)
+
+ 64         262 LOAD_GLOBAL             17 (NULL + object)
+            272 CALL                     0
+            280 STORE_DEREF             12 (sentinal)
+
+ 65         282 LOAD_GLOBAL             19 (NULL + Lock)
+            292 CALL                     0
+            300 STORE_DEREF              8 (lock)
+
+ 66         302 LOAD_CONST               3 (0)
+            304 STORE_DEREF              9 (nthreads)
+
+ 67         306 LOAD_CONST               6 (True)
+            308 STORE_DEREF             11 (running)
+
+ 69         310 LOAD_CLOSURE            17 (T)
+            312 LOAD_CLOSURE            18 (V)
+            314 LOAD_CLOSURE             2 (callback)
+            316 LOAD_CLOSURE             7 (get)
+            318 LOAD_CLOSURE            10 (put)
+            320 LOAD_CLOSURE            11 (running)
+            322 LOAD_CLOSURE            12 (sentinal)
+            324 LOAD_CLOSURE            13 (submit)
+            326 LOAD_CLOSURE            14 (task_done)
+            328 LOAD_CLOSURE            15 (with_submit)
+            330 LOAD_CLOSURE             0 (work)
+            332 BUILD_TUPLE             11
+            334 LOAD_CONST               7 (<code object worker at 0xa5b20ef80, file "concurrenttools/basic.py", line 69>)
+            336 MAKE_FUNCTION            8 (closure)
+            338 STORE_DEREF             16 (worker)
+
+ 92         340 LOAD_CLOSURE             8 (lock)
+            342 LOAD_CLOSURE             3 (max_workers)
+            344 LOAD_CLOSURE             9 (nthreads)
+            346 LOAD_CLOSURE            10 (put)
+            348 LOAD_CLOSURE            16 (worker)
+            350 BUILD_TUPLE              5
+            352 LOAD_CONST               8 (<code object submit at 0x103957d70, file "concurrenttools/basic.py", line 92>)
+            354 MAKE_FUNCTION            8 (closure)
+            356 STORE_DEREF             13 (submit)
+
+101         358 LOAD_FAST                1 (tasks)
+            360 GET_ITER
+        >>  362 FOR_ITER                10 (to 386)
+            366 STORE_FAST               6 (task)
+
+102         368 PUSH_NULL
+            370 LOAD_DEREF              13 (submit)
+            372 LOAD_FAST                6 (task)
+            374 CALL                     1
+            382 POP_TOP
+            384 JUMP_BACKWARD           12 (to 362)
+
+101     >>  386 END_FOR
+
+103         388 NOP
+
+104         390 LOAD_FAST                5 (q)
+            392 LOAD_ATTR               21 (NULL|self + join)
+            412 CALL                     0
+            420 POP_TOP
+
+106         422 LOAD_CONST               9 (False)
+            424 STORE_DEREF             11 (running)
+
+107         426 LOAD_FAST                5 (q)
+            428 LOAD_ATTR               22 (queue)
+            448 LOAD_ATTR               25 (NULL|self + clear)
+            468 CALL                     0
+            476 POP_TOP
+
+108         478 PUSH_NULL
+            480 LOAD_DEREF              10 (put)
+            482 LOAD_DEREF              12 (sentinal)
+            484 CALL                     1
+            492 POP_TOP
+            494 RETURN_CONST             0 (None)
+        >>  496 PUSH_EXC_INFO
+
+106         498 LOAD_CONST               9 (False)
+            500 STORE_DEREF             11 (running)
+
+107         502 LOAD_FAST                5 (q)
+            504 LOAD_ATTR               22 (queue)
+            524 LOAD_ATTR               25 (NULL|self + clear)
+            544 CALL                     0
+            552 POP_TOP
+
+108         554 PUSH_NULL
+            556 LOAD_DEREF              10 (put)
+            558 LOAD_DEREF              12 (sentinal)
+            560 CALL                     1
+            568 POP_TOP
+            570 RERAISE                  0
+        >>  572 COPY                     3
+            574 POP_EXCEPT
+            576 RERAISE                  1
+ExceptionTable:
+  390 to 420 -> 496 [0]
+  496 to 570 -> 572 [1] lasti
+
+Disassembly of <code object worker at 0xa5b20ef80, file "concurrenttools/basic.py", line 69>:
+              0 COPY_FREE_VARS          11
+
+ 69           2 RESUME                   0
+
+ 71     >>    4 LOAD_DEREF               7 (running)
+              6 POP_JUMP_IF_FALSE      122 (to 252)
+
+ 72     >>    8 NOP
+
+ 73          10 PUSH_NULL
+             12 LOAD_DEREF               5 (get)
+             14 LOAD_CONST               1 (1)
+             16 KW_NAMES                 2 (('timeout',))
+             18 CALL                     1
+             26 STORE_FAST               0 (task)
+
+ 76          28 LOAD_FAST                0 (task)
+             30 LOAD_DEREF               8 (sentinal)
+             32 IS_OP                    0
+             34 POP_JUMP_IF_FALSE        9 (to 54)
+
+ 77          36 PUSH_NULL
+             38 LOAD_DEREF               6 (put)
+             40 LOAD_DEREF               8 (sentinal)
+             42 CALL                     1
+             50 POP_TOP
+
+ 78          52 RETURN_CONST             0 (None)
+
+ 79     >>   54 LOAD_GLOBAL              3 (NULL + cast)
+             64 LOAD_DEREF               2 (T)
+             66 LOAD_FAST                0 (task)
+             68 CALL                     2
+             76 STORE_FAST               0 (task)
+
+ 80          78 NOP
+
+ 81          80 LOAD_DEREF              11 (with_submit)
+             82 POP_JUMP_IF_FALSE       35 (to 154)
+
+ 82          84 PUSH_NULL
+             86 LOAD_GLOBAL              3 (NULL + cast)
+             96 LOAD_GLOBAL              4 (Callable)
+            106 LOAD_DEREF               2 (T)
+            108 LOAD_GLOBAL              4 (Callable)
+            118 BUILD_LIST               2
+            120 LOAD_DEREF               3 (V)
+            122 BUILD_TUPLE              2
+            124 BINARY_SUBSCR
+            128 LOAD_DEREF              12 (work)
+            130 CALL                     2
+            138 LOAD_FAST                0 (task)
+            140 LOAD_DEREF               9 (submit)
+            142 CALL                     2
+            150 STORE_FAST               1 (r)
+            152 JUMP_FORWARD            28 (to 210)
+
+ 84     >>  154 PUSH_NULL
+            156 LOAD_GLOBAL              3 (NULL + cast)
+            166 LOAD_GLOBAL              4 (Callable)
+            176 LOAD_DEREF               2 (T)
+            178 BUILD_LIST               1
+            180 LOAD_DEREF               3 (V)
+            182 BUILD_TUPLE              2
+            184 BINARY_SUBSCR
+            188 LOAD_DEREF              12 (work)
+            190 CALL                     2
+            198 LOAD_FAST                0 (task)
+            200 CALL                     1
+            208 STORE_FAST               1 (r)
+
+ 85     >>  210 LOAD_DEREF               4 (callback)
+            212 POP_JUMP_IF_NONE         8 (to 230)
+
+ 86         214 PUSH_NULL
+            216 LOAD_DEREF               4 (callback)
+            218 LOAD_FAST                1 (r)
+            220 CALL                     1
+            228 POP_TOP
+
+ 90     >>  230 PUSH_NULL
+            232 LOAD_DEREF              10 (task_done)
+            234 CALL                     0
+            242 POP_TOP
+
+ 71         244 LOAD_DEREF               7 (running)
+            246 POP_JUMP_IF_FALSE        1 (to 250)
+            248 JUMP_BACKWARD          121 (to 8)
+        >>  250 RETURN_CONST             0 (None)
+        >>  252 RETURN_CONST             0 (None)
+        >>  254 PUSH_EXC_INFO
+
+ 74         256 LOAD_GLOBAL              0 (Empty)
+            266 CHECK_EXC_MATCH
+            268 POP_JUMP_IF_FALSE        3 (to 276)
+            270 POP_TOP
+
+ 75         272 POP_EXCEPT
+            274 JUMP_BACKWARD          136 (to 4)
+
+ 74     >>  276 RERAISE                  0
+        >>  278 COPY                     3
+            280 POP_EXCEPT
+            282 RERAISE                  1
+        >>  284 PUSH_EXC_INFO
+
+ 87         286 LOAD_GLOBAL              6 (BaseException)
+            296 CHECK_EXC_MATCH
+            298 POP_JUMP_IF_FALSE        3 (to 306)
+            300 POP_TOP
+
+ 88         302 POP_EXCEPT
+            304 JUMP_BACKWARD           38 (to 230)
+
+ 87     >>  306 RERAISE                  0
+        >>  308 COPY                     3
+            310 POP_EXCEPT
+            312 RERAISE                  1
+        >>  314 PUSH_EXC_INFO
+
+ 90         316 PUSH_NULL
+            318 LOAD_DEREF              10 (task_done)
+            320 CALL                     0
+            328 POP_TOP
+            330 RERAISE                  0
+        >>  332 COPY                     3
+            334 POP_EXCEPT
+            336 RERAISE                  1
+ExceptionTable:
+  10 to 26 -> 254 [0]
+  80 to 228 -> 284 [0]
+  254 to 270 -> 278 [1] lasti
+  276 to 276 -> 278 [1] lasti
+  284 to 300 -> 308 [1] lasti
+  302 to 304 -> 314 [0]
+  306 to 306 -> 308 [1] lasti
+  308 to 312 -> 314 [0]
+  314 to 330 -> 332 [1] lasti
+
+Disassembly of <code object submit at 0x103957d70, file "concurrenttools/basic.py", line 92>:
+              0 COPY_FREE_VARS           5
+
+ 92           2 RESUME                   0
+
+ 94           4 LOAD_DEREF               3 (nthreads)
+              6 LOAD_DEREF               2 (max_workers)
+              8 COMPARE_OP               2 (<)
+             12 POP_JUMP_IF_FALSE       33 (to 80)
+
+ 95          14 LOAD_DEREF               1 (lock)
+             16 BEFORE_WITH
+             18 POP_TOP
+
+ 96          20 LOAD_DEREF               3 (nthreads)
+             22 LOAD_DEREF               2 (max_workers)
+             24 COMPARE_OP               2 (<)
+             28 POP_JUMP_IF_FALSE       17 (to 64)
+
+ 97          30 LOAD_GLOBAL              1 (NULL + start_new_thread)
+             40 LOAD_DEREF               5 (worker)
+             42 LOAD_CONST               1 (())
+             44 CALL                     2
+             52 POP_TOP
+
+ 98          54 LOAD_DEREF               3 (nthreads)
+             56 LOAD_CONST               2 (1)
+             58 BINARY_OP               13 (+=)
+             62 STORE_DEREF              3 (nthreads)
+
+ 95     >>   64 LOAD_CONST               0 (None)
+             66 LOAD_CONST               0 (None)
+             68 LOAD_CONST               0 (None)
+             70 CALL                     2
+             78 POP_TOP
+
+ 99     >>   80 PUSH_NULL
+             82 LOAD_DEREF               4 (put)
+             84 LOAD_FAST                0 (task)
+             86 CALL                     1
+             94 POP_TOP
+             96 RETURN_CONST             0 (None)
+
+ 95     >>   98 PUSH_EXC_INFO
+            100 WITH_EXCEPT_START
+            102 POP_JUMP_IF_TRUE         1 (to 106)
+            104 RERAISE                  2
+        >>  106 POP_TOP
+            108 POP_EXCEPT
+            110 POP_TOP
+            112 POP_TOP
+            114 JUMP_BACKWARD           18 (to 80)
+        >>  116 COPY                     3
+            118 POP_EXCEPT
+            120 RERAISE                  1
+ExceptionTable:
+  18 to 62 -> 98 [1] lasti
+  98 to 106 -> 116 [3] lasti
+
+Disassembly of <code object <generic parameters of thread_pool_batch> at 0x1038b77b0, file "concurrenttools/basic.py", line 111>:
+              0 MAKE_CELL                1 (T)
+              2 MAKE_CELL                2 (V)
+
+111           4 RESUME                   0
+              6 LOAD_CONST               0 ('T')
+              8 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             10 COPY                     1
+             12 STORE_DEREF              1 (T)
+             14 LOAD_CONST               1 ('V')
+             16 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             18 COPY                     1
+             20 STORE_DEREF              2 (V)
+             22 BUILD_TUPLE              2
+             24 LOAD_FAST                0 (.defaults)
+             26 LOAD_CONST               2 ('work')
+
+112          28 LOAD_GLOBAL              0 (Callable)
+             38 LOAD_DEREF               1 (T)
+             40 BUILD_LIST               1
+             42 LOAD_DEREF               2 (V)
+             44 BUILD_TUPLE              2
+             46 BINARY_SUBSCR
+             50 LOAD_GLOBAL              0 (Callable)
+             60 LOAD_DEREF               1 (T)
+             62 LOAD_GLOBAL              0 (Callable)
+             72 BUILD_LIST               2
+             74 LOAD_DEREF               2 (V)
+             76 BUILD_TUPLE              2
+             78 BINARY_SUBSCR
+             82 BINARY_OP                7 (|)
+
+111          86 LOAD_CONST               3 ('tasks')
+
+113          88 LOAD_GLOBAL              2 (Iterable)
+             98 LOAD_DEREF               1 (T)
+            100 BINARY_SUBSCR
+
+111         104 LOAD_CONST               4 ('callback')
+
+114         106 LOAD_CONST               5 (None)
+            108 LOAD_GLOBAL              0 (Callable)
+            118 LOAD_DEREF               2 (V)
+            120 BUILD_LIST               1
+            122 LOAD_GLOBAL              4 (Any)
+            132 BUILD_TUPLE              2
+            134 BINARY_SUBSCR
+            138 BINARY_OP                7 (|)
+
+111         142 LOAD_CONST               6 ('max_workers')
+
+115         144 LOAD_CONST               5 (None)
+            146 LOAD_GLOBAL              6 (int)
+            156 BINARY_OP                7 (|)
+
+111         160 BUILD_TUPLE              8
+            162 LOAD_CLOSURE             1 (T)
+            164 LOAD_CLOSURE             2 (V)
+            166 BUILD_TUPLE              2
+            168 LOAD_CONST               7 (<code object thread_pool_batch at 0xa5b20f480, file "concurrenttools/basic.py", line 111>)
+            170 MAKE_FUNCTION           13 (defaults, annotations, closure)
+            172 SWAP                     2
+            174 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            176 RETURN_VALUE
+
+Disassembly of <code object thread_pool_batch at 0xa5b20f480, file "concurrenttools/basic.py", line 111>:
+              0 COPY_FREE_VARS           2
+              2 MAKE_CELL                0 (work)
+              4 MAKE_CELL                2 (callback)
+              6 MAKE_CELL                7 (create_task)
+              8 MAKE_CELL                8 (done_evt)
+             10 MAKE_CELL                9 (lock)
+             12 MAKE_CELL               10 (ntasks)
+             14 MAKE_CELL               11 (submit)
+             16 MAKE_CELL               12 (with_submit)
+             18 MAKE_CELL               13 (works)
+
+111          20 RESUME                   0
+
+117          22 LOAD_GLOBAL              1 (NULL + argcount)
+             32 LOAD_DEREF               0 (work)
+             34 CALL                     1
+             42 STORE_FAST               4 (ac)
+
+118          44 LOAD_FAST                4 (ac)
+             46 LOAD_CONST               1 (1)
+             48 COMPARE_OP               2 (<)
+             52 POP_JUMP_IF_FALSE       14 (to 82)
+
+119          54 LOAD_GLOBAL              3 (NULL + TypeError)
+             64 LOAD_DEREF               0 (work)
+             66 FORMAT_VALUE             2 (repr)
+             68 LOAD_CONST               2 (' should take a positional argument as task')
+             70 BUILD_STRING             2
+             72 CALL                     1
+             80 RAISE_VARARGS            1
+
+120     >>   82 LOAD_FAST                4 (ac)
+             84 LOAD_CONST               1 (1)
+             86 COMPARE_OP              68 (>)
+             90 STORE_DEREF             12 (with_submit)
+
+121          92 LOAD_FAST                3 (max_workers)
+             94 POP_JUMP_IF_NONE         5 (to 106)
+             96 LOAD_FAST                3 (max_workers)
+             98 LOAD_CONST               3 (0)
+            100 COMPARE_OP              26 (<=)
+            104 POP_JUMP_IF_FALSE       27 (to 160)
+
+122     >>  106 LOAD_GLOBAL              5 (NULL + min)
+            116 LOAD_CONST               4 (32)
+            118 LOAD_GLOBAL              7 (NULL + cpu_count)
+            128 CALL                     0
+            136 COPY                     1
+            138 POP_JUMP_IF_TRUE         2 (to 144)
+            140 POP_TOP
+            142 LOAD_CONST               1 (1)
+        >>  144 LOAD_CONST               5 (4)
+            146 BINARY_OP                0 (+)
+            150 CALL                     2
+            158 STORE_FAST               3 (max_workers)
+
+124     >>  160 LOAD_CONST               3 (0)
+            162 STORE_DEREF             10 (ntasks)
+
+125         164 LOAD_GLOBAL              9 (NULL + Lock)
+            174 CALL                     0
+            182 STORE_DEREF              9 (lock)
+
+126         184 LOAD_GLOBAL             11 (NULL + Event)
+            194 CALL                     0
+            202 STORE_DEREF              8 (done_evt)
+
+128         204 LOAD_CLOSURE            14 (T)
+            206 LOAD_CLOSURE            15 (V)
+            208 LOAD_CLOSURE             2 (callback)
+            210 LOAD_CLOSURE             8 (done_evt)
+            212 LOAD_CLOSURE             9 (lock)
+            214 LOAD_CLOSURE            10 (ntasks)
+            216 LOAD_CLOSURE            11 (submit)
+            218 LOAD_CLOSURE            12 (with_submit)
+            220 LOAD_CLOSURE             0 (work)
+            222 BUILD_TUPLE              9
+            224 LOAD_CONST               6 (<code object works at 0xa5b20f200, file "concurrenttools/basic.py", line 128>)
+            226 MAKE_FUNCTION            8 (closure)
+            228 STORE_DEREF             13 (works)
+
+143         230 LOAD_CLOSURE             7 (create_task)
+            232 LOAD_CLOSURE             9 (lock)
+            234 LOAD_CLOSURE            10 (ntasks)
+            236 LOAD_CLOSURE            13 (works)
+            238 BUILD_TUPLE              4
+            240 LOAD_CONST               7 (<code object submit at 0x103b1d240, file "concurrenttools/basic.py", line 143>)
+            242 MAKE_FUNCTION            8 (closure)
+            244 STORE_DEREF             11 (submit)
+
+149         246 LOAD_GLOBAL             13 (NULL + killable_executor)
+            256 LOAD_GLOBAL             15 (NULL + ThreadPoolExecutor)
+            266 LOAD_FAST                3 (max_workers)
+            268 CALL                     1
+            276 CALL                     1
+            284 BEFORE_WITH
+            286 STORE_FAST               5 (pool)
+
+150         288 LOAD_FAST                5 (pool)
+            290 LOAD_ATTR               16 (submit)
+            310 STORE_DEREF              7 (create_task)
+
+151         312 LOAD_FAST                1 (tasks)
+            314 GET_ITER
+        >>  316 FOR_ITER                10 (to 340)
+            320 STORE_FAST               6 (task)
+
+152         322 PUSH_NULL
+            324 LOAD_DEREF              11 (submit)
+            326 LOAD_FAST                6 (task)
+            328 CALL                     1
+            336 POP_TOP
+            338 JUMP_BACKWARD           12 (to 316)
+
+151     >>  340 END_FOR
+
+153         342 LOAD_DEREF              10 (ntasks)
+            344 POP_JUMP_IF_FALSE       16 (to 378)
+
+154         346 LOAD_DEREF               8 (done_evt)
+            348 LOAD_ATTR               19 (NULL|self + wait)
+            368 CALL                     0
+            376 POP_TOP
+
+149     >>  378 LOAD_CONST               0 (None)
+            380 LOAD_CONST               0 (None)
+            382 LOAD_CONST               0 (None)
+            384 CALL                     2
+            392 POP_TOP
+            394 RETURN_CONST             0 (None)
+        >>  396 PUSH_EXC_INFO
+            398 WITH_EXCEPT_START
+            400 POP_JUMP_IF_TRUE         1 (to 404)
+            402 RERAISE                  2
+        >>  404 POP_TOP
+            406 POP_EXCEPT
+            408 POP_TOP
+            410 POP_TOP
+            412 RETURN_CONST             0 (None)
+        >>  414 COPY                     3
+            416 POP_EXCEPT
+            418 RERAISE                  1
+ExceptionTable:
+  286 to 376 -> 396 [1] lasti
+  396 to 404 -> 414 [3] lasti
+
+Disassembly of <code object works at 0xa5b20f200, file "concurrenttools/basic.py", line 128>:
+              0 COPY_FREE_VARS           9
+
+128           2 RESUME                   0
+
+130           4 NOP
+
+131           6 LOAD_DEREF               9 (with_submit)
+              8 POP_JUMP_IF_FALSE       35 (to 80)
+
+132          10 PUSH_NULL
+             12 LOAD_GLOBAL              1 (NULL + cast)
+             22 LOAD_GLOBAL              2 (Callable)
+             32 LOAD_DEREF               2 (T)
+             34 LOAD_GLOBAL              2 (Callable)
+             44 BUILD_LIST               2
+             46 LOAD_DEREF               3 (V)
+             48 BUILD_TUPLE              2
+             50 BINARY_SUBSCR
+             54 LOAD_DEREF              10 (work)
+             56 CALL                     2
+             64 LOAD_FAST                0 (task)
+             66 LOAD_DEREF               8 (submit)
+             68 CALL                     2
+             76 STORE_FAST               1 (r)
+             78 JUMP_FORWARD            28 (to 136)
+
+134     >>   80 PUSH_NULL
+             82 LOAD_GLOBAL              1 (NULL + cast)
+             92 LOAD_GLOBAL              2 (Callable)
+            102 LOAD_DEREF               2 (T)
+            104 BUILD_LIST               1
+            106 LOAD_DEREF               3 (V)
+            108 BUILD_TUPLE              2
+            110 BINARY_SUBSCR
+            114 LOAD_DEREF              10 (work)
+            116 CALL                     2
+            124 LOAD_FAST                0 (task)
+            126 CALL                     1
+            134 STORE_FAST               1 (r)
+
+135     >>  136 LOAD_DEREF               4 (callback)
+            138 POP_JUMP_IF_NONE         8 (to 156)
+
+136         140 PUSH_NULL
+            142 LOAD_DEREF               4 (callback)
+            144 LOAD_FAST                1 (r)
+            146 CALL                     1
+            154 POP_TOP
+
+138     >>  156 LOAD_DEREF               6 (lock)
+            158 BEFORE_WITH
+            160 POP_TOP
+
+139         162 LOAD_DEREF               7 (ntasks)
+            164 LOAD_CONST               1 (1)
+            166 BINARY_OP               23 (-=)
+            170 STORE_DEREF              7 (ntasks)
+
+138         172 LOAD_CONST               0 (None)
+            174 LOAD_CONST               0 (None)
+            176 LOAD_CONST               0 (None)
+            178 CALL                     2
+            186 POP_TOP
+
+140     >>  188 LOAD_DEREF               7 (ntasks)
+            190 POP_JUMP_IF_TRUE        17 (to 226)
+
+141         192 LOAD_DEREF               5 (done_evt)
+            194 LOAD_ATTR                5 (NULL|self + set)
+            214 CALL                     0
+            222 POP_TOP
+            224 RETURN_CONST             0 (None)
+
+140     >>  226 RETURN_CONST             0 (None)
+
+138     >>  228 PUSH_EXC_INFO
+            230 WITH_EXCEPT_START
+            232 POP_JUMP_IF_TRUE         1 (to 236)
+            234 RERAISE                  2
+        >>  236 POP_TOP
+            238 POP_EXCEPT
+            240 POP_TOP
+            242 POP_TOP
+            244 JUMP_BACKWARD           29 (to 188)
+        >>  246 COPY                     3
+            248 POP_EXCEPT
+            250 RERAISE                  1
+        >>  252 PUSH_EXC_INFO
+            254 LOAD_DEREF               6 (lock)
+            256 BEFORE_WITH
+            258 POP_TOP
+
+139         260 LOAD_DEREF               7 (ntasks)
+            262 LOAD_CONST               1 (1)
+            264 BINARY_OP               23 (-=)
+            268 STORE_DEREF              7 (ntasks)
+
+138         270 LOAD_CONST               0 (None)
+            272 LOAD_CONST               0 (None)
+            274 LOAD_CONST               0 (None)
+            276 CALL                     2
+            284 POP_TOP
+            286 JUMP_FORWARD            12 (to 312)
+        >>  288 PUSH_EXC_INFO
+            290 WITH_EXCEPT_START
+            292 POP_JUMP_IF_TRUE         1 (to 296)
+            294 RERAISE                  2
+        >>  296 POP_TOP
+            298 POP_EXCEPT
+            300 POP_TOP
+            302 POP_TOP
+            304 JUMP_FORWARD             3 (to 312)
+        >>  306 COPY                     3
+            308 POP_EXCEPT
+            310 RERAISE                  1
+
+140     >>  312 LOAD_DEREF               7 (ntasks)
+            314 POP_JUMP_IF_TRUE        17 (to 350)
+
+141         316 LOAD_DEREF               5 (done_evt)
+            318 LOAD_ATTR                5 (NULL|self + set)
+            338 CALL                     0
+            346 POP_TOP
+            348 RERAISE                  0
+
+140     >>  350 RERAISE                  0
+        >>  352 COPY                     3
+            354 POP_EXCEPT
+            356 RERAISE                  1
+ExceptionTable:
+  6 to 154 -> 252 [0]
+  160 to 170 -> 228 [1] lasti
+  228 to 236 -> 246 [3] lasti
+  252 to 256 -> 352 [1] lasti
+  258 to 268 -> 288 [3] lasti
+  270 to 286 -> 352 [1] lasti
+  288 to 296 -> 306 [5] lasti
+  298 to 350 -> 352 [1] lasti
+
+Disassembly of <code object submit at 0x103b1d240, file "concurrenttools/basic.py", line 143>:
+              0 COPY_FREE_VARS           4
+
+143           2 RESUME                   0
+
+145           4 LOAD_DEREF               2 (lock)
+              6 BEFORE_WITH
+              8 POP_TOP
+
+146          10 LOAD_DEREF               3 (ntasks)
+             12 LOAD_CONST               1 (1)
+             14 BINARY_OP               13 (+=)
+             18 STORE_DEREF              3 (ntasks)
+
+145          20 LOAD_CONST               0 (None)
+             22 LOAD_CONST               0 (None)
+             24 LOAD_CONST               0 (None)
+             26 CALL                     2
+             34 POP_TOP
+
+147     >>   36 PUSH_NULL
+             38 LOAD_DEREF               1 (create_task)
+             40 LOAD_DEREF               4 (works)
+             42 LOAD_FAST                0 (task)
+             44 CALL                     2
+             52 RETURN_VALUE
+
+145     >>   54 PUSH_EXC_INFO
+             56 WITH_EXCEPT_START
+             58 POP_JUMP_IF_TRUE         1 (to 62)
+             60 RERAISE                  2
+        >>   62 POP_TOP
+             64 POP_EXCEPT
+             66 POP_TOP
+             68 POP_TOP
+             70 JUMP_BACKWARD           18 (to 36)
+        >>   72 COPY                     3
+             74 POP_EXCEPT
+             76 RERAISE                  1
+ExceptionTable:
+  8 to 18 -> 54 [1] lasti
+  54 to 62 -> 72 [3] lasti
+
+Disassembly of <code object <generic parameters of async_batch> at 0x1038f2a30, file "concurrenttools/basic.py", line 157>:
+              0 MAKE_CELL                1 (T)
+              2 MAKE_CELL                2 (V)
+
+157           4 RESUME                   0
+              6 LOAD_CONST               0 ('T')
+              8 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             10 COPY                     1
+             12 STORE_DEREF              1 (T)
+             14 LOAD_CONST               1 ('V')
+             16 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             18 COPY                     1
+             20 STORE_DEREF              2 (V)
+             22 BUILD_TUPLE              2
+             24 LOAD_FAST                0 (.defaults)
+             26 LOAD_CONST               2 ('work')
+
+158          28 LOAD_GLOBAL              0 (Callable)
+             38 LOAD_DEREF               1 (T)
+             40 BUILD_LIST               1
+             42 LOAD_GLOBAL              2 (Coroutine)
+             52 LOAD_CONST               3 (None)
+             54 LOAD_CONST               3 (None)
+             56 LOAD_DEREF               2 (V)
+             58 BUILD_TUPLE              3
+             60 BINARY_SUBSCR
+             64 BUILD_TUPLE              2
+             66 BINARY_SUBSCR
+             70 LOAD_GLOBAL              0 (Callable)
+             80 LOAD_DEREF               1 (T)
+             82 LOAD_GLOBAL              0 (Callable)
+             92 BUILD_LIST               2
+             94 LOAD_GLOBAL              2 (Coroutine)
+            104 LOAD_CONST               3 (None)
+            106 LOAD_CONST               3 (None)
+            108 LOAD_DEREF               2 (V)
+            110 BUILD_TUPLE              3
+            112 BINARY_SUBSCR
+            116 BUILD_TUPLE              2
+            118 BINARY_SUBSCR
+            122 BINARY_OP                7 (|)
+
+157         126 LOAD_CONST               4 ('tasks')
+
+159         128 LOAD_GLOBAL              4 (Iterable)
+            138 LOAD_DEREF               1 (T)
+            140 BINARY_SUBSCR
+            144 LOAD_GLOBAL              6 (AsyncIterable)
+            154 LOAD_DEREF               1 (T)
+            156 BINARY_SUBSCR
+            160 BINARY_OP                7 (|)
+
+157         164 LOAD_CONST               5 ('callback')
+
+160         166 LOAD_CONST               3 (None)
+            168 LOAD_GLOBAL              0 (Callable)
+            178 LOAD_DEREF               2 (V)
+            180 BUILD_LIST               1
+            182 LOAD_GLOBAL              8 (Any)
+            192 BUILD_TUPLE              2
+            194 BINARY_SUBSCR
+            198 BINARY_OP                7 (|)
+
+157         202 LOAD_CONST               6 ('max_workers')
+
+161         204 LOAD_CONST               3 (None)
+            206 LOAD_GLOBAL             10 (int)
+            216 BINARY_OP                7 (|)
+            220 LOAD_GLOBAL             12 (AsyncSemaphore)
+            230 BINARY_OP                7 (|)
+
+157         234 BUILD_TUPLE              8
+            236 LOAD_CLOSURE             1 (T)
+            238 LOAD_CLOSURE             2 (V)
+            240 BUILD_TUPLE              2
+            242 LOAD_CONST               7 (<code object async_batch at 0xa5a536400, file "concurrenttools/basic.py", line 157>)
+            244 MAKE_FUNCTION           13 (defaults, annotations, closure)
+            246 SWAP                     2
+            248 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            250 RETURN_VALUE
+
+Disassembly of <code object async_batch at 0xa5a536400, file "concurrenttools/basic.py", line 157>:
+              0 COPY_FREE_VARS           2
+              2 MAKE_CELL                0 (work)
+              4 MAKE_CELL                2 (callback)
+              6 MAKE_CELL                8 (create_task)
+              8 MAKE_CELL                9 (submit)
+             10 MAKE_CELL               10 (with_submit)
+             12 MAKE_CELL               11 (works)
+
+157          14 RETURN_GENERATOR
+             16 POP_TOP
+             18 RESUME                   0
+
+163          20 LOAD_FAST                3 (max_workers)
+             22 POP_JUMP_IF_NOT_NONE     2 (to 28)
+
+164          24 LOAD_CONST               1 (32)
+             26 STORE_FAST               3 (max_workers)
+
+165     >>   28 LOAD_GLOBAL              1 (NULL + isinstance)
+             38 LOAD_FAST                3 (max_workers)
+             40 LOAD_GLOBAL              2 (int)
+             50 CALL                     2
+             58 POP_JUMP_IF_FALSE       19 (to 98)
+
+166          60 LOAD_FAST                3 (max_workers)
+             62 LOAD_CONST               2 (0)
+             64 COMPARE_OP              68 (>)
+             68 POP_JUMP_IF_FALSE       11 (to 92)
+
+167          70 LOAD_GLOBAL              5 (NULL + AsyncSemaphore)
+             80 CALL                     0
+             88 STORE_FAST               4 (sema)
+             90 JUMP_FORWARD             5 (to 102)
+
+169     >>   92 LOAD_CONST               0 (None)
+             94 STORE_FAST               4 (sema)
+             96 JUMP_FORWARD             2 (to 102)
+
+171     >>   98 LOAD_FAST                3 (max_workers)
+            100 STORE_FAST               4 (sema)
+
+172     >>  102 LOAD_GLOBAL              7 (NULL + argcount)
+            112 LOAD_DEREF               0 (work)
+            114 CALL                     1
+            122 STORE_FAST               5 (ac)
+
+173         124 LOAD_FAST                5 (ac)
+            126 LOAD_CONST               3 (1)
+            128 COMPARE_OP               2 (<)
+            132 POP_JUMP_IF_FALSE       14 (to 162)
+
+174         134 LOAD_GLOBAL              9 (NULL + TypeError)
+            144 LOAD_DEREF               0 (work)
+            146 FORMAT_VALUE             2 (repr)
+            148 LOAD_CONST               4 (' should accept a positional argument as task')
+            150 BUILD_STRING             2
+            152 CALL                     1
+            160 RAISE_VARARGS            1
+
+175     >>  162 LOAD_FAST                5 (ac)
+            164 LOAD_CONST               3 (1)
+            166 COMPARE_OP              68 (>)
+            170 STORE_DEREF             10 (with_submit)
+
+176         172 LOAD_FAST                4 (sema)
+            174 BUILD_TUPLE              1
+            176 LOAD_CLOSURE            12 (T)
+            178 LOAD_CLOSURE            13 (V)
+            180 LOAD_CLOSURE             2 (callback)
+            182 LOAD_CLOSURE             9 (submit)
+            184 LOAD_CLOSURE            10 (with_submit)
+            186 LOAD_CLOSURE             0 (work)
+            188 LOAD_CLOSURE            11 (works)
+            190 BUILD_TUPLE              7
+            192 LOAD_CONST               5 (<code object works at 0xa5a535e00, file "concurrenttools/basic.py", line 176>)
+            194 MAKE_FUNCTION            9 (defaults, closure)
+            196 STORE_DEREF             11 (works)
+
+193         198 LOAD_GLOBAL             11 (NULL + TaskGroup)
+            208 CALL                     0
+            216 BEFORE_ASYNC_WITH
+            218 GET_AWAITABLE            1
+            220 LOAD_CONST               0 (None)
+        >>  222 SEND                     3 (to 232)
+            226 YIELD_VALUE              2
+            228 RESUME                   3
+            230 JUMP_BACKWARD_NO_INTERRUPT     5 (to 222)
+        >>  232 END_SEND
+            234 STORE_FAST               6 (tg)
+
+194         236 LOAD_FAST                6 (tg)
+            238 LOAD_ATTR               12 (create_task)
+            258 STORE_DEREF              8 (create_task)
+
+195         260 LOAD_CLOSURE             8 (create_task)
+            262 LOAD_CLOSURE            11 (works)
+            264 BUILD_TUPLE              2
+            266 LOAD_CONST               6 (<code object <lambda> at 0x103946a30, file "concurrenttools/basic.py", line 195>)
+            268 MAKE_FUNCTION            8 (closure)
+            270 STORE_DEREF              9 (submit)
+
+196         272 LOAD_GLOBAL              1 (NULL + isinstance)
+            282 LOAD_FAST                1 (tasks)
+            284 LOAD_GLOBAL             14 (Iterable)
+            294 CALL                     2
+            302 POP_JUMP_IF_FALSE       16 (to 336)
+
+197         304 LOAD_FAST                1 (tasks)
+            306 GET_ITER
+        >>  308 FOR_ITER                10 (to 332)
+            312 STORE_FAST               7 (task)
+
+198         314 PUSH_NULL
+            316 LOAD_DEREF               9 (submit)
+            318 LOAD_FAST                7 (task)
+            320 CALL                     1
+            328 POP_TOP
+            330 JUMP_BACKWARD           12 (to 308)
+
+197     >>  332 END_FOR
+            334 JUMP_FORWARD            20 (to 376)
+
+200     >>  336 LOAD_FAST                1 (tasks)
+            338 GET_AITER
+        >>  340 GET_ANEXT
+            342 LOAD_CONST               0 (None)
+        >>  344 SEND                     3 (to 354)
+            348 YIELD_VALUE              4
+            350 RESUME                   3
+            352 JUMP_BACKWARD_NO_INTERRUPT     5 (to 344)
+        >>  354 END_SEND
+            356 STORE_FAST               7 (task)
+
+201         358 PUSH_NULL
+            360 LOAD_DEREF               9 (submit)
+            362 LOAD_FAST                7 (task)
+            364 CALL                     1
+            372 POP_TOP
+            374 JUMP_BACKWARD           18 (to 340)
+
+193     >>  376 LOAD_CONST               0 (None)
+            378 LOAD_CONST               0 (None)
+            380 LOAD_CONST               0 (None)
+            382 CALL                     2
+            390 GET_AWAITABLE            2
+            392 LOAD_CONST               0 (None)
+        >>  394 SEND                     3 (to 404)
+            398 YIELD_VALUE              2
+            400 RESUME                   3
+            402 JUMP_BACKWARD_NO_INTERRUPT     5 (to 394)
+        >>  404 END_SEND
+            406 POP_TOP
+            408 RETURN_CONST             0 (None)
+        >>  410 CLEANUP_THROW
+            412 JUMP_BACKWARD           91 (to 232)
+
+200     >>  414 CLEANUP_THROW
+            416 JUMP_BACKWARD           32 (to 354)
+        >>  418 END_ASYNC_FOR
+            420 JUMP_BACKWARD           23 (to 376)
+
+193     >>  422 CLEANUP_THROW
+            424 JUMP_BACKWARD           11 (to 404)
+        >>  426 PUSH_EXC_INFO
+            428 WITH_EXCEPT_START
+            430 GET_AWAITABLE            2
+            432 LOAD_CONST               0 (None)
+        >>  434 SEND                     4 (to 446)
+            438 YIELD_VALUE              3
+            440 RESUME                   3
+            442 JUMP_BACKWARD_NO_INTERRUPT     5 (to 434)
+        >>  444 CLEANUP_THROW
+        >>  446 END_SEND
+            448 POP_JUMP_IF_TRUE         1 (to 452)
+            450 RERAISE                  2
+        >>  452 POP_TOP
+            454 POP_EXCEPT
+            456 POP_TOP
+            458 POP_TOP
+            460 RETURN_CONST             0 (None)
+        >>  462 COPY                     3
+            464 POP_EXCEPT
+            466 RERAISE                  1
+        >>  468 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            470 RERAISE                  1
+ExceptionTable:
+  18 to 224 -> 468 [0] lasti
+  226 to 226 -> 410 [3]
+  228 to 232 -> 468 [0] lasti
+  234 to 338 -> 426 [1] lasti
+  340 to 346 -> 418 [2]
+  348 to 348 -> 414 [4]
+  350 to 354 -> 418 [2]
+  356 to 374 -> 426 [1] lasti
+  376 to 396 -> 468 [0] lasti
+  398 to 398 -> 422 [2]
+  400 to 410 -> 468 [0] lasti
+  414 to 414 -> 418 [2]
+  418 to 418 -> 426 [1] lasti
+  422 to 422 -> 468 [0] lasti
+  426 to 436 -> 462 [3] lasti
+  438 to 438 -> 444 [6]
+  440 to 452 -> 462 [3] lasti
+  454 to 466 -> 468 [0] lasti
+
+Disassembly of <code object works at 0xa5a535e00, file "concurrenttools/basic.py", line 176>:
+              0 COPY_FREE_VARS           7
+
+176           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+177           8 LOAD_FAST                1 (sema)
+             10 POP_JUMP_IF_NONE        45 (to 102)
+
+178          12 LOAD_FAST                1 (sema)
+             14 BEFORE_ASYNC_WITH
+             16 GET_AWAITABLE            1
+             18 LOAD_CONST               0 (None)
+        >>   20 SEND                     3 (to 30)
+             24 YIELD_VALUE              2
+             26 RESUME                   3
+             28 JUMP_BACKWARD_NO_INTERRUPT     5 (to 20)
+        >>   30 END_SEND
+             32 POP_TOP
+
+179          34 PUSH_NULL
+             36 LOAD_DEREF              11 (works)
+             38 LOAD_FAST                0 (task)
+             40 LOAD_CONST               0 (None)
+             42 CALL                     2
+             50 GET_AWAITABLE            0
+             52 LOAD_CONST               0 (None)
+        >>   54 SEND                     3 (to 64)
+             58 YIELD_VALUE              3
+             60 RESUME                   3
+             62 JUMP_BACKWARD_NO_INTERRUPT     5 (to 54)
+        >>   64 END_SEND
+
+178          66 SWAP                     2
+             68 LOAD_CONST               0 (None)
+             70 LOAD_CONST               0 (None)
+             72 LOAD_CONST               0 (None)
+             74 CALL                     2
+             82 GET_AWAITABLE            2
+             84 LOAD_CONST               0 (None)
+        >>   86 SEND                     3 (to 96)
+             90 YIELD_VALUE              2
+             92 RESUME                   3
+             94 JUMP_BACKWARD_NO_INTERRUPT     5 (to 86)
+        >>   96 END_SEND
+             98 POP_TOP
+            100 RETURN_VALUE
+
+180     >>  102 NOP
+
+181         104 LOAD_DEREF               9 (with_submit)
+            106 POP_JUMP_IF_FALSE       53 (to 214)
+
+182         108 PUSH_NULL
+            110 LOAD_GLOBAL              1 (NULL + cast)
+            120 LOAD_GLOBAL              2 (Callable)
+            130 LOAD_DEREF               5 (T)
+            132 LOAD_GLOBAL              2 (Callable)
+            142 BUILD_LIST               2
+            144 LOAD_GLOBAL              4 (Coroutine)
+            154 LOAD_CONST               0 (None)
+            156 LOAD_CONST               0 (None)
+            158 LOAD_DEREF               6 (V)
+            160 BUILD_TUPLE              3
+            162 BINARY_SUBSCR
+            166 BUILD_TUPLE              2
+            168 BINARY_SUBSCR
+            172 LOAD_DEREF              10 (work)
+            174 CALL                     2
+            182 LOAD_FAST                0 (task)
+            184 LOAD_DEREF               8 (submit)
+            186 CALL                     2
+            194 GET_AWAITABLE            0
+            196 LOAD_CONST               0 (None)
+        >>  198 SEND                     3 (to 208)
+            202 YIELD_VALUE              3
+            204 RESUME                   3
+            206 JUMP_BACKWARD_NO_INTERRUPT     5 (to 198)
+        >>  208 END_SEND
+            210 STORE_FAST               2 (r)
+            212 JUMP_FORWARD            46 (to 306)
+
+184     >>  214 PUSH_NULL
+            216 LOAD_GLOBAL              1 (NULL + cast)
+            226 LOAD_GLOBAL              2 (Callable)
+            236 LOAD_DEREF               5 (T)
+            238 BUILD_LIST               1
+            240 LOAD_GLOBAL              4 (Coroutine)
+            250 LOAD_CONST               0 (None)
+            252 LOAD_CONST               0 (None)
+            254 LOAD_DEREF               6 (V)
+            256 BUILD_TUPLE              3
+            258 BINARY_SUBSCR
+            262 BUILD_TUPLE              2
+            264 BINARY_SUBSCR
+            268 LOAD_DEREF              10 (work)
+            270 CALL                     2
+            278 LOAD_FAST                0 (task)
+            280 CALL                     1
+            288 GET_AWAITABLE            0
+            290 LOAD_CONST               0 (None)
+        >>  292 SEND                     3 (to 302)
+            296 YIELD_VALUE              3
+            298 RESUME                   3
+            300 JUMP_BACKWARD_NO_INTERRUPT     5 (to 292)
+        >>  302 END_SEND
+            304 STORE_FAST               2 (r)
+
+185     >>  306 LOAD_DEREF               7 (callback)
+            308 POP_JUMP_IF_NONE        31 (to 372)
+
+186         310 PUSH_NULL
+            312 LOAD_DEREF               7 (callback)
+            314 LOAD_FAST                2 (r)
+            316 CALL                     1
+            324 STORE_FAST               3 (t)
+
+187         326 LOAD_GLOBAL              7 (NULL + isawaitable)
+            336 LOAD_FAST                3 (t)
+            338 CALL                     1
+            346 POP_JUMP_IF_FALSE       11 (to 370)
+
+188         348 LOAD_FAST                3 (t)
+            350 GET_AWAITABLE            0
+            352 LOAD_CONST               0 (None)
+        >>  354 SEND                     3 (to 364)
+            358 YIELD_VALUE              3
+            360 RESUME                   3
+            362 JUMP_BACKWARD_NO_INTERRUPT     5 (to 354)
+        >>  364 END_SEND
+            366 POP_TOP
+            368 RETURN_CONST             0 (None)
+
+187     >>  370 RETURN_CONST             0 (None)
+
+185     >>  372 RETURN_CONST             0 (None)
+
+178     >>  374 CLEANUP_THROW
+            376 JUMP_BACKWARD          174 (to 30)
+
+179     >>  378 CLEANUP_THROW
+            380 JUMP_BACKWARD          159 (to 64)
+
+178     >>  382 CLEANUP_THROW
+            384 JUMP_BACKWARD          145 (to 96)
+        >>  386 PUSH_EXC_INFO
+            388 WITH_EXCEPT_START
+            390 GET_AWAITABLE            2
+            392 LOAD_CONST               0 (None)
+        >>  394 SEND                     4 (to 406)
+            398 YIELD_VALUE              3
+            400 RESUME                   3
+            402 JUMP_BACKWARD_NO_INTERRUPT     5 (to 394)
+        >>  404 CLEANUP_THROW
+        >>  406 END_SEND
+            408 POP_JUMP_IF_TRUE         1 (to 412)
+            410 RERAISE                  2
+        >>  412 POP_TOP
+            414 POP_EXCEPT
+            416 POP_TOP
+            418 POP_TOP
+            420 JUMP_BACKWARD          160 (to 102)
+        >>  422 COPY                     3
+            424 POP_EXCEPT
+            426 RERAISE                  1
+
+182     >>  428 CLEANUP_THROW
+            430 JUMP_BACKWARD          112 (to 208)
+
+184     >>  432 CLEANUP_THROW
+            434 JUMP_BACKWARD           67 (to 302)
+
+188     >>  436 CLEANUP_THROW
+            438 JUMP_BACKWARD           38 (to 364)
+        >>  440 PUSH_EXC_INFO
+
+189         442 LOAD_GLOBAL              8 (KeyboardInterrupt)
+            452 CHECK_EXC_MATCH
+            454 POP_JUMP_IF_FALSE        2 (to 460)
+            456 POP_TOP
+
+190         458 RAISE_VARARGS            0
+
+191     >>  460 LOAD_GLOBAL             10 (BaseException)
+            470 CHECK_EXC_MATCH
+            472 POP_JUMP_IF_FALSE       12 (to 498)
+            474 STORE_FAST               4 (e)
+
+192         476 LOAD_GLOBAL             12 (AsyncCancelledError)
+            486 LOAD_FAST                4 (e)
+            488 RAISE_VARARGS            2
+        >>  490 LOAD_CONST               0 (None)
+            492 STORE_FAST               4 (e)
+            494 DELETE_FAST              4 (e)
+            496 RERAISE                  1
+
+191     >>  498 RERAISE                  0
+        >>  500 COPY                     3
+            502 POP_EXCEPT
+            504 RERAISE                  1
+        >>  506 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            508 RERAISE                  1
+ExceptionTable:
+  6 to 22 -> 506 [0] lasti
+  24 to 24 -> 374 [3]
+  26 to 30 -> 506 [0] lasti
+  32 to 56 -> 386 [1] lasti
+  58 to 58 -> 378 [3]
+  60 to 64 -> 386 [1] lasti
+  66 to 88 -> 506 [0] lasti
+  90 to 90 -> 382 [3]
+  92 to 100 -> 506 [0] lasti
+  104 to 200 -> 440 [0]
+  202 to 202 -> 428 [2]
+  204 to 294 -> 440 [0]
+  296 to 296 -> 432 [2]
+  298 to 356 -> 440 [0]
+  358 to 358 -> 436 [2]
+  360 to 366 -> 440 [0]
+  368 to 374 -> 506 [0] lasti
+  378 to 378 -> 386 [1] lasti
+  382 to 382 -> 506 [0] lasti
+  386 to 396 -> 422 [3] lasti
+  398 to 398 -> 404 [6]
+  400 to 412 -> 422 [3] lasti
+  414 to 426 -> 506 [0] lasti
+  428 to 428 -> 440 [0]
+  432 to 432 -> 440 [0]
+  436 to 436 -> 440 [0]
+  440 to 474 -> 500 [1] lasti
+  476 to 488 -> 490 [1] lasti
+  490 to 498 -> 500 [1] lasti
+  500 to 504 -> 506 [0] lasti
+
+Disassembly of <code object <lambda> at 0x103946a30, file "concurrenttools/basic.py", line 195>:
+              0 COPY_FREE_VARS           2
+
+195           2 RESUME                   0
+              4 PUSH_NULL
+              6 LOAD_DEREF               1 (create_task)
+              8 PUSH_NULL
+             10 LOAD_DEREF               2 (works)
+             12 LOAD_FAST                0 (task)
+             14 CALL                     1
+             22 CALL                     1
+             30 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of threaded> at 0x103a79530, file "concurrenttools/basic.py", line 204>:
+              0 MAKE_CELL                1 (Args)
+              2 MAKE_CELL                2 (T)
+
+204           4 RESUME                   0
+
+205           6 LOAD_CONST               0 ('Args')
+              8 CALL_INTRINSIC_1         8 (INTRINSIC_PARAMSPEC)
+             10 COPY                     1
+             12 STORE_DEREF              1 (Args)
+             14 LOAD_CONST               1 ('T')
+             16 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             18 COPY                     1
+             20 STORE_DEREF              2 (T)
+             22 BUILD_TUPLE              2
+             24 LOAD_FAST                0 (.defaults)
+             26 LOAD_CONST               2 ('lock')
+
+208          28 LOAD_CONST               3 (None)
+             30 LOAD_GLOBAL              0 (int)
+             40 BINARY_OP                7 (|)
+             44 LOAD_GLOBAL              2 (ContextManager)
+             54 BINARY_OP                7 (|)
+
+205          58 LOAD_CONST               4 ('func')
+
+206          60 LOAD_GLOBAL              4 (Callable)
+             70 LOAD_DEREF               1 (Args)
+             72 LOAD_DEREF               2 (T)
+             74 BUILD_TUPLE              2
+             76 BINARY_SUBSCR
+
+205          80 LOAD_CONST               5 ('return')
+
+210          82 LOAD_GLOBAL              4 (Callable)
+             92 LOAD_DEREF               1 (Args)
+             94 LOAD_GLOBAL              6 (Future)
+            104 LOAD_DEREF               2 (T)
+            106 BINARY_SUBSCR
+            110 BUILD_TUPLE              2
+            112 BINARY_SUBSCR
+
+205         116 BUILD_TUPLE              6
+            118 LOAD_CLOSURE             1 (Args)
+            120 LOAD_CLOSURE             2 (T)
+            122 BUILD_TUPLE              2
+            124 LOAD_CONST               6 (<code object threaded at 0x103afc480, file "concurrenttools/basic.py", line 204>)
+            126 MAKE_FUNCTION           13 (defaults, annotations, closure)
+            128 SWAP                     2
+            130 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            132 RETURN_VALUE
+
+Disassembly of <code object threaded at 0x103afc480, file "concurrenttools/basic.py", line 204>:
+              0 COPY_FREE_VARS           2
+              2 MAKE_CELL                0 (func)
+              4 MAKE_CELL                1 (lock)
+              6 MAKE_CELL                2 (thread_init_kwds)
+
+204           8 RESUME                   0
+
+211          10 LOAD_GLOBAL              1 (NULL + isinstance)
+             20 LOAD_DEREF               1 (lock)
+             22 LOAD_GLOBAL              2 (int)
+             32 CALL                     2
+             40 POP_JUMP_IF_FALSE       11 (to 64)
+
+212          42 LOAD_GLOBAL              5 (NULL + Semaphore)
+             52 LOAD_DEREF               1 (lock)
+             54 CALL                     1
+             62 STORE_DEREF              1 (lock)
+
+213     >>   64 LOAD_CONST               1 ('args')
+             66 LOAD_DEREF               4 (Args)
+             68 LOAD_ATTR                6 (args)
+             88 LOAD_CONST               2 ('kwds')
+             90 LOAD_DEREF               4 (Args)
+             92 LOAD_ATTR                8 (kwargs)
+            112 LOAD_CONST               3 ('return')
+            114 LOAD_GLOBAL             10 (Future)
+            124 LOAD_DEREF               5 (T)
+            126 BINARY_SUBSCR
+            130 BUILD_TUPLE              6
+            132 LOAD_CLOSURE             5 (T)
+            134 LOAD_CLOSURE             0 (func)
+            136 LOAD_CLOSURE             1 (lock)
+            138 LOAD_CLOSURE             2 (thread_init_kwds)
+            140 BUILD_TUPLE              4
+            142 LOAD_CONST               4 (<code object wrapper at 0x1038779f0, file "concurrenttools/basic.py", line 213>)
+            144 MAKE_FUNCTION           12 (annotations, closure)
+            146 STORE_FAST               3 (wrapper)
+
+231         148 LOAD_GLOBAL             13 (NULL + update_wrapper)
+            158 LOAD_FAST                3 (wrapper)
+            160 LOAD_DEREF               0 (func)
+            162 CALL                     2
+            170 RETURN_VALUE
+
+Disassembly of <code object wrapper at 0x1038779f0, file "concurrenttools/basic.py", line 213>:
+              0 COPY_FREE_VARS           4
+              2 MAKE_CELL                0 (args)
+              4 MAKE_CELL                1 (kwds)
+              6 MAKE_CELL                4 (fu)
+
+213           8 RESUME                   0
+
+214          10 LOAD_DEREF               7 (lock)
+             12 POP_JUMP_IF_NOT_NONE     9 (to 32)
+
+215          14 LOAD_CLOSURE             0 (args)
+             16 LOAD_CLOSURE             4 (fu)
+             18 LOAD_CLOSURE             6 (func)
+             20 LOAD_CLOSURE             1 (kwds)
+             22 BUILD_TUPLE              4
+             24 LOAD_CONST               1 (<code object asfuture at 0x103a79680, file "concurrenttools/basic.py", line 215>)
+             26 MAKE_FUNCTION            8 (closure)
+             28 STORE_FAST               2 (asfuture)
+             30 JUMP_FORWARD             9 (to 50)
+
+221     >>   32 LOAD_CLOSURE             0 (args)
+             34 LOAD_CLOSURE             4 (fu)
+             36 LOAD_CLOSURE             6 (func)
+             38 LOAD_CLOSURE             1 (kwds)
+             40 LOAD_CLOSURE             7 (lock)
+             42 BUILD_TUPLE              5
+             44 LOAD_CONST               2 (<code object asfuture at 0x1038b7930, file "concurrenttools/basic.py", line 221>)
+             46 MAKE_FUNCTION            8 (closure)
+             48 STORE_FAST               2 (asfuture)
+
+227     >>   50 LOAD_GLOBAL              1 (NULL + Future)
+             60 CALL                     0
+             68 STORE_DEREF              4 (fu)
+
+228          70 LOAD_GLOBAL              3 (NULL + Thread)
+             80 LOAD_CONST               4 (())
+             82 LOAD_CONST               3 ('target')
+             84 LOAD_FAST                2 (asfuture)
+             86 BUILD_MAP                1
+             88 LOAD_DEREF               8 (thread_init_kwds)
+             90 DICT_MERGE               1
+             92 CALL_FUNCTION_EX         1
+             94 COPY                     1
+             96 STORE_FAST               3 (thread)
+             98 LOAD_DEREF               4 (fu)
+            100 STORE_ATTR               2 (thread)
+
+229         110 LOAD_FAST                3 (thread)
+            112 LOAD_ATTR                7 (NULL|self + start)
+            132 CALL                     0
+            140 POP_TOP
+
+230         142 LOAD_DEREF               4 (fu)
+            144 RETURN_VALUE
+
+Disassembly of <code object asfuture at 0x103a79680, file "concurrenttools/basic.py", line 215>:
+              0 COPY_FREE_VARS           4
+
+215           2 RESUME                   0
+
+216           4 NOP
+
+217           6 LOAD_DEREF               2 (fu)
+              8 LOAD_ATTR                1 (NULL|self + set_result)
+             28 PUSH_NULL
+             30 LOAD_DEREF               3 (func)
+             32 LOAD_DEREF               1 (args)
+             34 BUILD_MAP                0
+             36 LOAD_DEREF               4 (kwds)
+             38 DICT_MERGE               1
+             40 CALL_FUNCTION_EX         1
+             42 CALL                     1
+             50 POP_TOP
+             52 RETURN_CONST             0 (None)
+        >>   54 PUSH_EXC_INFO
+
+218          56 LOAD_GLOBAL              2 (BaseException)
+             66 CHECK_EXC_MATCH
+             68 POP_JUMP_IF_FALSE       27 (to 124)
+             70 STORE_FAST               0 (e)
+
+219          72 LOAD_DEREF               2 (fu)
+             74 LOAD_ATTR                5 (NULL|self + set_exception)
+             94 LOAD_FAST                0 (e)
+             96 CALL                     1
+            104 POP_TOP
+            106 POP_EXCEPT
+            108 LOAD_CONST               0 (None)
+            110 STORE_FAST               0 (e)
+            112 DELETE_FAST              0 (e)
+            114 RETURN_CONST             0 (None)
+        >>  116 LOAD_CONST               0 (None)
+            118 STORE_FAST               0 (e)
+            120 DELETE_FAST              0 (e)
+            122 RERAISE                  1
+
+218     >>  124 RERAISE                  0
+        >>  126 COPY                     3
+            128 POP_EXCEPT
+            130 RERAISE                  1
+ExceptionTable:
+  6 to 50 -> 54 [0]
+  54 to 70 -> 126 [1] lasti
+  72 to 104 -> 116 [1] lasti
+  116 to 124 -> 126 [1] lasti
+
+Disassembly of <code object asfuture at 0x1038b7930, file "concurrenttools/basic.py", line 221>:
+              0 COPY_FREE_VARS           5
+
+221           2 RESUME                   0
+
+222           4 LOAD_DEREF               5 (lock)
+              6 BEFORE_WITH
+              8 POP_TOP
+
+223          10 NOP
+
+224          12 LOAD_DEREF               2 (fu)
+             14 LOAD_ATTR                1 (NULL|self + set_result)
+             34 PUSH_NULL
+             36 LOAD_DEREF               3 (func)
+             38 LOAD_DEREF               1 (args)
+             40 BUILD_MAP                0
+             42 LOAD_DEREF               4 (kwds)
+             44 DICT_MERGE               1
+             46 CALL_FUNCTION_EX         1
+             48 CALL                     1
+             56 POP_TOP
+
+222     >>   58 LOAD_CONST               0 (None)
+             60 LOAD_CONST               0 (None)
+             62 LOAD_CONST               0 (None)
+             64 CALL                     2
+             72 POP_TOP
+             74 RETURN_CONST             0 (None)
+        >>   76 PUSH_EXC_INFO
+
+225          78 LOAD_GLOBAL              2 (BaseException)
+             88 CHECK_EXC_MATCH
+             90 POP_JUMP_IF_FALSE       27 (to 146)
+             92 STORE_FAST               0 (e)
+
+226          94 LOAD_DEREF               2 (fu)
+             96 LOAD_ATTR                5 (NULL|self + set_exception)
+            116 LOAD_FAST                0 (e)
+            118 CALL                     1
+            126 POP_TOP
+            128 POP_EXCEPT
+            130 LOAD_CONST               0 (None)
+            132 STORE_FAST               0 (e)
+            134 DELETE_FAST              0 (e)
+            136 JUMP_BACKWARD           40 (to 58)
+        >>  138 LOAD_CONST               0 (None)
+            140 STORE_FAST               0 (e)
+            142 DELETE_FAST              0 (e)
+            144 RERAISE                  1
+
+225     >>  146 RERAISE                  0
+        >>  148 COPY                     3
+            150 POP_EXCEPT
+            152 RERAISE                  1
+
+222     >>  154 PUSH_EXC_INFO
+            156 WITH_EXCEPT_START
+            158 POP_JUMP_IF_TRUE         1 (to 162)
+            160 RERAISE                  2
+        >>  162 POP_TOP
+            164 POP_EXCEPT
+            166 POP_TOP
+            168 POP_TOP
+            170 RETURN_CONST             0 (None)
+        >>  172 COPY                     3
+            174 POP_EXCEPT
+            176 RERAISE                  1
+ExceptionTable:
+  8 to 8 -> 154 [1] lasti
+  12 to 56 -> 76 [1]
+  76 to 92 -> 148 [2] lasti
+  94 to 126 -> 138 [2] lasti
+  128 to 136 -> 154 [1] lasti
+  138 to 146 -> 148 [2] lasti
+  148 to 152 -> 154 [1] lasti
+  154 to 162 -> 172 [3] lasti
+
+Disassembly of <code object <generic parameters of run_as_thread> at 0x1039b25b0, file "concurrenttools/basic.py", line 234>:
+234           0 RESUME                   0
+              2 LOAD_CONST               0 ('Args')
+              4 CALL_INTRINSIC_1         8 (INTRINSIC_PARAMSPEC)
+              6 COPY                     1
+              8 STORE_FAST               1 (Args)
+             10 LOAD_CONST               1 ('T')
+             12 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             14 COPY                     1
+             16 STORE_FAST               2 (T)
+             18 BUILD_TUPLE              2
+             20 LOAD_CONST               2 ('func')
+
+235          22 LOAD_GLOBAL              0 (Callable)
+             32 LOAD_FAST                1 (Args)
+             34 LOAD_FAST                2 (T)
+             36 BUILD_TUPLE              2
+             38 BINARY_SUBSCR
+
+234          42 LOAD_CONST               3 ('args')
+
+237          44 LOAD_FAST                1 (Args)
+             46 LOAD_ATTR                2 (args)
+
+234          66 LOAD_CONST               4 ('kwargs')
+
+238          68 LOAD_FAST                1 (Args)
+             70 LOAD_ATTR                4 (kwargs)
+
+234          90 LOAD_CONST               5 ('return')
+
+239          92 LOAD_GLOBAL              6 (Future)
+            102 LOAD_FAST                2 (T)
+            104 BINARY_SUBSCR
+
+234         108 BUILD_TUPLE              8
+            110 LOAD_CONST               6 (<code object run_as_thread at 0x1084bd530, file "concurrenttools/basic.py", line 234>)
+            112 MAKE_FUNCTION            4 (annotations)
+            114 SWAP                     2
+            116 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            118 RETURN_VALUE
+
+Disassembly of <code object run_as_thread at 0x1084bd530, file "concurrenttools/basic.py", line 234>:
+234           0 RESUME                   0
+
+240           2 PUSH_NULL
+              4 PUSH_NULL
+              6 LOAD_GLOBAL              1 (NULL + getattr)
+             16 LOAD_GLOBAL              2 (threaded)
+             26 LOAD_CONST               1 ('__wrapped__')
+             28 CALL                     2
+             36 LOAD_FAST                0 (func)
+             38 CALL                     1
+             46 LOAD_FAST                1 (args)
+             48 BUILD_MAP                0
+             50 LOAD_FAST                2 (kwargs)
+             52 DICT_MERGE               1
+             54 CALL_FUNCTION_EX         1
+             56 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of asynchronized> at 0x103afc8d0, file "concurrenttools/basic.py", line 243>:
+              0 MAKE_CELL                1 (Args)
+              2 MAKE_CELL                2 (T)
+
+243           4 RESUME                   0
+
+244           6 LOAD_CONST               0 ('Args')
+              8 CALL_INTRINSIC_1         8 (INTRINSIC_PARAMSPEC)
+             10 COPY                     1
+             12 STORE_DEREF              1 (Args)
+             14 LOAD_CONST               1 ('T')
+             16 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             18 COPY                     1
+             20 STORE_DEREF              2 (T)
+             22 BUILD_TUPLE              2
+             24 LOAD_FAST                0 (.defaults)
+             26 LOAD_CONST               2 ('loop')
+
+247          28 LOAD_CONST               3 (None)
+             30 LOAD_GLOBAL              0 (BaseEventLoop)
+             40 BINARY_OP                7 (|)
+
+244          44 LOAD_CONST               4 ('new_thread')
+
+248          46 LOAD_GLOBAL              2 (bool)
+
+244          56 LOAD_CONST               5 ('executor')
+
+249          58 LOAD_GLOBAL              4 (Literal)
+             68 LOAD_CONST               6 ((False, None))
+             70 BINARY_SUBSCR
+             74 LOAD_GLOBAL              6 (Executor)
+             84 BINARY_OP                7 (|)
+
+244          88 LOAD_CONST               7 ('func')
+
+245          90 LOAD_GLOBAL              8 (Callable)
+            100 LOAD_DEREF               1 (Args)
+            102 LOAD_DEREF               2 (T)
+            104 BUILD_TUPLE              2
+            106 BINARY_SUBSCR
+
+244         110 LOAD_CONST               8 ('return')
+
+250         112 LOAD_GLOBAL              8 (Callable)
+            122 LOAD_DEREF               1 (Args)
+            124 LOAD_GLOBAL             10 (AsyncFuture)
+            134 LOAD_DEREF               2 (T)
+            136 BINARY_SUBSCR
+            140 BUILD_TUPLE              2
+            142 BINARY_SUBSCR
+
+244         146 BUILD_TUPLE             10
+            148 LOAD_CLOSURE             1 (Args)
+            150 LOAD_CLOSURE             2 (T)
+            152 BUILD_TUPLE              2
+            154 LOAD_CONST               9 (<code object asynchronized at 0x1039b2830, file "concurrenttools/basic.py", line 243>)
+            156 MAKE_FUNCTION           13 (defaults, annotations, closure)
+            158 SWAP                     2
+            160 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            162 RETURN_VALUE
+
+Disassembly of <code object asynchronized at 0x1039b2830, file "concurrenttools/basic.py", line 243>:
+              0 COPY_FREE_VARS           2
+              2 MAKE_CELL                0 (func)
+              4 MAKE_CELL                1 (loop)
+              6 MAKE_CELL                2 (new_thread)
+              8 MAKE_CELL                3 (executor)
+             10 MAKE_CELL                5 (run_in_thread)
+
+243          12 RESUME                   0
+
+251          14 LOAD_CLOSURE             0 (func)
+             16 BUILD_TUPLE              1
+             18 LOAD_CONST               1 (<code object run_in_thread at 0x103afc760, file "concurrenttools/basic.py", line 251>)
+             20 MAKE_FUNCTION            8 (closure)
+             22 STORE_DEREF              5 (run_in_thread)
+
+256          24 LOAD_CONST               2 ('args')
+             26 LOAD_DEREF               6 (Args)
+             28 LOAD_ATTR                0 (args)
+             48 LOAD_CONST               3 ('kwargs')
+             50 LOAD_DEREF               6 (Args)
+             52 LOAD_ATTR                2 (kwargs)
+             72 LOAD_CONST               4 ('return')
+             74 LOAD_GLOBAL              4 (AsyncFuture)
+             84 LOAD_DEREF               7 (T)
+             86 BINARY_SUBSCR
+             90 BUILD_TUPLE              6
+             92 LOAD_CLOSURE             3 (executor)
+             94 LOAD_CLOSURE             0 (func)
+             96 LOAD_CLOSURE             1 (loop)
+             98 LOAD_CLOSURE             2 (new_thread)
+            100 LOAD_CLOSURE             5 (run_in_thread)
+            102 BUILD_TUPLE              5
+            104 LOAD_CONST               5 (<code object wrapper at 0x1038bed30, file "concurrenttools/basic.py", line 256>)
+            106 MAKE_FUNCTION           12 (annotations, closure)
+            108 STORE_FAST               4 (wrapper)
+
+267         110 LOAD_FAST                4 (wrapper)
+            112 RETURN_VALUE
+
+Disassembly of <code object run_in_thread at 0x103afc760, file "concurrenttools/basic.py", line 251>:
+              0 COPY_FREE_VARS           1
+
+251           2 RESUME                   0
+
+252           4 NOP
+
+253           6 LOAD_FAST                0 (loop)
+              8 LOAD_ATTR                1 (NULL|self + call_soon_threadsafe)
+             28 LOAD_FAST                1 (future)
+             30 LOAD_ATTR                2 (set_result)
+             50 PUSH_NULL
+             52 LOAD_DEREF               5 (func)
+             54 LOAD_FAST                2 (args)
+             56 BUILD_MAP                0
+             58 LOAD_FAST                3 (kwargs)
+             60 DICT_MERGE               1
+             62 CALL_FUNCTION_EX         1
+             64 CALL                     2
+             72 POP_TOP
+             74 RETURN_CONST             0 (None)
+        >>   76 PUSH_EXC_INFO
+
+254          78 LOAD_GLOBAL              4 (BaseException)
+             88 CHECK_EXC_MATCH
+             90 POP_JUMP_IF_FALSE       38 (to 168)
+             92 STORE_FAST               4 (e)
+
+255          94 LOAD_FAST                0 (loop)
+             96 LOAD_ATTR                1 (NULL|self + call_soon_threadsafe)
+            116 LOAD_FAST                1 (future)
+            118 LOAD_ATTR                6 (set_exception)
+            138 LOAD_FAST                4 (e)
+            140 CALL                     2
+            148 POP_TOP
+            150 POP_EXCEPT
+            152 LOAD_CONST               0 (None)
+            154 STORE_FAST               4 (e)
+            156 DELETE_FAST              4 (e)
+            158 RETURN_CONST             0 (None)
+        >>  160 LOAD_CONST               0 (None)
+            162 STORE_FAST               4 (e)
+            164 DELETE_FAST              4 (e)
+            166 RERAISE                  1
+
+254     >>  168 RERAISE                  0
+        >>  170 COPY                     3
+            172 POP_EXCEPT
+            174 RERAISE                  1
+ExceptionTable:
+  6 to 72 -> 76 [0]
+  76 to 92 -> 170 [1] lasti
+  94 to 148 -> 160 [1] lasti
+  160 to 168 -> 170 [1] lasti
+
+Disassembly of <code object wrapper at 0x1038bed30, file "concurrenttools/basic.py", line 256>:
+              0 COPY_FREE_VARS           5
+
+256           2 RESUME                   0
+
+258           4 LOAD_DEREF               6 (new_thread)
+              6 POP_JUMP_IF_FALSE       11 (to 30)
+              8 LOAD_GLOBAL              1 (NULL + iscoroutinefunction)
+             18 LOAD_DEREF               4 (func)
+             20 CALL                     1
+             28 POP_JUMP_IF_FALSE       28 (to 86)
+
+259     >>   30 LOAD_GLOBAL              3 (NULL + ensure_future)
+             40 LOAD_GLOBAL              5 (NULL + ensure_coroutine)
+             50 PUSH_NULL
+             52 LOAD_DEREF               4 (func)
+             54 LOAD_FAST                0 (args)
+             56 BUILD_MAP                0
+             58 LOAD_FAST                1 (kwargs)
+             60 DICT_MERGE               1
+             62 CALL_FUNCTION_EX         1
+             64 CALL                     1
+             72 LOAD_DEREF               5 (loop)
+             74 KW_NAMES                 1 (('loop',))
+             76 CALL                     2
+             84 RETURN_VALUE
+
+260     >>   86 LOAD_DEREF               5 (loop)
+             88 POP_JUMP_IF_NOT_NONE    24 (to 138)
+
+261          90 LOAD_GLOBAL              7 (NULL + cast)
+            100 LOAD_GLOBAL              8 (BaseEventLoop)
+            110 LOAD_GLOBAL             11 (NULL + get_event_loop)
+            120 CALL                     0
+            128 CALL                     2
+            136 STORE_DEREF              5 (loop)
+
+262     >>  138 LOAD_DEREF               3 (executor)
+            140 LOAD_CONST               2 (False)
+            142 IS_OP                    0
+            144 POP_JUMP_IF_FALSE       34 (to 214)
+
+263         146 LOAD_DEREF               5 (loop)
+            148 LOAD_ATTR               13 (NULL|self + create_future)
+            168 CALL                     0
+            176 STORE_FAST               2 (future)
+
+264         178 LOAD_GLOBAL             15 (NULL + start_new_thread)
+            188 LOAD_DEREF               7 (run_in_thread)
+            190 LOAD_DEREF               5 (loop)
+            192 LOAD_FAST                2 (future)
+            194 LOAD_FAST                0 (args)
+            196 LOAD_FAST                1 (kwargs)
+            198 BUILD_TUPLE              4
+            200 CALL                     2
+            208 POP_TOP
+
+265         210 LOAD_FAST                2 (future)
+            212 RETURN_VALUE
+
+266     >>  214 LOAD_DEREF               5 (loop)
+            216 LOAD_ATTR               17 (NULL|self + run_in_executor)
+            236 LOAD_DEREF               3 (executor)
+            238 LOAD_GLOBAL             19 (NULL + partial)
+            248 LOAD_DEREF               4 (func)
+            250 BUILD_LIST               1
+            252 LOAD_FAST                0 (args)
+            254 LIST_EXTEND              1
+            256 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+            258 BUILD_MAP                0
+            260 LOAD_FAST                1 (kwargs)
+            262 DICT_MERGE               1
+            264 CALL_FUNCTION_EX         1
+            266 CALL                     2
+            274 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of run_as_async> at 0x1039b2970, file "concurrenttools/basic.py", line 270>:
+270           0 RESUME                   0
+              2 LOAD_CONST               0 ('Args')
+              4 CALL_INTRINSIC_1         8 (INTRINSIC_PARAMSPEC)
+              6 COPY                     1
+              8 STORE_FAST               1 (Args)
+             10 LOAD_CONST               1 ('T')
+             12 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+             14 COPY                     1
+             16 STORE_FAST               2 (T)
+             18 BUILD_TUPLE              2
+             20 LOAD_CONST               2 ('func')
+
+271          22 LOAD_GLOBAL              0 (Callable)
+             32 LOAD_FAST                1 (Args)
+             34 LOAD_FAST                2 (T)
+             36 BUILD_TUPLE              2
+             38 BINARY_SUBSCR
+
+270          42 LOAD_CONST               3 ('args')
+
+273          44 LOAD_FAST                1 (Args)
+             46 LOAD_ATTR                2 (args)
+
+270          66 LOAD_CONST               4 ('kwargs')
+
+274          68 LOAD_FAST                1 (Args)
+             70 LOAD_ATTR                4 (kwargs)
+
+270          90 LOAD_CONST               5 ('return')
+
+275          92 LOAD_GLOBAL              6 (AsyncFuture)
+            102 LOAD_FAST                2 (T)
+            104 BINARY_SUBSCR
+
+270         108 BUILD_TUPLE              8
+            110 LOAD_CONST               6 (<code object run_as_async at 0x1084bc030, file "concurrenttools/basic.py", line 270>)
+            112 MAKE_FUNCTION            4 (annotations)
+            114 SWAP                     2
+            116 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            118 RETURN_VALUE
+
+Disassembly of <code object run_as_async at 0x1084bc030, file "concurrenttools/basic.py", line 270>:
+270           0 RESUME                   0
+
+276           2 PUSH_NULL
+              4 PUSH_NULL
+              6 LOAD_GLOBAL              1 (NULL + getattr)
+             16 LOAD_GLOBAL              2 (asynchronized)
+             26 LOAD_CONST               1 ('__wrapped__')
+             28 CALL                     2
+             36 LOAD_FAST                0 (func)
+             38 CALL                     1
+             46 LOAD_FAST                1 (args)
+             48 BUILD_MAP                0
+             50 LOAD_FAST                2 (kwargs)
+             52 DICT_MERGE               1
+             54 CALL_FUNCTION_EX         1
+             56 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of threadpool_map> at 0x103af5230, file "concurrenttools/basic.py", line 279>:
+279           0 RESUME                   0
+              2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('func')
+
+280          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_CONST               2 (Ellipsis)
+             28 LOAD_FAST                2 (T)
+             30 BUILD_TUPLE              2
+             32 BINARY_SUBSCR
+
+279          36 LOAD_CONST               3 ('max_workers')
+
+284          38 LOAD_CONST               4 (None)
+             40 LOAD_GLOBAL              2 (int)
+             50 BINARY_OP                7 (|)
+
+279          54 LOAD_CONST               5 ('return')
+
+285          56 LOAD_GLOBAL              4 (Iterator)
+             66 LOAD_FAST                2 (T)
+             68 BINARY_SUBSCR
+
+279          72 BUILD_TUPLE              6
+             74 LOAD_CONST               6 (<code object threadpool_map at 0xa5a536700, file "concurrenttools/basic.py", line 279>)
+             76 MAKE_FUNCTION            6 (kwdefaults, annotations)
+             78 SWAP                     2
+             80 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+             82 RETURN_VALUE
+
+Disassembly of <code object threadpool_map at 0xa5a536700, file "concurrenttools/basic.py", line 279>:
+              0 MAKE_CELL                0 (func)
+              2 MAKE_CELL                1 (it)
+              4 MAKE_CELL                3 (its)
+              6 MAKE_CELL                9 (put)
+              8 MAKE_CELL               10 (running)
+             10 MAKE_CELL               11 (submit)
+
+279          12 RETURN_GENERATOR
+             14 POP_TOP
+             16 RESUME                   0
+
+286          18 LOAD_FAST                2 (max_workers)
+             20 LOAD_CONST               1 (0)
+             22 COMPARE_OP              40 (==)
+             26 POP_JUMP_IF_FALSE       22 (to 72)
+
+287          28 LOAD_GLOBAL              1 (NULL + map)
+             38 LOAD_DEREF               0 (func)
+             40 LOAD_DEREF               1 (it)
+             42 BUILD_LIST               2
+             44 LOAD_DEREF               3 (its)
+             46 LIST_EXTEND              1
+             48 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+             50 CALL_FUNCTION_EX         0
+             52 GET_YIELD_FROM_ITER
+             54 LOAD_CONST               0 (None)
+        >>   56 SEND                     3 (to 66)
+             60 YIELD_VALUE              2
+             62 RESUME                   2
+             64 JUMP_BACKWARD_NO_INTERRUPT     5 (to 56)
+        >>   66 END_SEND
+             68 POP_TOP
+             70 RETURN_CONST             0 (None)
+
+289     >>   72 LOAD_FAST                2 (max_workers)
+             74 POP_JUMP_IF_NONE         5 (to 86)
+             76 LOAD_FAST                2 (max_workers)
+             78 LOAD_CONST               1 (0)
+             80 COMPARE_OP               2 (<)
+             84 POP_JUMP_IF_FALSE       27 (to 140)
+
+290     >>   86 LOAD_GLOBAL              3 (NULL + min)
+             96 LOAD_CONST               2 (32)
+             98 LOAD_GLOBAL              5 (NULL + cpu_count)
+            108 CALL                     0
+            116 COPY                     1
+            118 POP_JUMP_IF_TRUE         2 (to 124)
+            120 POP_TOP
+            122 LOAD_CONST               3 (1)
+        >>  124 LOAD_CONST               4 (4)
+            126 BINARY_OP                0 (+)
+            130 CALL                     2
+            138 STORE_FAST               2 (max_workers)
+
+291     >>  140 LOAD_GLOBAL              7 (NULL + SimpleQueue)
+            150 CALL                     0
+            158 STORE_FAST               4 (queue)
+
+292         160 LOAD_FAST                4 (queue)
+            162 LOAD_ATTR                8 (get)
+            182 LOAD_FAST                4 (queue)
+            184 LOAD_ATTR               10 (put_nowait)
+            204 SWAP                     2
+            206 STORE_FAST               5 (get)
+            208 STORE_DEREF              9 (put)
+
+293         210 LOAD_GLOBAL             13 (NULL + ThreadPoolExecutor)
+            220 LOAD_FAST                2 (max_workers)
+            222 KW_NAMES                 5 (('max_workers',))
+            224 CALL                     1
+            232 STORE_FAST               6 (executor)
+
+294         234 LOAD_FAST                6 (executor)
+            236 LOAD_ATTR               14 (submit)
+            256 STORE_DEREF             11 (submit)
+
+295         258 LOAD_CONST               6 (True)
+            260 STORE_DEREF             10 (running)
+
+296         262 LOAD_CLOSURE             0 (func)
+            264 LOAD_CLOSURE             1 (it)
+            266 LOAD_CLOSURE             3 (its)
+            268 LOAD_CLOSURE             9 (put)
+            270 LOAD_CLOSURE            10 (running)
+            272 LOAD_CLOSURE            11 (submit)
+            274 BUILD_TUPLE              6
+            276 LOAD_CONST               7 (<code object make_tasks at 0x103af01d0, file "concurrenttools/basic.py", line 296>)
+            278 MAKE_FUNCTION            8 (closure)
+            280 STORE_FAST               7 (make_tasks)
+
+309         282 NOP
+
+310         284 LOAD_GLOBAL             17 (NULL + start_new_thread)
+            294 LOAD_FAST                7 (make_tasks)
+            296 LOAD_CONST               8 (())
+            298 CALL                     2
+            306 POP_TOP
+
+311         308 LOAD_FAST                6 (executor)
+            310 BEFORE_WITH
+            312 POP_TOP
+
+312         314 PUSH_NULL
+            316 LOAD_FAST                5 (get)
+            318 CALL                     0
+            326 COPY                     1
+            328 STORE_FAST               8 (fu)
+            330 POP_JUMP_IF_FALSE       46 (to 424)
+
+313     >>  332 LOAD_GLOBAL             19 (NULL + isinstance)
+            342 LOAD_FAST                8 (fu)
+            344 LOAD_GLOBAL             20 (BaseException)
+            354 CALL                     2
+            362 POP_JUMP_IF_FALSE        2 (to 368)
+
+314         364 LOAD_FAST                8 (fu)
+            366 RAISE_VARARGS            1
+
+315     >>  368 LOAD_FAST                8 (fu)
+            370 LOAD_ATTR               23 (NULL|self + result)
+            390 CALL                     0
+            398 YIELD_VALUE              3
+            400 RESUME                   1
+            402 POP_TOP
+
+312         404 PUSH_NULL
+            406 LOAD_FAST                5 (get)
+            408 CALL                     0
+            416 COPY                     1
+            418 STORE_FAST               8 (fu)
+            420 POP_JUMP_IF_FALSE        1 (to 424)
+            422 JUMP_BACKWARD           46 (to 332)
+
+311     >>  424 LOAD_CONST               0 (None)
+            426 LOAD_CONST               0 (None)
+            428 LOAD_CONST               0 (None)
+            430 CALL                     2
+            438 POP_TOP
+
+317     >>  440 LOAD_CONST               9 (False)
+            442 STORE_DEREF             10 (running)
+
+318         444 LOAD_FAST                6 (executor)
+            446 LOAD_ATTR               25 (NULL|self + shutdown)
+            466 LOAD_CONST               9 (False)
+            468 LOAD_CONST               6 (True)
+            470 KW_NAMES                10 (('wait', 'cancel_futures'))
+            472 CALL                     2
+            480 POP_TOP
+            482 RETURN_CONST             0 (None)
+
+287     >>  484 CLEANUP_THROW
+            486 JUMP_BACKWARD          211 (to 66)
+
+311     >>  488 PUSH_EXC_INFO
+            490 WITH_EXCEPT_START
+            492 POP_JUMP_IF_TRUE         1 (to 496)
+            494 RERAISE                  2
+        >>  496 POP_TOP
+            498 POP_EXCEPT
+            500 POP_TOP
+            502 POP_TOP
+            504 JUMP_BACKWARD           33 (to 440)
+        >>  506 COPY                     3
+            508 POP_EXCEPT
+            510 RERAISE                  1
+        >>  512 PUSH_EXC_INFO
+
+317         514 LOAD_CONST               9 (False)
+            516 STORE_DEREF             10 (running)
+
+318         518 LOAD_FAST                6 (executor)
+            520 LOAD_ATTR               25 (NULL|self + shutdown)
+            540 LOAD_CONST               9 (False)
+            542 LOAD_CONST               6 (True)
+            544 KW_NAMES                10 (('wait', 'cancel_futures'))
+            546 CALL                     2
+            554 POP_TOP
+            556 RERAISE                  0
+        >>  558 COPY                     3
+            560 POP_EXCEPT
+            562 RERAISE                  1
+        >>  564 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            566 RERAISE                  1
+ExceptionTable:
+  16 to 58 -> 564 [0] lasti
+  60 to 60 -> 484 [2]
+  62 to 280 -> 564 [0] lasti
+  284 to 310 -> 512 [0]
+  312 to 420 -> 488 [1] lasti
+  424 to 438 -> 512 [0]
+  440 to 484 -> 564 [0] lasti
+  488 to 496 -> 506 [3] lasti
+  498 to 510 -> 512 [0]
+  512 to 556 -> 558 [1] lasti
+  558 to 562 -> 564 [0] lasti
+
+Disassembly of <code object make_tasks at 0x103af01d0, file "concurrenttools/basic.py", line 296>:
+              0 COPY_FREE_VARS           6
+
+296           2 RESUME                   0
+
+297           4 NOP
+
+298           6 LOAD_GLOBAL              1 (NULL + zip)
+             16 LOAD_DEREF               3 (it)
+             18 BUILD_LIST               1
+             20 LOAD_DEREF               4 (its)
+             22 LIST_EXTEND              1
+             24 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+             26 CALL_FUNCTION_EX         0
+             28 GET_ITER
+        >>   30 FOR_ITER                22 (to 78)
+             34 STORE_FAST               0 (args)
+
+299          36 LOAD_DEREF               6 (running)
+             38 POP_JUMP_IF_TRUE         2 (to 44)
+
+300          40 POP_TOP
+             42 JUMP_FORWARD            18 (to 80)
+
+301     >>   44 NOP
+
+302          46 PUSH_NULL
+             48 LOAD_DEREF               5 (put)
+             50 PUSH_NULL
+             52 LOAD_DEREF               7 (submit)
+             54 LOAD_DEREF               2 (func)
+             56 BUILD_LIST               1
+             58 LOAD_FAST                0 (args)
+             60 LIST_EXTEND              1
+             62 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+             64 CALL_FUNCTION_EX         0
+             66 CALL                     1
+             74 POP_TOP
+             76 JUMP_BACKWARD           24 (to 30)
+
+298     >>   78 END_FOR
+
+308     >>   80 PUSH_NULL
+             82 LOAD_DEREF               5 (put)
+             84 LOAD_CONST               0 (None)
+             86 CALL                     1
+             94 POP_TOP
+             96 RETURN_CONST             0 (None)
+        >>   98 PUSH_EXC_INFO
+
+303         100 LOAD_GLOBAL              2 (RuntimeError)
+            110 CHECK_EXC_MATCH
+            112 POP_JUMP_IF_FALSE        4 (to 122)
+            114 POP_TOP
+
+304         116 POP_EXCEPT
+            118 POP_TOP
+            120 JUMP_BACKWARD           21 (to 80)
+
+303     >>  122 RERAISE                  0
+        >>  124 COPY                     3
+            126 POP_EXCEPT
+            128 RERAISE                  1
+        >>  130 PUSH_EXC_INFO
+
+305         132 LOAD_GLOBAL              4 (BaseException)
+            142 CHECK_EXC_MATCH
+            144 POP_JUMP_IF_FALSE       18 (to 182)
+            146 STORE_FAST               1 (e)
+
+306         148 PUSH_NULL
+            150 LOAD_DEREF               5 (put)
+            152 LOAD_FAST                1 (e)
+            154 CALL                     1
+            162 POP_TOP
+            164 POP_EXCEPT
+            166 LOAD_CONST               0 (None)
+            168 STORE_FAST               1 (e)
+            170 DELETE_FAST              1 (e)
+            172 JUMP_BACKWARD           47 (to 80)
+        >>  174 LOAD_CONST               0 (None)
+            176 STORE_FAST               1 (e)
+            178 DELETE_FAST              1 (e)
+            180 RERAISE                  1
+
+305     >>  182 RERAISE                  0
+        >>  184 COPY                     3
+            186 POP_EXCEPT
+            188 RERAISE                  1
+        >>  190 PUSH_EXC_INFO
+
+308         192 PUSH_NULL
+            194 LOAD_DEREF               5 (put)
+            196 LOAD_CONST               0 (None)
+            198 CALL                     1
+            206 POP_TOP
+            208 RERAISE                  0
+        >>  210 COPY                     3
+            212 POP_EXCEPT
+            214 RERAISE                  1
+ExceptionTable:
+  6 to 42 -> 130 [0]
+  46 to 74 -> 98 [1]
+  76 to 78 -> 130 [0]
+  98 to 114 -> 124 [2] lasti
+  116 to 120 -> 130 [0]
+  122 to 122 -> 124 [2] lasti
+  124 to 128 -> 130 [0]
+  130 to 146 -> 184 [1] lasti
+  148 to 162 -> 174 [1] lasti
+  164 to 172 -> 190 [0]
+  174 to 182 -> 184 [1] lasti
+  184 to 188 -> 190 [0]
+  190 to 208 -> 210 [1] lasti
+
+Disassembly of <code object <generic parameters of taskgroup_map> at 0x1039b2bf0, file "concurrenttools/basic.py", line 321>:
+              0 MAKE_CELL                2 (T)
+
+321           2 RESUME                   0
+              4 LOAD_CONST               0 ('T')
+              6 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              8 COPY                     1
+             10 STORE_DEREF              2 (T)
+             12 BUILD_TUPLE              1
+             14 LOAD_FAST                0 (.defaults)
+             16 LOAD_CONST               1 ('func')
+
+322          18 LOAD_GLOBAL              0 (Callable)
+             28 LOAD_CONST               2 (Ellipsis)
+             30 LOAD_DEREF               2 (T)
+             32 BUILD_TUPLE              2
+             34 BINARY_SUBSCR
+             38 LOAD_GLOBAL              0 (Callable)
+             48 LOAD_CONST               2 (Ellipsis)
+             50 LOAD_GLOBAL              2 (Awaitable)
+             60 LOAD_DEREF               2 (T)
+             62 BINARY_SUBSCR
+             66 BUILD_TUPLE              2
+             68 BINARY_SUBSCR
+             72 BINARY_OP                7 (|)
+
+321          76 LOAD_CONST               3 ('max_workers')
+
+326          78 LOAD_CONST               4 (None)
+             80 LOAD_GLOBAL              4 (int)
+             90 BINARY_OP                7 (|)
+
+321          94 LOAD_CONST               5 ('return')
+
+327          96 LOAD_GLOBAL              6 (AsyncIterator)
+            106 LOAD_DEREF               2 (T)
+            108 BINARY_SUBSCR
+
+321         112 BUILD_TUPLE              6
+            114 LOAD_CLOSURE             2 (T)
+            116 BUILD_TUPLE              1
+            118 LOAD_CONST               6 (<code object taskgroup_map at 0xa5a53dc00, file "concurrenttools/basic.py", line 321>)
+            120 MAKE_FUNCTION           14 (kwdefaults, annotations, closure)
+            122 SWAP                     2
+            124 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            126 RETURN_VALUE
+
+Disassembly of <code object taskgroup_map at 0xa5a53dc00, file "concurrenttools/basic.py", line 321>:
+              0 COPY_FREE_VARS           1
+              2 MAKE_CELL                0 (func)
+              4 MAKE_CELL                1 (it)
+              6 MAKE_CELL                3 (its)
+              8 MAKE_CELL               12 (call)
+             10 MAKE_CELL               13 (create_task)
+             12 MAKE_CELL               14 (put)
+             14 MAKE_CELL               15 (sema)
+
+321          16 RETURN_GENERATOR
+             18 POP_TOP
+             20 RESUME                   0
+
+328          22 LOAD_FAST                2 (max_workers)
+             24 LOAD_CONST               1 (0)
+             26 COMPARE_OP              40 (==)
+             30 POP_JUMP_IF_FALSE       38 (to 108)
+
+329          32 LOAD_GLOBAL              1 (NULL + async_map)
+             42 LOAD_DEREF               0 (func)
+             44 LOAD_DEREF               1 (it)
+             46 BUILD_LIST               2
+             48 LOAD_DEREF               3 (its)
+             50 LIST_EXTEND              1
+             52 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+             54 CALL_FUNCTION_EX         0
+             56 GET_AITER
+        >>   58 GET_ANEXT
+             60 LOAD_CONST               0 (None)
+        >>   62 SEND                     3 (to 72)
+             66 YIELD_VALUE              3
+             68 RESUME                   3
+             70 JUMP_BACKWARD_NO_INTERRUPT     5 (to 62)
+        >>   72 END_SEND
+             74 STORE_FAST               4 (ret)
+
+330          76 LOAD_GLOBAL              3 (NULL + cast)
+             86 LOAD_DEREF              16 (T)
+             88 LOAD_FAST                4 (ret)
+             90 CALL                     2
+             98 CALL_INTRINSIC_1         4 (INTRINSIC_ASYNC_GEN_WRAP)
+            100 YIELD_VALUE              1
+            102 RESUME                   1
+            104 POP_TOP
+            106 JUMP_BACKWARD           25 (to 58)
+
+332     >>  108 LOAD_FAST                2 (max_workers)
+            110 POP_JUMP_IF_NONE         5 (to 122)
+            112 LOAD_FAST                2 (max_workers)
+            114 LOAD_CONST               1 (0)
+            116 COMPARE_OP              26 (<=)
+            120 POP_JUMP_IF_FALSE        2 (to 126)
+
+333     >>  122 LOAD_CONST               2 (32)
+            124 STORE_FAST               2 (max_workers)
+
+334     >>  126 LOAD_GLOBAL              5 (NULL + AsyncSemaphore)
+            136 LOAD_FAST                2 (max_workers)
+            138 CALL                     1
+            146 STORE_DEREF             15 (sema)
+
+335         148 LOAD_GLOBAL              7 (NULL + AsyncQueue)
+            158 CALL                     0
+            166 STORE_FAST               5 (queue)
+
+336         168 LOAD_FAST                5 (queue)
+            170 LOAD_ATTR                8 (get)
+            190 LOAD_FAST                5 (queue)
+            192 LOAD_ATTR               10 (put_nowait)
+            212 SWAP                     2
+            214 STORE_FAST               6 (get)
+            216 STORE_DEREF             14 (put)
+
+337         218 LOAD_CLOSURE             0 (func)
+            220 LOAD_CLOSURE            15 (sema)
+            222 BUILD_TUPLE              2
+            224 LOAD_CONST               3 (<code object call at 0x1038b7ab0, file "concurrenttools/basic.py", line 337>)
+            226 MAKE_FUNCTION            8 (closure)
+            228 STORE_DEREF             12 (call)
+
+343         230 LOAD_CLOSURE            12 (call)
+            232 LOAD_CLOSURE            13 (create_task)
+            234 LOAD_CLOSURE             1 (it)
+            236 LOAD_CLOSURE             3 (its)
+            238 LOAD_CLOSURE            14 (put)
+            240 BUILD_TUPLE              5
+            242 LOAD_CONST               4 (<code object make_tasks at 0x103af0510, file "concurrenttools/basic.py", line 343>)
+            244 MAKE_FUNCTION            8 (closure)
+            246 STORE_FAST               7 (make_tasks)
+
+351         248 LOAD_CONST               0 (None)
+            250 STORE_FAST               8 (exc)
+
+352         252 LOAD_GLOBAL             13 (NULL + TaskGroup)
+            262 CALL                     0
+            270 BEFORE_ASYNC_WITH
+            272 GET_AWAITABLE            1
+            274 LOAD_CONST               0 (None)
+        >>  276 SEND                     3 (to 286)
+            280 YIELD_VALUE              2
+            282 RESUME                   3
+            284 JUMP_BACKWARD_NO_INTERRUPT     5 (to 276)
+        >>  286 END_SEND
+            288 STORE_FAST               9 (tg)
+
+353         290 LOAD_FAST                9 (tg)
+            292 LOAD_ATTR               14 (create_task)
+            312 STORE_DEREF             13 (create_task)
+
+354         314 PUSH_NULL
+            316 LOAD_DEREF              13 (create_task)
+            318 PUSH_NULL
+            320 LOAD_FAST                7 (make_tasks)
+            322 CALL                     0
+            330 CALL                     1
+            338 POP_TOP
+
+355         340 NOP
+
+356         342 PUSH_NULL
+            344 LOAD_FAST                6 (get)
+            346 CALL                     0
+            354 GET_AWAITABLE            0
+            356 LOAD_CONST               0 (None)
+        >>  358 SEND                     3 (to 368)
+            362 YIELD_VALUE              4
+            364 RESUME                   3
+            366 JUMP_BACKWARD_NO_INTERRUPT     5 (to 358)
+        >>  368 END_SEND
+            370 COPY                     1
+            372 STORE_FAST              10 (task)
+            374 POP_JUMP_IF_FALSE       50 (to 476)
+
+357     >>  376 LOAD_GLOBAL             17 (NULL + isinstance)
+            386 LOAD_FAST               10 (task)
+            388 LOAD_GLOBAL             18 (BaseException)
+            398 CALL                     2
+            406 POP_JUMP_IF_FALSE        3 (to 414)
+
+358         408 LOAD_FAST               10 (task)
+            410 STORE_FAST               8 (exc)
+
+359         412 JUMP_FORWARD            31 (to 476)
+
+360     >>  414 LOAD_FAST               10 (task)
+            416 GET_AWAITABLE            0
+            418 LOAD_CONST               0 (None)
+        >>  420 SEND                     3 (to 430)
+            424 YIELD_VALUE              4
+            426 RESUME                   3
+            428 JUMP_BACKWARD_NO_INTERRUPT     5 (to 420)
+        >>  430 END_SEND
+            432 CALL_INTRINSIC_1         4 (INTRINSIC_ASYNC_GEN_WRAP)
+            434 YIELD_VALUE              3
+            436 RESUME                   1
+            438 POP_TOP
+
+356         440 PUSH_NULL
+            442 LOAD_FAST                6 (get)
+            444 CALL                     0
+            452 GET_AWAITABLE            0
+            454 LOAD_CONST               0 (None)
+        >>  456 SEND                     3 (to 466)
+            460 YIELD_VALUE              4
+            462 RESUME                   3
+            464 JUMP_BACKWARD_NO_INTERRUPT     5 (to 456)
+        >>  466 END_SEND
+            468 COPY                     1
+            470 STORE_FAST              10 (task)
+            472 POP_JUMP_IF_FALSE        1 (to 476)
+            474 JUMP_BACKWARD           50 (to 376)
+
+352     >>  476 LOAD_CONST               0 (None)
+            478 LOAD_CONST               0 (None)
+            480 LOAD_CONST               0 (None)
+            482 CALL                     2
+            490 GET_AWAITABLE            2
+            492 LOAD_CONST               0 (None)
+        >>  494 SEND                     3 (to 504)
+            498 YIELD_VALUE              2
+            500 RESUME                   3
+            502 JUMP_BACKWARD_NO_INTERRUPT     5 (to 494)
+        >>  504 END_SEND
+            506 POP_TOP
+
+363     >>  508 LOAD_FAST                8 (exc)
+            510 POP_JUMP_IF_NONE         2 (to 516)
+
+364         512 LOAD_FAST                8 (exc)
+            514 RAISE_VARARGS            1
+
+363     >>  516 RETURN_CONST             0 (None)
+
+329     >>  518 CLEANUP_THROW
+            520 JUMP_BACKWARD          225 (to 72)
+        >>  522 END_ASYNC_FOR
+            524 RETURN_CONST             0 (None)
+
+352     >>  526 CLEANUP_THROW
+            528 JUMP_BACKWARD          122 (to 286)
+
+356     >>  530 CLEANUP_THROW
+            532 JUMP_BACKWARD           83 (to 368)
+
+360     >>  534 CLEANUP_THROW
+            536 JUMP_BACKWARD           54 (to 430)
+
+356     >>  538 CLEANUP_THROW
+            540 JUMP_BACKWARD           38 (to 466)
+        >>  542 PUSH_EXC_INFO
+
+361         544 LOAD_GLOBAL             18 (BaseException)
+            554 CHECK_EXC_MATCH
+            556 POP_JUMP_IF_FALSE       12 (to 582)
+            558 STORE_FAST              11 (e)
+
+362         560 LOAD_FAST               11 (e)
+            562 STORE_FAST               8 (exc)
+            564 POP_EXCEPT
+            566 LOAD_CONST               0 (None)
+            568 STORE_FAST              11 (e)
+            570 DELETE_FAST             11 (e)
+            572 JUMP_BACKWARD           49 (to 476)
+        >>  574 LOAD_CONST               0 (None)
+            576 STORE_FAST              11 (e)
+            578 DELETE_FAST             11 (e)
+            580 RERAISE                  1
+
+361     >>  582 RERAISE                  0
+        >>  584 COPY                     3
+            586 POP_EXCEPT
+            588 RERAISE                  1
+
+352     >>  590 CLEANUP_THROW
+            592 JUMP_BACKWARD           45 (to 504)
+        >>  594 PUSH_EXC_INFO
+            596 WITH_EXCEPT_START
+            598 GET_AWAITABLE            2
+            600 LOAD_CONST               0 (None)
+        >>  602 SEND                     4 (to 614)
+            606 YIELD_VALUE              3
+            608 RESUME                   3
+            610 JUMP_BACKWARD_NO_INTERRUPT     5 (to 602)
+        >>  612 CLEANUP_THROW
+        >>  614 END_SEND
+            616 POP_JUMP_IF_TRUE         1 (to 620)
+            618 RERAISE                  2
+        >>  620 POP_TOP
+            622 POP_EXCEPT
+            624 POP_TOP
+            626 POP_TOP
+            628 JUMP_BACKWARD           61 (to 508)
+        >>  630 COPY                     3
+            632 POP_EXCEPT
+            634 RERAISE                  1
+        >>  636 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            638 RERAISE                  1
+ExceptionTable:
+  20 to 56 -> 636 [0] lasti
+  58 to 64 -> 522 [1]
+  66 to 66 -> 518 [3]
+  68 to 72 -> 522 [1]
+  74 to 278 -> 636 [0] lasti
+  280 to 280 -> 526 [3]
+  282 to 286 -> 636 [0] lasti
+  288 to 338 -> 594 [1] lasti
+  342 to 360 -> 542 [1]
+  362 to 362 -> 530 [3]
+  364 to 422 -> 542 [1]
+  424 to 424 -> 534 [3]
+  426 to 458 -> 542 [1]
+  460 to 460 -> 538 [3]
+  462 to 472 -> 542 [1]
+  476 to 496 -> 636 [0] lasti
+  498 to 498 -> 590 [2]
+  500 to 516 -> 636 [0] lasti
+  518 to 518 -> 522 [1]
+  522 to 526 -> 636 [0] lasti
+  530 to 530 -> 542 [1]
+  534 to 534 -> 542 [1]
+  538 to 538 -> 542 [1]
+  542 to 558 -> 584 [2] lasti
+  560 to 562 -> 574 [2] lasti
+  564 to 572 -> 594 [1] lasti
+  574 to 582 -> 584 [2] lasti
+  584 to 588 -> 594 [1] lasti
+  590 to 590 -> 636 [0] lasti
+  594 to 604 -> 630 [3] lasti
+  606 to 606 -> 612 [6]
+  608 to 620 -> 630 [3] lasti
+  622 to 634 -> 636 [0] lasti
+
+Disassembly of <code object call at 0x1038b7ab0, file "concurrenttools/basic.py", line 337>:
+              0 COPY_FREE_VARS           2
+
+337           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+338           8 LOAD_DEREF               3 (sema)
+             10 BEFORE_ASYNC_WITH
+             12 GET_AWAITABLE            1
+             14 LOAD_CONST               0 (None)
+        >>   16 SEND                     3 (to 26)
+             20 YIELD_VALUE              2
+             22 RESUME                   3
+             24 JUMP_BACKWARD_NO_INTERRUPT     5 (to 16)
+        >>   26 END_SEND
+             28 POP_TOP
+
+339          30 PUSH_NULL
+             32 LOAD_DEREF               2 (func)
+             34 LOAD_FAST                0 (args)
+             36 CALL_FUNCTION_EX         0
+             38 STORE_FAST               1 (ret)
+
+340          40 LOAD_GLOBAL              1 (NULL + isawaitable)
+             50 LOAD_FAST                1 (ret)
+             52 CALL                     1
+             60 POP_JUMP_IF_FALSE       10 (to 82)
+
+341          62 LOAD_FAST                1 (ret)
+             64 GET_AWAITABLE            0
+             66 LOAD_CONST               0 (None)
+        >>   68 SEND                     3 (to 78)
+             72 YIELD_VALUE              3
+             74 RESUME                   3
+             76 JUMP_BACKWARD_NO_INTERRUPT     5 (to 68)
+        >>   78 END_SEND
+             80 STORE_FAST               1 (ret)
+
+342     >>   82 LOAD_FAST                1 (ret)
+
+338          84 SWAP                     2
+             86 LOAD_CONST               0 (None)
+             88 LOAD_CONST               0 (None)
+             90 LOAD_CONST               0 (None)
+             92 CALL                     2
+            100 GET_AWAITABLE            2
+            102 LOAD_CONST               0 (None)
+        >>  104 SEND                     3 (to 114)
+            108 YIELD_VALUE              2
+            110 RESUME                   3
+            112 JUMP_BACKWARD_NO_INTERRUPT     5 (to 104)
+        >>  114 END_SEND
+            116 POP_TOP
+            118 RETURN_VALUE
+        >>  120 CLEANUP_THROW
+            122 JUMP_BACKWARD           49 (to 26)
+
+341     >>  124 CLEANUP_THROW
+            126 JUMP_BACKWARD           25 (to 78)
+
+338     >>  128 CLEANUP_THROW
+            130 JUMP_BACKWARD            9 (to 114)
+        >>  132 PUSH_EXC_INFO
+            134 WITH_EXCEPT_START
+            136 GET_AWAITABLE            2
+            138 LOAD_CONST               0 (None)
+        >>  140 SEND                     4 (to 152)
+            144 YIELD_VALUE              3
+            146 RESUME                   3
+            148 JUMP_BACKWARD_NO_INTERRUPT     5 (to 140)
+        >>  150 CLEANUP_THROW
+        >>  152 END_SEND
+            154 POP_JUMP_IF_TRUE         1 (to 158)
+            156 RERAISE                  2
+        >>  158 POP_TOP
+            160 POP_EXCEPT
+            162 POP_TOP
+            164 POP_TOP
+            166 RETURN_CONST             0 (None)
+        >>  168 COPY                     3
+            170 POP_EXCEPT
+            172 RERAISE                  1
+        >>  174 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            176 RERAISE                  1
+ExceptionTable:
+  6 to 18 -> 174 [0] lasti
+  20 to 20 -> 120 [3]
+  22 to 26 -> 174 [0] lasti
+  28 to 70 -> 132 [1] lasti
+  72 to 72 -> 124 [3]
+  74 to 82 -> 132 [1] lasti
+  84 to 106 -> 174 [0] lasti
+  108 to 108 -> 128 [3]
+  110 to 120 -> 174 [0] lasti
+  124 to 124 -> 132 [1] lasti
+  128 to 128 -> 174 [0] lasti
+  132 to 142 -> 168 [3] lasti
+  144 to 144 -> 150 [6]
+  146 to 158 -> 168 [3] lasti
+  160 to 172 -> 174 [0] lasti
+
+Disassembly of <code object make_tasks at 0x103af0510, file "concurrenttools/basic.py", line 343>:
+              0 COPY_FREE_VARS           5
+
+343           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+344           8 NOP
+
+345          10 LOAD_GLOBAL              1 (NULL + async_zip)
+             20 LOAD_DEREF               4 (it)
+             22 BUILD_LIST               1
+             24 LOAD_DEREF               5 (its)
+             26 LIST_EXTEND              1
+             28 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+             30 CALL_FUNCTION_EX         0
+             32 GET_AITER
+        >>   34 GET_ANEXT
+             36 LOAD_CONST               0 (None)
+        >>   38 SEND                     3 (to 48)
+             42 YIELD_VALUE              5
+             44 RESUME                   3
+             46 JUMP_BACKWARD_NO_INTERRUPT     5 (to 38)
+        >>   48 END_SEND
+             50 STORE_FAST               0 (args)
+
+346          52 PUSH_NULL
+             54 LOAD_DEREF               6 (put)
+             56 PUSH_NULL
+             58 LOAD_DEREF               3 (create_task)
+             60 PUSH_NULL
+             62 LOAD_DEREF               2 (call)
+             64 LOAD_FAST                0 (args)
+             66 CALL                     1
+             74 CALL                     1
+             82 CALL                     1
+             90 POP_TOP
+             92 JUMP_BACKWARD           30 (to 34)
+
+345     >>   94 CLEANUP_THROW
+             96 JUMP_BACKWARD           25 (to 48)
+        >>   98 END_ASYNC_FOR
+            100 JUMP_FORWARD            30 (to 162)
+        >>  102 PUSH_EXC_INFO
+
+347         104 LOAD_GLOBAL              2 (BaseException)
+            114 CHECK_EXC_MATCH
+            116 POP_JUMP_IF_FALSE       18 (to 154)
+            118 STORE_FAST               1 (e)
+
+348         120 PUSH_NULL
+            122 LOAD_DEREF               6 (put)
+            124 LOAD_FAST                1 (e)
+            126 CALL                     1
+            134 POP_TOP
+            136 POP_EXCEPT
+            138 LOAD_CONST               0 (None)
+            140 STORE_FAST               1 (e)
+            142 DELETE_FAST              1 (e)
+            144 JUMP_FORWARD             8 (to 162)
+        >>  146 LOAD_CONST               0 (None)
+            148 STORE_FAST               1 (e)
+            150 DELETE_FAST              1 (e)
+            152 RERAISE                  1
+
+347     >>  154 RERAISE                  0
+        >>  156 COPY                     3
+            158 POP_EXCEPT
+            160 RERAISE                  1
+
+350     >>  162 PUSH_NULL
+            164 LOAD_DEREF               6 (put)
+            166 LOAD_CONST               0 (None)
+            168 CALL                     1
+            176 POP_TOP
+            178 RETURN_CONST             0 (None)
+        >>  180 PUSH_EXC_INFO
+            182 PUSH_NULL
+            184 LOAD_DEREF               6 (put)
+            186 LOAD_CONST               0 (None)
+            188 CALL                     1
+            196 POP_TOP
+            198 RERAISE                  0
+        >>  200 COPY                     3
+            202 POP_EXCEPT
+            204 RERAISE                  1
+        >>  206 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            208 RERAISE                  1
+ExceptionTable:
+  6 to 6 -> 206 [0] lasti
+  10 to 32 -> 102 [0]
+  34 to 40 -> 98 [1]
+  42 to 42 -> 94 [3]
+  44 to 48 -> 98 [1]
+  50 to 92 -> 102 [0]
+  94 to 94 -> 98 [1]
+  98 to 98 -> 102 [0]
+  100 to 100 -> 180 [0]
+  102 to 118 -> 156 [1] lasti
+  120 to 134 -> 146 [1] lasti
+  136 to 144 -> 180 [0]
+  146 to 154 -> 156 [1] lasti
+  156 to 160 -> 180 [0]
+  162 to 178 -> 206 [0] lasti
+  180 to 198 -> 200 [1] lasti
+  200 to 204 -> 206 [0] lasti
+
+Disassembly of <code object <generic parameters of conmap> at 0x1038ff930, file "concurrenttools/basic.py", line 367>:
+367           0 RESUME                   0
+
+368           2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('func')
+
+369          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_CONST               2 (Ellipsis)
+             28 LOAD_FAST                2 (T)
+             30 BUILD_TUPLE              2
+             32 BINARY_SUBSCR
+
+368          36 LOAD_CONST               3 ('max_workers')
+
+373          38 LOAD_CONST               4 (None)
+             40 LOAD_GLOBAL              2 (int)
+             50 BINARY_OP                7 (|)
+
+368          54 LOAD_CONST               5 ('async_')
+
+374          56 LOAD_GLOBAL              4 (Literal)
+             66 LOAD_CONST               6 (False)
+             68 BINARY_SUBSCR
+
+368          72 LOAD_CONST               7 ('return')
+
+375          74 LOAD_GLOBAL              6 (Iterator)
+             84 LOAD_FAST                2 (T)
+             86 BINARY_SUBSCR
+
+368          90 BUILD_TUPLE              8
+             92 LOAD_CONST               8 (<code object conmap at 0x103b34b90, file "concurrenttools/basic.py", line 367>)
+             94 MAKE_FUNCTION            6 (kwdefaults, annotations)
+             96 SWAP                     2
+             98 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            100 RETURN_VALUE
+
+Disassembly of <code object conmap at 0x103b34b90, file "concurrenttools/basic.py", line 367>:
+367           0 RESUME                   0
+
+376           2 RETURN_CONST             0 (None)
+
+Disassembly of <code object <generic parameters of conmap> at 0x1039b2d30, file "concurrenttools/basic.py", line 377>:
+377           0 RESUME                   0
+
+378           2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('func')
+
+379          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_CONST               2 (Ellipsis)
+             28 LOAD_GLOBAL              2 (Awaitable)
+             38 LOAD_FAST                2 (T)
+             40 BINARY_SUBSCR
+             44 BUILD_TUPLE              2
+             46 BINARY_SUBSCR
+
+378          50 LOAD_CONST               3 ('max_workers')
+
+383          52 LOAD_CONST               4 (None)
+             54 LOAD_GLOBAL              4 (int)
+             64 BINARY_OP                7 (|)
+
+378          68 LOAD_CONST               5 ('async_')
+
+384          70 LOAD_GLOBAL              6 (Literal)
+             80 LOAD_CONST               6 (True)
+             82 BINARY_SUBSCR
+
+378          86 LOAD_CONST               7 ('return')
+
+385          88 LOAD_GLOBAL              8 (AsyncIterator)
+             98 LOAD_FAST                2 (T)
+            100 BINARY_SUBSCR
+
+378         104 BUILD_TUPLE              8
+            106 LOAD_CONST               8 (<code object conmap at 0x103b34d30, file "concurrenttools/basic.py", line 377>)
+            108 MAKE_FUNCTION            6 (kwdefaults, annotations)
+            110 SWAP                     2
+            112 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            114 RETURN_VALUE
+
+Disassembly of <code object conmap at 0x103b34d30, file "concurrenttools/basic.py", line 377>:
+377           0 RESUME                   0
+
+386           2 RETURN_CONST             0 (None)
+
+Disassembly of <code object <generic parameters of conmap> at 0x103877e10, file "concurrenttools/basic.py", line 387>:
+387           0 RESUME                   0
+              2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('func')
+
+388          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_CONST               2 (Ellipsis)
+             28 LOAD_FAST                2 (T)
+             30 BUILD_TUPLE              2
+             32 BINARY_SUBSCR
+             36 LOAD_GLOBAL              0 (Callable)
+             46 LOAD_CONST               2 (Ellipsis)
+             48 LOAD_GLOBAL              2 (Awaitable)
+             58 LOAD_FAST                2 (T)
+             60 BINARY_SUBSCR
+             64 BUILD_TUPLE              2
+             66 BINARY_SUBSCR
+             70 BINARY_OP                7 (|)
+
+387          74 LOAD_CONST               3 ('max_workers')
+
+392          76 LOAD_CONST               4 (None)
+             78 LOAD_GLOBAL              4 (int)
+             88 BINARY_OP                7 (|)
+
+387          92 LOAD_CONST               5 ('async_')
+
+393          94 LOAD_GLOBAL              6 (Literal)
+            104 LOAD_CONST               6 ((False, True))
+            106 BINARY_SUBSCR
+
+387         110 LOAD_CONST               7 ('return')
+
+394         112 LOAD_GLOBAL              8 (Iterator)
+            122 LOAD_FAST                2 (T)
+            124 BINARY_SUBSCR
+            128 LOAD_GLOBAL             10 (AsyncIterator)
+            138 LOAD_FAST                2 (T)
+            140 BINARY_SUBSCR
+            144 BINARY_OP                7 (|)
+
+387         148 BUILD_TUPLE              8
+            150 LOAD_CONST               8 (<code object conmap at 0x103b20d40, file "concurrenttools/basic.py", line 387>)
+            152 MAKE_FUNCTION            6 (kwdefaults, annotations)
+            154 SWAP                     2
+            156 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            158 RETURN_VALUE
+
+Disassembly of <code object conmap at 0x103b20d40, file "concurrenttools/basic.py", line 387>:
+387           0 RESUME                   0
+
+395           2 LOAD_GLOBAL              1 (NULL + has_keyword_arg)
+             12 LOAD_FAST                0 (func)
+             14 LOAD_CONST               1 ('async_')
+             16 CALL                     2
+             24 POP_JUMP_IF_FALSE       13 (to 52)
+
+396          26 LOAD_GLOBAL              3 (NULL + partial)
+             36 LOAD_FAST                0 (func)
+             38 LOAD_FAST                3 (async_)
+             40 KW_NAMES                 2 (('async_',))
+             42 CALL                     2
+             50 STORE_FAST               0 (func)
+
+397     >>   52 LOAD_FAST                3 (async_)
+             54 POP_JUMP_IF_FALSE        6 (to 68)
+             56 LOAD_GLOBAL              4 (taskgroup_map)
+             66 JUMP_FORWARD             5 (to 78)
+        >>   68 LOAD_GLOBAL              6 (threadpool_map)
+        >>   78 STORE_FAST               5 (map)
+
+398          80 PUSH_NULL
+             82 LOAD_FAST                5 (map)
+
+399          84 LOAD_FAST                0 (func)
+
+400          86 LOAD_FAST                1 (it)
+
+398          88 BUILD_LIST               2
+
+401          90 LOAD_FAST                4 (its)
+
+398          92 LIST_EXTEND              1
+             94 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+             96 LOAD_CONST               3 ('max_workers')
+
+402          98 LOAD_FAST                2 (max_workers)
+
+398         100 BUILD_MAP                1
+            102 CALL_FUNCTION_EX         1
+            104 RETURN_VALUE
+
+Disassembly of <code object <generic parameters of conmap_wrap> at 0x103877cb0, file "concurrenttools/basic.py", line 406>:
+406           0 RESUME                   0
+
+407           2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('func')
+
+408          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_CONST               2 (Ellipsis)
+             28 LOAD_FAST                2 (T)
+             30 BUILD_TUPLE              2
+             32 BINARY_SUBSCR
+
+407          36 LOAD_CONST               3 ('max_workers')
+
+412          38 LOAD_CONST               4 (None)
+             40 LOAD_GLOBAL              2 (int)
+             50 BINARY_OP                7 (|)
+
+407          54 LOAD_CONST               5 ('async_')
+
+413          56 LOAD_GLOBAL              4 (Literal)
+             66 LOAD_CONST               6 (False)
+             68 BINARY_SUBSCR
+
+407          72 LOAD_CONST               7 ('return')
+
+414          74 LOAD_GLOBAL              6 (Iterator)
+             84 LOAD_GLOBAL              8 (tuple)
+             94 LOAD_GLOBAL              8 (tuple)
+            104 LOAD_CONST               4 (None)
+            106 LOAD_FAST                2 (T)
+            108 BINARY_OP                7 (|)
+            112 LOAD_CONST               4 (None)
+            114 LOAD_GLOBAL             10 (BaseExceptionGroup)
+            124 BINARY_OP                7 (|)
+            128 BUILD_TUPLE              3
+            130 BINARY_SUBSCR
+            134 BINARY_SUBSCR
+
+407         138 BUILD_TUPLE              8
+            140 LOAD_CONST               8 (<code object conmap_wrap at 0x103b34c60, file "concurrenttools/basic.py", line 406>)
+            142 MAKE_FUNCTION            6 (kwdefaults, annotations)
+            144 SWAP                     2
+            146 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            148 RETURN_VALUE
+
+Disassembly of <code object conmap_wrap at 0x103b34c60, file "concurrenttools/basic.py", line 406>:
+406           0 RESUME                   0
+
+415           2 RETURN_CONST             0 (None)
+
+Disassembly of <code object <generic parameters of conmap_wrap> at 0x103afca40, file "concurrenttools/basic.py", line 416>:
+416           0 RESUME                   0
+
+417           2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('func')
+
+418          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_CONST               2 (Ellipsis)
+             28 LOAD_GLOBAL              2 (Awaitable)
+             38 LOAD_FAST                2 (T)
+             40 BINARY_SUBSCR
+             44 BUILD_TUPLE              2
+             46 BINARY_SUBSCR
+
+417          50 LOAD_CONST               3 ('max_workers')
+
+422          52 LOAD_CONST               4 (None)
+             54 LOAD_GLOBAL              4 (int)
+             64 BINARY_OP                7 (|)
+
+417          68 LOAD_CONST               5 ('async_')
+
+423          70 LOAD_GLOBAL              6 (Literal)
+             80 LOAD_CONST               6 (True)
+             82 BINARY_SUBSCR
+
+417          86 LOAD_CONST               7 ('return')
+
+424          88 LOAD_GLOBAL              8 (AsyncIterator)
+             98 LOAD_GLOBAL             10 (tuple)
+            108 LOAD_GLOBAL             10 (tuple)
+            118 LOAD_CONST               4 (None)
+            120 LOAD_FAST                2 (T)
+            122 BINARY_OP                7 (|)
+            126 LOAD_CONST               4 (None)
+            128 LOAD_GLOBAL             12 (BaseExceptionGroup)
+            138 BINARY_OP                7 (|)
+            142 BUILD_TUPLE              3
+            144 BINARY_SUBSCR
+            148 BINARY_SUBSCR
+
+417         152 BUILD_TUPLE              8
+            154 LOAD_CONST               8 (<code object conmap_wrap at 0x103b363f0, file "concurrenttools/basic.py", line 416>)
+            156 MAKE_FUNCTION            6 (kwdefaults, annotations)
+            158 SWAP                     2
+            160 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            162 RETURN_VALUE
+
+Disassembly of <code object conmap_wrap at 0x103b363f0, file "concurrenttools/basic.py", line 416>:
+416           0 RESUME                   0
+
+425           2 RETURN_CONST             0 (None)
+
+Disassembly of <code object <generic parameters of conmap_wrap> at 0x1038f2db0, file "concurrenttools/basic.py", line 426>:
+426           0 RESUME                   0
+              2 LOAD_CONST               0 ('T')
+              4 CALL_INTRINSIC_1         7 (INTRINSIC_TYPEVAR)
+              6 COPY                     1
+              8 STORE_FAST               2 (T)
+             10 BUILD_TUPLE              1
+             12 LOAD_FAST                0 (.defaults)
+             14 LOAD_CONST               1 ('func')
+
+427          16 LOAD_GLOBAL              0 (Callable)
+             26 LOAD_CONST               2 (Ellipsis)
+             28 LOAD_FAST                2 (T)
+             30 BUILD_TUPLE              2
+             32 BINARY_SUBSCR
+             36 LOAD_GLOBAL              0 (Callable)
+             46 LOAD_CONST               2 (Ellipsis)
+             48 LOAD_GLOBAL              2 (Awaitable)
+             58 LOAD_FAST                2 (T)
+             60 BINARY_SUBSCR
+             64 BUILD_TUPLE              2
+             66 BINARY_SUBSCR
+             70 BINARY_OP                7 (|)
+
+426          74 LOAD_CONST               3 ('max_workers')
+
+431          76 LOAD_CONST               4 (None)
+             78 LOAD_GLOBAL              4 (int)
+             88 BINARY_OP                7 (|)
+
+426          92 LOAD_CONST               5 ('async_')
+
+432          94 LOAD_GLOBAL              6 (Literal)
+            104 LOAD_CONST               6 ((False, True))
+            106 BINARY_SUBSCR
+
+426         110 LOAD_CONST               7 ('return')
+
+433         112 LOAD_GLOBAL              8 (Iterator)
+            122 LOAD_GLOBAL             10 (tuple)
+            132 LOAD_GLOBAL             10 (tuple)
+            142 LOAD_CONST               4 (None)
+            144 LOAD_FAST                2 (T)
+            146 BINARY_OP                7 (|)
+            150 LOAD_CONST               4 (None)
+            152 LOAD_GLOBAL             12 (BaseExceptionGroup)
+            162 BINARY_OP                7 (|)
+            166 BUILD_TUPLE              3
+            168 BINARY_SUBSCR
+            172 BINARY_SUBSCR
+            176 LOAD_GLOBAL             14 (AsyncIterator)
+            186 LOAD_GLOBAL             10 (tuple)
+            196 LOAD_GLOBAL             10 (tuple)
+            206 LOAD_CONST               4 (None)
+            208 LOAD_FAST                2 (T)
+            210 BINARY_OP                7 (|)
+            214 LOAD_CONST               4 (None)
+            216 LOAD_GLOBAL             12 (BaseExceptionGroup)
+            226 BINARY_OP                7 (|)
+            230 BUILD_TUPLE              3
+            232 BINARY_SUBSCR
+            236 BINARY_SUBSCR
+            240 BINARY_OP                7 (|)
+
+426         244 BUILD_TUPLE              8
+            246 LOAD_CONST               8 (<code object conmap_wrap at 0x1084bde30, file "concurrenttools/basic.py", line 426>)
+            248 MAKE_FUNCTION            6 (kwdefaults, annotations)
+            250 SWAP                     2
+            252 CALL_INTRINSIC_2         4 (INTRINSIC_SET_FUNCTION_TYPE_PARAMS)
+            254 RETURN_VALUE
+
+Disassembly of <code object conmap_wrap at 0x1084bde30, file "concurrenttools/basic.py", line 426>:
+              0 MAKE_CELL                0 (func)
+
+426           2 RESUME                   0
+
+435           4 LOAD_FAST                3 (async_)
+              6 POP_JUMP_IF_FALSE        6 (to 20)
+
+436           8 LOAD_CLOSURE             0 (func)
+             10 BUILD_TUPLE              1
+             12 LOAD_CONST               1 (<code object method at 0x103a78ff0, file "concurrenttools/basic.py", line 436>)
+             14 MAKE_FUNCTION            8 (closure)
+             16 STORE_FAST               5 (method)
+             18 JUMP_FORWARD             5 (to 30)
+
+445     >>   20 LOAD_CLOSURE             0 (func)
+             22 BUILD_TUPLE              1
+             24 LOAD_CONST               2 (<code object method at 0x103b1d350, file "concurrenttools/basic.py", line 445>)
+             26 MAKE_FUNCTION            8 (closure)
+             28 STORE_FAST               5 (method)
+
+450     >>   30 LOAD_GLOBAL              1 (NULL + conmap)
+
+451          40 LOAD_FAST                5 (method)
+
+452          42 LOAD_FAST                1 (it)
+
+450          44 BUILD_LIST               2
+
+453          46 LOAD_FAST                4 (its)
+
+450          48 LIST_EXTEND              1
+             50 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+
+454          52 LOAD_FAST                2 (max_workers)
+
+455          54 LOAD_FAST                3 (async_)
+
+450          56 LOAD_CONST               3 (('max_workers', 'async_'))
+             58 BUILD_CONST_KEY_MAP      2
+             60 CALL_FUNCTION_EX         1
+             62 RETURN_VALUE
+
+Disassembly of <code object method at 0x103a78ff0, file "concurrenttools/basic.py", line 436>:
+              0 COPY_FREE_VARS           1
+
+436           2 RETURN_GENERATOR
+              4 POP_TOP
+              6 RESUME                   0
+
+437           8 NOP
+
+438          10 PUSH_NULL
+             12 LOAD_DEREF               3 (func)
+             14 LOAD_FAST                0 (args)
+             16 CALL_FUNCTION_EX         0
+             18 STORE_FAST               1 (ret)
+
+439          20 LOAD_GLOBAL              1 (NULL + isawaitable)
+             30 LOAD_FAST                1 (ret)
+             32 CALL                     1
+             40 POP_JUMP_IF_FALSE       10 (to 62)
+
+440          42 LOAD_FAST                1 (ret)
+             44 GET_AWAITABLE            0
+             46 LOAD_CONST               0 (None)
+        >>   48 SEND                     3 (to 58)
+             52 YIELD_VALUE              3
+             54 RESUME                   3
+             56 JUMP_BACKWARD_NO_INTERRUPT     5 (to 48)
+        >>   58 END_SEND
+             60 STORE_FAST               1 (ret)
+
+441     >>   62 LOAD_FAST                0 (args)
+             64 LOAD_FAST                1 (ret)
+             66 LOAD_CONST               0 (None)
+             68 BUILD_TUPLE              3
+             70 RETURN_VALUE
+
+440     >>   72 CLEANUP_THROW
+             74 JUMP_BACKWARD            9 (to 58)
+        >>   76 PUSH_EXC_INFO
+
+442          78 LOAD_GLOBAL              2 (BaseException)
+             88 CHECK_EXC_MATCH
+             90 POP_JUMP_IF_FALSE       15 (to 122)
+             92 STORE_FAST               2 (e)
+
+443          94 LOAD_FAST                0 (args)
+             96 LOAD_CONST               0 (None)
+             98 LOAD_FAST                2 (e)
+            100 BUILD_TUPLE              3
+            102 SWAP                     2
+            104 POP_EXCEPT
+            106 LOAD_CONST               0 (None)
+            108 STORE_FAST               2 (e)
+            110 DELETE_FAST              2 (e)
+            112 RETURN_VALUE
+        >>  114 LOAD_CONST               0 (None)
+            116 STORE_FAST               2 (e)
+            118 DELETE_FAST              2 (e)
+            120 RERAISE                  1
+
+442     >>  122 RERAISE                  0
+        >>  124 COPY                     3
+            126 POP_EXCEPT
+            128 RERAISE                  1
+        >>  130 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+            132 RERAISE                  1
+ExceptionTable:
+  6 to 6 -> 130 [0] lasti
+  10 to 50 -> 76 [0]
+  52 to 52 -> 72 [2]
+  54 to 68 -> 76 [0]
+  70 to 70 -> 130 [0] lasti
+  72 to 72 -> 76 [0]
+  76 to 92 -> 124 [1] lasti
+  94 to 100 -> 114 [1] lasti
+  102 to 102 -> 124 [1] lasti
+  104 to 112 -> 130 [0] lasti
+  114 to 122 -> 124 [1] lasti
+  124 to 128 -> 130 [0] lasti
+
+Disassembly of <code object method at 0x103b1d350, file "concurrenttools/basic.py", line 445>:
+              0 COPY_FREE_VARS           1
+
+445           2 RESUME                   0
+
+446           4 NOP
+
+447           6 LOAD_FAST                0 (args)
+              8 PUSH_NULL
+             10 LOAD_DEREF               2 (func)
+             12 LOAD_FAST                0 (args)
+             14 CALL_FUNCTION_EX         0
+             16 LOAD_CONST               0 (None)
+             18 BUILD_TUPLE              3
+             20 RETURN_VALUE
+        >>   22 PUSH_EXC_INFO
+
+448          24 LOAD_GLOBAL              0 (BaseException)
+             34 CHECK_EXC_MATCH
+             36 POP_JUMP_IF_FALSE       15 (to 68)
+             38 STORE_FAST               1 (e)
+
+449          40 LOAD_FAST                0 (args)
+             42 LOAD_CONST               0 (None)
+             44 LOAD_FAST                1 (e)
+             46 BUILD_TUPLE              3
+             48 SWAP                     2
+             50 POP_EXCEPT
+             52 LOAD_CONST               0 (None)
+             54 STORE_FAST               1 (e)
+             56 DELETE_FAST              1 (e)
+             58 RETURN_VALUE
+        >>   60 LOAD_CONST               0 (None)
+             62 STORE_FAST               1 (e)
+             64 DELETE_FAST              1 (e)
+             66 RERAISE                  1
+
+448     >>   68 RERAISE                  0
+        >>   70 COPY                     3
+             72 POP_EXCEPT
+             74 RERAISE                  1
+ExceptionTable:
+  6 to 18 -> 22 [0]
+  22 to 38 -> 70 [1] lasti
+  40 to 46 -> 60 [1] lasti
+  48 to 48 -> 70 [1] lasti
+  60 to 68 -> 70 [1] lasti

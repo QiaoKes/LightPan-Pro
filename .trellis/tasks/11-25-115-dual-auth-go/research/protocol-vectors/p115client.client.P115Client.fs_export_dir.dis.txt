@@ -1,0 +1,43 @@
+11208           0 RESUME                   0
+
+11230           2 LOAD_GLOBAL              1 (NULL + complete_url)
+               12 LOAD_CONST               1 ('/files/export_dir')
+               14 LOAD_FAST                2 (base_url)
+               16 KW_NAMES                 2 (('base_url',))
+               18 CALL                     2
+               26 STORE_FAST               5 (api)
+
+11231          28 LOAD_GLOBAL              3 (NULL + isinstance)
+               38 LOAD_FAST                1 (payload)
+               40 LOAD_GLOBAL              4 (int)
+               50 LOAD_GLOBAL              6 (str)
+               60 BUILD_TUPLE              2
+               62 CALL                     2
+               70 POP_JUMP_IF_FALSE        4 (to 80)
+
+11232          72 LOAD_CONST               3 ('file_ids')
+               74 LOAD_FAST                1 (payload)
+               76 BUILD_MAP                1
+               78 STORE_FAST               1 (payload)
+
+11233     >>   80 LOAD_FAST                1 (payload)
+               82 LOAD_ATTR                9 (NULL|self + setdefault)
+              102 LOAD_CONST               4 ('target')
+              104 LOAD_CONST               5 ('U_1_0')
+              106 CALL                     2
+              114 POP_TOP
+
+11234         116 PUSH_NULL
+              118 LOAD_FAST                0 (self)
+              120 LOAD_ATTR               10 (request)
+              140 LOAD_CONST               8 (())
+              142 LOAD_FAST                5 (api)
+              144 LOAD_CONST               6 ('POST')
+              146 LOAD_FAST                1 (payload)
+              148 LOAD_FAST                3 (async_)
+              150 LOAD_CONST               7 (('url', 'method', 'data', 'async_'))
+              152 BUILD_CONST_KEY_MAP      4
+              154 LOAD_FAST                4 (request_kwargs)
+              156 DICT_MERGE               1
+              158 CALL_FUNCTION_EX         1
+              160 RETURN_VALUE

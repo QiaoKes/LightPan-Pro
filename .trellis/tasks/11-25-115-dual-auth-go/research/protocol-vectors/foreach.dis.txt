@@ -1,0 +1,140 @@
+foreach import [Instruction(opname='LOAD_CONST', opcode=100, arg=24, argval=('bfs_gen', 'chunked', 'chain', 'chain_from_iterable', 'collect', 'foreach', 'run_gen_step', 'run_gen_step_iter', 'through', 'with_iter_next', 'map', 'filter', 'iter_unique', 'Yield', 'YieldFrom'), argrepr="('bfs_gen', 'chunked', 'chain', 'chain_from_iterable', 'collect', 'foreach', 'run_gen_step', 'run_gen_step_iter', 'through', 'with_iter_next', 'map', 'filter', 'iter_unique', 'Yield', 'YieldFrom')", offset=348, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='IMPORT_NAME', opcode=108, arg=62, argval='iterutils', argrepr='iterutils', offset=350, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='IMPORT_FROM', opcode=109, arg=63, argval='bfs_gen', argrepr='bfs_gen', offset=352, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='STORE_NAME', opcode=90, arg=63, argval='bfs_gen', argrepr='bfs_gen', offset=354, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='IMPORT_FROM', opcode=109, arg=64, argval='chunked', argrepr='chunked', offset=356, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='STORE_NAME', opcode=90, arg=64, argval='chunked', argrepr='chunked', offset=358, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='IMPORT_FROM', opcode=109, arg=65, argval='chain', argrepr='chain', offset=360, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='STORE_NAME', opcode=90, arg=65, argval='chain', argrepr='chain', offset=362, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='IMPORT_FROM', opcode=109, arg=66, argval='chain_from_iterable', argrepr='chain_from_iterable', offset=364, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='STORE_NAME', opcode=90, arg=66, argval='chain_from_iterable', argrepr='chain_from_iterable', offset=366, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='IMPORT_FROM', opcode=109, arg=67, argval='collect', argrepr='collect', offset=368, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='STORE_NAME', opcode=90, arg=67, argval='collect', argrepr='collect', offset=370, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='IMPORT_FROM', opcode=109, arg=68, argval='foreach', argrepr='foreach', offset=372, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='STORE_NAME', opcode=90, arg=68, argval='foreach', argrepr='foreach', offset=374, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1)), Instruction(opname='IMPORT_FROM', opcode=109, arg=69, argval='run_gen_step', argrepr='run_gen_step', offset=376, starts_line=None, is_jump_target=False, positions=Positions(lineno=44, end_lineno=48, col_offset=0, end_col_offset=1))]
+iterutils/misc 285
+285           0 RESUME                   0
+
+293           2 LOAD_FAST                3 (threaded)
+              4 POP_JUMP_IF_TRUE        34 (to 74)
+
+294           6 LOAD_GLOBAL              1 (NULL + isinstance)
+             16 LOAD_FAST                1 (iterable)
+             18 LOAD_GLOBAL              2 (AsyncIterable)
+             28 CALL                     2
+             36 POP_JUMP_IF_TRUE        18 (to 74)
+
+295          38 LOAD_GLOBAL              5 (NULL + any)
+             48 LOAD_CONST               1 (<code object <genexpr> at 0x10a2ef030, file "iterutils/misc.py", line 295>)
+             50 MAKE_FUNCTION            0
+             52 LOAD_FAST                4 (iterables)
+             54 GET_ITER
+             56 CALL                     0
+             64 CALL                     1
+             72 POP_JUMP_IF_FALSE       17 (to 108)
+
+297     >>   74 LOAD_GLOBAL              7 (NULL + async_foreach)
+
+298          84 LOAD_FAST                0 (function)
+
+299          86 LOAD_FAST                1 (iterable)
+
+297          88 BUILD_LIST               2
+
+300          90 LOAD_FAST                4 (iterables)
+
+297          92 LIST_EXTEND              1
+             94 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+
+301          96 LOAD_FAST                2 (default)
+
+302          98 LOAD_FAST                3 (threaded)
+
+297         100 LOAD_CONST               2 (('default', 'threaded'))
+            102 BUILD_CONST_KEY_MAP      2
+            104 CALL_FUNCTION_EX         1
+            106 RETURN_VALUE
+
+304     >>  108 LOAD_FAST                2 (default)
+            110 STORE_FAST               5 (r)
+
+305         112 LOAD_FAST                4 (iterables)
+            114 POP_JUMP_IF_FALSE       24 (to 164)
+
+306         116 LOAD_GLOBAL              9 (NULL + _zip)
+            126 LOAD_FAST                1 (iterable)
+            128 BUILD_LIST               1
+            130 LOAD_FAST                4 (iterables)
+            132 LIST_EXTEND              1
+            134 CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+            136 CALL_FUNCTION_EX         0
+            138 GET_ITER
+        >>  140 FOR_ITER                 7 (to 158)
+            144 STORE_FAST               6 (args)
+
+307         146 PUSH_NULL
+            148 LOAD_FAST                0 (function)
+            150 LOAD_FAST                6 (args)
+            152 CALL_FUNCTION_EX         0
+            154 STORE_FAST               5 (r)
+            156 JUMP_BACKWARD            9 (to 140)
+
+306     >>  158 END_FOR
+
+311         160 LOAD_FAST                5 (r)
+            162 RETURN_VALUE
+
+309     >>  164 LOAD_FAST                1 (iterable)
+            166 GET_ITER
+        >>  168 FOR_ITER                10 (to 192)
+            172 STORE_FAST               7 (arg)
+
+310         174 PUSH_NULL
+            176 LOAD_FAST                0 (function)
+            178 LOAD_FAST                7 (arg)
+            180 CALL                     1
+            188 STORE_FAST               5 (r)
+            190 JUMP_BACKWARD           12 (to 168)
+
+309     >>  192 END_FOR
+
+311         194 LOAD_FAST                5 (r)
+            196 RETURN_VALUE
+
+Disassembly of <code object <genexpr> at 0x10a2ef030, file "iterutils/misc.py", line 295>:
+295           0 RETURN_GENERATOR
+              2 POP_TOP
+              4 RESUME                   0
+              6 LOAD_FAST                0 (.0)
+        >>    8 FOR_ITER                20 (to 52)
+             12 STORE_FAST               1 (it)
+             14 LOAD_GLOBAL              1 (NULL + isinstance)
+             24 LOAD_FAST                1 (it)
+             26 LOAD_GLOBAL              2 (AsyncIterable)
+             36 CALL                     2
+             44 YIELD_VALUE              1
+             46 RESUME                   1
+             48 POP_TOP
+             50 JUMP_BACKWARD           22 (to 8)
+        >>   52 END_FOR
+             54 RETURN_CONST             0 (None)
+        >>   56 CALL_INTRINSIC_1         3 (INTRINSIC_STOPITERATION_ERROR)
+             58 RERAISE                  1
+ExceptionTable:
+  4 to 54 -> 56 [0] lasti
+Instruction(opname='LOAD_CONST', opcode=100, arg=29, argval=('threaded',), argrepr="('threaded',)", offset=1058, starts_line=264, is_jump_target=False, positions=Positions(lineno=264, end_lineno=282, col_offset=0, end_col_offset=60))
+Instruction(opname='BUILD_CONST_KEY_MAP', opcode=156, arg=1, argval=1, argrepr='', offset=1060, starts_line=None, is_jump_target=False, positions=Positions(lineno=264, end_lineno=282, col_offset=0, end_col_offset=60))
+Instruction(opname='SWAP', opcode=99, arg=2, argval=2, argrepr='', offset=1062, starts_line=None, is_jump_target=False, positions=Positions(lineno=264, end_lineno=282, col_offset=0, end_col_offset=60))
+Instruction(opname='LOAD_CONST', opcode=100, arg=52, argval=<code object <generic parameters of chunked> at 0x106a779b0, file "iterutils/misc.py", line 264>, argrepr='<code object <generic parameters of chunked> at 0x106a779b0, file "iterutils/misc.py", line 264>', offset=1064, starts_line=None, is_jump_target=False, positions=Positions(lineno=264, end_lineno=282, col_offset=0, end_col_offset=60))
+Instruction(opname='MAKE_FUNCTION', opcode=132, arg=0, argval=0, argrepr='', offset=1066, starts_line=None, is_jump_target=False, positions=Positions(lineno=264, end_lineno=282, col_offset=0, end_col_offset=60))
+Instruction(opname='SWAP', opcode=99, arg=3, argval=3, argrepr='', offset=1068, starts_line=None, is_jump_target=False, positions=Positions(lineno=264, end_lineno=282, col_offset=0, end_col_offset=60))
+Instruction(opname='CALL', opcode=171, arg=2, argval=2, argrepr='', offset=1070, starts_line=None, is_jump_target=False, positions=Positions(lineno=264, end_lineno=282, col_offset=0, end_col_offset=60))
+Instruction(opname='STORE_NAME', opcode=90, arg=87, argval='chunked', argrepr='chunked', offset=1078, starts_line=None, is_jump_target=False, positions=Positions(lineno=264, end_lineno=282, col_offset=0, end_col_offset=60))
+Instruction(opname='LOAD_CONST', opcode=100, arg=19, argval=None, argrepr='None', offset=1080, starts_line=290, is_jump_target=False, positions=Positions(lineno=290, end_lineno=290, col_offset=14, end_col_offset=18))
+Instruction(opname='LOAD_CONST', opcode=100, arg=21, argval=False, argrepr='False', offset=1082, starts_line=291, is_jump_target=False, positions=Positions(lineno=291, end_lineno=291, col_offset=21, end_col_offset=26))
+Instruction(opname='LOAD_CONST', opcode=100, arg=53, argval=('default', 'threaded'), argrepr="('default', 'threaded')", offset=1084, starts_line=285, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='BUILD_CONST_KEY_MAP', opcode=156, arg=2, argval=2, argrepr='', offset=1086, starts_line=None, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='LOAD_CONST', opcode=100, arg=30, argval='function', argrepr="'function'", offset=1088, starts_line=None, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='LOAD_NAME', opcode=101, arg=21, argval='Callable', argrepr='Callable', offset=1090, starts_line=286, is_jump_target=False, positions=Positions(lineno=286, end_lineno=286, col_offset=14, end_col_offset=22))
+Instruction(opname='LOAD_CONST', opcode=100, arg=31, argval='iterable', argrepr="'iterable'", offset=1092, starts_line=285, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='LOAD_NAME', opcode=101, arg=26, argval='Iterable', argrepr='Iterable', offset=1094, starts_line=287, is_jump_target=False, positions=Positions(lineno=287, end_lineno=287, col_offset=14, end_col_offset=22))
+Instruction(opname='LOAD_NAME', opcode=101, arg=17, argval='AsyncIterable', argrepr='AsyncIterable', offset=1096, starts_line=None, is_jump_target=False, positions=Positions(lineno=287, end_lineno=287, col_offset=25, end_col_offset=38))
+Instruction(opname='BINARY_OP', opcode=122, arg=7, argval=7, argrepr='|', offset=1098, starts_line=None, is_jump_target=False, positions=Positions(lineno=287, end_lineno=287, col_offset=14, end_col_offset=38))
+Instruction(opname='LOAD_CONST', opcode=100, arg=32, argval='iterables', argrepr="'iterables'", offset=1102, starts_line=285, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='LOAD_NAME', opcode=101, arg=26, argval='Iterable', argrepr='Iterable', offset=1104, starts_line=289, is_jump_target=False, positions=Positions(lineno=289, end_lineno=289, col_offset=16, end_col_offset=24))
+Instruction(opname='LOAD_NAME', opcode=101, arg=17, argval='AsyncIterable', argrepr='AsyncIterable', offset=1106, starts_line=None, is_jump_target=False, positions=Positions(lineno=289, end_lineno=289, col_offset=27, end_col_offset=40))
+Instruction(opname='BINARY_OP', opcode=122, arg=7, argval=7, argrepr='|', offset=1108, starts_line=None, is_jump_target=False, positions=Positions(lineno=289, end_lineno=289, col_offset=16, end_col_offset=40))
+Instruction(opname='LOAD_CONST', opcode=100, arg=33, argval='threaded', argrepr="'threaded'", offset=1112, starts_line=285, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='LOAD_NAME', opcode=101, arg=82, argval='bool', argrepr='bool', offset=1114, starts_line=291, is_jump_target=False, positions=Positions(lineno=291, end_lineno=291, col_offset=14, end_col_offset=18))
+Instruction(opname='BUILD_TUPLE', opcode=102, arg=8, argval=8, argrepr='', offset=1116, starts_line=285, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='LOAD_CONST', opcode=100, arg=54, argval=<code object foreach at 0x106b3ebf0, file "iterutils/misc.py", line 285>, argrepr='<code object foreach at 0x106b3ebf0, file "iterutils/misc.py", line 285>', offset=1118, starts_line=None, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='MAKE_FUNCTION', opcode=132, arg=6, argval=6, argrepr='kwdefaults, annotations', offset=1120, starts_line=None, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='STORE_NAME', opcode=90, arg=88, argval='foreach', argrepr='foreach', offset=1122, starts_line=None, is_jump_target=False, positions=Positions(lineno=285, end_lineno=311, col_offset=0, end_col_offset=12))
+Instruction(opname='NOP', opcode=9, arg=None, argval=None, argrepr='', offset=1124, starts_line=317, is_jump_target=False, positions=Positions(lineno=317, end_lineno=317, col_offset=21, end_col_offset=26))
