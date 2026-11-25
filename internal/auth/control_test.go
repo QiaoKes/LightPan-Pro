@@ -3,6 +3,7 @@ package auth
 import (
 	"context"
 	"errors"
+	"fmt"
 	"io"
 	"log/slog"
 	"sync"
@@ -16,6 +17,7 @@ import (
 
 // 经真实 Manager 注入 Guard，覆盖初始化、驱动内联和主动调度共用锁的完整路径。
 type controlledDriver struct {
+	expiryOnly bool
 	refreshDriver
 	driver.AuthRefreshControl
 	mu                      sync.Mutex
@@ -29,6 +31,7 @@ type controlledDriver struct {
 func (d *controlledDriver) Config() driver.Config {
 	c := d.refreshDriver.Config()
 	c.Name = "auth_control_test"
+	c.RefreshAtExpiry = d.expiryOnly
 	return c
 }
 func (d *controlledDriver) SetAuthPersister(fn driver.AuthPersistFunc) { d.persist = fn }
@@ -339,5 +342,76 @@ func TestLegacyFailedStateSeedsPersistentRetryTime(t *testing.T) {
 	f.clock.Add(int64(time.Hour))
 	if next := f.svc.calcNextCheck(context.Background(), 1, f.now(), false); !next.Equal(want) {
 		t.Fatalf("重算导致重试时间漂移：%v", next)
+	}
+}
+
+func TestHealthOnlyPersistenceDoesNotRefreshOrInvalidatePlayback(t *testing.T) {
+	ctx := context.Background()
+	f := newControlFixture(t, nil, nil)
+	previous := f.now().Add(-time.Hour)
+	f.repo.states[1] = &domain.AuthState{AccountID: 1, Status: domain.AuthActive, AccessToken: "open", Cookie: "cookie", TokenExpires: f.now().Add(time.Hour), LastRefreshAt: previous, OpenAuth: domain.CredentialHealth{Status: domain.AuthActive, VerifiedUID: "1"}, CookieAuth: domain.CredentialHealth{Status: domain.AuthActive, VerifiedUID: "1"}}
+	drv, err := f.mgr.Get(ctx, 1)
+	if err != nil {
+		t.Fatal(err)
+	}
+	invalidated := 0
+	f.svc.SetCredentialInvalidator(func(int64) { invalidated++ })
+	before := f.state(t)
+	health := domain.CredentialHealth{Status: domain.AuthTokenExpired, VerifiedUID: "1"}
+	if err := drv.(*controlledDriver).persist(ctx, domain.AuthCredentials{CookieAuth: &health}); err != nil {
+		t.Fatal(err)
+	}
+	after := f.state(t)
+	if after.CookieAuth.Status != domain.AuthTokenExpired {
+		t.Fatal("health observation not persisted")
+	}
+	if invalidated != 0 || !after.LastRefreshAt.Equal(before.LastRefreshAt) || !after.TokenExpires.Equal(before.TokenExpires) {
+		t.Fatalf("health observation treated as refresh: invalidations=%d before=%+v after=%+v", invalidated, before, after)
+	}
+	if err := drv.(*controlledDriver).persist(ctx, domain.AuthCredentials{AccessToken: "replacement-open"}); err != nil {
+		t.Fatal(err)
+	}
+	after = f.state(t)
+	if invalidated == 0 || after.AccessToken != "replacement-open" || !after.LastRefreshAt.Equal(f.now()) {
+		t.Fatal("actual replacement did not invalidate and record refresh")
+	}
+}
+
+func TestExpiryOnlyNoChangeRefreshPreservesPlaybackAndSchedule(t *testing.T) {
+	for _, caller := range []driver.RefreshCaller{driver.CallerActive, driver.CallerPassive} {
+		t.Run(fmt.Sprint(caller), func(t *testing.T) {
+			ctx := context.Background()
+			exchanges := 0
+			f := newControlFixture(t, func(_ context.Context, d *controlledDriver) error { d.expiryOnly = true; return nil }, func(context.Context, *controlledDriver) error { exchanges++; return nil })
+			oldRefresh := f.now().Add(-time.Hour)
+			expiry := f.now().Add(time.Hour)
+			f.repo.states[1] = &domain.AuthState{AccountID: 1, Status: domain.AuthActive, AccessToken: "open", TokenExpires: expiry, LastRefreshAt: oldRefresh}
+			invalidations := 0
+			f.svc.SetCredentialInvalidator(func(int64) { invalidations++ })
+			outcome, err := f.svc.Refresh(ctx, 1, caller)
+			if err != nil || outcome != driver.RefreshSuccess {
+				t.Fatalf("refresh=%v %v", outcome, err)
+			}
+			st := f.state(t)
+			if exchanges != 1 || invalidations != 0 || !st.LastRefreshAt.Equal(oldRefresh) || !st.TokenExpires.Equal(expiry) {
+				t.Fatalf("no-change refresh altered state: exchanges=%d invalidations=%d state=%+v", exchanges, invalidations, st)
+			}
+			// Once expiry is reached a persisted replacement must still complete normally.
+			f.clock.Add(int64(2 * time.Hour))
+			drv, err := f.mgr.Get(ctx, 1)
+			if err != nil {
+				t.Fatal(err)
+			}
+			drv.(*controlledDriver).exchange = func(ctx context.Context, d *controlledDriver) error {
+				return d.persist(ctx, domain.AuthCredentials{AccessToken: "renewed", TokenExpires: f.now().Add(time.Hour)})
+			}
+			if _, err := f.svc.Refresh(ctx, 1, caller); err != nil {
+				t.Fatal(err)
+			}
+			st = f.state(t)
+			if st.AccessToken != "renewed" || invalidations == 0 || !st.LastRefreshAt.Equal(f.now()) || !st.TokenExpires.Equal(f.now().Add(time.Hour)) {
+				t.Fatalf("real refresh did not complete: %+v invalidations=%d", st, invalidations)
+			}
+		})
 	}
 }

@@ -2,6 +2,8 @@ package auth
 
 import (
 	"context"
+	"errors"
+	"litepan/internal/driver"
 
 	"litepan/internal/domain"
 )
@@ -14,6 +16,10 @@ func WithRetry(ctx context.Context, gate GateChecker, accountID int64, fn func()
 	err := fn()
 	if err == nil {
 		return nil
+	}
+	var capabilityErr *driver.CapabilityAuthError
+	if errors.As(err, &capabilityErr) {
+		return err
 	}
 	if gate == nil || !IsAuthError(err) {
 		return err

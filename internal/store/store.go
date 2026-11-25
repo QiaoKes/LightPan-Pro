@@ -4,6 +4,7 @@ import "litepan/internal/domain"
 
 // Store 聚合各仓储实现，作为上层注入的统一入口。
 type Store struct {
+	TemporaryPlayback   domain.TemporaryPlaybackRepository
 	DB                  *DB
 	Accounts            domain.AccountRepository
 	AuthStates          domain.AuthStateRepository
@@ -26,6 +27,7 @@ type Store struct {
 // New 基于已打开的 DB 构造仓储集合。
 func New(db *DB) *Store {
 	return &Store{
+		TemporaryPlayback:   &temporaryPlaybackRepo{db: db},
 		DB:                  db,
 		Accounts:            &accountRepo{db: db},
 		AuthStates:          &authStateRepo{db: db},

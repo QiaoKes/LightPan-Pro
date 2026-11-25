@@ -32,6 +32,7 @@ type Config struct {
 	OAuthName string
 	// 主动刷新调度参数（AuthToken 型驱动填写 TokenLifetime/RefreshAdvance）。
 	TokenLifetime          time.Duration
+	RefreshAtExpiry        bool // Preserve providers that refresh only at actual expiry.
 	RefreshAdvance         time.Duration
 	HealthCheckInterval    time.Duration // AuthCookie 型驱动填写
 	ProvideHashes          []string      // 跨盘秒传：源盘可提供的指纹类型（sha1/md5）

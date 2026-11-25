@@ -20,7 +20,7 @@ func (s *Service) Refresh(ctx context.Context, accountID int64, caller driver.Re
 	if err != nil {
 		return driver.RefreshRetryable, err
 	}
-	if err := authBlocked(st, s.now()); err != nil {
+	if err := capabilityAwareBlocked(st, s.now()); err != nil {
 		return driver.RefreshRetryable, err
 	}
 	if recentlyRefreshed(st, s.now()) {
@@ -75,6 +75,9 @@ func (s *Service) refreshUnlocked(ctx context.Context, accountID int64, caller d
 
 // onCredentialsPersisted 驱动内联刷新写回 token 时同步认证成功态（如 123 apiCall 自动续期）。
 func (s *Service) onCredentialsPersisted(ctx context.Context, accountID int64) {
+	if s.credentialInvalidator != nil {
+		s.credentialInvalidator(accountID)
+	}
 	if scope := s.scope(ctx, accountID); scope != nil {
 		scope.persisted.Store(true)
 		return
@@ -108,6 +111,9 @@ func (s *Service) applyAccountSchedule(ctx context.Context, accountID int64, st 
 
 func (s *Service) applyTokenSchedule(drv driver.Driver, st *domain.AuthState) {
 	cfg := drv.Config()
+	if cfg.RefreshAtExpiry {
+		return
+	}
 	now := s.now()
 	switch cfg.AuthType {
 	case driver.AuthToken:

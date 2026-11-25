@@ -10,10 +10,12 @@ import (
 type QRStatus string
 
 const (
-	QRWaiting QRStatus = "waiting" // 等待扫码/确认
-	QRSuccess QRStatus = "success" // 已确认，凭证就绪
-	QRFailed  QRStatus = "failed"  // 登录失败（取消/拒绝等）
-	QRExpired QRStatus = "expired" // 二维码过期
+	QRScanned   QRStatus = "scanned"
+	QRCancelled QRStatus = "cancelled"
+	QRWaiting   QRStatus = "waiting" // 等待扫码/确认
+	QRSuccess   QRStatus = "success" // 已确认，凭证就绪
+	QRFailed    QRStatus = "failed"  // 登录失败（取消/拒绝等）
+	QRExpired   QRStatus = "expired" // 二维码过期
 )
 
 // QRStartResult 开始扫码登录的返回；Token 为不透明续询令牌。
@@ -38,4 +40,12 @@ type QRPollResult struct {
 type QRLoginProvider interface {
 	StartQRLogin(ctx context.Context) (*QRStartResult, error)
 	PollQRLogin(ctx context.Context, token string) (*QRPollResult, error)
+}
+
+type QRLoginOptions struct{ Purpose, App, ClientID string }
+
+type PurposeQRLoginProvider interface {
+	StartQRLoginFor(context.Context, QRLoginOptions) (*QRStartResult, error)
+	PollQRLoginFor(context.Context, string, string) (*QRPollResult, error)
+	CancelQRLogin(context.Context, string, string) error
 }

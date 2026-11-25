@@ -28,13 +28,14 @@ const (
 
 // Service 跨驱动文件浏览；读走缓存，写后发 FileMutated。
 type Service struct {
-	exec     *driverexec.Executor
-	cache    *cache.Service
-	accounts domain.AccountRepository
-	bus      *eventbus.Bus
-	settings *settings.Service
-	listHits *cache.HitTracker
-	log      *slog.Logger
+	playbackInvalidator func(int64)
+	exec                *driverexec.Executor
+	cache               *cache.Service
+	accounts            domain.AccountRepository
+	bus                 *eventbus.Bus
+	settings            *settings.Service
+	listHits            *cache.HitTracker
+	log                 *slog.Logger
 }
 
 func NewService(exec *driverexec.Executor, c *cache.Service, accounts domain.AccountRepository, bus *eventbus.Bus, set *settings.Service, listHits *cache.HitTracker) *Service {
@@ -117,6 +118,34 @@ func (s *Service) ResolvePath(ctx context.Context, accountID int64, rootID, rela
 	parts := strings.Split(relativePath, "/")
 	if len(parts) > maxResolvedPathDepth {
 		return nil, domain.Errorf(domain.CodeValidation, "STRM 路径层级过深")
+	}
+	for _, name := range parts {
+		if name == "" || name == "." || name == ".." || strings.ContainsRune(name, '\x00') {
+			return nil, domain.Errorf(domain.CodeValidation, "非法 STRM 相对路径")
+		}
+	}
+	var native *domain.FileItem
+	var nativeSupported bool
+	if err := s.exec.Run(ctx, accountID, func(drv driver.Driver) error {
+		resolver, ok := drv.(driver.PathResolver)
+		if !ok {
+			return nil
+		}
+		nativeSupported = true
+		var err error
+		native, err = resolver.ResolvePath(ctx, rootID, relativePath)
+		return err
+	}); err != nil {
+		return nil, err
+	}
+	if nativeSupported {
+		if native == nil || native.ID == "" {
+			return nil, domain.Errorf(domain.CodeDriverError, "驱动未返回路径引用")
+		}
+		if native.IsDir {
+			return nil, domain.Errorf(domain.CodeValidation, "STRM 路径不能指向目录")
+		}
+		return native, nil
 	}
 	for i, name := range parts {
 		if name == "" || name == "." || name == ".." || strings.ContainsRune(name, '\x00') {
@@ -505,6 +534,9 @@ func (s *Service) DirCacheTTL(ctx context.Context, accountID int64) time.Duratio
 
 // 先同步失效再发事件，避免写后重列命中旧缓存。
 func (s *Service) publishMutation(ctx context.Context, e eventbus.FileMutated) {
+	if s.playbackInvalidator != nil && (e.Op == "delete" || e.Op == "move" || e.Op == "rename") {
+		s.playbackInvalidator(e.AccountID)
+	}
 	e.ParentID = cache.NormalizeDirParentID(e.ParentID)
 	e.OldParentID = cache.NormalizeDirParentID(e.OldParentID)
 	if s.cache != nil {
@@ -575,4 +607,14 @@ func parseCacheTTLMinutes(configJSON string) (int, bool) {
 		}
 	}
 	return 0, false
+}
+
+func (s *Service) SetPlaybackInvalidator(fn func(int64)) { s.playbackInvalidator = fn }
+
+// NotifyExternalMutation invalidates links after verified upstream changes
+// without emitting a second mutation event or starting a recursive scan.
+func (s *Service) NotifyExternalMutation(accountID int64) {
+	if s.playbackInvalidator != nil {
+		s.playbackInvalidator(accountID)
+	}
 }

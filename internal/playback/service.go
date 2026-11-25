@@ -5,6 +5,8 @@ import (
 	"log/slog"
 	"net/http"
 	"net/url"
+	"sync"
+	"sync/atomic"
 
 	"litepan/internal/cache"
 	"litepan/internal/core/driverexec"
@@ -13,14 +15,17 @@ import (
 )
 
 type Service struct {
-	exec           *driverexec.Executor
-	cache          *cache.Service
-	clientHTTP1    *http.Client
-	clientH2       *http.Client
-	rangeLimits    accountRangeLimiter
-	transferLimits accountRangeLimiter
-	resolveHook    DownloadResolverHook
-	log            *slog.Logger
+	cacheGeneration atomic.Uint64
+	temporaryLedger domain.TemporaryPlaybackRepository
+	temporaryActive sync.Map
+	exec            *driverexec.Executor
+	cache           *cache.Service
+	clientHTTP1     *http.Client
+	clientH2        *http.Client
+	rangeLimits     accountRangeLimiter
+	transferLimits  accountRangeLimiter
+	resolveHook     DownloadResolverHook
+	log             *slog.Logger
 }
 
 // DownloadResolverHook 允许外部插件在驱动解析前接管下载直链。
@@ -82,6 +87,8 @@ func stripRedirectReferer(req *http.Request, via []*http.Request) error {
 	return nil
 }
 
+type strmResolveContextKey struct{}
+
 type Request struct {
 	AccountID int64
 	FileID    string
@@ -92,7 +99,17 @@ func (s *Service) ServeHTTP(w http.ResponseWriter, r *http.Request, req Request,
 		return err
 	}
 	ua := r.UserAgent()
-	res, err := s.Resolve(r.Context(), req.AccountID, req.FileID, ua, false, intent.allowsPlaybackResolve())
+	var res Resolved
+	var err error
+	if intent.TemporaryCopy {
+		res, err = s.ResolveTemporaryPlayback(r.Context(), req.AccountID, req.FileID, ua)
+	} else {
+		resolveCtx := r.Context()
+		if intent.STRM {
+			resolveCtx = context.WithValue(resolveCtx, strmResolveContextKey{}, true)
+		}
+		res, err = s.Resolve(resolveCtx, req.AccountID, req.FileID, ua, false, intent.allowsPlaybackResolve())
+	}
 	if err != nil {
 		return err
 	}
@@ -118,7 +135,11 @@ func (s *Service) Resolve(ctx context.Context, accountID int64, fileID, ua strin
 		return s.resolveFresh(ctx, accountID, fileID, ua, playback)
 	}
 
-	key := cache.DownloadURLKey(accountID, fileID, resolveCacheVariant(ua, playback))
+	variant := resolveCacheVariant(ua, playback)
+	if ctx.Value(strmResolveContextKey{}) == true {
+		variant += "\x00strm"
+	}
+	key := cache.DownloadURLKey(accountID, fileID, variant)
 	if refresh {
 		s.cache.InvalidateKey(key)
 	} else if res, ok := cache.GetAs[Resolved](s.cache, key); ok {
@@ -174,7 +195,12 @@ func (s *Service) resolveFresh(ctx context.Context, accountID int64, fileID, ua 
 			if err != nil {
 				return err
 			}
-			got, err := dl.ResolveDownload(ctx, driver.DownloadRequest{FileID: fileID, UA: ua})
+			var got *domain.DownloadInfo
+			if queued, ok := drv.(driver.STRMDownloader); ok && ctx.Value(strmResolveContextKey{}) == true {
+				got, err = queued.ResolveSTRMDownload(ctx, driver.DownloadRequest{FileID: fileID, UA: ua})
+			} else {
+				got, err = dl.ResolveDownload(ctx, driver.DownloadRequest{FileID: fileID, UA: ua})
+			}
 			if err != nil {
 				return err
 			}
@@ -215,6 +241,7 @@ func (s *Service) resolveFresh(ctx context.Context, accountID int64, fileID, ua 
 }
 
 func (s *Service) InvalidateAccount(accountID int64) {
+	s.cacheGeneration.Add(1)
 	if s.cache != nil {
 		s.cache.InvalidateAccountType(accountID, cache.TypeDownloadURL)
 	}
@@ -225,3 +252,8 @@ func (s *Service) InvalidateAll() {
 		s.cache.InvalidatePrefix(string(cache.TypeDownloadURL) + ":")
 	}
 }
+
+// CacheGeneration changes whenever account links are invalidated.
+func (s *Service) CacheGeneration() uint64 { return s.cacheGeneration.Load() }
+
+func (s *Service) CheckAccount(ctx context.Context, id int64) error { return s.exec.Check(ctx, id) }

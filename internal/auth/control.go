@@ -54,11 +54,15 @@ func (s *Service) initializeDriver(ctx context.Context, id int64, initialize fun
 	if err != nil {
 		return err
 	}
-	if err := authBlocked(st, s.now()); err != nil {
+	if err := capabilityAwareBlocked(st, s.now()); err != nil {
 		return err
 	}
 	err = initialize(ctx)
 	if err != nil {
+		var capabilityErr *driver.CapabilityAuthError
+		if errors.As(err, &capabilityErr) {
+			return err
+		}
 		// 配置错误、停用或删除账号不是刷新失败，不改变账号认证状态。
 		if ae, ok := domain.AsAppError(err); ok && (ae.Code == domain.CodeValidation || ae.Code == domain.CodeNotFound) {
 			return err
@@ -98,7 +102,7 @@ func (s *Service) refreshInline(ctx context.Context, id int64, drv driver.Driver
 	if err != nil {
 		return err
 	}
-	if err := authBlocked(st, s.now()); err != nil {
+	if err := capabilityAwareBlocked(st, s.now()); err != nil {
 		return err
 	}
 	if recentlyRefreshed(st, s.now()) {
@@ -130,6 +134,11 @@ func recentlyRefreshed(st *domain.AuthState, now time.Time) bool {
 }
 
 func (s *Service) finishRefresh(ctx context.Context, id int64, drv driver.Driver) error {
+	// Expiry-only providers may return success before expiry without a wire exchange.
+	// Only a material/expiry persistence marks this scope as a real refresh.
+	if scope := s.scope(ctx, id); drv.Config().RefreshAtExpiry && scope != nil && !scope.persisted.Load() {
+		return nil
+	}
 	st, err := s.loadState(ctx, id)
 	if err != nil {
 		return err
@@ -154,6 +163,15 @@ func (s *Service) completeRefresh(ctx context.Context, id int64, drv driver.Driv
 }
 
 func (s *Service) recordRefreshFailure(ctx context.Context, id int64, outcome driver.RefreshOutcome, caller driver.RefreshCaller, err error) {
+	var capabilityErr *driver.CapabilityAuthError
+	if errors.As(err, &capabilityErr) {
+		if !IsAuthError(err) {
+			return
+		}
+		gate := &Gate{svc: s}
+		_ = gate.HandleCapabilityError(ctx, id, capabilityErr.Capability, err)
+		return
+	}
 	if errors.Is(err, context.Canceled) {
 		return
 	}
@@ -175,4 +193,19 @@ func (s *Service) recordRefreshFailure(ctx context.Context, id int64, outcome dr
 	schTime := formatSchedTime(latest.NextRetryAt)
 	s.log.Warn(fmt.Sprintf("账号 %s 认证刷新失败: %v，下次重试 %s", scheduleLabel(name, driverType), err, schTime),
 		"account_id", id, "account", name, "driver", driverType, "caller", callerName(caller), "outcome", outcome.String(), "next_retry_at", schTime, "error", err)
+}
+
+// LockAccount serializes account reconnects with refresh and initialization.
+func (s *Service) LockAccount(ctx context.Context, id int64) (context.Context, func(), error) {
+	return s.lockAccount(ctx, id)
+}
+
+func capabilityAwareBlocked(st *domain.AuthState, now time.Time) error {
+	if st.CookieAuth.Status != "" || st.OpenAuth.Status != "" {
+		if st.CookieAuth.Status == domain.AuthActive || st.OpenAuth.Status == domain.AuthActive {
+			return nil
+		}
+		return domain.Errf(domain.CodeAuthExpired)
+	}
+	return authBlocked(st, now)
 }

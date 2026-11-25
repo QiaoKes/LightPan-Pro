@@ -1,0 +1,7 @@
+Protocol mathematics and constants verified against bundled p115cipher 0.0.5
+and supporting pinned p115cipher 0.0.6 by
+ChenyangGao <https://chenyanggao.github.io>, in pinned p115client source.
+Upstream __init__.py declares GPLv3, while pyproject.toml declares MIT.
+The upstream GPLv3 LICENSE is retained without resolving or relabeling this
+conflict. Go implementation uses standard library primitives; distribution
+license compatibility requires review.

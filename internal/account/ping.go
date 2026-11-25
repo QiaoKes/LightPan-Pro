@@ -30,7 +30,30 @@ func (s *Service) pingDriver(ctx context.Context, driverType, configJSON string,
 
 		err = drv.Init(ctx)
 		if err == nil {
-			err = drv.Ping(ctx)
+			if previous, updating := ctx.Value(credentialPreviousKey{}).(domain.AuthCredentials); updating {
+				if validator, ok := drv.(driver.CredentialUpdateValidator); ok {
+					err = validator.ValidateCredentialUpdate(ctx, previous)
+				} else {
+					err = drv.Ping(ctx)
+				}
+			} else {
+				err = drv.Ping(ctx)
+			}
+		}
+		if err == nil {
+			if provider, ok := drv.(driver.CapabilityAuthProvider); ok {
+				health := provider.CredentialHealth()
+				cookie, open := health[domain.AuthCapabilityCookieAPI], health[domain.AuthCapabilityOpenAPI]
+				_, updating := ctx.Value(credentialPreviousKey{}).(domain.AuthCredentials)
+				_, validatesUpdate := drv.(driver.CredentialUpdateValidator)
+				if !(updating && validatesUpdate) && (cookie.Status != domain.AuthActive || open.Status != domain.AuthActive || cookie.VerifiedUID == "" || cookie.VerifiedUID != open.VerifiedUID) {
+					err = domain.Errorf(domain.CodeValidation, "both credential capabilities must be verified for the same UID")
+				} else if captured, ok := ctx.Value(credentialCaptureKey{}).(map[domain.AuthCapability]domain.CredentialHealth); ok {
+					for k, v := range health {
+						captured[k] = v
+					}
+				}
+			}
 		}
 		release(ctx)
 		if err == nil {

@@ -42,7 +42,7 @@ func (s *Service) ensureSchedule(ctx context.Context, accountID int64) {
 	if patched.TokenExpires.Equal(st.TokenExpires) && patched.LastRefreshAt.Equal(st.LastRefreshAt) {
 		return
 	}
-	_ = s.authStates.Upsert(ctx, &patched)
+	_ = s.persistRuntime(ctx, &patched)
 }
 
 // calcNextCheck 计算账号下次主动检查时间。
@@ -101,6 +101,12 @@ func nextCheck(cfg driver.Config, st *domain.AuthState, now time.Time, firstBoot
 
 	switch cfg.AuthType {
 	case driver.AuthToken:
+		if cfg.RefreshAtExpiry {
+			if !st.TokenExpires.IsZero() {
+				return st.TokenExpires
+			}
+			return now.Add(time.Hour)
+		}
 		advance := cfg.RefreshAdvance
 		if advance <= 0 {
 			advance = time.Hour

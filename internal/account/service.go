@@ -55,10 +55,12 @@ type Input struct {
 
 // View 是面向 API 的账号视图（config 已合并认证字段供表单展示）。
 type View struct {
-	Account       *domain.Account
-	Config        string
-	AuthStatus    domain.AuthStatus
-	AuthLastError string
+	Account            *domain.Account
+	Config             string
+	AuthStatus         domain.AuthStatus
+	AuthLastError      string
+	CredentialHealth   string
+	CredentialStatuses map[domain.AuthCapability]domain.CredentialHealth
 }
 
 // Service 编排账号 CRUD 副作用：连接测试、配置拆分、认证态、调度、驱动与直链缓存。
@@ -127,6 +129,8 @@ func (s *Service) LookupUploadAccount(ctx context.Context, accountID int64) (nam
 }
 
 func (s *Service) Create(ctx context.Context, in Input) (View, error) {
+	captured := map[domain.AuthCapability]domain.CredentialHealth{}
+	ctx = context.WithValue(ctx, credentialCaptureKey{}, captured)
 	if err := validateCreate(in); err != nil {
 		return View{}, err
 	}
@@ -164,6 +168,18 @@ func (s *Service) Create(ctx context.Context, in Input) (View, error) {
 }
 
 func (s *Service) Update(ctx context.Context, id int64, in Input) (View, error) {
+	captured := map[domain.AuthCapability]domain.CredentialHealth{}
+	ctx = context.WithValue(ctx, credentialCaptureKey{}, captured)
+	if locker, ok := s.auth.(interface {
+		LockAccount(context.Context, int64) (context.Context, func(), error)
+	}); ok {
+		locked, unlock, err := locker.LockAccount(ctx, id)
+		if err != nil {
+			return View{}, err
+		}
+		defer unlock()
+		ctx = locked
+	}
 	if strings.TrimSpace(in.Name) == "" {
 		return View{}, domain.Errorf(domain.CodeValidation, "name 为必填")
 	}
@@ -202,6 +218,7 @@ func (s *Service) Update(ctx context.Context, id int64, in Input) (View, error) 
 	if existingAuth != nil {
 		authFields = auth.CoalesceFields(authFields, existingAuth)
 	}
+	ctx = context.WithValue(ctx, credentialPreviousKey{}, domain.CredentialsFromState(existingAuth))
 	if err := s.pingDriver(ctx, driverType, auth.ComposeConfig(staticConfig, authFields), true); err != nil {
 		return View{}, err
 	}
@@ -310,6 +327,16 @@ func (s *Service) view(ctx context.Context, a *domain.Account) View {
 			cfg = auth.MergeConfig(a.Config, st)
 			v.AuthStatus = st.Status
 			v.AuthLastError = st.LastError
+			if st.CookieAuth.Status != "" || st.OpenAuth.Status != "" {
+				v.CredentialStatuses = map[domain.AuthCapability]domain.CredentialHealth{domain.AuthCapabilityCookieAPI: st.CookieAuth, domain.AuthCapabilityOpenAPI: st.OpenAuth}
+				v.CredentialHealth = "unavailable"
+				if st.CookieAuth.Status == domain.AuthActive || st.OpenAuth.Status == domain.AuthActive {
+					v.CredentialHealth = "degraded"
+				}
+				if st.CookieAuth.Status == domain.AuthActive && st.OpenAuth.Status == domain.AuthActive {
+					v.CredentialHealth = "healthy"
+				}
+			}
 		}
 	}
 	v.Config = cfg
@@ -322,6 +349,13 @@ func (s *Service) upsertAuthFromFields(ctx context.Context, accountID int64, exi
 	}
 	st := auth.ApplyUpdate(existing, fields)
 	st.AccountID = accountID
+	if health, ok := ctx.Value(credentialCaptureKey{}).(map[domain.AuthCapability]domain.CredentialHealth); ok && len(health) > 0 {
+		st.CookieAuth = health[domain.AuthCapabilityCookieAPI]
+		st.OpenAuth = health[domain.AuthCapabilityOpenAPI]
+		if auth.CredentialsChanged(existing, fields) {
+			st.CredentialGeneration++
+		}
+	}
 	// 已有账号由认证服务清理负面状态并发恢复事件，不能在这里提前抹掉旧状态。
 	if s.auth == nil {
 		st.Status = domain.AuthActive
@@ -331,7 +365,7 @@ func (s *Service) upsertAuthFromFields(ctx context.Context, accountID int64, exi
 		st.LastFailureKind = ""
 		st.NextRetryAt = time.Time{}
 	}
-	if reseedSchedule && auth.HasCredentials(st) {
+	if reseedSchedule && auth.HasCredentials(st) && st.CookieAuth.Status == "" && st.OpenAuth.Status == "" {
 		st.TokenExpires = time.Time{}
 		st.CookieExpires = time.Time{}
 		st.LastRefreshAt = time.Time{}
@@ -403,3 +437,7 @@ func (s *Service) onAccountEnabled(ctx context.Context, accountID int64) {
 		s.lifecycle.OnAccountEnabled(ctx, accountID)
 	}
 }
+
+type credentialCaptureKey struct{}
+
+type credentialPreviousKey struct{}

@@ -11,24 +11,26 @@ import (
 )
 
 type accountDTO struct {
-	ID              int64  `json:"id"`
-	Name            string `json:"name"`
-	DriverType      string `json:"driver_type"`
-	DriverCardName  string `json:"driver_card_name,omitempty"`
-	DriverCardColor string `json:"driver_card_color,omitempty"`
-	DriverCardLogo  string `json:"driver_card_logo,omitempty"`
-	AuthStatus      string `json:"auth_status,omitempty"`
-	AuthLastError   string `json:"auth_last_error,omitempty"`
-	Config          string `json:"config"`
-	IsActive        bool   `json:"is_active"`
-	IsDefault       bool   `json:"is_default"`
-	SortOrder       int    `json:"sort_order"`
-	CreatedAt       string `json:"created_at,omitempty"`
-	UpdatedAt       string `json:"updated_at,omitempty"`
-	ProfileNickname string `json:"profile_nickname,omitempty"`
-	ProfileVIP      string `json:"profile_vip,omitempty"`
-	ProfileUsed     int64  `json:"profile_used_bytes,omitempty"`
-	ProfileTotal    int64  `json:"profile_total_bytes,omitempty"`
+	CredentialHealth   string                                            `json:"credential_health,omitempty"`
+	CredentialStatuses map[domain.AuthCapability]domain.CredentialHealth `json:"credential_statuses,omitempty"`
+	ID                 int64                                             `json:"id"`
+	Name               string                                            `json:"name"`
+	DriverType         string                                            `json:"driver_type"`
+	DriverCardName     string                                            `json:"driver_card_name,omitempty"`
+	DriverCardColor    string                                            `json:"driver_card_color,omitempty"`
+	DriverCardLogo     string                                            `json:"driver_card_logo,omitempty"`
+	AuthStatus         string                                            `json:"auth_status,omitempty"`
+	AuthLastError      string                                            `json:"auth_last_error,omitempty"`
+	Config             string                                            `json:"config"`
+	IsActive           bool                                              `json:"is_active"`
+	IsDefault          bool                                              `json:"is_default"`
+	SortOrder          int                                               `json:"sort_order"`
+	CreatedAt          string                                            `json:"created_at,omitempty"`
+	UpdatedAt          string                                            `json:"updated_at,omitempty"`
+	ProfileNickname    string                                            `json:"profile_nickname,omitempty"`
+	ProfileVIP         string                                            `json:"profile_vip,omitempty"`
+	ProfileUsed        int64                                             `json:"profile_used_bytes,omitempty"`
+	ProfileTotal       int64                                             `json:"profile_total_bytes,omitempty"`
 }
 
 func viewToDTO(v account.View) accountDTO {
@@ -46,6 +48,8 @@ func viewToDTO(v account.View) accountDTO {
 		dto.AuthStatus = string(v.AuthStatus)
 	}
 	dto.AuthLastError = v.AuthLastError
+	dto.CredentialHealth = v.CredentialHealth
+	dto.CredentialStatuses = v.CredentialStatuses
 	if info, ok := driver.Lookup(a.DriverType); ok {
 		dto.DriverCardName = info.DisplayName
 		dto.DriverCardColor = info.CardColor

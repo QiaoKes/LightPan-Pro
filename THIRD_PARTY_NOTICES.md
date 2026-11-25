@@ -1,6 +1,14 @@
 # 第三方软件声明
 
-LitePan 的前端按需使用以下第三方组件。各组件仍由其原作者持有版权，并遵循各自许可证。
+LitePan 使用以下第三方组件及协议参考。各组件仍由其原作者持有版权，并遵循各自许可证。
+
+## p115client / p115cipher / p115pickcode
+
+- 用途：115 请求协议、加密固定向量及 pickcode 转换的纯 Go 移植参考；运行时不加载 Python。
+- 作者：ChenyangGao。
+- 来源：本地固定版本 p115client `b649be77a6c77681e26d6eb1d1d013418b49d5e8` 及 EmbyNginx 实际内置 SDK/cipher；具体文件、哈希、版本差异见 `.trellis/tasks/11-25-115-dual-auth-go/research/protocol-baseline.md`。
+- p115cipher 内置版本为 0.0.5。上游源码声明 GPLv3，而包元数据声明 MIT，存在未解决的声明差异。本项目保留原始 GPLv3 许可证及差异说明，不擅自将其改标为 MIT。
+- 原始许可证：`drivers/115/client/cipher/LICENSE.upstream`；来源说明：`drivers/115/client/cipher/NOTICE`。对外分发前需解决适用授权与项目许可证兼容性问题。
 
 ## heic-to / libheif
 
@@ -51,3 +59,11 @@ LitePan 的前端按需使用以下第三方组件。各组件仍由其原作者
 - 许可证：Apache License 2.0
 
 该组件仅在用户打开 PPTX 文件时按需加载，不向第三方服务上传文档；LitePan 未修改其源码。
+
+## charset-normalizer / CPython 字符集行为
+
+- 用途：115 目录树文件的本地字符集探测、解码与 Python 行为对照；运行和构建不加载 Python。
+- 探测算法：charset-normalizer 3.5.1，MIT License，Copyright (c) 2025 TAHRI Ahmed R.；固定源码 commit `e239bdc5cc1eb1f0db08d4046ad531f805dbea71`。
+- 编码映射、Unicode 属性及排序/数值行为参考：CPython 3.12.13，固定源码 commit `3bb231a6a5dc02b95658877318bf61501a7209e9`；ISO-2022 源文件署名 Hye-Shik Chang。
+- 原始声明与许可证：`drivers/115/client/charset/NOTICE`、`LICENSE.upstream`、`LICENSE.cpython`。
+- 移植及离线生成对照证据：`.trellis/tasks/11-25-115-dual-auth-go/research/charset-oracle.md`。

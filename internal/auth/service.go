@@ -12,13 +12,14 @@ import (
 
 // Service 负责认证刷新、状态机持久化与事件发布。
 type Service struct {
-	accounts   domain.AccountRepository
-	authStates domain.AuthStateRepository
-	drivers    driver.Provider
-	bus        *eventbus.Bus
-	log        *slog.Logger
-	locks      *keyedMutex
-	now        func() time.Time
+	credentialInvalidator func(int64)
+	accounts              domain.AccountRepository
+	authStates            domain.AuthStateRepository
+	drivers               driver.Provider
+	bus                   *eventbus.Bus
+	log                   *slog.Logger
+	locks                 *keyedMutex
+	now                   func() time.Time
 
 	activeEnabled func() bool
 
@@ -103,3 +104,7 @@ func (s *Service) wake() {
 	default:
 	}
 }
+
+// SetCredentialInvalidator wires synchronous direct-link invalidation before persistence returns.
+// Configure once at application startup, before serving requests.
+func (s *Service) SetCredentialInvalidator(fn func(int64)) { s.credentialInvalidator = fn }

@@ -1,6 +1,7 @@
 package api
 
 import (
+	"encoding/json"
 	"net/http"
 	"strings"
 	"time"
@@ -12,35 +13,38 @@ import (
 )
 
 type strmTaskDTO struct {
-	ID                  int64  `json:"id,omitempty"`
-	Name                string `json:"name"`
-	AccountID           int64  `json:"account_id"`
-	ParentID            string `json:"parent_id"`
-	Path                string `json:"path"`
-	Recursive           bool   `json:"recursive"`
-	ScanInterval        int    `json:"scan_interval"`
-	ScanMode            string `json:"scan_mode"`
-	Extensions          string `json:"extensions"`
-	OutputFolder        string `json:"output_folder"`
-	GroupDir            string `json:"group_dir"`
-	ApiInterval         int    `json:"api_interval"`
-	ExcludeDirKeywords  string `json:"exclude_dir_keywords"`
-	ExcludeFileKeywords string `json:"exclude_file_keywords"`
-	SyncMetadata        bool   `json:"sync_metadata"`
-	BranchCheckEnabled  bool   `json:"branch_check_enabled"`
-	TimeWindowEnabled   bool   `json:"time_window_enabled"`
-	TimeStart           string `json:"time_start"`
-	TimeEnd             string `json:"time_end"`
-	ScheduleMode        string `json:"schedule_mode"`
-	Status              string `json:"status"`
-	PausedReason        string `json:"paused_reason,omitempty"`
-	ErrorMessage        string `json:"error_message,omitempty"`
-	ScannedCount        int64  `json:"scanned_count"`
-	GeneratedCount      int64  `json:"generated_count"`
-	UpdatedCount        int64  `json:"updated_count"`
-	RemovedCount        int64  `json:"removed_count"`
-	LastScan            string `json:"last_scan,omitempty"`
-	LastScanStatus      string `json:"last_scan_status,omitempty"`
+	metadataSyncModeProvided bool
+	ID                       int64  `json:"id,omitempty"`
+	Name                     string `json:"name"`
+	AccountID                int64  `json:"account_id"`
+	ParentID                 string `json:"parent_id"`
+	Path                     string `json:"path"`
+	Recursive                bool   `json:"recursive"`
+	ScanInterval             int    `json:"scan_interval"`
+	ScanMode                 string `json:"scan_mode"`
+	Extensions               string `json:"extensions"`
+	OutputFolder             string `json:"output_folder"`
+	GroupDir                 string `json:"group_dir"`
+	ApiInterval              int    `json:"api_interval"`
+	ExcludeDirKeywords       string `json:"exclude_dir_keywords"`
+	ExcludeFileKeywords      string `json:"exclude_file_keywords"`
+	MetadataSyncMode         string `json:"metadata_sync_mode"`
+	MonitoringEnabled        bool   `json:"monitoring_enabled"`
+	SyncMetadata             bool   `json:"sync_metadata"`
+	BranchCheckEnabled       bool   `json:"branch_check_enabled"`
+	TimeWindowEnabled        bool   `json:"time_window_enabled"`
+	TimeStart                string `json:"time_start"`
+	TimeEnd                  string `json:"time_end"`
+	ScheduleMode             string `json:"schedule_mode"`
+	Status                   string `json:"status"`
+	PausedReason             string `json:"paused_reason,omitempty"`
+	ErrorMessage             string `json:"error_message,omitempty"`
+	ScannedCount             int64  `json:"scanned_count"`
+	GeneratedCount           int64  `json:"generated_count"`
+	UpdatedCount             int64  `json:"updated_count"`
+	RemovedCount             int64  `json:"removed_count"`
+	LastScan                 string `json:"last_scan,omitempty"`
+	LastScanStatus           string `json:"last_scan_status,omitempty"`
 	// NextRunAt 是后端计算的下一次自动扫描时间；为空表示不参与自动调度（手动或未启用）。
 	NextRunAt         string `json:"next_run_at,omitempty"`
 	AutomationManaged bool   `json:"automation_managed"`
@@ -156,6 +160,14 @@ func (h *Handler) updateStrmTask(w http.ResponseWriter, r *http.Request) {
 	if err := decodeJSON(r, &in); err != nil {
 		writeErr(w, err)
 		return
+	}
+	if !in.metadataSyncModeProvided {
+		existing, err := h.strm.GetTask(r.Context(), id)
+		if err != nil {
+			writeErr(w, err)
+			return
+		}
+		in.MetadataSyncMode = existing.MetadataSyncMode
 	}
 	task, err := h.strm.UpdateTask(r.Context(), id, fromStrmTaskDTO(in))
 	if err != nil {
@@ -603,6 +615,8 @@ func fromStrmTaskDTO(in strmTaskDTO) *domain.StrmTask {
 		ExcludeDirKeywords:  in.ExcludeDirKeywords,
 		ExcludeFileKeywords: in.ExcludeFileKeywords,
 		SyncMetadata:        in.SyncMetadata,
+		MetadataSyncMode:    in.MetadataSyncMode,
+		MonitoringEnabled:   in.MonitoringEnabled,
 		BranchCheckEnabled:  in.BranchCheckEnabled,
 		TimeWindowEnabled:   in.TimeWindowEnabled,
 		TimeStart:           in.TimeStart,
@@ -640,6 +654,8 @@ func toStrmTaskDTO(task *domain.StrmTask, meta strm.TaskListMeta, automationMana
 		ExcludeDirKeywords:  task.ExcludeDirKeywords,
 		ExcludeFileKeywords: task.ExcludeFileKeywords,
 		SyncMetadata:        task.SyncMetadata,
+		MetadataSyncMode:    task.MetadataSyncMode,
+		MonitoringEnabled:   task.MonitoringEnabled,
 		BranchCheckEnabled:  task.BranchCheckEnabled,
 		TimeWindowEnabled:   task.TimeWindowEnabled,
 		TimeStart:           task.TimeStart,
@@ -702,4 +718,19 @@ func toStrmBranchDTO(branch *domain.StrmBranch) strmBranchDTO {
 		Source:        branch.Source,
 	}
 	return out
+}
+
+func (d *strmTaskDTO) UnmarshalJSON(data []byte) error {
+	type plain strmTaskDTO
+	var decoded plain
+	if err := json.Unmarshal(data, &decoded); err != nil {
+		return err
+	}
+	var fields map[string]json.RawMessage
+	if err := json.Unmarshal(data, &fields); err != nil {
+		return err
+	}
+	*d = strmTaskDTO(decoded)
+	_, d.metadataSyncModeProvided = fields["metadata_sync_mode"]
+	return nil
 }

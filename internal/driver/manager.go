@@ -200,10 +200,41 @@ func (m *Manager) persistAuth(ctx context.Context, accountID int64, creds domain
 	}
 	st := domain.MergeAuthCredentials(existing, creds)
 	st.AccountID = accountID
-	if err := m.authStates.Upsert(ctx, st); err != nil {
+	if !authMaterialChanged(existing, st) && (creds.CookieAuth != nil || creds.OpenAuth != nil) {
+		if patcher, ok := m.authStates.(domain.CredentialHealthPatcher); ok {
+			expected := st.CredentialGeneration
+			if creds.ExpectedGeneration != nil {
+				expected = *creds.ExpectedGeneration
+			}
+			return patcher.PatchCredentialHealth(ctx, accountID, expected, creds.CookieAuth, creds.OpenAuth)
+		}
+	}
+	var persistErr error
+	if patcher, ok := m.authStates.(domain.AuthCredentialPatcher); ok && existing != nil {
+		expected := existing.CredentialGeneration
+		if creds.ExpectedGeneration != nil {
+			expected = *creds.ExpectedGeneration
+		}
+		persistErr = patcher.PatchAuthCredentials(ctx, accountID, expected, creds)
+	} else if creds.ExpectedGeneration != nil {
+		if existing != nil && existing.CredentialGeneration != *creds.ExpectedGeneration {
+			return domain.Errorf(domain.CodeValidation, "stale credential generation")
+		}
+		if repo, ok := m.authStates.(interface {
+			UpsertGeneration(context.Context, *domain.AuthState, uint64) error
+		}); ok {
+			persistErr = repo.UpsertGeneration(ctx, st, *creds.ExpectedGeneration)
+		} else {
+			persistErr = m.authStates.Upsert(ctx, st)
+		}
+	} else {
+		persistErr = m.authStates.Upsert(ctx, st)
+	}
+	if persistErr != nil {
+		err := persistErr
 		return err
 	}
-	if m.onAuthPersist != nil {
+	if authMaterialChanged(existing, st) && m.onAuthPersist != nil {
 		m.onAuthPersist(ctx, accountID)
 	}
 	return nil
@@ -242,4 +273,12 @@ func configHash(cfg string) string {
 	}
 	b, _ := json.Marshal(m)
 	return fmt.Sprintf("%x", md5.Sum(b))
+}
+
+// authMaterialChanged excludes health observations, which do not represent a refresh.
+func authMaterialChanged(before, after *domain.AuthState) bool {
+	if before == nil {
+		before = &domain.AuthState{}
+	}
+	return before.AccessToken != after.AccessToken || before.RefreshToken != after.RefreshToken || before.Cookie != after.Cookie || !before.TokenExpires.Equal(after.TokenExpires) || !before.CookieExpires.Equal(after.CookieExpires)
 }

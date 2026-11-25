@@ -24,7 +24,7 @@ func (s *Service) loadState(ctx context.Context, accountID int64) (*domain.AuthS
 			}
 			if (st.Status == domain.AuthFailed || st.Status == domain.AuthTokenExpired) && st.NextRetryAt.IsZero() {
 				st.NextRetryAt = s.now().Add(failedRetryCooldown)
-				if err := s.authStates.Upsert(ctx, st); err != nil {
+				if err := s.persistRuntime(ctx, st); err != nil {
 					return nil, err
 				}
 			}
@@ -42,6 +42,9 @@ func (s *Service) loadState(ctx context.Context, accountID int64) (*domain.AuthS
 // 必须传 false —— 此时不把 LastRefreshAt 置为当前时间，否则调度器误以为
 // "刚刷新过"命中复用窗口，而 TokenExpires 仍是旧值，导致约 20 秒空转。
 func (s *Service) markSuccess(ctx context.Context, accountID int64, st *domain.AuthState, refreshed bool) error {
+	if refreshed && s.credentialInvalidator != nil {
+		s.credentialInvalidator(accountID)
+	}
 	wasBad := st.Status != domain.AuthActive
 	notifyRecovered := wasBad && s.bus != nil
 	if notifyRecovered && s.accounts != nil {
@@ -61,7 +64,7 @@ func (s *Service) markSuccess(ctx context.Context, accountID int64, st *domain.A
 	if refreshed {
 		st.LastRefreshAt = s.now()
 	}
-	if err := s.authStates.Upsert(ctx, st); err != nil {
+	if err := s.persistRuntime(ctx, st); err != nil {
 		s.log.Warn("写入认证成功态失败", "account", accountID, "err", err)
 		return err
 	}
@@ -138,7 +141,7 @@ func (s *Service) handleFailure(ctx context.Context, accountID int64, st *domain
 		st.LastError = "认证刷新失败"
 	}
 	st.LastFailureKind = kind
-	if err := s.authStates.Upsert(ctx, st); err != nil {
+	if err := s.persistRuntime(ctx, st); err != nil {
 		s.log.Warn("写入认证失败态失败", "account", accountID, "err", err)
 	}
 	s.wake()
@@ -150,7 +153,7 @@ func (s *Service) toTokenExpired(ctx context.Context, accountID int64, st *domai
 	st.LastError = msg
 	st.LastFailureKind = domain.AuthFailureAuth
 	st.NextRetryAt = s.now().Add(failedRetryCooldown)
-	if err := s.authStates.Upsert(ctx, st); err != nil {
+	if err := s.persistRuntime(ctx, st); err != nil {
 		s.log.Warn("写入 Token 过期态失败", "account", accountID, "err", err)
 	}
 	if changed {
@@ -165,7 +168,7 @@ func (s *Service) toFailed(ctx context.Context, accountID int64, st *domain.Auth
 	st.LastError = msg
 	st.LastFailureKind = domain.AuthFailureAuth
 	st.NextRetryAt = s.now().Add(failedRetryCooldown)
-	if err := s.authStates.Upsert(ctx, st); err != nil {
+	if err := s.persistRuntime(ctx, st); err != nil {
 		s.log.Warn("写入认证失败终态失败", "account", accountID, "err", err)
 	}
 	if changed {
@@ -207,4 +210,11 @@ func authBlocked(st *domain.AuthState, now time.Time) error {
 		}
 	}
 	return nil
+}
+
+func (s *Service) persistRuntime(ctx context.Context, st *domain.AuthState) error {
+	if repo, ok := s.authStates.(domain.AuthRuntimeUpdater); ok {
+		return repo.UpsertAuthRuntime(ctx, st)
+	}
+	return s.authStates.Upsert(ctx, st)
 }

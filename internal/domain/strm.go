@@ -52,6 +52,8 @@ type StrmTask struct {
 	ApiInterval         int
 	ExcludeDirKeywords  string
 	ExcludeFileKeywords string
+	MetadataSyncMode    string
+	MonitoringEnabled   bool
 	SyncMetadata        bool
 	BranchCheckEnabled  bool
 	TimeWindowEnabled   bool

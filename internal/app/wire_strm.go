@@ -10,6 +10,8 @@ import (
 
 func wireSTRM(st *storeBundle, files *file.Service, playback *playback.Service, bus *eventbus.Bus, logs *logx.Manager, dataDir, strmDir, listenAddr string, secret []byte) (*strm.Service, *strm.Coordinator) {
 	svc := strm.NewService(strm.ServiceOptions{
+		Accounts:   st.store.Accounts,
+		EventStore: st.db,
 		Repo:       st.store.StrmTasks,
 		Branches:   st.store.StrmBranches,
 		DirCache:   st.store.StrmDirCache,

@@ -38,32 +38,34 @@ var ErrRestartRequested = errors.New("restart requested")
 
 // App 按依赖顺序构造与关闭各子系统。
 type App struct {
-	cfg              config.Config
-	logs             *logx.Manager
-	log              *slog.Logger
-	db               *store.DB
-	store            *store.Store
-	settings         *settings.Service
-	bus              *eventbus.Bus
-	cache            *cache.Service
-	drivers          *driver.Manager
-	auth             *auth.Service
-	sched            *auth.Scheduler
-	files            *file.Service
-	uploads          *upload.Manager
-	offlineDownloads *offlinedownload.Service
-	playback         *playback.Service
-	strm             *strm.Service
-	strmDelete       *strmdelete.Service
-	mediaOrganize    *mediaorganize.Service
-	automation       *automation.Service
-	fuse             *fusemount.Service
-	cacheRetention   *cacheretention.Service
-	embyProxy        *embyproxy.Service
-	fnosProxy        *fnosproxy.Service
-	httpSrv          *http.Server
-	httpBaseCancel   context.CancelFunc
-	restartCh        <-chan struct{}
+	playbackCleanupCancel context.CancelFunc
+	playbackCleanupMu     sync.Mutex
+	cfg                   config.Config
+	logs                  *logx.Manager
+	log                   *slog.Logger
+	db                    *store.DB
+	store                 *store.Store
+	settings              *settings.Service
+	bus                   *eventbus.Bus
+	cache                 *cache.Service
+	drivers               *driver.Manager
+	auth                  *auth.Service
+	sched                 *auth.Scheduler
+	files                 *file.Service
+	uploads               *upload.Manager
+	offlineDownloads      *offlinedownload.Service
+	playback              *playback.Service
+	strm                  *strm.Service
+	strmDelete            *strmdelete.Service
+	mediaOrganize         *mediaorganize.Service
+	automation            *automation.Service
+	fuse                  *fusemount.Service
+	cacheRetention        *cacheretention.Service
+	embyProxy             *embyproxy.Service
+	fnosProxy             *fnosproxy.Service
+	httpSrv               *http.Server
+	httpBaseCancel        context.CancelFunc
+	restartCh             <-chan struct{}
 }
 
 // Options 是构造 App 所需的外部依赖。
@@ -153,6 +155,14 @@ func New(ctx context.Context, opts Options) (*App, error) {
 
 // Run 启动 HTTP 服务并阻塞直到 ctx 取消或服务出错。
 func (a *App) Run(ctx context.Context) error {
+	cleanupCtx, cancelCleanup := context.WithCancel(ctx)
+	defer cancelCleanup()
+	a.playbackCleanupMu.Lock()
+	a.playbackCleanupCancel = cancelCleanup
+	a.playbackCleanupMu.Unlock()
+	if a.playback != nil {
+		go a.playback.RunTemporaryCleanup(cleanupCtx)
+	}
 	if a.logs != nil && a.settings != nil {
 		a.logs.StartAutoCleanup(ctx, a.settings.Int(settings.KeyLogRetentionDays))
 	}
@@ -216,6 +226,11 @@ const (
 
 // Shutdown 按依赖反序优雅关闭：先停 HTTP，再卸载 FUSE，最后关 DB。
 func (a *App) Shutdown(ctx context.Context) error {
+	a.playbackCleanupMu.Lock()
+	if a.playbackCleanupCancel != nil {
+		a.playbackCleanupCancel()
+	}
+	a.playbackCleanupMu.Unlock()
 	a.log.Info("正在优雅关闭各组件")
 	if a.sched != nil {
 		a.sched.Stop()

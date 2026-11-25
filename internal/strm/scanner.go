@@ -39,19 +39,20 @@ type ScanSettings struct {
 }
 
 type ScanDeps struct {
-	Files       *file.Service
-	Branches    domain.StrmBranchRepository
-	DirCache    domain.StrmDirCacheRepository
-	Playback    *playback.Service
-	StrmDir     string
-	BaseURL     string
-	Token       string
-	SignEnabled bool
-	Secret      []byte
-	Settings    ScanSettings
-	Log         *slog.Logger
-	OnProgress  ScanProgressReporter
-	Failures    *FailureCollector
+	OnTreeComplete func(context.Context, int64, string, int64) error
+	Files          *file.Service
+	Branches       domain.StrmBranchRepository
+	DirCache       domain.StrmDirCacheRepository
+	Playback       *playback.Service
+	StrmDir        string
+	BaseURL        string
+	Token          string
+	SignEnabled    bool
+	Secret         []byte
+	Settings       ScanSettings
+	Log            *slog.Logger
+	OnProgress     ScanProgressReporter
+	Failures       *FailureCollector
 	// ManualCleanupConfirm 手动执行时置位，允许"远端识别 0"的范围正常清理；定时扫描仍受空保护约束。
 	ManualCleanupConfirm bool
 }
@@ -100,6 +101,7 @@ type branchScanState struct {
 }
 
 func ScanTask(ctx context.Context, task *domain.StrmTask, deps ScanDeps, runMode string) (ScanResult, error) {
+	deps.Settings = taskScanSettings(task, deps.Settings)
 	// 手动执行（全部/分支）视为用户已确认网盘状态，放行"远端识别 0"范围的清理
 	deps.ManualCleanupConfirm = runMode == domain.StrmRunModeFull || runMode == domain.StrmRunModeBranch
 	var result ScanResult
@@ -116,6 +118,15 @@ func ScanTask(ctx context.Context, task *domain.StrmTask, deps ScanDeps, runMode
 	root := strings.TrimSpace(deps.StrmDir)
 	if root == "" {
 		root = "strm"
+	}
+	if deps.Settings.Tool115TreeEnabled && deps.Files != nil {
+		supported, err := deps.Files.SupportsTreeSnapshot(ctx, task.AccountID)
+		if err != nil {
+			return result, err
+		}
+		if supported {
+			return scanTreeTask(ctx, task, deps, root, rules)
+		}
 	}
 	enhanced, err := useEnhancedScan(ctx, task, deps, runMode)
 	if err != nil {

@@ -55,6 +55,8 @@ export interface Account {
   driver_card_logo?: string;
   auth_status?: "active" | "cooldown" | "token_expired" | "failed" | string;
   auth_last_error?: string;
+  credential_health?: "healthy" | "degraded" | "unavailable";
+  credential_statuses?: Partial<Record<"cookie_api" | "open_api", { status: string; verified_uid?: string; last_error?: string }>>;
   config: string; // JSON 字符串
   is_active: boolean;
   is_default: boolean;

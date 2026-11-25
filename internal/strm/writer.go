@@ -163,6 +163,9 @@ func DeleteTaskOutput(strmDir, outputFolder string) error {
 	if _, err := os.Stat(dir); os.IsNotExist(err) {
 		return nil
 	}
+	if managed, err := deleteTreeOutputs(dir); managed {
+		return err
+	}
 	return os.RemoveAll(dir)
 }
 

@@ -110,6 +110,9 @@ function onMenuSelect(key: string) {
           <span v-if="account.is_default" class="acc-card__default-tag">默认</span>
           <span v-if="hasAuthError" class="acc-card__status-pill">失效</span>
         </h4>
+        <p v-for="(health, capability) in account.credential_statuses" :key="capability" class="acc-card__time" :title="health?.last_error">
+          {{ capability === "cookie_api" ? "Cookie" : "Open" }}：{{ health?.status === "active" ? "可用" : "需检查 / 重新授权" }}
+        </p>
         <p class="acc-card__time">
           {{ nickname || (createdAt ? `创建于 ${createdAt}` : "") }}
         </p>

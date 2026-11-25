@@ -471,6 +471,7 @@ func NewRouter(d Deps) http.Handler {
 			r.Post("/oauth/confirm-received/{session_id}", h.oauthConfirmReceived)
 			r.Post("/qr/start", h.startQRLogin)
 			r.Post("/qr/poll", h.pollQRLogin)
+			r.Post("/qr/cancel", h.cancelQRLogin)
 		})
 		r.Route("/files", func(r chi.Router) {
 			r.Group(func(r chi.Router) {

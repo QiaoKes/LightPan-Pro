@@ -33,9 +33,11 @@ const isEdit = computed(() => props.editing !== null);
 const stepTitle = computed(() =>
   isEdit.value ? "编辑账号" : step.value === 1 ? "选择网盘驱动" : "配置账号信息",
 );
-const supportsOAuth = computed(() => Boolean(selectedDriver.value?.supports_oauth));
+const supportsOAuth = computed(() => driverType.value !== "115" && Boolean(selectedDriver.value?.supports_oauth));
 const supportsQRLogin = computed(() => Boolean(selectedDriver.value?.supports_qr_login));
 const qrOpen = ref(false);
+const qrPurpose = ref<"cookie" | "open">("cookie");
+const dualAuth = computed(() => driverType.value === "115");
 
 function parseBooleanSelectValue(f: FieldSchema, raw: unknown) {
   if (f.type !== "select" || !(f.options ?? []).some((o) => o.value === "true" || o.value === "false")) {
@@ -152,6 +154,11 @@ function validate(): string | null {
       (!props.editing || a.id !== props.editing.id),
   );
   if (dup) return "账号名称已存在，请使用其他名称";
+  if (dualAuth.value && !isEdit.value) {
+    for (const key of ["cookie", "access_token", "refresh_token"]) {
+      if (!String(formValues.value[key] ?? "").trim()) return "请先填写或扫码获取 Cookie 和完整 Open 授权";
+    }
+  }
   for (const f of fields.value) {
     if (!f.required) continue;
     const v = formValues.value[f.name];
@@ -194,7 +201,7 @@ async function submit() {
 }
 
 async function handleOAuth() {
-  if (!driverType.value) return;
+  if (!driverType.value || dualAuth.value) return;
   const fieldNames = fields.value.map((f) => f.name);
   try {
     const filled = await runOAuth(driverType.value, fieldNames);
@@ -204,7 +211,8 @@ async function handleOAuth() {
   }
 }
 
-function openQRLogin() {
+function openQRLogin(purpose: "cookie" | "open" = "cookie") {
+  qrPurpose.value = purpose;
   if (!driverType.value) return;
   qrOpen.value = true;
 }
@@ -241,6 +249,7 @@ function handleClose() {
       <FormField label="账号名称" required>
         <AppInput v-model="name" placeholder="请输入账号名称" />
       </FormField>
+      <p v-if="dualAuth">Cookie 和 Open 授权必须有效且属于同一账号。保存时由服务端验证；重新授权一侧会保留另一侧。</p>
       <DynamicForm :fields="fields" v-model="formValues" />
     </div>
 
@@ -259,10 +268,11 @@ function handleClose() {
             v-if="supportsQRLogin"
             variant="primary"
             :disabled="submitting"
-            @click="openQRLogin"
+            @click="openQRLogin('cookie')"
           >
-            {{ isEdit ? "重新扫码获取" : "扫码获取授权" }}
+            {{ dualAuth ? "扫码获取 Cookie" : isEdit ? "重新扫码获取" : "扫码获取授权" }}
           </AppButton>
+          <AppButton v-if="supportsQRLogin && dualAuth" variant="primary" :disabled="submitting" @click="openQRLogin('open')">扫码获取 Open</AppButton>
         </div>
         <div class="step-footer__right">
           <AppButton v-if="!isEdit" variant="secondary" @click="goPrevStep">← 上一步</AppButton>
@@ -277,8 +287,9 @@ function handleClose() {
   <QrLoginModal
     :open="qrOpen"
     :driver-type="driverType"
+    :purpose="dualAuth ? qrPurpose : undefined"
     :config="buildConfig()"
-    :device-options="selectedDriver?.qr_devices ?? []"
+    :device-options="dualAuth && qrPurpose === 'open' ? [] : selectedDriver?.qr_devices ?? []"
     :device-field="selectedDriver?.qr_device_field ?? ''"
     @success="onQRSuccess"
     @close="qrOpen = false"

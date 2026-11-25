@@ -166,18 +166,19 @@ func (s *Service) runTaskAsync(task *domain.StrmTask) {
 			return
 		}
 		result, err := ScanTask(ctx, task, ScanDeps{
-			Files:       s.files,
-			Branches:    s.branches,
-			DirCache:    s.dirCache,
-			Playback:    s.playback,
-			StrmDir:     s.strmDir,
-			BaseURL:     s.scanBaseURL(),
-			Token:       token,
-			SignEnabled: s.settings.Bool(settings.KeyStrmSignatureEnabled),
-			Secret:      s.secret,
-			Settings:    s.scanSettings(),
-			Log:         s.log,
-			OnProgress:  reportProgress,
+			OnTreeComplete: s.treeBaselineComplete,
+			Files:          s.files,
+			Branches:       s.branches,
+			DirCache:       s.dirCache,
+			Playback:       s.playback,
+			StrmDir:        s.strmDir,
+			BaseURL:        s.scanBaseURL(),
+			Token:          token,
+			SignEnabled:    s.settings.Bool(settings.KeyStrmSignatureEnabled),
+			Secret:         s.secret,
+			Settings:       s.scanSettings(),
+			Log:            s.log,
+			OnProgress:     reportProgress,
 		}, runMode)
 		patch := scanPatchAfterRun(err, result)
 		patch.LastScan = time.Now()

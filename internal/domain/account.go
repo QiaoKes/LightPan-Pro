@@ -1,6 +1,9 @@
 package domain
 
-import "time"
+import (
+	"context"
+	"time"
+)
 
 // Account 是网盘账号的静态配置（认证运行态拆到 AuthState）。
 type Account struct {
@@ -35,30 +38,49 @@ const (
 )
 
 // AuthState 是账号的认证运行态，独立于静态配置存储。
+type AuthCapability string
+
+const (
+	AuthCapabilityCookieAPI AuthCapability = "cookie_api"
+	AuthCapabilityOpenAPI   AuthCapability = "open_api"
+)
+
+type CredentialHealth struct {
+	Status      AuthStatus `json:"status"`
+	VerifiedUID string     `json:"verified_uid,omitempty"`
+	LastError   string     `json:"last_error,omitempty"`
+}
+
 type AuthState struct {
-	AccountID       int64
-	Status          AuthStatus
-	AccessToken     string
-	RefreshToken    string
-	TokenExpires    time.Time
-	Cookie          string
-	CookieExpires   time.Time
-	ActiveAttempts  int
-	PassiveAttempts int
-	LastError       string
-	LastFailureKind AuthFailureKind
-	NextRetryAt     time.Time
-	LastRefreshAt   time.Time
-	LastNotifiedAt  time.Time
+	CookieAuth           CredentialHealth
+	OpenAuth             CredentialHealth
+	CredentialGeneration uint64
+	AccountID            int64
+	Status               AuthStatus
+	AccessToken          string
+	RefreshToken         string
+	TokenExpires         time.Time
+	Cookie               string
+	CookieExpires        time.Time
+	ActiveAttempts       int
+	PassiveAttempts      int
+	LastError            string
+	LastFailureKind      AuthFailureKind
+	NextRetryAt          time.Time
+	LastRefreshAt        time.Time
+	LastNotifiedAt       time.Time
 }
 
 // AuthCredentials 是注入驱动或在刷新后回写的运行凭证。
 type AuthCredentials struct {
-	AccessToken   string
-	RefreshToken  string
-	Cookie        string
-	TokenExpires  time.Time
-	CookieExpires time.Time
+	CookieAuth         *CredentialHealth
+	OpenAuth           *CredentialHealth
+	ExpectedGeneration *uint64
+	AccessToken        string
+	RefreshToken       string
+	Cookie             string
+	TokenExpires       time.Time
+	CookieExpires      time.Time
 }
 
 // CredentialsFromState 从 AuthState 转为驱动注入结构。
@@ -67,6 +89,7 @@ func CredentialsFromState(st *AuthState) AuthCredentials {
 		return AuthCredentials{}
 	}
 	return AuthCredentials{
+		CookieAuth: &st.CookieAuth, OpenAuth: &st.OpenAuth, ExpectedGeneration: &st.CredentialGeneration,
 		AccessToken:   st.AccessToken,
 		RefreshToken:  st.RefreshToken,
 		Cookie:        st.Cookie,
@@ -80,6 +103,18 @@ func MergeAuthCredentials(existing *AuthState, creds AuthCredentials) *AuthState
 	out := &AuthState{Status: AuthActive}
 	if existing != nil {
 		*out = *existing
+	}
+	if creds.ExpectedGeneration != nil && *creds.ExpectedGeneration != out.CredentialGeneration {
+		return out
+	}
+	if creds.CookieAuth != nil {
+		out.CookieAuth = *creds.CookieAuth
+	}
+	if creds.OpenAuth != nil {
+		out.OpenAuth = *creds.OpenAuth
+	}
+	if (creds.Cookie != "" && creds.Cookie != out.Cookie) || (creds.AccessToken != "" && creds.AccessToken != out.AccessToken) || (creds.RefreshToken != "" && creds.RefreshToken != out.RefreshToken) {
+		out.CredentialGeneration++
 	}
 	if creds.AccessToken != "" {
 		out.AccessToken = creds.AccessToken
@@ -97,4 +132,19 @@ func MergeAuthCredentials(existing *AuthState, creds AuthCredentials) *AuthState
 		out.CookieExpires = creds.CookieExpires
 	}
 	return out
+}
+
+// CredentialHealthPatcher updates only supplied health sides, conditional on the credential snapshot.
+type CredentialHealthPatcher interface {
+	PatchCredentialHealth(context.Context, int64, uint64, *CredentialHealth, *CredentialHealth) error
+}
+
+// AuthRuntimeUpdater persists bookkeeping and scheduling without overwriting credential health or secrets.
+type AuthRuntimeUpdater interface {
+	UpsertAuthRuntime(context.Context, *AuthState) error
+}
+
+// AuthCredentialPatcher merges supplied credential fields without replacing unsupplied health.
+type AuthCredentialPatcher interface {
+	PatchAuthCredentials(context.Context, int64, uint64, AuthCredentials) error
 }

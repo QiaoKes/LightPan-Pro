@@ -5,6 +5,7 @@ import (
 	"crypto/rand"
 	"crypto/subtle"
 	"encoding/base64"
+	"fmt"
 	"log/slog"
 	"path/filepath"
 	"strings"
@@ -30,18 +31,21 @@ type RunningAccountLister interface {
 }
 
 type Service struct {
-	repo       domain.StrmTaskRepository
-	branches   domain.StrmBranchRepository
-	dirCache   domain.StrmDirCacheRepository
-	files      *file.Service
-	playback   *playback.Service
-	settings   *settings.Service
-	dataDir    string
-	strmDir    string
-	listenAddr string
-	secret     []byte
-	bus        *eventbus.Bus
-	log        *slog.Logger
+	accounts            domain.AccountRepository
+	eventStore          EventSyncStore
+	outputReservationMu sync.Mutex
+	repo                domain.StrmTaskRepository
+	branches            domain.StrmBranchRepository
+	dirCache            domain.StrmDirCacheRepository
+	files               *file.Service
+	playback            *playback.Service
+	settings            *settings.Service
+	dataDir             string
+	strmDir             string
+	listenAddr          string
+	secret              []byte
+	bus                 *eventbus.Bus
+	log                 *slog.Logger
 
 	mu                       sync.Mutex
 	running                  map[int64]bool
@@ -65,6 +69,8 @@ type Service struct {
 }
 
 type ServiceOptions struct {
+	Accounts   domain.AccountRepository
+	EventStore EventSyncStore
 	Repo       domain.StrmTaskRepository
 	Branches   domain.StrmBranchRepository
 	DirCache   domain.StrmDirCacheRepository
@@ -89,6 +95,8 @@ func NewService(opts ServiceOptions) *Service {
 		strmDir = filepath.Join(filepath.Dir(filepath.Clean(opts.DataDir)), "strm")
 	}
 	return &Service{
+		eventStore:            opts.EventStore,
+		accounts:              opts.Accounts,
 		repo:                  opts.Repo,
 		branches:              opts.Branches,
 		dirCache:              opts.DirCache,
@@ -290,6 +298,9 @@ func (s *Service) Start(ctx context.Context) {
 	s.mu.Unlock()
 
 	go s.recoverStaleRunningTasks(ctx)
+	if s.eventStore != nil {
+		go s.monitorEvents(ctx)
+	}
 
 	go func() {
 		if !s.awaitStartup(ctx) {
@@ -320,7 +331,32 @@ func (s *Service) GetTask(ctx context.Context, id int64) (*domain.StrmTask, erro
 }
 
 func (s *Service) CreateTask(ctx context.Context, task *domain.StrmTask) (*domain.StrmTask, error) {
+	s.outputReservationMu.Lock()
+	defer s.outputReservationMu.Unlock()
+	if err := validateTaskMetadataSyncMode(task.MetadataSyncMode); err != nil {
+		return nil, err
+	}
 	norm := s.normalizeTask(*task)
+	if norm.MetadataSyncMode == "" && s.accounts != nil {
+		account, err := s.accounts.Get(ctx, norm.AccountID)
+		if err != nil {
+			return nil, err
+		}
+		if account.DriverType == "115" {
+			norm.MetadataSyncMode = MetadataSyncCloudPrimary
+		}
+	}
+	existing, err := s.repo.List(ctx)
+	if err != nil {
+		return nil, err
+	}
+	outputs := make(map[int64]string, len(existing))
+	for _, item := range existing {
+		outputs[item.ID] = TaskRelDir(item.GroupDir, item.OutputFolder)
+	}
+	if err = ValidateTaskOutput(s.strmDir, 0, TaskRelDir(norm.GroupDir, norm.OutputFolder), outputs); err != nil {
+		return nil, err
+	}
 	id, err := s.repo.Create(ctx, &norm)
 	if err != nil {
 		return nil, err
@@ -329,6 +365,11 @@ func (s *Service) CreateTask(ctx context.Context, task *domain.StrmTask) (*domai
 }
 
 func (s *Service) UpdateTask(ctx context.Context, id int64, task *domain.StrmTask) (*domain.StrmTask, error) {
+	var out *domain.StrmTask
+	err := WithTaskSync(ctx, id, func() error { var err error; out, err = s.updateTaskSynchronized(ctx, id, task); return err })
+	return out, err
+}
+func (s *Service) updateTaskSynchronized(ctx context.Context, id int64, task *domain.StrmTask) (*domain.StrmTask, error) {
 	releaseFiles, ok := s.TryBeginTaskFileOperation(id)
 	if !ok {
 		return nil, domain.Errorf(domain.CodeValidation, "当前任务正在进行，请停止后再修改设置")
@@ -340,6 +381,7 @@ func (s *Service) UpdateTask(ctx context.Context, id int64, task *domain.StrmTas
 		return nil, err
 	}
 	oldTaskRelDir := TaskRelDir(existing.GroupDir, existing.OutputFolder)
+	scopeChanged := existing.AccountID != task.AccountID || existing.ParentID != task.ParentID || existing.Path != task.Path || existing.Recursive != task.Recursive
 	automationManaged, err := s.IsAutomationManaged(ctx, id)
 	if err != nil {
 		return nil, err
@@ -357,7 +399,12 @@ func (s *Service) UpdateTask(ctx context.Context, id int64, task *domain.StrmTas
 	existing.ApiInterval = task.ApiInterval
 	existing.ExcludeDirKeywords = task.ExcludeDirKeywords
 	existing.ExcludeFileKeywords = task.ExcludeFileKeywords
+	if err := validateTaskMetadataSyncMode(task.MetadataSyncMode); err != nil {
+		return nil, err
+	}
+	existing.MetadataSyncMode = task.MetadataSyncMode
 	existing.SyncMetadata = task.SyncMetadata
+	existing.MonitoringEnabled = task.MonitoringEnabled
 	existing.BranchCheckEnabled = task.BranchCheckEnabled
 	existing.TimeWindowEnabled = task.TimeWindowEnabled
 	existing.TimeStart = task.TimeStart
@@ -369,9 +416,32 @@ func (s *Service) UpdateTask(ctx context.Context, id int64, task *domain.StrmTas
 	norm := s.normalizeTask(*existing)
 	norm.ID = id
 	newTaskRelDir := TaskRelDir(norm.GroupDir, norm.OutputFolder)
+	s.outputReservationMu.Lock()
+	defer s.outputReservationMu.Unlock()
+	if newTaskRelDir != oldTaskRelDir {
+		tasks, e := s.repo.List(ctx)
+		if e != nil {
+			return nil, e
+		}
+		outputs := map[int64]string{}
+		for _, item := range tasks {
+			outputs[item.ID] = TaskRelDir(item.GroupDir, item.OutputFolder)
+		}
+		if e = ValidateTaskOutput(s.strmDir, id, newTaskRelDir, outputs); e != nil {
+			return nil, e
+		}
+	}
 	outputMove, err := moveTaskOutputDirectory(s.strmDir, oldTaskRelDir, newTaskRelDir)
 	if err != nil {
 		return nil, err
+	}
+	if scopeChanged && s.eventStore != nil {
+		if err = s.eventStore.SaveEventSync(ctx, id, EventSyncState{}); err != nil {
+			if rollbackErr := outputMove.Rollback(); rollbackErr != nil {
+				return nil, fmt.Errorf("reset event baseline: %w; output rollback: %v", err, rollbackErr)
+			}
+			return nil, err
+		}
 	}
 	if err := s.repo.Update(ctx, &norm); err != nil {
 		if rollbackErr := outputMove.Rollback(); rollbackErr != nil {
@@ -862,4 +932,22 @@ func branchRelativePath(taskPath, branchPath string) string {
 		return strings.TrimPrefix(branchPath, prefix)
 	}
 	return ""
+}
+
+func validateTaskMetadataSyncMode(mode string) error {
+	switch mode {
+	case "", MetadataSyncCloudPrimary, MetadataSyncLocalPrimary, MetadataSyncBidirectional:
+		return nil
+	default:
+		return domain.Errorf(domain.CodeValidation, "invalid task metadata sync mode")
+	}
+}
+func taskScanSettings(task *domain.StrmTask, defaults ScanSettings) ScanSettings {
+	if task != nil && task.MetadataSyncMode != "" {
+		defaults.MetadataSyncMode = task.MetadataSyncMode
+	}
+	return defaults
+}
+func (s *Service) scanSettingsForTask(task *domain.StrmTask) ScanSettings {
+	return taskScanSettings(task, s.scanSettings())
 }

@@ -50,11 +50,13 @@ var (
 )
 
 type Service struct {
-	settings *settings.Service
-	playback *playback.Service
-	strm     *strm.Service
-	log      *slog.Logger
-	client   *http.Client
+	directMu    sync.Mutex
+	directSlots map[directPlaybackKey]*directPlaybackSlot
+	settings    *settings.Service
+	playback    *playback.Service
+	strm        *strm.Service
+	log         *slog.Logger
+	client      *http.Client
 
 	servePlayback func(http.ResponseWriter, *http.Request, playback.Request, playback.Intent) error
 	resolvePath   func(context.Context, int64, string, string) (string, error)
@@ -833,7 +835,7 @@ func (s *Service) serveSTRM(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadGateway)
 		return
 	}
-	if err := s.playbackServe(w, r, playback.Request{AccountID: accountID, FileID: fileID}, playback.Intent{FileName: ref.FileName}); err != nil {
+	if err := s.playbackServe(w, r, playback.Request{AccountID: accountID, FileID: fileID}, playback.Intent{STRM: true, FileName: ref.FileName}); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
@@ -868,24 +870,35 @@ func (s *Service) playbackServe(w http.ResponseWriter, r *http.Request, req play
 	return s.servePlayback(w, r, req, intent)
 }
 
-func (s *Service) serveLitePanPlayback(w http.ResponseWriter, r *http.Request, litepanURL string) bool {
+func (s *Service) serveLitePanPlayback(w http.ResponseWriter, r *http.Request, litepanURL string, configs ...Config) bool {
+	var cfg Config
+	if len(configs) > 0 {
+		cfg = configs[0]
+	}
 	accountID, fileID, ok, err := s.resolveLitePanSTRM(r.Context(), litepanURL)
 	if !ok {
 		return false
 	}
 	if err != nil {
 		s.log.Warn("Emby/Jellyfin 反代解析路径型 LitePan STRM 失败", "account_id", accountID, "error", err)
-		http.Error(w, err.Error(), http.StatusBadGateway)
+		s.proxyRequest(w, r, cfg, strings.TrimPrefix(r.URL.Path, "/"))
 		return true
 	}
-	if err := s.playbackServe(w, r, playback.Request{AccountID: accountID, FileID: fileID}, playback.Intent{}); err != nil {
+	if err := s.playbackServe(w, r, playback.Request{AccountID: accountID, FileID: fileID}, playback.Intent{TemporaryCopy: s.playback != nil && s.playback.SupportsTemporaryPlayback(r.Context(), accountID) && s.needsTemporaryCopy(r, cfg)}); err != nil {
+		if capture, ok := w.(*redirectCapture); ok && capture.committed {
+			return true
+		}
 		if isExpectedClientDisconnect(r.Context(), err) {
 			s.log.Debug("Emby/Jellyfin 反代播放请求已取消", "account_id", accountID, "file_id", fileID, "error", err)
 			return true
 		}
 		s.log.Warn("Emby/Jellyfin 反代解析 LitePan STRM 失败", "account_id", accountID, "file_id", fileID, "error", err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		s.proxyRequest(w, r, cfg, strings.TrimPrefix(r.URL.Path, "/"))
 		return true
+	}
+	if capture, ok := w.(*redirectCapture); ok {
+		capture.accountID = accountID
+		capture.cacheable = true
 	}
 	return true
 }
@@ -972,11 +985,42 @@ func (s *Service) lookupMediaSource(cfg Config, itemID, mediaSourceID string) st
 }
 
 func (s *Service) redirectSTRMStream(w http.ResponseWriter, r *http.Request, cfg Config, fullPath string) {
-	client := proxybase.EmbyClientName(r)
-	if r.Method == http.MethodHead {
-		s.proxyRequest(w, r, cfg, fullPath)
-		return
+	// The final redirect cache precedes media/path/session work. Serialize misses
+	// for one identity so simultaneous seeks cannot duplicate cloud resolution.
+	if r.Method == http.MethodGet || r.Method == http.MethodHead {
+		item := ""
+		if m := videoStreamPathRE.FindStringSubmatch(fullPath); len(m) > 1 {
+			item = m[1]
+		}
+		generation := uint64(0)
+		if s.playback != nil {
+			generation = s.playback.CacheGeneration()
+		}
+		key := directPlaybackKey{generation: generation, server: embyMediaSourceCacheKey(cfg, ""), item: item, source: queryValue(r, "mediasourceid"), ua: r.UserAgent(), device: playbackDevice(r)}
+		slot := s.acquireDirectSlot(key)
+		defer s.releaseDirectSlot(key, slot)
+		slot.Lock()
+		defer slot.Unlock()
+		if slot.entry.location != "" && time.Now().Before(slot.entry.expires) {
+			if s.playback != nil && slot.entry.accountID != 0 {
+				if err := s.playback.CheckAccount(r.Context(), slot.entry.accountID); err != nil {
+					s.proxyRequest(w, r, cfg, fullPath)
+					return
+				}
+			}
+			http.Redirect(w, r, slot.entry.location, http.StatusFound)
+			return
+		}
+		capture := &redirectCapture{ResponseWriter: w}
+		defer func() {
+			if capture.cacheable && capture.location != "" {
+				slot.entry = directPlaybackEntry{accountID: capture.accountID, location: capture.location, expires: time.Now().Add(1200 * time.Second)}
+			}
+		}()
+		w = capture
 	}
+
+	client := proxybase.EmbyClientName(r)
 	mediaSourceID := queryValue(r, "mediasourceid")
 	itemID := ""
 	if m := videoStreamPathRE.FindStringSubmatch(fullPath); len(m) > 1 {
@@ -1008,7 +1052,7 @@ func (s *Service) redirectSTRMStream(w http.ResponseWriter, r *http.Request, cfg
 			proxybase.ServeSTRMDescriptor(w, r, cachedURL)
 			return
 		}
-		if s.serveLitePanPlayback(w, r, cachedURL) {
+		if s.serveLitePanPlayback(w, r, cachedURL, cfg) {
 			return
 		}
 	}
@@ -1041,7 +1085,7 @@ func (s *Service) redirectSTRMStream(w http.ResponseWriter, r *http.Request, cfg
 				proxybase.ServeSTRMDescriptor(w, r, redirectURL)
 				return
 			}
-			if s.serveLitePanPlayback(w, r, redirectURL) {
+			if s.serveLitePanPlayback(w, r, redirectURL, cfg) {
 				return
 			}
 		}
@@ -1061,7 +1105,7 @@ func (s *Service) redirectSTRMStream(w http.ResponseWriter, r *http.Request, cfg
 			proxybase.ServeSTRMDescriptor(w, r, itemPath)
 			return
 		}
-		if s.serveLitePanPlayback(w, r, itemPath) {
+		if s.serveLitePanPlayback(w, r, itemPath, cfg) {
 			return
 		}
 	}
@@ -1290,34 +1334,13 @@ func (s *Service) extractLitePanSTRM(mediaSource map[string]any, r *http.Request
 }
 
 func (s *Service) inferLitePanMediaInfo(ctx context.Context, litepanURL, ua string) map[string]any {
-	if s.playback == nil {
+	ref, ok := proxybase.ParseLitePanSTRMReference(litepanURL)
+	if !ok || ref.FileName == "" {
 		return nil
 	}
-	accountID, fileID, ok, err := s.resolveLitePanSTRM(ctx, litepanURL)
-	if !ok || err != nil {
-		return nil
-	}
-	res, err := s.playback.Resolve(ctx, accountID, fileID, ua, false, true)
-	if err != nil {
-		return nil
-	}
-	out := map[string]any{}
-	name := strings.TrimSpace(res.File.Name)
-	if name == "" {
-		name = strings.TrimSpace(res.Link.FileName)
-	}
-	if name != "" {
-		out["Name"] = name
-		if ext := strings.TrimPrefix(strings.ToLower(path.Ext(name)), "."); ext != "" {
-			out["Container"] = ext
-		}
-	}
-	size := res.File.Size
-	if size <= 0 {
-		size = res.Link.Size
-	}
-	if size > 0 {
-		out["Size"] = size
+	out := map[string]any{"Name": ref.FileName}
+	if ext := strings.TrimPrefix(strings.ToLower(path.Ext(ref.FileName)), "."); ext != "" {
+		out["Container"] = ext
 	}
 	return out
 }

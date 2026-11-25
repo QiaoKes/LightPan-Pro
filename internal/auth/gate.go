@@ -19,9 +19,24 @@ func (g *Gate) Check(ctx context.Context, accountID int64) error {
 	if g == nil || g.svc == nil {
 		return nil
 	}
+	if g.svc.accounts != nil {
+		account, err := g.svc.accounts.Get(ctx, accountID)
+		if err != nil {
+			return err
+		}
+		if !account.IsActive {
+			return domain.Errorf(domain.CodePermissionDenied, "account is disabled")
+		}
+	}
 	st, err := g.svc.loadState(ctx, accountID)
 	if err != nil {
 		return err
+	}
+	if st.CookieAuth.Status != "" || st.OpenAuth.Status != "" {
+		if st.CookieAuth.Status == domain.AuthActive || st.OpenAuth.Status == domain.AuthActive {
+			return nil
+		}
+		return domain.Errf(domain.CodeAuthExpired)
 	}
 	now := g.svc.now()
 	switch st.Status {
@@ -65,4 +80,83 @@ func (g *Gate) HandleRetryFailure(ctx context.Context, accountID int64, cause er
 		return
 	}
 	g.svc.recordRefreshFailure(ctx, accountID, driver.RefreshRetryable, driver.CallerPassive, cause)
+}
+
+func (g *Gate) CheckCapability(ctx context.Context, accountID int64, capability domain.AuthCapability) error {
+	if g == nil || g.svc == nil {
+		return nil
+	}
+	if g.svc.accounts != nil {
+		account, err := g.svc.accounts.Get(ctx, accountID)
+		if err != nil {
+			return err
+		}
+		if !account.IsActive {
+			return domain.Errorf(domain.CodePermissionDenied, "account is disabled")
+		}
+	}
+	st, err := g.svc.loadState(ctx, accountID)
+	if err != nil {
+		return err
+	}
+	if st.CookieAuth.Status == "" && st.OpenAuth.Status == "" {
+		return g.Check(ctx, accountID)
+	}
+	health := st.CookieAuth
+	switch capability {
+	case domain.AuthCapabilityCookieAPI:
+	case domain.AuthCapabilityOpenAPI:
+		health = st.OpenAuth
+	default:
+		return domain.Errorf(domain.CodeValidation, "unknown credential capability")
+	}
+	if health.Status != domain.AuthActive {
+		return &driver.CapabilityAuthError{Capability: capability, Cause: domain.Errf(domain.CodeAuthExpired)}
+	}
+	return nil
+}
+func (g *Gate) HandleCapabilityError(ctx context.Context, accountID int64, capability domain.AuthCapability, cause error) error {
+	if g == nil || g.svc == nil || !IsAuthError(cause) {
+		return cause
+	}
+	ctx, unlock, err := g.svc.lockAccount(ctx, accountID)
+	if err != nil {
+		return err
+	}
+	defer unlock()
+	st, err := g.svc.loadState(ctx, accountID)
+	if err != nil {
+		return err
+	}
+	var health *domain.CredentialHealth
+	switch capability {
+	case domain.AuthCapabilityCookieAPI:
+		health = &st.CookieAuth
+	case domain.AuthCapabilityOpenAPI:
+		health = &st.OpenAuth
+	default:
+		return domain.Errorf(domain.CodeValidation, "unknown credential capability")
+	}
+	health.Status = domain.AuthTokenExpired
+	// Persist a bounded, generic error; upstream messages may contain credentials.
+	health.LastError = "credential expired; reconnect required"
+	var persistErr error
+	if patcher, ok := g.svc.authStates.(domain.CredentialHealthPatcher); ok {
+		var cookie, open *domain.CredentialHealth
+		if capability == domain.AuthCapabilityCookieAPI {
+			cookie = health
+		} else {
+			open = health
+		}
+		persistErr = patcher.PatchCredentialHealth(ctx, accountID, st.CredentialGeneration, cookie, open)
+	} else {
+		persistErr = g.svc.authStates.Upsert(ctx, st)
+	}
+	if persistErr != nil {
+		return persistErr
+	}
+	if capability == domain.AuthCapabilityOpenAPI && g.svc.credentialInvalidator != nil {
+		g.svc.credentialInvalidator(accountID)
+	}
+	return &driver.CapabilityAuthError{Capability: capability, Cause: cause}
 }

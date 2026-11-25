@@ -65,6 +65,11 @@ func wireServices(cfg config.Config, logs *logx.Manager, st *storeBundle, core *
 	fileSvc := file.NewService(core.exec, core.cache, st.store.Accounts, core.bus, st.settings, core.listHits)
 	fileSvc.SetLogger(logs.For(logx.ModuleFileOp))
 	playbackSvc := playback.NewService(core.exec, core.cache)
+	if core.auth != nil {
+		core.auth.SetCredentialInvalidator(playbackSvc.InvalidateAccount)
+	}
+	playbackSvc.SetTemporaryPlaybackRepository(st.store.TemporaryPlayback)
+	fileSvc.SetPlaybackInvalidator(playbackSvc.InvalidateAccount)
 	playbackSvc.SetLogger(logs.For(logx.ModuleSystem))
 	strmSvc, coord := wireSTRM(st, fileSvc, playbackSvc, core.bus, logs, cfg.DataDir, cfg.StrmDir, cfg.ListenAddr, core.secret)
 	strmDeleteSvc := strmdelete.New(strmdelete.Options{

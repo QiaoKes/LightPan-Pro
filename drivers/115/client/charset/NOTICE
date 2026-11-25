@@ -1,0 +1,14 @@
+This package is a pure Go port of the default charset-normalizer 3.5.1 detection path used by the reference EmbyNginx directory-tree parser.
+
+charset-normalizer: MIT License, Copyright (c) 2025 TAHRI Ahmed R.
+Source: https://github.com/jawah/charset_normalizer
+Pinned tag3.5.1, commit e239bdc5cc1eb1f0db08d4046ad531f805dbea71.
+Original license retained in LICENSE.upstream.
+
+Python codec behavior, Unicode 15.0 properties, case mappings and numeric/sorting semantics are derived from CPython3.12.13 offline reference execution and source.
+Source: https://github.com/python/cpython
+Pinned tagv3.12.13, commit 3bb231a6a5dc02b95658877318bf61501a7209e9.
+CPython license and copyright history retained in LICENSE.cpython.
+ISO-2022 source _codecs_iso2022.c credits Hye-Shik Chang <perky@FreeBSD.org>.
+
+Local changes: algorithms and error/state handling translated into Go; immutable mapping tables generated offline; default detector exposed only for local directory-tree text decoding. Python, native extensions and generators are not runtime or build dependencies. Source comparisons, generators and independently produced fixtures live in .trellis/tasks/11-25-115-dual-auth-go/research/protocol-vectors.

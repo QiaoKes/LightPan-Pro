@@ -175,9 +175,6 @@ export function useOAuthAuth() {
       }
       navigateOAuthWindow(url);
       const tokens = await pollStatus(sessionId, () => cancelled.value);
-      if (driverType === "115_open") {
-        await new Promise((r) => setTimeout(r, 2000));
-      }
       const filled = normalizeOAuthFields(tokens, fieldNames);
       const count = Object.keys(filled).length;
       if (count === 0) {

@@ -6,6 +6,8 @@ export interface StrmTask {
   account_id: number;
   parent_id: string;
   path: string;
+  monitoring_enabled?: boolean;
+  metadata_sync_mode?: "" | "cloud_primary" | "local_primary" | "bidirectional";
   recursive: boolean;
   scan_interval: number;
   scan_mode: string;
@@ -90,6 +92,8 @@ export type StrmTaskInput = Pick<
   | "account_id"
   | "parent_id"
   | "path"
+  | "monitoring_enabled"
+  | "metadata_sync_mode"
   | "recursive"
   | "scan_interval"
   | "scan_mode"

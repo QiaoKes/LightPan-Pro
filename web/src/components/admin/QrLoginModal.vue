@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onUnmounted, ref, watch } from "vue";
-import { qrPoll, qrStart, type QrStatus } from "@/api/qr";
+import { qrCancel, qrPoll, qrStart, type QrPurpose, type QrStatus } from "@/api/qr";
 import type { FieldOption } from "@/api/types";
 import { toast } from "@/composables/useToast";
 import AppPlainModal from "@/components/base/AppPlainModal.vue";
@@ -13,6 +13,7 @@ const props = withDefaults(
     open: boolean;
     driverType: string;
     config?: string;
+    purpose?: QrPurpose;
     deviceOptions?: FieldOption[];
     deviceField?: string;
   }>(),
@@ -20,7 +21,7 @@ const props = withDefaults(
 );
 const emit = defineEmits<{ close: []; success: [credentials: Record<string, string>] }>();
 
-type Phase = "loading" | "waiting" | "success" | "failed" | "expired" | "error";
+type Phase = "loading" | "waiting" | "scanned" | "success" | "failed" | "expired" | "cancelled" | "error";
 
 const phase = ref<Phase>("loading");
 const qrImage = ref("");
@@ -30,6 +31,14 @@ const expiresIn = ref(0);
 const panelTitle = ref("扫码登录");
 const hintText = ref("请使用对应网盘 App扫码，成功后授权信息将填入表单");
 const device = ref("");
+
+let generation = 0;
+function cancelSession() {
+  generation++;
+  const previous = token.value;
+  token.value = "";
+  if (previous) void qrCancel(props.driverType, previous, props.purpose).catch(() => {});
+}
 
 let pollTimer: ReturnType<typeof setTimeout> | null = null;
 let countdownTimer: ReturnType<typeof setInterval> | null = null;
@@ -62,7 +71,7 @@ function startCountdown(seconds: number) {
   if (expiresIn.value <= 0) return;
   countdownTimer = setInterval(() => {
     expiresIn.value = Math.max(0, expiresIn.value - 1);
-    if (expiresIn.value <= 0 && phase.value === "waiting") {
+    if (expiresIn.value <= 0 && ["waiting", "scanned"].includes(phase.value)) {
       phase.value = "expired";
       message.value = "二维码已过期，请重新获取";
       clearPoll();
@@ -78,7 +87,6 @@ function scheduleNextPoll(delay = 2000) {
 
 function defaultDevice() {
   return (
-    props.deviceOptions.find((o) => o.value === "web")?.value ??
     props.deviceOptions[0]?.value ??
     ""
   );
@@ -107,7 +115,10 @@ function onDeviceSelect(next: string | number | boolean) {
 }
 
 async function start() {
+  cancelSession();
+  const current = generation;
   clearPoll();
+  clearCountdown();
   phase.value = "loading";
   qrImage.value = "";
   message.value = "";
@@ -116,7 +127,11 @@ async function start() {
   panelTitle.value = "扫码登录";
   hintText.value = "请使用对应网盘 App扫码，成功后授权信息将填入表单";
   try {
-    const res = await qrStart(props.driverType, buildStartConfig());
+    const res = await qrStart(props.driverType, buildStartConfig(), { purpose: props.purpose, app: device.value || undefined, client_id: String(JSON.parse(buildStartConfig()).client_id || "") || undefined });
+    if (current !== generation || !props.open) {
+      if (res.data?.token) void qrCancel(props.driverType, res.data.token, props.purpose).catch(() => {});
+      return;
+    }
     if (!res.success || !res.data?.token || !res.data.qr_image_base64) {
       throw new Error(res.message || "获取二维码失败");
     }
@@ -125,9 +140,10 @@ async function start() {
     if (res.data.title?.trim()) panelTitle.value = res.data.title.trim();
     if (res.data.hint?.trim()) hintText.value = res.data.hint.trim();
     phase.value = "waiting";
-    startCountdown(res.data.expires_in || 300);
+    startCountdown(res.data.expires_in ?? 0);
     scheduleNextPoll(2000);
   } catch (e) {
+    if (current !== generation || !props.open) return;
     phase.value = "error";
     message.value = e instanceof Error ? e.message : "获取二维码失败";
   }
@@ -135,6 +151,8 @@ async function start() {
 
 const phaseByStatus: Record<QrStatus, Phase> = {
   waiting: "waiting",
+  scanned: "scanned",
+  cancelled: "cancelled",
   success: "success",
   failed: "failed",
   expired: "expired",
@@ -142,9 +160,10 @@ const phaseByStatus: Record<QrStatus, Phase> = {
 
 async function poll() {
   if (!token.value) return;
+  const current = generation;
   try {
-    const res = await qrPoll(props.driverType, token.value);
-    if (!props.open || !token.value) return;
+    const res = await qrPoll(props.driverType, token.value, props.purpose);
+    if (!props.open || !token.value || current !== generation) return;
     if (!res.success || !res.data?.status) {
       throw new Error(res.message || "轮询失败");
     }
@@ -161,6 +180,8 @@ async function poll() {
     if (accessToken) credentials.access_token = accessToken;
     if (refreshToken) credentials.refresh_token = refreshToken;
     if (fields) Object.assign(credentials, fields);
+    if (res.data.token_expires) credentials.token_expires = res.data.token_expires;
+    if (res.data.cookie_expires) credentials.cookie_expires = res.data.cookie_expires;
     if (status === "success" && Object.keys(credentials).length > 0) {
       phase.value = "success";
       clearPoll();
@@ -176,23 +197,26 @@ async function poll() {
       clearCountdown();
       return;
     }
-    if (status === "failed" || status === "expired") {
+    if (status === "failed" || status === "expired" || status === "cancelled") {
       phase.value = phaseByStatus[status];
-      message.value = msg || (status === "expired" ? "二维码已过期" : "扫码登录失败");
+      message.value = msg || (status === "expired" ? "二维码已过期" : status === "cancelled" ? "已取消授权" : "扫码登录失败");
       clearPoll();
       clearCountdown();
       return;
     }
+    phase.value = phaseByStatus[status];
+    hintText.value = msg || (status === "scanned" ? "已扫码，请在 App 中确认授权" : "请使用对应网盘 App 扫码");
     scheduleNextPoll(2000);
   } catch {
-    if (!props.open || !token.value) return;
-    if (expiresIn.value <= 0) {
+    if (!props.open || !token.value || current !== generation) return;
+    if (expiresIn.value <= 0 && countdownTimer) {
       phase.value = "expired";
       message.value = "二维码已过期，请重新获取";
       clearPoll();
       clearCountdown();
       return;
     }
+    hintText.value = "网络暂时异常，正在重试；也可关闭或重新获取二维码";
     // 短暂断网或上游轮询异常时继续尝试，由二维码真实有效期收口。
     scheduleNextPoll(3000);
   }
@@ -201,7 +225,7 @@ async function poll() {
 function handleClose() {
   clearPoll();
   clearCountdown();
-  token.value = "";
+  cancelSession();
   emit("close");
 }
 
@@ -212,6 +236,7 @@ watch(
       device.value = defaultDevice();
       void start();
     } else {
+      cancelSession();
       clearPoll();
       clearCountdown();
     }
@@ -219,6 +244,7 @@ watch(
 );
 
 onUnmounted(() => {
+  cancelSession();
   clearPoll();
   clearCountdown();
 });
@@ -242,16 +268,16 @@ onUnmounted(() => {
           <span>正在生成二维码...</span>
         </div>
 
-        <div v-else-if="phase === 'waiting' || phase === 'success'" class="qr-state qr-state--waiting">
+        <div v-else-if="phase === 'waiting' || phase === 'scanned' || phase === 'success'" class="qr-state qr-state--waiting">
           <img class="qr-image" :src="qrImage" alt="扫码二维码" />
           <div class="qr-hint">{{ hintText }}</div>
-          <div v-if="phase === 'waiting' && expireText" class="qr-countdown">{{ expireText }}</div>
-          <div v-else class="qr-success">已获取授权信息</div>
+          <div v-if="(phase === 'waiting' || phase === 'scanned') && expireText" class="qr-countdown">{{ expireText }}</div>
+          <div v-else-if="phase === 'success'" class="qr-success">已获取授权信息</div>
         </div>
 
         <div v-else class="qr-state qr-state--failed">
           <SvgIcon name="circle-exclamation" size="1em" />
-          <div class="qr-result-title">{{ phase === "expired" ? "二维码已过期" : "扫码登录失败" }}</div>
+          <div class="qr-result-title">{{ phase === "expired" ? "二维码已过期" : phase === "cancelled" ? "已取消授权" : "扫码登录失败" }}</div>
           <div class="qr-hint">{{ message || "二维码已失效，请关闭后重新获取" }}</div>
           <button class="qr-retry" type="button" @click="start">重新获取</button>
         </div>

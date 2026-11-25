@@ -37,7 +37,7 @@ func (h *Handler) strmPlay(w http.ResponseWriter, r *http.Request) {
 	if err := h.playback.ServeHTTP(w, r, playback.Request{
 		AccountID: accountID,
 		FileID:    fileID,
-	}, playback.Intent{FileName: fileName}); err != nil {
+	}, playback.Intent{STRM: true, FileName: fileName}); err != nil {
 		writeErr(w, err)
 	}
 }
@@ -77,7 +77,7 @@ func (h *Handler) strmPathPlay(w http.ResponseWriter, r *http.Request) {
 	if fileName == "" {
 		fileName = item.Name
 	}
-	if err := h.playback.ServeHTTP(w, r, playback.Request{AccountID: accountID, FileID: item.ID}, playback.Intent{FileName: fileName}); err != nil {
+	if err := h.playback.ServeHTTP(w, r, playback.Request{AccountID: accountID, FileID: item.ID}, playback.Intent{STRM: true, FileName: fileName}); err != nil {
 		writeErr(w, err)
 	}
 }

@@ -241,7 +241,8 @@ const temporaryRetentionOptions = [
   { value: 0, label: "永久" },
 ];
 
-type TaskForm = Omit<StrmTaskInput, "sync_metadata" | "schedule_mode"> & {
+type TaskForm = Omit<StrmTaskInput, "sync_metadata" | "schedule_mode" | "metadata_sync_mode"> & {
+  metadata_sync_mode: NonNullable<StrmTaskInput["metadata_sync_mode"]>;
   time_window_mode: "always" | "custom";
   sync_metadata: string;
   schedule_mode: ScheduleMode;
@@ -262,6 +263,8 @@ const emptyForm = (): TaskForm => ({
   exclude_dir_keywords: "",
   exclude_file_keywords: "",
   sync_metadata: "false",
+  monitoring_enabled: false,
+  metadata_sync_mode: "",
   branch_check_enabled: false,
   time_window_enabled: false,
   time_start: "00:00",
@@ -332,6 +335,12 @@ const drawerSaving = computed(() => {
   return readPanelSaving(organizeSettingsRef.value?.saving);
 });
 const drawerCanSave = drawerDirty;
+
+const taskMetadataModeOptions = [
+  { value: "cloud_primary", label: "云端优先" },
+  { value: "local_primary", label: "本地优先" },
+  { value: "bidirectional", label: "双向同步" },
+];
 
 const metadataSyncOptions = [
   { value: "false", label: "关闭" },
@@ -661,6 +670,8 @@ function openEdit(task: StrmTask) {
   form.parent_id = task.parent_id;
   form.path = task.path;
   form.recursive = task.recursive;
+  form.monitoring_enabled = task.monitoring_enabled ?? false;
+  form.metadata_sync_mode = task.metadata_sync_mode ?? "";
   form.scan_interval = task.scan_interval || defaultScanInterval();
   form.scan_mode = task.scan_mode;
   form.extensions = task.extensions ?? "";
@@ -678,6 +689,9 @@ function openEdit(task: StrmTask) {
 
 function onFolderPicked(payload: { accountId: number; parentId: string; path: string }) {
   form.account_id = payload.accountId;
+  if (!editingId.value) {
+    form.metadata_sync_mode = accounts.value.find((account) => account.id === payload.accountId)?.driver_type === "115" ? "cloud_primary" : "";
+  }
   form.parent_id = payload.parentId;
   form.path = payload.path || "/";
   pickerOpen.value = false;
@@ -691,6 +705,8 @@ function buildTaskPayload(): StrmTaskInput {
     parent_id: form.parent_id,
     path: form.path,
     recursive: form.recursive,
+    monitoring_enabled: accounts.value.find((account) => account.id === form.account_id)?.driver_type === "115" && Boolean(form.monitoring_enabled),
+    metadata_sync_mode: form.metadata_sync_mode || (!editingId.value && accounts.value.find((account) => account.id === form.account_id)?.driver_type === "115" ? "cloud_primary" : ""),
     scan_interval: form.scan_interval,
     scan_mode: form.scan_mode,
     extensions: form.extensions,
@@ -1359,6 +1375,15 @@ watch(activeTab, (tab) => {
             />
           </FormField>
         </div>
+
+        <FormField v-if="accounts.find((account) => account.id === form.account_id)?.driver_type === '115'" label="附件同步模式">
+          <AppSelect v-model="form.metadata_sync_mode" :options="taskMetadataModeOptions" placeholder="继承全局设置" />
+        </FormField>
+
+        <FormField v-if="accounts.find((account) => account.id === form.account_id)?.driver_type === '115'" label="增量监控">
+          <label><input v-model="form.monitoring_enabled" type="checkbox" /> 开启目录变更监控（默认关闭）</label>
+          <p>首次完整扫描后开始监控，并定期校准。Cookie 失效时暂停，恢复后重新校准。</p>
+        </FormField>
 
         <button type="button" class="strm-advanced-toggle" @click="showAdvanced = !showAdvanced">
           {{ showAdvanced ? "收起选项" : "更多选项" }}
