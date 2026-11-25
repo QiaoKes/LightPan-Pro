@@ -1,7 +1,7 @@
 # 115 双凭据纯 Go 重构 PRD
 
 ## 状态与目标
-Status: in_progress. Execution explicitly authorized on 2026-11-25. All implementation agents use gpt-6.1-sol; coordinator owns integration and acceptance. Offline protocol evidence is frozen; live-account acceptance remains separate.
+Status: offline implementation and Docker delivery complete; live-account acceptance deferred under D10. Execution explicitly authorized on 2026-11-25. All implementation agents use gpt-6.1-sol; coordinator owns integration and acceptance. Offline protocol evidence is frozen; live-account acceptance remains separate.
 
 以本地 EmbyNginx 参考项目的有效请求行为为基线，在 LitePan 中提供双凭据挂载、可靠的 302 播放、目录树生成及自动同步。保持模块职责清晰，使后续开发可按独立工作包并行交付。
 
@@ -125,3 +125,6 @@ A13（R5/R7/R15，W0–W8）：正常与异常场景提供有序请求轨迹，�
 ## Authorized delivery extension — 2026-11-25
 
 Commit and push the complete115 refactor and add GitHub Actions validation plus container publishing. Image: ghcr.io/qiaokes/lightpan-pro, tag sha- followed by the first7hex characters of the workflow commit; no latest. Build linux/amd64. Pull requests only validate; trusted push/manual runs may publish after validation. No live115 credentials or calls enter CI. Existing D10 live-acceptance deferral remains unchanged.
+
+### Docker-only simplification (supersedes initial CI shape)
+User subsequently requested minimal direct Docker building/publishing, without separate validation jobs. Events are push/manual; one image build/publish job; same image and SHA tags. Earlier Go/frontend offline acceptance remains recorded but is not repeated on every push.

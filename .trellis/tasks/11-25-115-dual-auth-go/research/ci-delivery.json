@@ -1,0 +1,30 @@
+{
+  "repository": "QiaoKes/LightPan-Pro",
+  "branch": "codex/115-dual-auth-go",
+  "implementation_commit": "89fc7c4680d08449ecead90c9d3c2fc2c8c12568",
+  "ci_commit": "d8ddcb35a1a75dbb6cce5635e2d5200951bb81e5",
+  "first_run_id": 45641655967,
+  "first_run_url": "https://github.com/QiaoKes/LightPan-Pro/actions/runs/45641655967",
+  "image": "ghcr.io/qiaokes/lightpan-pro",
+  "tag_format": "sha-<first7commithex>",
+  "platforms": [
+    "linux/amd64"
+  ],
+  "local_checks": [
+    "independent actionlint",
+    "frontend type-check",
+    "frontend upload dispatcher",
+    "both Compose configurations",
+    "CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -tags fuse"
+  ],
+  "hosted_status": "success",
+  "live_115_acceptance": "deferred_D10",
+  "pipeline": "Docker build and push only; supersedes initial validation gate",
+  "docker_only_commit": "9b65537a1e8ba4e20ca6e0a9768102c0954fdee2",
+  "docker_only_run_id": 45644010263,
+  "docker_only_run_url": "https://github.com/QiaoKes/LightPan-Pro/actions/runs/45644010263",
+  "published_tag": "sha-9b65537",
+  "published_digest": "sha256:241b3b085c373ca7eeb81df1a2c79cc253a6507891b278d2b1cad4c840547e7d",
+  "visibility": "public",
+  "initial_validation_and_publish_run_status": "success"
+}

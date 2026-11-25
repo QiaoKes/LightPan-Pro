@@ -15,7 +15,7 @@
   "branch": "codex/115-dual-auth-go",
   "base_branch": "main",
   "worktree_path": null,
-  "commit": null,
+  "commit": "89fc7c4",
   "pr_url": null,
   "subtasks": [],
   "children": [
@@ -36,9 +36,11 @@
     "implementation_status": "offline_verified",
     "acceptance_report": "acceptance.md",
     "live_acceptance": "deferred_by_user_D10",
-    "commit_status": "authorized_by_user",
+    "commit_status": "committed",
     "delivery_scope": "code_and_offline_acceptance",
     "completion_audit": "research/completion-audit.md",
-    "implementation_commit": "89fc7c4"
+    "implementation_commit": "89fc7c4",
+    "ci_config_commit": "9b65537",
+    "ci_delivery": "docker_build_publish_passed"
   }
 }

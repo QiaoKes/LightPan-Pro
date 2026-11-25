@@ -28,3 +28,9 @@ New fixtures exercise cold Sessions through the real playback service, cache exp
 ## User-authorized GitHub delivery — 2026-11-25
 
 User explicitly authorized commit and push of the full115 refactor, plus GitHub CI and image publishing using short SHA tags. This supersedes the historical pending-confirmation gate. Implementation commit89fc7c4 includes all517 reviewed implementation paths (Git recognizes508 renames/changes). CI publishes ghcr.io/qiaokes/lightpan-pro:sha-<first7commithex> for linux/amd64 only after validation. Pull requests validate without package writes. Separate6.1-sol implementation and review own CI/container changes; coordinator owns deployment docs, commits, push and first-run verification. Local Docker daemon is stopped; hosted build must verify the actual image. No real115 calls are authorized or required for CI.
+
+User additionally authorized merging to main and pushing once CI passes. First feature-branch run45641655967 validates source commitd8ddcb3 (contains full115 commit89fc7c4). Documentation-only commits and lifecycle records will accompany the merge. Do not merge while validation or publishing is unproven.
+
+User simplified delivery to Docker build/push only. Removing separate CI tests/vet/race/type-check and PR validation; preserving actual image build, token permissions, SHA tags and runtime notices. This overrides the initial validation-gated CI design.
+
+Docker-only run45644010263 completed successfully, publishing public sha-9b65537. Initial full-validation run45641655967 also succeeded. All required implementation and offline gates are complete; finishing task records and merging to main under explicit user authorization. Future CI remains Docker-only.

@@ -12,7 +12,7 @@
 - [x] Complete D11/W9 exact charset detection and differential validation; raw export-name ambiguity is inherited, monitor path escaping already implemented.
 - [x] Implement D9 trash-only deletion: remove permanent option and interim partial-error branch; exact-ID single-call fixtures and independent review passed.
 - [x] User explicitly authorized committing the full115 changes and push on 2026-11-25; implementation committed as89fc7c4.
-- [ ] Add GitHub validation and GHCR short-SHA image publishing, verify first remote run, and push all work.
+- [x] User-requested Docker-only GHCR publishing passed on GitHub: run45644010263, public sha-9b65537 image. Full115 code and CI pushed to feature branch; main merge/push authorized.
 
 ## Validation
 Targeted Go package tests first; then `go test ./...` and `go vet ./...`. Use `go test -race` on changed auth, scheduler, driver, playback and STRM packages. In web: `npm run type-check`, `npm run build` using repository lockfile/tooling. Run deterministic httptest fixtures for protocol bytes, auth states and retry counts; tree parser fixtures cover incomplete scans and path scope. Tests must verify observable behavior, not mirror implementation.
